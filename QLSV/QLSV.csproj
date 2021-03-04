@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Entity\Student.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
