@@ -8,5 +8,9 @@ namespace QLSV.Entity
 {
     class User
     {
+        protected string UserName { get; set; }
+        protected string PassWord { get; set; }
+
+
     }
 }

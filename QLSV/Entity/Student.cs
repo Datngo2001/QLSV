@@ -31,7 +31,7 @@ namespace QLSV.Entity
         public bool insertStudent(int id, string fname, string lname, DateTime date, bool gender, string phone, string address, MemoryStream picture)
         {
             DataBase mydb = new DataBase();
-            SqlCommand command = new SqlCommand("INSERT INTO std (id, fname, Iname, bdate, gender, phone, " +
+            SqlCommand command = new SqlCommand("INSERT INTO Students_info (ID, fname, lname, bdate, gender, phone, address, picture)" +
                 "VALUES (@id, @fn, @ln, @bdt, @gd, @phn, @adrs, @pic)", mydb.Connection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
@@ -39,7 +39,7 @@ namespace QLSV.Entity
             command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
             command.Parameters.Add("@bdt", SqlDbType.DateTime).Value = date;
             command.Parameters.Add("@gd", SqlDbType.Bit).Value = gender;
-            command.Parameters.Add("@ohn", SqlDbType.VarChar).Value = phone;
+            command.Parameters.Add("@phn", SqlDbType.VarChar).Value = phone;
             command.Parameters.Add("@adrs", SqlDbType.VarChar).Value = address;
             command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
 
