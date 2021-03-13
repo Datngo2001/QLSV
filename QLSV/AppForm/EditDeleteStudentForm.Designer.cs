@@ -1,0 +1,351 @@
+﻿
+namespace QLSV.AppForm
+{
+    partial class EditDeleteStudentForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.Id_tb = new System.Windows.Forms.TextBox();
+            this.FirstName_tb = new System.Windows.Forms.TextBox();
+            this.LastName_tb = new System.Windows.Forms.TextBox();
+            this.Phone_tb = new System.Windows.Forms.TextBox();
+            this.BirthDay_picker = new System.Windows.Forms.DateTimePicker();
+            this.genderBtn_group = new System.Windows.Forms.GroupBox();
+            this.female_rbtn = new System.Windows.Forms.RadioButton();
+            this.male_rbtn = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.Address_rtb = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Edit = new System.Windows.Forms.Button();
+            this.Remove = new System.Windows.Forms.Button();
+            this.Upload = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.genderBtn_group.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // Id_tb
+            // 
+            this.Id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Id_tb.Location = new System.Drawing.Point(217, 76);
+            this.Id_tb.Name = "Id_tb";
+            this.Id_tb.Size = new System.Drawing.Size(147, 35);
+            this.Id_tb.TabIndex = 0;
+            // 
+            // FirstName_tb
+            // 
+            this.FirstName_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FirstName_tb.Location = new System.Drawing.Point(217, 131);
+            this.FirstName_tb.Name = "FirstName_tb";
+            this.FirstName_tb.Size = new System.Drawing.Size(301, 35);
+            this.FirstName_tb.TabIndex = 0;
+            // 
+            // LastName_tb
+            // 
+            this.LastName_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LastName_tb.Location = new System.Drawing.Point(217, 207);
+            this.LastName_tb.Name = "LastName_tb";
+            this.LastName_tb.Size = new System.Drawing.Size(301, 35);
+            this.LastName_tb.TabIndex = 0;
+            // 
+            // Phone_tb
+            // 
+            this.Phone_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phone_tb.Location = new System.Drawing.Point(217, 391);
+            this.Phone_tb.Name = "Phone_tb";
+            this.Phone_tb.Size = new System.Drawing.Size(301, 35);
+            this.Phone_tb.TabIndex = 0;
+            // 
+            // BirthDay_picker
+            // 
+            this.BirthDay_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BirthDay_picker.Location = new System.Drawing.Point(217, 273);
+            this.BirthDay_picker.Name = "BirthDay_picker";
+            this.BirthDay_picker.Size = new System.Drawing.Size(301, 35);
+            this.BirthDay_picker.TabIndex = 1;
+            // 
+            // genderBtn_group
+            // 
+            this.genderBtn_group.Controls.Add(this.female_rbtn);
+            this.genderBtn_group.Controls.Add(this.male_rbtn);
+            this.genderBtn_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.genderBtn_group.Location = new System.Drawing.Point(217, 319);
+            this.genderBtn_group.Name = "genderBtn_group";
+            this.genderBtn_group.Size = new System.Drawing.Size(301, 58);
+            this.genderBtn_group.TabIndex = 19;
+            this.genderBtn_group.TabStop = false;
+            // 
+            // female_rbtn
+            // 
+            this.female_rbtn.AutoSize = true;
+            this.female_rbtn.Location = new System.Drawing.Point(175, 16);
+            this.female_rbtn.Name = "female_rbtn";
+            this.female_rbtn.Size = new System.Drawing.Size(120, 33);
+            this.female_rbtn.TabIndex = 1;
+            this.female_rbtn.TabStop = true;
+            this.female_rbtn.Text = "Female";
+            this.female_rbtn.UseVisualStyleBackColor = true;
+            // 
+            // male_rbtn
+            // 
+            this.male_rbtn.AutoSize = true;
+            this.male_rbtn.Location = new System.Drawing.Point(16, 16);
+            this.male_rbtn.Name = "male_rbtn";
+            this.male_rbtn.Size = new System.Drawing.Size(91, 33);
+            this.male_rbtn.TabIndex = 0;
+            this.male_rbtn.TabStop = true;
+            this.male_rbtn.Text = "Male";
+            this.male_rbtn.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(47, 76);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(42, 29);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "ID:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(47, 137);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(137, 29);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "First Name:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(47, 207);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(134, 29);
+            this.label3.TabIndex = 20;
+            this.label3.Text = "Last Name:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(47, 273);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 29);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Birth Day:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(47, 335);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 29);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Gender:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(47, 394);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 29);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Phone:";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(370, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 35);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Find";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Find_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(580, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(108, 29);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Address:";
+            // 
+            // Address_rtb
+            // 
+            this.Address_rtb.Location = new System.Drawing.Point(715, 76);
+            this.Address_rtb.Name = "Address_rtb";
+            this.Address_rtb.Size = new System.Drawing.Size(388, 226);
+            this.Address_rtb.TabIndex = 22;
+            this.Address_rtb.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(580, 319);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 29);
+            this.label8.TabIndex = 20;
+            this.label8.Text = "Pictire:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(715, 319);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(388, 271);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Edit
+            // 
+            this.Edit.BackColor = System.Drawing.Color.LimeGreen;
+            this.Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Edit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Edit.Location = new System.Drawing.Point(205, 642);
+            this.Edit.Name = "Edit";
+            this.Edit.Size = new System.Drawing.Size(257, 59);
+            this.Edit.TabIndex = 24;
+            this.Edit.Text = "Edit";
+            this.Edit.UseVisualStyleBackColor = false;
+            this.Edit.Click += new System.EventHandler(this.Edit_Click);
+            // 
+            // Remove
+            // 
+            this.Remove.BackColor = System.Drawing.Color.Red;
+            this.Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Remove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Remove.Location = new System.Drawing.Point(499, 642);
+            this.Remove.Name = "Remove";
+            this.Remove.Size = new System.Drawing.Size(168, 59);
+            this.Remove.TabIndex = 24;
+            this.Remove.Text = "Remove";
+            this.Remove.UseVisualStyleBackColor = false;
+            this.Remove.Click += new System.EventHandler(this.Remove_Click);
+            // 
+            // Upload
+            // 
+            this.Upload.Location = new System.Drawing.Point(715, 596);
+            this.Upload.Name = "Upload";
+            this.Upload.Size = new System.Drawing.Size(388, 29);
+            this.Upload.TabIndex = 25;
+            this.Upload.Text = "Upload Image";
+            this.Upload.UseVisualStyleBackColor = true;
+            this.Upload.Click += new System.EventHandler(this.Upload_Click);
+            // 
+            // Cancel
+            // 
+            this.Cancel.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Cancel.Location = new System.Drawing.Point(715, 642);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(168, 59);
+            this.Cancel.TabIndex = 26;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // EditDeleteStudentForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1164, 723);
+            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.Upload);
+            this.Controls.Add(this.Remove);
+            this.Controls.Add(this.Edit);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.Address_rtb);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.genderBtn_group);
+            this.Controls.Add(this.BirthDay_picker);
+            this.Controls.Add(this.Phone_tb);
+            this.Controls.Add(this.LastName_tb);
+            this.Controls.Add(this.FirstName_tb);
+            this.Controls.Add(this.Id_tb);
+            this.Name = "EditDeleteStudentForm";
+            this.Text = "EditDeleteStudentForm";
+            this.genderBtn_group.ResumeLayout(false);
+            this.genderBtn_group.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        public System.Windows.Forms.TextBox Id_tb;
+        public System.Windows.Forms.TextBox FirstName_tb;
+        public System.Windows.Forms.TextBox LastName_tb;
+        public System.Windows.Forms.TextBox Phone_tb;
+        public System.Windows.Forms.DateTimePicker BirthDay_picker;
+        public System.Windows.Forms.GroupBox genderBtn_group;
+        public System.Windows.Forms.RadioButton female_rbtn;
+        public System.Windows.Forms.RadioButton male_rbtn;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.RichTextBox Address_rtb;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button Edit;
+        public System.Windows.Forms.Button Remove;
+        public System.Windows.Forms.Button Upload;
+        private System.Windows.Forms.Button Cancel;
+    }
+}

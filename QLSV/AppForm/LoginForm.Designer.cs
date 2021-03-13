@@ -1,5 +1,5 @@
 ﻿
-namespace QLSV
+namespace QLSV.AppForm
 {
     partial class LoginForm
     {
@@ -55,6 +55,7 @@ namespace QLSV
             this.Password_textBox.Name = "Password_textBox";
             this.Password_textBox.Size = new System.Drawing.Size(242, 26);
             this.Password_textBox.TabIndex = 1;
+            this.Password_textBox.UseSystemPasswordChar = true;
             // 
             // Login_button
             // 

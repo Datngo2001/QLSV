@@ -1,5 +1,5 @@
 ﻿
-namespace QLSV
+namespace QLSV.AppForm
 {
     partial class MainForm
     {
@@ -32,13 +32,13 @@ namespace QLSV
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Dropdown_Student = new System.Windows.Forms.ToolStripMenuItem();
             this.item_NewStudent = new System.Windows.Forms.ToolStripMenuItem();
-            this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.studentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staticsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editRemoveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageStudentFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,26 +79,13 @@ namespace QLSV
             this.item_NewStudent.Text = "Add New Student";
             this.item_NewStudent.Click += new System.EventHandler(this.addStudent_Clicked);
             // 
-            // cOURSEToolStripMenuItem
-            // 
-            this.cOURSEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
-            this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(135, 42);
-            this.cOURSEToolStripMenuItem.Text = "COURSE";
-            // 
-            // sCOREToolStripMenuItem
-            // 
-            this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
-            this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
-            this.sCOREToolStripMenuItem.Text = "SCORE";
-            // 
             // studentListToolStripMenuItem
             // 
             this.studentListToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.studentListToolStripMenuItem.Name = "studentListToolStripMenuItem";
             this.studentListToolStripMenuItem.Size = new System.Drawing.Size(399, 46);
             this.studentListToolStripMenuItem.Text = "Student List ";
+            this.studentListToolStripMenuItem.Click += new System.EventHandler(this.studentListToolStripMenuItem_Click);
             // 
             // staticsToolStripMenuItem
             // 
@@ -128,16 +115,31 @@ namespace QLSV
             this.printToolStripMenuItem.Size = new System.Drawing.Size(399, 46);
             this.printToolStripMenuItem.Text = "Print";
             // 
+            // cOURSEToolStripMenuItem
+            // 
+            this.cOURSEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
+            this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(135, 42);
+            this.cOURSEToolStripMenuItem.Text = "COURSE";
+            // 
+            // sCOREToolStripMenuItem
+            // 
+            this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
+            this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
+            this.sCOREToolStripMenuItem.Text = "SCORE";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(969, 506);
+            this.ClientSize = new System.Drawing.Size(969, 553);
             this.Controls.Add(this.menuStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "19110115 Ngô Minh Đạt 19110101 Nguyễn Thành Phát";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

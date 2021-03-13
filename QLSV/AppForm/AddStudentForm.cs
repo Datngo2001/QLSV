@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using QLSV.Entity;
 
-namespace QLSV
+namespace QLSV.AppForm
 {
     public partial class AddStudentForm : Form
     {
@@ -26,19 +26,27 @@ namespace QLSV
                 Fname = fname_tx.Text,
                 Lname = lname_tb.Text,
                 Bdate = bdate_picker.Value,
-                Gender = male_rbtn.Checked, //checked == true ==> true == male
                 Phone = phone_tb.Text,
                 Address = address_rtb.Text,
                 Picture = new MemoryStream((byte[])imgCon.ConvertTo(pictureBox.Image, typeof(byte[])))
             };
+            if (female_rbtn.Checked)
+            {
+                student.Gender = 'F';
+            }else if (male_rbtn.Checked)
+            {
+                student.Gender = 'M';
+            }
             if(student.insertStudent() == true)
             {
                 MessageBox.Show("Add Complete", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                ClearAllText(this);
             }
             else
             {
-                MessageBox.Show("Add Complete", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Add Fail", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -56,6 +64,23 @@ namespace QLSV
             }
             pictureBox.Image = Image.FromFile(filepath.ToString());
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+        void ClearAllText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                    ((TextBox)c).Clear();
+                else
+                    ClearAllText(c);
+            }
+            foreach (Control c in con.Controls)
+            {
+                if (c is RichTextBox)
+                    ((RichTextBox)c).Clear();
+                else
+                    ClearAllText(c);
+            }
         }
     }
 }

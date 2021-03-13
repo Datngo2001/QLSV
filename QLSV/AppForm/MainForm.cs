@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace QLSV
+namespace QLSV.AppForm
 {
     public partial class MainForm : Form
     {
@@ -19,6 +19,17 @@ namespace QLSV
         {
             AddStudentForm addStudentForm = new AddStudentForm();
             addStudentForm.ShowDialog();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void studentListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StudentListForm studentListForm = new StudentListForm();
+            studentListForm.Show();
         }
     }
 }

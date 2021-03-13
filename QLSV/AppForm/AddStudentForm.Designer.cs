@@ -1,5 +1,5 @@
 ﻿
-namespace QLSV
+namespace QLSV.AppForm
 {
     partial class AddStudentForm
     {

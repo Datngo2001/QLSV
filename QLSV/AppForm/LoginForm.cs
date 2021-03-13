@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using QLSV.Data;
 
-namespace QLSV
+namespace QLSV.AppForm
 {
     public partial class LoginForm : Form
     {

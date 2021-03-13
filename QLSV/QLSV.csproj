@@ -46,37 +46,55 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddStudentForm.cs">
+    <Compile Include="AppForm\AddStudentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddStudentForm.Designer.cs">
+    <Compile Include="AppForm\AddStudentForm.Designer.cs">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\EditDeleteStudentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\EditDeleteStudentForm.Designer.cs">
+      <DependentUpon>EditDeleteStudentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\StudentListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\StudentListForm.Designer.cs">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\User.cs" />
-    <Compile Include="LoginForm.cs">
+    <Compile Include="AppForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
+    <Compile Include="AppForm\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="AppForm\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="AppForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddStudentForm.resx">
+    <EmbeddedResource Include="AppForm\AddStudentForm.resx">
       <DependentUpon>AddStudentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
+    <EmbeddedResource Include="AppForm\EditDeleteStudentForm.resx">
+      <DependentUpon>EditDeleteStudentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="AppForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\StudentListForm.resx">
+      <DependentUpon>StudentListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
