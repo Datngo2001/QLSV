@@ -23,7 +23,7 @@ namespace QLSV.AppForm
             SqlDataAdapter adapter = new SqlDataAdapter();
             db.openConnection();
             SqlCommand cm = new SqlCommand(
-                "SELECT * FROM Students WHERE UserName = @User AND Password = @Pass", db.Connection);
+                "SELECT * FROM Users WHERE UserName = @User AND Password = @Pass", db.Connection);
             cm.Parameters.Add("@User", SqlDbType.VarChar).Value = Username_textBox.Text;
             cm.Parameters.Add("@Pass", SqlDbType.VarChar).Value = Password_textBox.Text;
             adapter.SelectCommand = cm;
@@ -40,12 +40,17 @@ namespace QLSV.AppForm
         }
         private void LoginForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void Cancel_button_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
         }
     }
 }

@@ -283,7 +283,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddStudentForm";
-            this.Text = "Ngô Minh Đạt 19110115";
+            this.Text = "Add a new student";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.genderBtn_group.ResumeLayout(false);
             this.genderBtn_group.PerformLayout();

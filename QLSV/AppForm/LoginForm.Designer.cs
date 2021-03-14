@@ -37,6 +37,8 @@ namespace QLSV.AppForm
             this.Password_label = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.Title_pictureBox = new System.Windows.Forms.PictureBox();
+            this.ForgetPassword = new System.Windows.Forms.LinkLabel();
+            this.register_lb = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Title_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +64,7 @@ namespace QLSV.AppForm
             this.Login_button.BackColor = System.Drawing.Color.SpringGreen;
             this.Login_button.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Login_button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Login_button.Location = new System.Drawing.Point(242, 240);
+            this.Login_button.Location = new System.Drawing.Point(256, 249);
             this.Login_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Login_button.Name = "Login_button";
             this.Login_button.Size = new System.Drawing.Size(162, 57);
@@ -76,7 +78,7 @@ namespace QLSV.AppForm
             this.Cancel_button.BackColor = System.Drawing.Color.Tomato;
             this.Cancel_button.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Cancel_button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Cancel_button.Location = new System.Drawing.Point(38, 240);
+            this.Cancel_button.Location = new System.Drawing.Point(33, 249);
             this.Cancel_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(162, 57);
@@ -129,12 +131,37 @@ namespace QLSV.AppForm
             this.Title_pictureBox.TabIndex = 7;
             this.Title_pictureBox.TabStop = false;
             // 
+            // ForgetPassword
+            // 
+            this.ForgetPassword.AutoSize = true;
+            this.ForgetPassword.LinkColor = System.Drawing.Color.White;
+            this.ForgetPassword.Location = new System.Drawing.Point(109, 198);
+            this.ForgetPassword.Name = "ForgetPassword";
+            this.ForgetPassword.Size = new System.Drawing.Size(175, 20);
+            this.ForgetPassword.TabIndex = 8;
+            this.ForgetPassword.TabStop = true;
+            this.ForgetPassword.Text = "Forgot your password ?";
+            // 
+            // register_lb
+            // 
+            this.register_lb.AutoSize = true;
+            this.register_lb.LinkColor = System.Drawing.Color.White;
+            this.register_lb.Location = new System.Drawing.Point(109, 218);
+            this.register_lb.Name = "register_lb";
+            this.register_lb.Size = new System.Drawing.Size(181, 20);
+            this.register_lb.TabIndex = 8;
+            this.register_lb.TabStop = true;
+            this.register_lb.Text = "Don\'t have an account ?";
+            this.register_lb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.register_LinkClicked);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(456, 317);
+            this.Controls.Add(this.register_lb);
+            this.Controls.Add(this.ForgetPassword);
             this.Controls.Add(this.Title_pictureBox);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.Password_label);
@@ -145,7 +172,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.Username_textBox);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
-            this.Text = "Login form: Ngo Minh Dat 19110115";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Title_pictureBox)).EndInit();
             this.ResumeLayout(false);
@@ -163,5 +190,7 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Label Password_label;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox Title_pictureBox;
+        private System.Windows.Forms.LinkLabel ForgetPassword;
+        private System.Windows.Forms.LinkLabel register_lb;
     }
 }

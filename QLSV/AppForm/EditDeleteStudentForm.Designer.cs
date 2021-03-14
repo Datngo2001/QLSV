@@ -212,6 +212,7 @@ namespace QLSV.AppForm
             // 
             // Address_rtb
             // 
+            this.Address_rtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Address_rtb.Location = new System.Drawing.Point(715, 76);
             this.Address_rtb.Name = "Address_rtb";
             this.Address_rtb.Size = new System.Drawing.Size(388, 226);
@@ -313,7 +314,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.FirstName_tb);
             this.Controls.Add(this.Id_tb);
             this.Name = "EditDeleteStudentForm";
-            this.Text = "EditDeleteStudentForm";
+            this.Text = "Edit and Delete";
             this.genderBtn_group.ResumeLayout(false);
             this.genderBtn_group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
