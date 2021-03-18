@@ -44,6 +44,7 @@ namespace QLSV.AppForm
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Dropdown_Student,
@@ -99,6 +100,7 @@ namespace QLSV.AppForm
             this.editRemoveToolStripMenuItem.Name = "editRemoveToolStripMenuItem";
             this.editRemoveToolStripMenuItem.Size = new System.Drawing.Size(399, 46);
             this.editRemoveToolStripMenuItem.Text = "Edit / Remove";
+            this.editRemoveToolStripMenuItem.Click += new System.EventHandler(this.editRemoveToolStripMenuItem_Click);
             // 
             // manageStudentFormToolStripMenuItem
             // 

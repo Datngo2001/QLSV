@@ -31,5 +31,11 @@ namespace QLSV.AppForm
             StudentListForm studentListForm = new StudentListForm();
             studentListForm.Show();
         }
+
+        private void editRemoveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditDeleteStudentForm editDeleteStudentForm = new EditDeleteStudentForm();
+            editDeleteStudentForm.Show();
+        }
     }
 }

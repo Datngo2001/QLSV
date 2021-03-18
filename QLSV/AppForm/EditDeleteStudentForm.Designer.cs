@@ -52,6 +52,8 @@ namespace QLSV.AppForm
             this.Remove = new System.Windows.Forms.Button();
             this.Upload = new System.Windows.Forms.Button();
             this.Cancel = new System.Windows.Forms.Button();
+            this.findByPhone_btn = new System.Windows.Forms.Button();
+            this.firstNameFind_btn = new System.Windows.Forms.Button();
             this.genderBtn_group.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +63,7 @@ namespace QLSV.AppForm
             this.Id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Id_tb.Location = new System.Drawing.Point(217, 76);
             this.Id_tb.Name = "Id_tb";
-            this.Id_tb.Size = new System.Drawing.Size(147, 35);
+            this.Id_tb.Size = new System.Drawing.Size(185, 35);
             this.Id_tb.TabIndex = 0;
             // 
             // FirstName_tb
@@ -69,7 +71,7 @@ namespace QLSV.AppForm
             this.FirstName_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FirstName_tb.Location = new System.Drawing.Point(217, 131);
             this.FirstName_tb.Name = "FirstName_tb";
-            this.FirstName_tb.Size = new System.Drawing.Size(301, 35);
+            this.FirstName_tb.Size = new System.Drawing.Size(185, 35);
             this.FirstName_tb.TabIndex = 0;
             // 
             // LastName_tb
@@ -85,7 +87,7 @@ namespace QLSV.AppForm
             this.Phone_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phone_tb.Location = new System.Drawing.Point(217, 391);
             this.Phone_tb.Name = "Phone_tb";
-            this.Phone_tb.Size = new System.Drawing.Size(301, 35);
+            this.Phone_tb.Size = new System.Drawing.Size(185, 35);
             this.Phone_tb.TabIndex = 0;
             // 
             // BirthDay_picker
@@ -192,9 +194,9 @@ namespace QLSV.AppForm
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(370, 76);
+            this.button1.Location = new System.Drawing.Point(408, 76);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 35);
+            this.button1.Size = new System.Drawing.Size(110, 35);
             this.button1.TabIndex = 21;
             this.button1.Text = "Find";
             this.button1.UseVisualStyleBackColor = true;
@@ -268,7 +270,7 @@ namespace QLSV.AppForm
             // 
             this.Upload.Location = new System.Drawing.Point(715, 596);
             this.Upload.Name = "Upload";
-            this.Upload.Size = new System.Drawing.Size(388, 29);
+            this.Upload.Size = new System.Drawing.Size(388, 40);
             this.Upload.TabIndex = 25;
             this.Upload.Text = "Upload Image";
             this.Upload.UseVisualStyleBackColor = true;
@@ -287,6 +289,28 @@ namespace QLSV.AppForm
             this.Cancel.UseVisualStyleBackColor = false;
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
+            // findByPhone_btn
+            // 
+            this.findByPhone_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findByPhone_btn.Location = new System.Drawing.Point(408, 391);
+            this.findByPhone_btn.Name = "findByPhone_btn";
+            this.findByPhone_btn.Size = new System.Drawing.Size(110, 35);
+            this.findByPhone_btn.TabIndex = 21;
+            this.findByPhone_btn.Text = "Find";
+            this.findByPhone_btn.UseVisualStyleBackColor = true;
+            this.findByPhone_btn.Click += new System.EventHandler(this.findByPhone_btn_Click);
+            // 
+            // firstNameFind_btn
+            // 
+            this.firstNameFind_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.firstNameFind_btn.Location = new System.Drawing.Point(408, 131);
+            this.firstNameFind_btn.Name = "firstNameFind_btn";
+            this.firstNameFind_btn.Size = new System.Drawing.Size(110, 35);
+            this.firstNameFind_btn.TabIndex = 21;
+            this.firstNameFind_btn.Text = "Find";
+            this.firstNameFind_btn.UseVisualStyleBackColor = true;
+            this.firstNameFind_btn.Click += new System.EventHandler(this.firstNameFind_btn_Click);
+            // 
             // EditDeleteStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -298,6 +322,8 @@ namespace QLSV.AppForm
             this.Controls.Add(this.Edit);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Address_rtb);
+            this.Controls.Add(this.firstNameFind_btn);
+            this.Controls.Add(this.findByPhone_btn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -348,5 +374,7 @@ namespace QLSV.AppForm
         public System.Windows.Forms.Button Remove;
         public System.Windows.Forms.Button Upload;
         private System.Windows.Forms.Button Cancel;
+        public System.Windows.Forms.Button findByPhone_btn;
+        public System.Windows.Forms.Button firstNameFind_btn;
     }
 }

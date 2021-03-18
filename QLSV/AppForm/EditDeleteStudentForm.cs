@@ -35,7 +35,6 @@ namespace QLSV.AppForm
 
         private void Find_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(Id_tb.Text);
             DataBase dataBase = new DataBase();
             SqlCommand command = new SqlCommand(
                 "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE id = @ID", dataBase.Connection);
@@ -46,31 +45,11 @@ namespace QLSV.AppForm
 
             if (table.Rows.Count > 0)
             {
-                FirstName_tb.Text = table.Rows[0]["fname"].ToString();
-                LastName_tb.Text = table.Rows[0]["lname"].ToString();
-                BirthDay_picker.Value = (DateTime)table.Rows[0]["bdate"];
-
-                // gender
-
-                if (table.Rows[0]["gender"].ToString() == "M")
-                {
-                    male_rbtn.Checked = true;
-                }
-                else if (table.Rows[0]["gender"].ToString() == "F")
-                {
-                    female_rbtn.Checked = true;
-                }
-
-
-                Phone_tb.Text = table.Rows[0]["phone"].ToString();
-                Address_rtb.Text = table.Rows[0]["address"].ToString();
-                byte[] pic = (byte[])table.Rows[0]["picture"];
-                MemoryStream picture = new MemoryStream(pic);
-                pictureBox1.Image = Image.FromStream(picture);
+                LoadData(table);
             }
             else
             {
-                MessageBox.Show("not found", "Find Student", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("not found", "Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -167,6 +146,82 @@ namespace QLSV.AppForm
         private void Cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void findByPhone_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(Id_tb.Text);
+                DataBase dataBase = new DataBase();
+                SqlCommand command = new SqlCommand(
+                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE phone = @Phone", dataBase.Connection);
+                command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone_tb.Text;
+                dataBase.openConnection();
+                Student student = new Student();
+                DataTable table = student.getStudents(command);
+
+                if (table.Rows.Count > 0)
+                {
+                    LoadData(table);
+                }
+                else
+                {
+                    MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception E)
+            {
+                Console.WriteLine(E.Message);
+                throw;
+            }
+        }
+
+        private void firstNameFind_btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                FindStudentForm findStudentForm = new FindStudentForm();
+                findStudentForm.Show();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public void LoadData(DataTable table)
+        {
+            try
+            {
+                FirstName_tb.Text = table.Rows[0]["fname"].ToString();
+                LastName_tb.Text = table.Rows[0]["lname"].ToString();
+                BirthDay_picker.Value = (DateTime)table.Rows[0]["bdate"];
+
+                // gender
+
+                if (table.Rows[0]["gender"].ToString() == "M")
+                {
+                    male_rbtn.Checked = true;
+                }
+                else if (table.Rows[0]["gender"].ToString() == "F")
+                {
+                    female_rbtn.Checked = true;
+                }
+
+
+                Phone_tb.Text = table.Rows[0]["phone"].ToString();
+                Address_rtb.Text = table.Rows[0]["address"].ToString();
+                byte[] pic = (byte[])table.Rows[0]["picture"];
+                MemoryStream picture = new MemoryStream(pic);
+                pictureBox1.Image = Image.FromStream(picture);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
         }
     }
 }
