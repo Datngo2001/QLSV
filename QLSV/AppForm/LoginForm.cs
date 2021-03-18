@@ -52,5 +52,50 @@ namespace QLSV.AppForm
             RegisterForm registerForm = new RegisterForm();
             registerForm.Show();
         }
+
+        private void password_ttip_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void Username_textBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Username_textBox.Text.Length != 0)
+                {
+                    errorProvider1.SetError(Username_textBox, null);
+                }
+                else
+                {
+                    errorProvider1.SetError(Username_textBox, "Please enter username!");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Password_textBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Password_textBox.Text.Length != 0)
+                {
+                    errorProvider2.SetError(Password_textBox, null);
+                }
+                else
+                {
+                    errorProvider2.SetError(Password_textBox, "Please enter password!");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }
