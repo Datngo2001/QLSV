@@ -18,6 +18,9 @@ namespace QLSV.AppForm
         }
         private void Login_button_Click(object sender, EventArgs e)
         {
+            ProgressDialog progress = new ProgressDialog();
+            progress.Show();
+
             DataBase db = new DataBase();
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();
@@ -27,8 +30,17 @@ namespace QLSV.AppForm
             cm.Parameters.Add("@User", SqlDbType.VarChar).Value = Username_textBox.Text;
             cm.Parameters.Add("@Pass", SqlDbType.VarChar).Value = Password_textBox.Text;
             adapter.SelectCommand = cm;
+
+            progress.Bar.Value = 50;
+
             adapter.Fill(table);
+
+            progress.Bar.Value = 100;
+
             db.closeConnection();
+
+            progress.Close();
+
             if (table.Rows.Count > 0)
             {
                 this.DialogResult = DialogResult.OK;

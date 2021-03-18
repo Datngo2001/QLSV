@@ -64,6 +64,12 @@
     <Compile Include="AppForm\FindStudentForm.Designer.cs">
       <DependentUpon>FindStudentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\ProgressDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ProgressDialog.Designer.cs">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ProgressDialog.resx">
+      <DependentUpon>ProgressDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>

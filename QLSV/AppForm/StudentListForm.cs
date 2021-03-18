@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-
 using System.Data.Sql;
 using QLSV.Data;
 using System.IO;
@@ -42,6 +36,9 @@ namespace QLSV.AppForm
         {
             try
             {
+                ProgressDialog progress = new ProgressDialog();
+                progress.Show();
+
                 DataBase dataBase = new DataBase();
                 dataBase.openConnection();
                 SqlCommand command = new SqlCommand("SELECT * FROM Students_info", dataBase.Connection);
@@ -51,6 +48,8 @@ namespace QLSV.AppForm
                 adapter.Fill(dataSet, "Students_info");
                 dataBase.closeConnection();
 
+                progress.Bar.Value = 50;
+
                 dataGridView1.RowTemplate.Height = 80;
                 DataTable table = dataSet.Tables["Students_info"];
                 dataGridView1.DataSource = table;
@@ -59,6 +58,11 @@ namespace QLSV.AppForm
                 imageColumn = (DataGridViewImageColumn)dataGridView1.Columns[7];
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
                 dataGridView1.AllowUserToAddRows = false;
+
+                progress.Bar.Value = 50;
+
+                progress.Close();
+
                 return true;
             }
             catch (Exception e)
