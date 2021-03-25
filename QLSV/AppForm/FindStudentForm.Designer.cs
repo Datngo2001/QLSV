@@ -47,9 +47,9 @@ namespace QLSV.AppForm
             // search_btn
             // 
             this.search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search_btn.Location = new System.Drawing.Point(1146, 12);
+            this.search_btn.Location = new System.Drawing.Point(1071, 12);
             this.search_btn.Name = "search_btn";
-            this.search_btn.Size = new System.Drawing.Size(229, 35);
+            this.search_btn.Size = new System.Drawing.Size(151, 35);
             this.search_btn.TabIndex = 1;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = true;
@@ -58,11 +58,12 @@ namespace QLSV.AppForm
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 107);
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 119);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1363, 610);
+            this.dataGridView1.Size = new System.Drawing.Size(1473, 610);
             this.dataGridView1.TabIndex = 2;
             // 
             // label1
@@ -79,13 +80,14 @@ namespace QLSV.AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1387, 729);
+            this.ClientSize = new System.Drawing.Size(1473, 729);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.search_btn);
             this.Controls.Add(this.searchInput_tb);
             this.Name = "FindStudentForm";
             this.Text = "Search Student";
+            this.Load += new System.EventHandler(this.FindStudentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -93,10 +95,9 @@ namespace QLSV.AppForm
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox searchInput_tb;
         private System.Windows.Forms.Button search_btn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox searchInput_tb;
     }
 }

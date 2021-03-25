@@ -31,12 +31,8 @@ namespace QLSV.AppForm
                 DataBase db = new DataBase();
 
                 SqlCommand insertCommand = new SqlCommand(
-                    "INSERT INTO Users " +
-                        "UserName," +
-                        "Password " +
-                    "VALUES" +
-                        "UserName = @username, " +
-                        "Password = @password"
+                    "INSERT INTO Users (UserName, Password)" +
+                    "VALUES (@username, @password)"
                     , db.Connection);
 
                 SqlCommand checkCommand = new SqlCommand(

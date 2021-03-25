@@ -192,6 +192,7 @@ namespace QLSV.AppForm
             // bdate_picker
             // 
             this.bdate_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bdate_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.bdate_picker.Location = new System.Drawing.Point(155, 142);
             this.bdate_picker.Name = "bdate_picker";
             this.bdate_picker.Size = new System.Drawing.Size(302, 30);

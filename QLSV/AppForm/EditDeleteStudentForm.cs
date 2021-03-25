@@ -169,6 +169,7 @@ namespace QLSV.AppForm
                 {
                     MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                dataBase.closeConnection();
             }
             catch (Exception E)
             {
@@ -182,6 +183,7 @@ namespace QLSV.AppForm
             try
             {
                 FindStudentForm findStudentForm = new FindStudentForm();
+                findStudentForm.searchInput_tb.Text = FirstName_tb.Text;
                 findStudentForm.Show();
             }
             catch (Exception)

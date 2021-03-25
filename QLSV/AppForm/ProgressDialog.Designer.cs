@@ -50,7 +50,7 @@ namespace QLSV.AppForm
             this.Name = "ProgressDialog";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.Text = "Loading";
+            this.Text = "QLSV Ngo Minh Dat 19110115";
             this.Load += new System.EventHandler(this.ProgressDialog_Load);
             this.ResumeLayout(false);
 
