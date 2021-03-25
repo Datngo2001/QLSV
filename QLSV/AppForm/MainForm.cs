@@ -37,5 +37,11 @@ namespace QLSV.AppForm
             EditDeleteStudentForm editDeleteStudentForm = new EditDeleteStudentForm();
             editDeleteStudentForm.Show();
         }
+
+        private void staticsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StaticForm staticForm = new StaticForm();
+            staticForm.Show();
+        }
     }
 }

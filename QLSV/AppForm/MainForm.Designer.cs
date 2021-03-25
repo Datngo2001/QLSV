@@ -93,6 +93,7 @@ namespace QLSV.AppForm
             this.staticsToolStripMenuItem.Name = "staticsToolStripMenuItem";
             this.staticsToolStripMenuItem.Size = new System.Drawing.Size(399, 46);
             this.staticsToolStripMenuItem.Text = "Statics";
+            this.staticsToolStripMenuItem.Click += new System.EventHandler(this.staticsToolStripMenuItem_Click);
             // 
             // editRemoveToolStripMenuItem
             // 
