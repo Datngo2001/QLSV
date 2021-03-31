@@ -43,5 +43,11 @@ namespace QLSV.AppForm
             StaticForm staticForm = new StaticForm();
             staticForm.Show();
         }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PrintForm printForm = new PrintForm();
+            printForm.Show();
+        }
     }
 }

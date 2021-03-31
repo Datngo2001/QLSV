@@ -29,14 +29,13 @@ namespace QLSV.AppForm
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.genderChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.totalStudent_lb = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.male_lb = new System.Windows.Forms.Label();
             this.malePercent_lb = new System.Windows.Forms.Label();
             this.female_lb = new System.Windows.Forms.Label();
@@ -46,17 +45,17 @@ namespace QLSV.AppForm
             // 
             // genderChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.genderChart.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.genderChart.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.genderChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.genderChart.Legends.Add(legend1);
             this.genderChart.Location = new System.Drawing.Point(17, 133);
             this.genderChart.Name = "genderChart";
             this.genderChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.genderChart.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.genderChart.Series.Add(series1);
             this.genderChart.Size = new System.Drawing.Size(601, 396);
             this.genderChart.TabIndex = 0;
             this.genderChart.Text = "chart1";
@@ -91,15 +90,6 @@ namespace QLSV.AppForm
             this.totalStudent_lb.Size = new System.Drawing.Size(102, 37);
             this.totalStudent_lb.TabIndex = 3;
             this.totalStudent_lb.Text = "label3";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(182, 646);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(182, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Ngô Minh Đạt 19110115";
             // 
             // male_lb
             // 
@@ -150,7 +140,6 @@ namespace QLSV.AppForm
             this.Controls.Add(this.female_lb);
             this.Controls.Add(this.malePercent_lb);
             this.Controls.Add(this.male_lb);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.totalStudent_lb);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -170,7 +159,6 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label totalStudent_lb;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label male_lb;
         private System.Windows.Forms.Label malePercent_lb;
         private System.Windows.Forms.Label female_lb;
