@@ -1,21 +1,20 @@
 ﻿using QLSV.Data;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Word;
+using Excel = Microsoft.Office.Interop.Excel;
+using Word = Microsoft.Office.Interop.Word;
+using System.IO;
 
 namespace QLSV.AppForm
 {
     public partial class PrintForm : Form
     {
-        private DataTable Table { get; set; }
+        private System.Data.DataTable Table { get; set; }
         public PrintForm()
         {
             InitializeComponent();
@@ -27,7 +26,8 @@ namespace QLSV.AppForm
             SqlCommand command = new SqlCommand("SELECT * FROM Students_info", dataBase.Connection);
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = command;
-            Table = new DataTable();
+
+            Table = new System.Data.DataTable();
             adapter.Fill(Table);
 
             Table.Columns[0].ColumnName = "ID";
@@ -49,11 +49,6 @@ namespace QLSV.AppForm
             dataView_gv.AllowUserToAddRows = false;
         }
 
-        private void Sevefile_btn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void print_btn_Click(object sender, EventArgs e)
         {
             PrintDialog pDlg = new PrintDialog();
@@ -70,11 +65,6 @@ namespace QLSV.AppForm
             {
                 MessageBox.Show("Đã hủy in");
             }
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void check_btn_Click(object sender, EventArgs e)
@@ -123,6 +113,8 @@ namespace QLSV.AppForm
 
                 db.openConnection();
 
+                Table = new System.Data.DataTable();
+
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(Table);
@@ -137,6 +129,8 @@ namespace QLSV.AppForm
                 imageColumn = (DataGridViewImageColumn)dataView_gv.Columns[7];
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
                 dataView_gv.AllowUserToAddRows = false;
+
+                dataView_gv.Refresh();
             }
             catch (Exception)
             {
@@ -159,9 +153,118 @@ namespace QLSV.AppForm
             }
         }
 
-        private void no_rbtn_CheckedChanged(object sender, EventArgs e)
+        private void Sevefile_btn_Click(object sender, EventArgs e)
         {
+            SaveFileDialog savefile = new SaveFileDialog();
+            savefile.DefaultExt = "*.docx";
+            savefile.Filter = "DOCX files(*.docx)|*.docx|Excel files(.xlsx) |*.xlsx";
 
+
+            if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
+            {
+                if(savefile.FileName.EndsWith("docx") == true)
+                {
+                    Export_Data_To_Word(dataView_gv, savefile.FileName);
+                    MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                if (savefile.FileName.EndsWith("xlsx") == true)
+                {
+                    ExportToExcel(dataView_gv, savefile.FileName);
+                    MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        public void Export_Data_To_Word(DataGridView DGV, string filename)
+        {
+            if (DGV.Rows.Count != 0)
+            {
+                int RowCount = DGV.Rows.Count;
+                int ColumnCount = DGV.Columns.Count;
+
+                Document oDoc = new Document();
+                oDoc.Application.Visible = true;
+
+                oDoc.PageSetup.Orientation = WdOrientation.wdOrientLandscape;
+
+                dynamic oRange = oDoc.Content.Application.Selection.Range;
+                string oTemp = "";
+                Object oMissing = System.Reflection.Missing.Value;
+                for (int r = 0; r <= RowCount - 1; r++)
+                {
+                    oTemp = "";
+                    for (int c = 0; c < ColumnCount - 1; c++)
+                    {
+                        oTemp = oTemp + DGV.Rows[r].Cells[c].Value + "\t";
+                    }
+                    var oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
+                    oPara1.Range.Text = oTemp;
+                    oPara1.Range.InsertParagraphAfter();
+                    byte[] imgbyte = (byte[])dataView_gv.Rows[r].Cells[7].Value;
+                    MemoryStream ms = new MemoryStream(imgbyte);
+                    //Image sparePicture = Image.FromStream(ms);
+                    Image finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(50, 50)));
+                    Clipboard.SetDataObject(finalPic);
+                    var oPara2 = oDoc.Content.Paragraphs.Add(ref oMissing);
+                    oPara2.Range.Paste();
+                    oPara2.Range.InsertParagraphAfter();
+                    oTemp += "\n";
+                }
+                //save the file
+                oDoc.SaveAs2(filename);
+            }
+        }
+        public bool ExportToExcel(DataGridView DGV, string filename)
+        {
+            if (DGV.Rows.Count != 0)
+            {
+                var excelApp = new Excel.Application();
+                // Make the object visible.
+                excelApp.Visible = true;
+
+                // Create a new, empty workbook and add it to the collection returned
+                // by property Workbooks. The new workbook becomes the active workbook.
+                // Add has an optional parameter for specifying a praticular template.
+                // Because no argument is sent in this example, Add creates a new workbook.
+                excelApp.Workbooks.Add();
+
+                // This example uses a single workSheet. The explicit type casting is
+                // removed in a later procedure.
+                Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
+
+                workSheet.Cells[1, "A"] = DGV.Columns[0].Name;
+                workSheet.Cells[1, "B"] = DGV.Columns[1].Name;
+                workSheet.Cells[1, "C"] = DGV.Columns[2].Name;
+                workSheet.Cells[1, "D"] = DGV.Columns[3].Name;
+                workSheet.Cells[1, "E"] = DGV.Columns[4].Name;
+                workSheet.Cells[1, "F"] = DGV.Columns[5].Name;
+                workSheet.Cells[1, "G"] = DGV.Columns[6].Name;
+                workSheet.Cells[1, "H"] = DGV.Columns[7].Name;
+
+                for (int i = 0; i < DGV.Rows.Count; i++)
+                {
+                    workSheet.Cells[i + 2, "A"] = DGV.Rows[i].Cells[0].Value;
+                    workSheet.Cells[i + 2, "B"] = DGV.Rows[i].Cells[1].Value;
+                    workSheet.Cells[i + 2, "C"] = DGV.Rows[i].Cells[2].Value;
+                    workSheet.Cells[i + 2, "D"] = DGV.Rows[i].Cells[3].Value;
+                    workSheet.Cells[i + 2, "E"] = DGV.Rows[i].Cells[4].Value;
+                    workSheet.Cells[i + 2, "F"] = DGV.Rows[i].Cells[5].Value;
+                    workSheet.Cells[i + 2, "G"] = DGV.Rows[i].Cells[6].Value;
+                }
+                workSheet.Columns[1].AutoFit();
+                workSheet.Columns[2].AutoFit();
+                workSheet.Columns[3].AutoFit();
+                workSheet.Columns[4].AutoFit();
+                workSheet.Columns[5].AutoFit();
+                workSheet.Columns[6].AutoFit();
+                workSheet.Columns[7].AutoFit();
+
+                workSheet.SaveAs(filename);
+
+                excelApp.Quit();
+
+                return true;
+            }
+            return false;
         }
     }
 }

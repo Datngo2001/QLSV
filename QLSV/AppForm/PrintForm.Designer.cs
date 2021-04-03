@@ -62,10 +62,9 @@ namespace QLSV.AppForm
             this.searchOption_gb.Controls.Add(this.all_rBtn);
             this.searchOption_gb.Location = new System.Drawing.Point(12, 15);
             this.searchOption_gb.Name = "searchOption_gb";
-            this.searchOption_gb.Size = new System.Drawing.Size(1251, 153);
+            this.searchOption_gb.Size = new System.Drawing.Size(1254, 153);
             this.searchOption_gb.TabIndex = 0;
             this.searchOption_gb.TabStop = false;
-            this.searchOption_gb.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // check_btn
             // 
@@ -111,7 +110,6 @@ namespace QLSV.AppForm
             this.no_rbtn.TabStop = true;
             this.no_rbtn.Text = "No";
             this.no_rbtn.UseVisualStyleBackColor = true;
-            this.no_rbtn.CheckedChanged += new System.EventHandler(this.no_rbtn_CheckedChanged);
             // 
             // yes_rbtn
             // 
@@ -129,7 +127,7 @@ namespace QLSV.AppForm
             // dateEnd2_dtp
             // 
             this.dateEnd2_dtp.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEnd2_dtp.CustomFormat = "dd-MM-yyyy";
+            this.dateEnd2_dtp.CustomFormat = "dd-MMM-yyyy";
             this.dateEnd2_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateEnd2_dtp.Location = new System.Drawing.Point(460, 78);
             this.dateEnd2_dtp.Name = "dateEnd2_dtp";
@@ -140,7 +138,7 @@ namespace QLSV.AppForm
             // dateEnd1_dtp
             // 
             this.dateEnd1_dtp.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateEnd1_dtp.CustomFormat = "dd-MM-yyyy";
+            this.dateEnd1_dtp.CustomFormat = "dd-MMM-yyyy";
             this.dateEnd1_dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateEnd1_dtp.Location = new System.Drawing.Point(262, 78);
             this.dateEnd1_dtp.Name = "dateEnd1_dtp";
@@ -228,23 +226,25 @@ namespace QLSV.AppForm
             // 
             // dataView_gv
             // 
-            this.dataView_gv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataView_gv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataView_gv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataView_gv.Location = new System.Drawing.Point(12, 168);
             this.dataView_gv.Name = "dataView_gv";
             this.dataView_gv.RowHeadersWidth = 62;
             this.dataView_gv.RowTemplate.Height = 28;
-            this.dataView_gv.Size = new System.Drawing.Size(1251, 417);
+            this.dataView_gv.Size = new System.Drawing.Size(1254, 418);
             this.dataView_gv.TabIndex = 1;
             // 
             // Sevefile_btn
             // 
-            this.Sevefile_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.Sevefile_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.Sevefile_btn.BackColor = System.Drawing.Color.PaleGreen;
             this.Sevefile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Sevefile_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.Sevefile_btn.Location = new System.Drawing.Point(299, 603);
+            this.Sevefile_btn.Location = new System.Drawing.Point(301, 599);
+            this.Sevefile_btn.Margin = new System.Windows.Forms.Padding(10, 10, 10, 50);
             this.Sevefile_btn.Name = "Sevefile_btn";
             this.Sevefile_btn.Size = new System.Drawing.Size(262, 74);
             this.Sevefile_btn.TabIndex = 2;
@@ -254,11 +254,12 @@ namespace QLSV.AppForm
             // 
             // print_btn
             // 
-            this.print_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.print_btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.print_btn.BackColor = System.Drawing.Color.PaleGreen;
             this.print_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.print_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.print_btn.Location = new System.Drawing.Point(732, 603);
+            this.print_btn.Location = new System.Drawing.Point(737, 599);
+            this.print_btn.Margin = new System.Windows.Forms.Padding(10, 10, 10, 50);
             this.print_btn.Name = "print_btn";
             this.print_btn.Size = new System.Drawing.Size(258, 74);
             this.print_btn.TabIndex = 2;
@@ -270,9 +271,8 @@ namespace QLSV.AppForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1275, 735);
+            this.ClientSize = new System.Drawing.Size(1278, 714);
             this.Controls.Add(this.print_btn);
             this.Controls.Add(this.Sevefile_btn);
             this.Controls.Add(this.dataView_gv);
