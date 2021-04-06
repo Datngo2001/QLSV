@@ -1,5 +1,6 @@
 ﻿using QLSV.Data;
 using QLSV.Entity;
+using QLSV.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,21 +36,24 @@ namespace QLSV.AppForm.StudentsForm
 
         private void Find_Click(object sender, EventArgs e)
         {
-            DataBase dataBase = new DataBase();
-            SqlCommand command = new SqlCommand(
-                "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE id = @ID", dataBase.Connection);
-            command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = Id_tb.Text;
-            dataBase.openConnection();
-            Student student = new Student();
-            DataTable table = student.getStudents(command);
+            try
+            {
+                SearchCenter searchCenter = new SearchCenter();
+                DataTable table = searchCenter.searchStudentID(Id_tb.Text);
 
-            if (table.Rows.Count > 0)
-            {
-                LoadData(table);
+                if (table.Rows.Count > 0)
+                {
+                    LoadData(table);
+                }
+                else
+                {
+                    MessageBox.Show("not found", "Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
             }
-            else
+            catch (Exception)
             {
-                MessageBox.Show("not found", "Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                throw;
             }
         }
 
@@ -152,14 +156,8 @@ namespace QLSV.AppForm.StudentsForm
         {
             try
             {
-                int id = int.Parse(Id_tb.Text);
-                DataBase dataBase = new DataBase();
-                SqlCommand command = new SqlCommand(
-                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE phone = @Phone", dataBase.Connection);
-                command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone_tb.Text;
-                dataBase.openConnection();
-                Student student = new Student();
-                DataTable table = student.getStudents(command);
+                SearchCenter searchCenter = new SearchCenter();
+                DataTable table = searchCenter.searchStudentPhone(Phone_tb.Text);
 
                 if (table.Rows.Count > 0)
                 {
@@ -169,7 +167,6 @@ namespace QLSV.AppForm.StudentsForm
                 {
                     MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                dataBase.closeConnection();
             }
             catch (Exception E)
             {

@@ -16,31 +16,22 @@ namespace QLSV.AppForm.StudentsForm
         }
         private void FindStudentForm_Load(object sender, EventArgs e)
         {
-            findByHint(searchInput_tb.Text);
+            findStudentsByHint(searchInput_tb.Text);
         }
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            findByHint(searchInput_tb.Text);
+            findStudentsByHint(searchInput_tb.Text);
         }
 
-        public void findByHint(string hint)
+        public void findStudentsByHint(string hint)
         {
             try
             {
-                DataBase dataBase = new DataBase();
-                SqlCommand command = new SqlCommand(
-                    "SELECT * FROM Students_info WHERE CONCAT(fname, lname, address) LIKE '%" +
-                    hint
-                    +"%'", dataBase.Connection);
-
-                dataBase.openConnection();
-
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = command;
+                var searchCenter = new QLSV.Utility.SearchCenter();
 
                 DataTable table = new DataTable();
-                adapter.Fill(table);
+                table = searchCenter.findByHint(hint);
 
                 table.Columns[0].ColumnName = "ID";
                 table.Columns[1].ColumnName = "First name";
@@ -57,8 +48,6 @@ namespace QLSV.AppForm.StudentsForm
                 DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
                 imageColumn = (DataGridViewImageColumn)dataGridView1.Columns[7];
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
-
-                dataBase.closeConnection();
             }
             catch (Exception)
             {
