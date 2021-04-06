@@ -10,7 +10,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
 
-namespace QLSV.AppForm
+namespace QLSV.AppForm.StudentsForm
 {
     public partial class PrintForm : Form
     {

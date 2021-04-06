@@ -7,7 +7,7 @@ using System.Data.Sql;
 using QLSV.Data;
 using System.IO;
 
-namespace QLSV.AppForm
+namespace QLSV.AppForm.StudentsForm
 {
     public partial class StudentListForm : Form
     {

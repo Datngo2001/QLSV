@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using QLSV.Entity;
 
-namespace QLSV.AppForm
+namespace QLSV.AppForm.StudentsForm
 {
     public partial class AddStudentForm : Form
     {

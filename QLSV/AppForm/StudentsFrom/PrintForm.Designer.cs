@@ -1,5 +1,5 @@
 ﻿
-namespace QLSV.AppForm
+namespace QLSV.AppForm.StudentsForm
 {
     partial class PrintForm
     {
@@ -53,7 +53,7 @@ namespace QLSV.AppForm
             // 
             // searchOption_gb
             // 
-            this.searchOption_gb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.searchOption_gb.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.searchOption_gb.Controls.Add(this.check_btn);
             this.searchOption_gb.Controls.Add(this.dateOption_gb);
@@ -226,8 +226,8 @@ namespace QLSV.AppForm
             // 
             // dataView_gv
             // 
-            this.dataView_gv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dataView_gv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataView_gv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataView_gv.Location = new System.Drawing.Point(12, 168);

@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLSV.AppForm
+namespace QLSV.AppForm.StudentsForm
 {
     public partial class EditDeleteStudentForm : Form
     {

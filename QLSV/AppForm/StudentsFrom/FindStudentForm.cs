@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
-namespace QLSV.AppForm
+namespace QLSV.AppForm.StudentsForm
 {
     public partial class FindStudentForm : Form
     {
