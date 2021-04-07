@@ -103,7 +103,7 @@ namespace QLSV.AppForm.StudentsForm
                 editDelete.Address_rtb.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString().Trim();
                 byte[] byteImage = (byte[])dataGridView1.CurrentRow.Cells[7].Value;
                 MemoryStream stream = new MemoryStream(byteImage);
-                editDelete.pictureBox1.Image = Image.FromStream(stream);
+                editDelete.student_pcb.Image = Image.FromStream(stream);
                 editDelete.Show();
                 return true;
             }
@@ -113,6 +113,11 @@ namespace QLSV.AppForm.StudentsForm
                 return false;
                 throw;
             }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -30,8 +30,8 @@ namespace QLSV.AppForm.StudentsForm
             {
                 filepath = ofdImages.FileName;
             }
-            pictureBox1.Image = Image.FromFile(filepath.ToString());
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            student_pcb.Image = Image.FromFile(filepath.ToString());
+            student_pcb.SizeMode = PictureBoxSizeMode.StretchImage;
         }
 
         private void Find_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace QLSV.AppForm.StudentsForm
                 command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone_tb.Text;
                 command.Parameters.Add("@Adress", SqlDbType.NVarChar).Value = Address_rtb.Text;
                 ImageConverter converter = new ImageConverter();
-                byte[] image = (byte[])converter.ConvertTo(pictureBox1.Image, typeof(byte[]));
+                byte[] image = (byte[])converter.ConvertTo(student_pcb.Image, typeof(byte[]));
                 command.Parameters.Add("@Picture", SqlDbType.Image).Value = image;
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = Id_tb.Text;
 
@@ -194,6 +194,7 @@ namespace QLSV.AppForm.StudentsForm
         {
             try
             {
+                Id_tb.Text = table.Rows[0]["Id"].ToString().Trim();
                 FirstName_tb.Text = table.Rows[0]["fname"].ToString();
                 LastName_tb.Text = table.Rows[0]["lname"].ToString();
                 BirthDay_picker.Value = (DateTime)table.Rows[0]["bdate"];
@@ -214,7 +215,7 @@ namespace QLSV.AppForm.StudentsForm
                 Address_rtb.Text = table.Rows[0]["address"].ToString();
                 byte[] pic = (byte[])table.Rows[0]["picture"];
                 MemoryStream picture = new MemoryStream(pic);
-                pictureBox1.Image = Image.FromStream(picture);
+                student_pcb.Image = Image.FromStream(picture);
             }
             catch (Exception e)
             {

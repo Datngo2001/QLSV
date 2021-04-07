@@ -9,6 +9,7 @@ namespace QLSV.AppForm
         public MainForm()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void addStudent_Clicked(object sender, EventArgs e)
@@ -44,6 +45,12 @@ namespace QLSV.AppForm
         {
             PrintForm printForm = new PrintForm();
             printForm.Show();
+        }
+
+        private void manageStudentFormToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageStudentsForm manageStudents = new ManageStudentsForm();
+            manageStudents.Show();
         }
     }
 }

@@ -109,6 +109,7 @@ namespace QLSV.AppForm
             this.manageStudentFormToolStripMenuItem.Name = "manageStudentFormToolStripMenuItem";
             this.manageStudentFormToolStripMenuItem.Size = new System.Drawing.Size(399, 46);
             this.manageStudentFormToolStripMenuItem.Text = "Manage Student Form";
+            this.manageStudentFormToolStripMenuItem.Click += new System.EventHandler(this.manageStudentFormToolStripMenuItem_Click);
             // 
             // printToolStripMenuItem
             // 

@@ -43,19 +43,19 @@ namespace QLSV.AppForm.StudentsForm
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.findID_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.Address_rtb = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Edit = new System.Windows.Forms.Button();
             this.Remove = new System.Windows.Forms.Button();
             this.Upload = new System.Windows.Forms.Button();
-            this.Cancel = new System.Windows.Forms.Button();
             this.findByPhone_btn = new System.Windows.Forms.Button();
             this.firstNameFind_btn = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
+            this.student_pcb = new System.Windows.Forms.PictureBox();
             this.genderBtn_group.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_pcb)).BeginInit();
             this.SuspendLayout();
             // 
             // Id_tb
@@ -191,16 +191,16 @@ namespace QLSV.AppForm.StudentsForm
             this.label6.TabIndex = 20;
             this.label6.Text = "Phone:";
             // 
-            // button1
+            // findID_btn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(408, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 35);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Find";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Find_Click);
+            this.findID_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.findID_btn.Location = new System.Drawing.Point(408, 76);
+            this.findID_btn.Name = "findID_btn";
+            this.findID_btn.Size = new System.Drawing.Size(110, 35);
+            this.findID_btn.TabIndex = 21;
+            this.findID_btn.Text = "Find";
+            this.findID_btn.UseVisualStyleBackColor = true;
+            this.findID_btn.Click += new System.EventHandler(this.Find_Click);
             // 
             // label7
             // 
@@ -231,17 +231,9 @@ namespace QLSV.AppForm.StudentsForm
             this.label8.TabIndex = 20;
             this.label8.Text = "Pictire:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(715, 319);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(388, 271);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 23;
-            this.pictureBox1.TabStop = false;
-            // 
             // Edit
             // 
+            this.Edit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Edit.BackColor = System.Drawing.Color.LimeGreen;
             this.Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Edit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -255,6 +247,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // Remove
             // 
+            this.Remove.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Remove.BackColor = System.Drawing.Color.Red;
             this.Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Remove.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -275,19 +268,6 @@ namespace QLSV.AppForm.StudentsForm
             this.Upload.Text = "Upload Image";
             this.Upload.UseVisualStyleBackColor = true;
             this.Upload.Click += new System.EventHandler(this.Upload_Click);
-            // 
-            // Cancel
-            // 
-            this.Cancel.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Cancel.Location = new System.Drawing.Point(715, 642);
-            this.Cancel.Name = "Cancel";
-            this.Cancel.Size = new System.Drawing.Size(168, 59);
-            this.Cancel.TabIndex = 26;
-            this.Cancel.Text = "Cancel";
-            this.Cancel.UseVisualStyleBackColor = false;
-            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // findByPhone_btn
             // 
@@ -311,20 +291,44 @@ namespace QLSV.AppForm.StudentsForm
             this.firstNameFind_btn.UseVisualStyleBackColor = true;
             this.firstNameFind_btn.Click += new System.EventHandler(this.firstNameFind_btn_Click);
             // 
+            // Cancel
+            // 
+            this.Cancel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Cancel.BackColor = System.Drawing.Color.DarkGray;
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.Cancel.Location = new System.Drawing.Point(715, 642);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(168, 59);
+            this.Cancel.TabIndex = 24;
+            this.Cancel.Text = "Cancel";
+            this.Cancel.UseVisualStyleBackColor = false;
+            this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
+            // 
+            // student_pcb
+            // 
+            this.student_pcb.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.student_pcb.Location = new System.Drawing.Point(715, 319);
+            this.student_pcb.Name = "student_pcb";
+            this.student_pcb.Size = new System.Drawing.Size(388, 271);
+            this.student_pcb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.student_pcb.TabIndex = 23;
+            this.student_pcb.TabStop = false;
+            // 
             // EditDeleteStudentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1164, 723);
-            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Upload);
+            this.Controls.Add(this.Cancel);
             this.Controls.Add(this.Remove);
             this.Controls.Add(this.Edit);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.student_pcb);
             this.Controls.Add(this.Address_rtb);
             this.Controls.Add(this.firstNameFind_btn);
             this.Controls.Add(this.findByPhone_btn);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.findID_btn);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -343,7 +347,7 @@ namespace QLSV.AppForm.StudentsForm
             this.Text = "Edit and Delete";
             this.genderBtn_group.ResumeLayout(false);
             this.genderBtn_group.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.student_pcb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,16 +369,16 @@ namespace QLSV.AppForm.StudentsForm
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label5;
         public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Button findID_btn;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.RichTextBox Address_rtb;
         public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.PictureBox student_pcb;
         public System.Windows.Forms.Button Edit;
         public System.Windows.Forms.Button Remove;
         public System.Windows.Forms.Button Upload;
-        private System.Windows.Forms.Button Cancel;
         public System.Windows.Forms.Button findByPhone_btn;
         public System.Windows.Forms.Button firstNameFind_btn;
+        public System.Windows.Forms.Button Cancel;
     }
 }
