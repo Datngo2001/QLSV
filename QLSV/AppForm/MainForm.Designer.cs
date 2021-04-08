@@ -38,12 +38,12 @@ namespace QLSV.AppForm
             this.manageStudentFormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDCOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eDITCOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rEMVCECOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGECOURCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRINTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,13 +137,6 @@ namespace QLSV.AppForm
             this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(135, 42);
             this.cOURSEToolStripMenuItem.Text = "COURSE";
             // 
-            // sCOREToolStripMenuItem
-            // 
-            this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
-            this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
-            this.sCOREToolStripMenuItem.Text = "SCORE";
-            // 
             // aDDCOURSEToolStripMenuItem
             // 
             this.aDDCOURSEToolStripMenuItem.Name = "aDDCOURSEToolStripMenuItem";
@@ -156,6 +149,7 @@ namespace QLSV.AppForm
             this.eDITCOURSEToolStripMenuItem.Name = "eDITCOURSEToolStripMenuItem";
             this.eDITCOURSEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
             this.eDITCOURSEToolStripMenuItem.Text = "EDIT COURSE";
+            this.eDITCOURSEToolStripMenuItem.Click += new System.EventHandler(this.eDITCOURSEToolStripMenuItem_Click);
             // 
             // rEMVCECOURSEToolStripMenuItem
             // 
@@ -174,6 +168,13 @@ namespace QLSV.AppForm
             this.pRINTToolStripMenuItem1.Name = "pRINTToolStripMenuItem1";
             this.pRINTToolStripMenuItem1.Size = new System.Drawing.Size(350, 46);
             this.pRINTToolStripMenuItem1.Text = "PRINT";
+            // 
+            // sCOREToolStripMenuItem
+            // 
+            this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
+            this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
+            this.sCOREToolStripMenuItem.Text = "SCORE";
             // 
             // MainForm
             // 

@@ -64,7 +64,7 @@ namespace QLSV.Entity
                     , dataBase.Connection);
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = Label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = Period;
-                command.Parameters.Add("@Bdate", SqlDbType.Text).Value = Description;
+                command.Parameters.Add("@description", SqlDbType.Text).Value = Description;
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
 
                 dataBase.openConnection();

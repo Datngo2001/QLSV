@@ -59,5 +59,11 @@ namespace QLSV.AppForm
             AddCourseForm addCourseForm = new AddCourseForm();
             addCourseForm.Show();
         }
+
+        private void eDITCOURSEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditCourseForm editCourseForm = new EditCourseForm();
+            editCourseForm.Show();
+        }
     }
 }

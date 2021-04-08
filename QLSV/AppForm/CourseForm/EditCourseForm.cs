@@ -25,7 +25,7 @@ namespace QLSV.AppForm.CourseForm
         {
             try
             {
-                course.Id = Convert.ToInt32(select_cb.SelectedValue);
+                course.Id = Convert.ToInt32(select_cb.Text);
                 course.Label = label_tb.Text;
                 course.Description = description_tb.Text;
                 course.Period = Convert.ToInt32(period_ud.Value);
@@ -50,7 +50,7 @@ namespace QLSV.AppForm.CourseForm
         {
             try
             {
-                int id = Convert.ToInt32(select_cb.SelectedItem.ToString());
+                int id = Convert.ToInt32(select_cb.Text);
                 course = course.getByID(id);
 
                 label_tb.Text = course.Label;
