@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using QLSV.AppForm.StudentsForm;
+using QLSV.AppForm.CourseForm;
 
 namespace QLSV.AppForm
 {
@@ -51,6 +52,12 @@ namespace QLSV.AppForm
         {
             ManageStudentsForm manageStudents = new ManageStudentsForm();
             manageStudents.Show();
+        }
+
+        private void aDDCOURSEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.Show();
         }
     }
 }

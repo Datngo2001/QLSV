@@ -39,6 +39,11 @@ namespace QLSV.AppForm
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDCOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eDITCOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEMVCECOURSEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGECOURCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRINTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +126,12 @@ namespace QLSV.AppForm
             // 
             // cOURSEToolStripMenuItem
             // 
+            this.cOURSEToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDCOURSEToolStripMenuItem,
+            this.eDITCOURSEToolStripMenuItem,
+            this.rEMVCECOURSEToolStripMenuItem,
+            this.mANAGECOURCEToolStripMenuItem,
+            this.pRINTToolStripMenuItem1});
             this.cOURSEToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cOURSEToolStripMenuItem.Name = "cOURSEToolStripMenuItem";
             this.cOURSEToolStripMenuItem.Size = new System.Drawing.Size(135, 42);
@@ -132,6 +143,37 @@ namespace QLSV.AppForm
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
             this.sCOREToolStripMenuItem.Text = "SCORE";
+            // 
+            // aDDCOURSEToolStripMenuItem
+            // 
+            this.aDDCOURSEToolStripMenuItem.Name = "aDDCOURSEToolStripMenuItem";
+            this.aDDCOURSEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
+            this.aDDCOURSEToolStripMenuItem.Text = "ADD COURSE";
+            this.aDDCOURSEToolStripMenuItem.Click += new System.EventHandler(this.aDDCOURSEToolStripMenuItem_Click);
+            // 
+            // eDITCOURSEToolStripMenuItem
+            // 
+            this.eDITCOURSEToolStripMenuItem.Name = "eDITCOURSEToolStripMenuItem";
+            this.eDITCOURSEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
+            this.eDITCOURSEToolStripMenuItem.Text = "EDIT COURSE";
+            // 
+            // rEMVCECOURSEToolStripMenuItem
+            // 
+            this.rEMVCECOURSEToolStripMenuItem.Name = "rEMVCECOURSEToolStripMenuItem";
+            this.rEMVCECOURSEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
+            this.rEMVCECOURSEToolStripMenuItem.Text = "REMOVE COURSE";
+            // 
+            // mANAGECOURCEToolStripMenuItem
+            // 
+            this.mANAGECOURCEToolStripMenuItem.Name = "mANAGECOURCEToolStripMenuItem";
+            this.mANAGECOURCEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
+            this.mANAGECOURCEToolStripMenuItem.Text = "MANAGE COURCE";
+            // 
+            // pRINTToolStripMenuItem1
+            // 
+            this.pRINTToolStripMenuItem1.Name = "pRINTToolStripMenuItem1";
+            this.pRINTToolStripMenuItem1.Size = new System.Drawing.Size(350, 46);
+            this.pRINTToolStripMenuItem1.Text = "PRINT";
             // 
             // MainForm
             // 
@@ -163,5 +205,10 @@ namespace QLSV.AppForm
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cOURSEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDDCOURSEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eDITCOURSEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEMVCECOURSEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGECOURCEToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRINTToolStripMenuItem1;
     }
 }
