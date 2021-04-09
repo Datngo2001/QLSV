@@ -90,6 +90,39 @@ namespace QLSV.Entity
             }
         }
 
+        public bool RemoveThisCourse()
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "DELETE FROM Courses" +
+                    " WHERE Id = @id", dataBase.Connection);
+                command.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
+
+                dataBase.openConnection();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    dataBase.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    dataBase.closeConnection();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
         public List<int> GetAllId()
         {
             List<int> result = new List<int>();

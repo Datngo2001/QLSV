@@ -231,7 +231,7 @@ namespace QLSV.AppForm.StudentsForm
             this.Controls.Add(this.reset_btn);
             this.Controls.Add(this.dowload);
             this.Name = "ManageStudentsForm";
-            this.Text = "ManageStudentsForm";
+            this.Text = "Ngo Minh Dat 19110115";
             this.Load += new System.EventHandler(this.ManageStudentsForm_Load);
             this.Controls.SetChildIndex(this.Id_tb, 0);
             this.Controls.SetChildIndex(this.FirstName_tb, 0);
