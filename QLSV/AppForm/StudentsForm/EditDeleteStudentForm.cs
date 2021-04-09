@@ -17,9 +17,11 @@ namespace QLSV.AppForm.StudentsForm
 {
     public partial class EditDeleteStudentForm : Form
     {
+        Student student;
         public EditDeleteStudentForm()
         {
             InitializeComponent();
+            student = new Student();
         }
 
         private void Upload_Click(object sender, EventArgs e)
@@ -38,12 +40,9 @@ namespace QLSV.AppForm.StudentsForm
         {
             try
             {
-                SearchCenter searchCenter = new SearchCenter();
-                DataTable table = searchCenter.searchStudentID(Id_tb.Text);
-
-                if (table.Rows.Count > 0)
+                if (student.getByID(Convert.ToInt32(Id_tb.Text)) == true)
                 {
-                    LoadData(table);
+                    LoadData();
                 }
                 else
                 {
@@ -61,50 +60,16 @@ namespace QLSV.AppForm.StudentsForm
         {
             try
             {
-                DataBase dataBase = new DataBase();
-
-                SqlCommand command = new SqlCommand(
-                    "UPDATE Students_info" +
-                    " SET " +
-                    "fname = @Fname," +
-                    "lname = @Lname," +
-                    "bdate = @Bdate," +
-                    "gender = @Gender," +
-                    "phone = @Phone," +
-                    "address = @Adress," +
-                    "picture = @Picture" +
-                    " WHERE id = @ID"
-                    , dataBase.Connection);
-                command.Parameters.Add("@Fname", SqlDbType.NVarChar).Value = FirstName_tb.Text;
-                command.Parameters.Add("@Lname", SqlDbType.NVarChar).Value = LastName_tb.Text;
-                command.Parameters.Add("@Bdate", SqlDbType.DateTime).Value = BirthDay_picker.Value;
-                if (female_rbtn.Checked)
+                Student student = new Student()
                 {
-                    command.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = "F";
-                }else if (male_rbtn.Checked)
-                {
-                    command.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = "M";
-                }else
-                {
-                    command.Parameters.Add("@Gender", SqlDbType.NVarChar).Value = "F";
-                }
-                command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone_tb.Text;
-                command.Parameters.Add("@Adress", SqlDbType.NVarChar).Value = Address_rtb.Text;
-                ImageConverter converter = new ImageConverter();
-                byte[] image = (byte[])converter.ConvertTo(student_pcb.Image, typeof(byte[]));
-                command.Parameters.Add("@Picture", SqlDbType.Image).Value = image;
-                command.Parameters.Add("@ID", SqlDbType.Int).Value = Id_tb.Text;
-
-                dataBase.openConnection();
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("Complete", "Edit complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR", "Edit fails", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                dataBase.closeConnection();
+                    ID = Convert.ToInt32(Id_tb.Text),
+                    Fname = FirstName_tb.Text,
+                    Lname = LastName_tb.Text,
+                    Bdate = BirthDay_picker.Value,
+                    Address = Address_rtb.Text,
+                    Phone = Phone_tb.Text,
+                    Picture = student_pcb.Image
+                };
             }
             catch (Exception E)
             {
@@ -121,15 +86,7 @@ namespace QLSV.AppForm.StudentsForm
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (delete == DialogResult.Yes)
                 {
-                    DataBase dataBase = new DataBase();
-
-                    SqlCommand command = new SqlCommand(
-                        "DELETE FROM Students_info" +
-                        " WHERE ID = @id", dataBase.Connection);
-                    command.Parameters.Add("@ID", SqlDbType.Int).Value = Id_tb.Text;
-
-                    dataBase.openConnection();
-                    if (command.ExecuteNonQuery() == 1)
+                    if (student.DeleteThisStudent() == true)
                     {
                         MessageBox.Show("Complete", "Delete complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -137,7 +94,6 @@ namespace QLSV.AppForm.StudentsForm
                     {
                         MessageBox.Show("ERROR", "Delete fails", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    dataBase.closeConnection();
                 }
             }
             catch (Exception E)
@@ -154,25 +110,22 @@ namespace QLSV.AppForm.StudentsForm
 
         private void findByPhone_btn_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SearchCenter searchCenter = new SearchCenter();
-                DataTable table = searchCenter.searchStudentPhone(Phone_tb.Text);
-
-                if (table.Rows.Count > 0)
-                {
-                    LoadData(table);
-                }
-                else
-                {
-                    MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-            }
-            catch (Exception E)
-            {
-                Console.WriteLine(E.Message);
-                throw;
-            }
+            //try
+            //{
+            //    if (student.getByPhone() == true)
+            //    {
+            //        LoadData();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //    }
+            //}
+            //catch (Exception E)
+            //{
+            //    Console.WriteLine(E.Message);
+            //    throw;
+            //}
         }
 
         private void firstNameFind_btn_Click(object sender, EventArgs e)
@@ -190,36 +143,58 @@ namespace QLSV.AppForm.StudentsForm
             }
         }
 
-        public void LoadData(DataTable table)
+        public void LoadData()
         {
             try
             {
-                Id_tb.Text = table.Rows[0]["Id"].ToString().Trim();
-                FirstName_tb.Text = table.Rows[0]["fname"].ToString();
-                LastName_tb.Text = table.Rows[0]["lname"].ToString();
-                BirthDay_picker.Value = (DateTime)table.Rows[0]["bdate"];
+                Id_tb.Text = student.ID.ToString();
+                FirstName_tb.Text = student.Fname;
+                LastName_tb.Text = student.Lname;
+                BirthDay_picker.Value = student.Bdate;
 
                 // gender
 
-                if (table.Rows[0]["gender"].ToString() == "M")
+                if (student.Gender == 'M')
                 {
                     male_rbtn.Checked = true;
                 }
-                else if (table.Rows[0]["gender"].ToString() == "F")
+                else if (student.Gender == 'F')
                 {
                     female_rbtn.Checked = true;
                 }
 
-
-                Phone_tb.Text = table.Rows[0]["phone"].ToString();
-                Address_rtb.Text = table.Rows[0]["address"].ToString();
-                byte[] pic = (byte[])table.Rows[0]["picture"];
-                MemoryStream picture = new MemoryStream(pic);
-                student_pcb.Image = Image.FromStream(picture);
+                Phone_tb.Text = student.Phone;
+                Address_rtb.Text = student.Address;
+                student_pcb.Image = student.Picture;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                throw;
+            }
+        }
+
+        private void EditDeleteStudentForm_Load(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+        public bool InputStudent(int id)
+        {
+            try
+            {
+                student = new Student();
+                if(student.getByID(id) == true)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
                 throw;
             }
         }

@@ -28,7 +28,7 @@ namespace QLSV.AppForm.StudentsForm
                 Bdate = bdate_picker.Value,
                 Phone = phone_tb.Text,
                 Address = address_rtb.Text,
-                Picture = new MemoryStream((byte[])imgCon.ConvertTo(pictureBox.Image, typeof(byte[])))
+                Picture = pictureBox.Image
             };
             if (female_rbtn.Checked)
             {
@@ -37,7 +37,7 @@ namespace QLSV.AppForm.StudentsForm
             {
                 student.Gender = 'M';
             }
-            if(student.insertStudent() == true)
+            if(student.InsertThisStudent() == true)
             {
                 MessageBox.Show("Add Complete", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 ClearAllText(this);

@@ -87,23 +87,7 @@ namespace QLSV.AppForm.StudentsForm
             try
             {
                 EditDeleteStudentForm editDelete = new EditDeleteStudentForm();
-                editDelete.Id_tb.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim();
-                editDelete.FirstName_tb.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString().Trim();
-                editDelete.LastName_tb.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString().Trim();
-                editDelete.BirthDay_picker.Value = (DateTime)dataGridView1.CurrentRow.Cells[3].Value;
-                if (dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim() == "M")
-                {
-                    editDelete.male_rbtn.Checked = true;
-                }
-                else if (dataGridView1.CurrentRow.Cells[4].Value.ToString().Trim() == "F")
-                {
-                    editDelete.female_rbtn.Checked = true;
-                }
-                editDelete.Phone_tb.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString().Trim();
-                editDelete.Address_rtb.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString().Trim();
-                byte[] byteImage = (byte[])dataGridView1.CurrentRow.Cells[7].Value;
-                MemoryStream stream = new MemoryStream(byteImage);
-                editDelete.student_pcb.Image = Image.FromStream(stream);
+                editDelete.InputStudent(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim()));
                 editDelete.Show();
                 return true;
             }

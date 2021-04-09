@@ -129,6 +129,7 @@
     </Compile>
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Entity\Course.cs" />
+    <Compile Include="Entity\Picture.cs" />
     <Compile Include="Entity\Student.cs" />
     <Compile Include="Entity\User.cs" />
     <Compile Include="AppForm\LoginForm.cs">

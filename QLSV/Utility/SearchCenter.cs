@@ -77,7 +77,7 @@ namespace QLSV.Utility
                 command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = phone;
                 dataBase.openConnection();
                 Student student = new Student();
-                DataTable table = student.getStudents(command);
+                DataTable table = student.getByComand(command);
 
                 dataBase.closeConnection();
 

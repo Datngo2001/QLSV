@@ -3,6 +3,7 @@ using System.IO;
 using QLSV.Data;
 using System.Data.SqlClient;
 using System.Data;
+using System.Drawing;
 
 namespace QLSV.Entity
 {
@@ -15,9 +16,9 @@ namespace QLSV.Entity
         public char Gender { get; set; } 
         public string Phone { get; set; }
         public string Address { get; set; }
-        public MemoryStream Picture { get; set; }
+        public Image Picture { get; set; }
         public Student(int id = 0, string fname = "", string lname = "", 
-            DateTime date = default, char gender = '\0', string phone = "", string address = "", MemoryStream picture = default)
+            DateTime date = default, char gender = '\0', string phone = "", string address = "", Image picture = default)
         {
             ID = id;
             Fname = fname;
@@ -28,44 +29,189 @@ namespace QLSV.Entity
             Address = address;
             Picture = picture;
         }
-        public bool insertStudent(int id, string fname, string lname, DateTime date, char gender, string phone, string address, MemoryStream picture)
+        public bool getByID(int id)
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE id = @ID", dataBase.Connection);
+                command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = id;
+                dataBase.openConnection();
+
+                DataTable table = new DataTable();
+
+                SqlDataAdapter adapter = new SqlDataAdapter()
+                {
+                    SelectCommand = command
+                };
+
+                adapter.Fill(table);
+
+                if(table.Rows.Count > 0)
+                {
+                    ID = Convert.ToInt32(table.Rows[0]["Id"].ToString().Trim());
+                    Fname = table.Rows[0]["fname"].ToString();
+                    Lname = table.Rows[0]["lname"].ToString();
+                    Bdate = (DateTime)table.Rows[0]["bdate"];
+                    Gender = (table.Rows[0]["gender"].ToString().Trim())[0];
+                    Phone = table.Rows[0]["phone"].ToString();
+                    Address = table.Rows[0]["address"].ToString();
+                    byte[] arr = (byte[])table.Rows[0]["picture"];
+                    Picture = new Picture().ByteArrToImage(arr);
+
+                    dataBase.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    dataBase.closeConnection();
+                    return false;
+                }
+
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        public bool InsertThisStudent()
         {
             DataBase mydb = new DataBase();
-            SqlCommand command = new SqlCommand("INSERT INTO Students_info (ID, fname, lname, bdate, gender, phone, address, picture)" +
+            try
+            {
+                SqlCommand command = new SqlCommand("INSERT INTO Students_info (ID, fname, lname, bdate, gender, phone, address, picture)" +
                 "VALUES (@id, @fn, @ln, @bdt, @gd, @phn, @adrs, @pic)", mydb.Connection);
 
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            command.Parameters.Add("@fn", SqlDbType.VarChar).Value = fname;
-            command.Parameters.Add("@ln", SqlDbType.VarChar).Value = lname;
-            command.Parameters.Add("@bdt", SqlDbType.DateTime).Value = date;
-            command.Parameters.Add("@gd", SqlDbType.VarChar).Value = gender;
-            command.Parameters.Add("@phn", SqlDbType.VarChar).Value = phone;
-            command.Parameters.Add("@adrs", SqlDbType.VarChar).Value = address;
-            command.Parameters.Add("@pic", SqlDbType.Image).Value = picture.ToArray();
+                command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
+                command.Parameters.Add("@fn", SqlDbType.VarChar).Value = Fname;
+                command.Parameters.Add("@ln", SqlDbType.VarChar).Value = Lname;
+                command.Parameters.Add("@bdt", SqlDbType.DateTime).Value = Bdate;
+                command.Parameters.Add("@gd", SqlDbType.VarChar).Value = Gender;
+                command.Parameters.Add("@phn", SqlDbType.VarChar).Value = Phone;
+                command.Parameters.Add("@adrs", SqlDbType.VarChar).Value = Address;
+                command.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(this.Picture).toByteArray();
 
-            mydb.openConnection();
+                mydb.openConnection();
 
-            if (command.ExecuteNonQuery() == 1)
-            {
-                mydb.closeConnection();
-                return true;
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    mydb.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    mydb.closeConnection();
+                    return false;
+                }
             }
-            else
+            catch (Exception)
             {
-                mydb.closeConnection();
                 return false;
+                throw;
+            }
+            finally
+            {
+                mydb.closeConnection();
             }
         }
-        public bool insertStudent()
+        public bool UpdateThisStudent()
         {
-            return insertStudent(ID, Fname, Lname, Bdate, Gender, Phone, Address, Picture);
-        }
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "UPDATE Students_info" +
+                    " SET " +
+                    "fname = @Fname," +
+                    "lname = @Lname," +
+                    "bdate = @Bdate," +
+                    "gender = @Gender," +
+                    "phone = @Phone," +
+                    "address = @Adress," +
+                    "picture = @Picture" +
+                    " WHERE id = @ID"
+                    , dataBase.Connection);
+                command.Parameters.Add("@Fname", SqlDbType.NVarChar).Value = Fname;
+                command.Parameters.Add("@Lname", SqlDbType.NVarChar).Value = Lname;
+                command.Parameters.Add("@Bdate", SqlDbType.DateTime).Value = Bdate;
+                command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
+                command.Parameters.Add("@Adress", SqlDbType.NVarChar).Value = Address;
+                command.Parameters.Add("@Picture", SqlDbType.Image).Value = new Picture(this.Picture).toByteArray();
+                command.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
-        public DataTable getStudents(SqlCommand command)
+                dataBase.openConnection();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    dataBase.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    dataBase.closeConnection();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        public bool DeleteThisStudent()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(command); 
-            DataTable table = new DataTable(); adapter.Fill(table);
-            return table;
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "DELETE FROM Students_info" +
+                    " WHERE ID = @id", dataBase.Connection);
+                command.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+
+                dataBase.openConnection();
+                if(command.ExecuteNonQuery() == 1)
+                {
+                    dataBase.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    dataBase.closeConnection();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                return false;
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        public DataTable getByComand(SqlCommand command)
+        {
+            try
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable(); adapter.Fill(table);
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

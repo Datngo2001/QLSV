@@ -345,6 +345,7 @@ namespace QLSV.AppForm.StudentsForm
             this.Controls.Add(this.Id_tb);
             this.Name = "EditDeleteStudentForm";
             this.Text = "Edit and Delete";
+            this.Load += new System.EventHandler(this.EditDeleteStudentForm_Load);
             this.genderBtn_group.ResumeLayout(false);
             this.genderBtn_group.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.student_pcb)).EndInit();
