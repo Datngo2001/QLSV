@@ -92,11 +92,14 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // BirthDay_picker
             // 
+            this.BirthDay_picker.CustomFormat = "dd-mm-yyyy";
             this.BirthDay_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BirthDay_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthDay_picker.Location = new System.Drawing.Point(217, 273);
             this.BirthDay_picker.Name = "BirthDay_picker";
             this.BirthDay_picker.Size = new System.Drawing.Size(301, 35);
             this.BirthDay_picker.TabIndex = 1;
+            this.BirthDay_picker.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
             // genderBtn_group
             // 

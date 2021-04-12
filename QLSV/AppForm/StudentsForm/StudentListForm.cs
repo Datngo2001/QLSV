@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Data.Sql;
 using QLSV.Data;
 using System.IO;
+using QLSV.Entity;
 
 namespace QLSV.AppForm.StudentsForm
 {
@@ -37,30 +38,18 @@ namespace QLSV.AppForm.StudentsForm
             try
             {
                 ProgressDialog progress = new ProgressDialog();
+
                 progress.Show();
 
-                DataBase dataBase = new DataBase();
-                dataBase.openConnection();
-                SqlCommand command = new SqlCommand("SELECT * FROM Students_info", dataBase.Connection);
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = command;
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Students_info");
-                dataBase.closeConnection();
+                SqlCommand command = new SqlCommand("SELECT * FROM Students_info");
+                Student student = new Student();
+                DataTable table = student.getByComand(command);
 
                 progress.Bar.Value = 50;
 
                 dataGridView1.RowTemplate.Height = 80;
-                DataTable table = dataSet.Tables["Students_info"];
 
-                table.Columns[0].ColumnName = "ID";
-                table.Columns[1].ColumnName = "First name";
-                table.Columns[2].ColumnName = "Last name";
-                table.Columns[3].ColumnName = "Birthdate";
-                table.Columns[4].ColumnName = "Gender";
-                table.Columns[5].ColumnName = "Phone";
-                table.Columns[6].ColumnName = "Adress";
-                table.Columns[7].ColumnName = "Picture";
+                table = student.StudentsTableNaming(table);
 
                 dataGridView1.DataSource = table;
                 dataGridView1.ReadOnly = true;
@@ -97,11 +86,6 @@ namespace QLSV.AppForm.StudentsForm
                 return false;
                 throw;
             }
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

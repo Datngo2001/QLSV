@@ -1,16 +1,6 @@
-﻿using QLSV.Data;
-using QLSV.Entity;
-using QLSV.Utility;
+﻿using QLSV.Entity;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QLSV.AppForm.StudentsForm
@@ -110,22 +100,22 @@ namespace QLSV.AppForm.StudentsForm
 
         private void findByPhone_btn_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (student.getByPhone() == true)
-            //    {
-            //        LoadData();
-            //    }
-            //    else
-            //    {
-            //        MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            //    }
-            //}
-            //catch (Exception E)
-            //{
-            //    Console.WriteLine(E.Message);
-            //    throw;
-            //}
+            try
+            {
+                if (student.getByPhone(Phone_tb.Text) == true)
+                {
+                    LoadData();
+                }
+                else
+                {
+                    MessageBox.Show("not found", "Find Student not found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception E)
+            {
+                Console.WriteLine(E.Message);
+                throw;
+            }
         }
 
         private void firstNameFind_btn_Click(object sender, EventArgs e)
@@ -151,8 +141,6 @@ namespace QLSV.AppForm.StudentsForm
                 FirstName_tb.Text = student.Fname;
                 LastName_tb.Text = student.Lname;
                 BirthDay_picker.Value = student.Bdate;
-
-                // gender
 
                 if (student.Gender == 'M')
                 {

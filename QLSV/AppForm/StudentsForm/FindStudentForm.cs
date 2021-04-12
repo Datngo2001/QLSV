@@ -1,4 +1,5 @@
 ﻿using QLSV.Data;
+using QLSV.Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,19 +29,9 @@ namespace QLSV.AppForm.StudentsForm
         {
             try
             {
-                var searchCenter = new QLSV.Utility.SearchCenter();
-
-                DataTable table = new DataTable();
-                table = searchCenter.findByHint(hint);
-
-                table.Columns[0].ColumnName = "ID";
-                table.Columns[1].ColumnName = "First name";
-                table.Columns[2].ColumnName = "Last name";
-                table.Columns[3].ColumnName = "Birthdate";
-                table.Columns[4].ColumnName = "Gender";
-                table.Columns[5].ColumnName = "Phone";
-                table.Columns[6].ColumnName = "Adress";
-                table.Columns[7].ColumnName = "Picture";
+                Student student = new Student();
+                DataTable table = student.findByHint(hint);
+                table = student.StudentsTableNaming(table);
 
                 dataGridView1.RowTemplate.Height = 80;
                 dataGridView1.DataSource = table;

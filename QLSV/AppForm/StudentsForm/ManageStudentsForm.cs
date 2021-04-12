@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLSV.Entity;
+using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
@@ -41,23 +42,11 @@ namespace QLSV.AppForm.StudentsForm
 
         private void search_btn_Click(object sender, EventArgs e)
         {
-            var searchCenter = new QLSV.Utility.SearchCenter();
-
-            DataTable table = new DataTable();
-            table = searchCenter.findByHint(Search_tb.Text);
+            Student student = new Student();
+            DataTable table = student.findByHint(Search_tb.Text);
+            table = student.StudentsTableNaming(table);
 
             showResult_dgv.RowTemplate.Height = 80;
-
-            table.Columns[0].ColumnName = "ID";
-            table.Columns[1].ColumnName = "First name";
-            table.Columns[2].ColumnName = "Last name";
-            table.Columns[3].ColumnName = "Birthdate";
-            table.Columns[4].ColumnName = "Gender";
-            table.Columns[5].ColumnName = "Phone";
-            table.Columns[6].ColumnName = "Adress";
-            table.Columns[7].ColumnName = "Picture";
-
-
             showResult_dgv.DataSource = table;
             showResult_dgv.ReadOnly = true;
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();

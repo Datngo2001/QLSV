@@ -44,7 +44,6 @@ namespace QLSV.AppForm.StudentsForm
             this.dataGridView1.RowTemplate.Height = 80;
             this.dataGridView1.Size = new System.Drawing.Size(1706, 673);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // button1

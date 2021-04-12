@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 using QLSV.Data;
 using System.Data.SqlClient;
 using System.Data;
@@ -9,25 +8,23 @@ namespace QLSV.Entity
 {
     class Student
     {
+        private DateTime bdate;
+
         public int ID { get; set; }
         public string Lname { get; set; }
         public string Fname { get; set; }
-        public DateTime Bdate { get; set; }
+        public DateTime Bdate
+        {
+            get { return Convert.ToDateTime(this.bdate.ToShortDateString()); }
+            set { this.bdate = value; } 
+        }
         public char Gender { get; set; } 
         public string Phone { get; set; }
         public string Address { get; set; }
         public Image Picture { get; set; }
-        public Student(int id = 0, string fname = "", string lname = "", 
-            DateTime date = default, char gender = '\0', string phone = "", string address = "", Image picture = default)
+        public Student()
         {
-            ID = id;
-            Fname = fname;
-            Lname = lname;
-            Bdate = date;
-            Gender = gender;
-            Phone = phone;
-            Address = address;
-            Picture = picture;
+            Bdate = default;
         }
         public bool getByID(int id)
         {
@@ -73,6 +70,113 @@ namespace QLSV.Entity
             catch (Exception)
             {
                 return false;
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        public bool getByPhone(string phone)
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE phone = @phone", dataBase.Connection);
+                command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
+                dataBase.openConnection();
+
+                DataTable table = new DataTable();
+
+                SqlDataAdapter adapter = new SqlDataAdapter()
+                {
+                    SelectCommand = command
+                };
+
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    ID = Convert.ToInt32(table.Rows[0]["Id"].ToString().Trim());
+                    Fname = table.Rows[0]["fname"].ToString();
+                    Lname = table.Rows[0]["lname"].ToString();
+                    Bdate = (DateTime)table.Rows[0]["bdate"];
+                    Gender = (table.Rows[0]["gender"].ToString().Trim())[0];
+                    Phone = table.Rows[0]["phone"].ToString();
+                    Address = table.Rows[0]["address"].ToString();
+                    byte[] arr = (byte[])table.Rows[0]["picture"];
+                    Picture = new Picture().ByteArrToImage(arr);
+
+                    dataBase.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    dataBase.closeConnection();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+                dataBase.closeConnection();
+                return false;
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        public DataTable getByComand(SqlCommand command)
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                command.Connection = dataBase.Connection;
+                dataBase.openConnection();
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable(); adapter.Fill(table);
+                dataBase.closeConnection();
+                return table;
+            }
+            catch (Exception)
+            {
+                dataBase.closeConnection();
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+        public DataTable findByHint(string hint)
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "SELECT * FROM Students_info WHERE CONCAT(fname, lname, address) LIKE '%" +
+                    hint
+                    + "%'", dataBase.Connection);
+
+                dataBase.openConnection();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                table = StudentsTableNaming(table);
+
+                dataBase.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+                dataBase.closeConnection();
                 throw;
             }
             finally
@@ -199,12 +303,19 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
-        public DataTable getByComand(SqlCommand command)
+        public DataTable StudentsTableNaming(DataTable table)
         {
             try
             {
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable table = new DataTable(); adapter.Fill(table);
+                table.Columns[0].ColumnName = "ID";
+                table.Columns[1].ColumnName = "First name";
+                table.Columns[2].ColumnName = "Last name";
+                table.Columns[3].ColumnName = "Birthdate";
+                table.Columns[4].ColumnName = "Gender";
+                table.Columns[5].ColumnName = "Phone";
+                table.Columns[6].ColumnName = "Adress";
+                table.Columns[7].ColumnName = "Picture";
+
                 return table;
             }
             catch (Exception)
