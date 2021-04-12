@@ -65,5 +65,11 @@ namespace QLSV.AppForm
             EditCourseForm editCourseForm = new EditCourseForm();
             editCourseForm.Show();
         }
+
+        private void rEMVCECOURSEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RemoveCourseForm removeCourseForm = new RemoveCourseForm();
+            removeCourseForm.Show();
+        }
     }
 }

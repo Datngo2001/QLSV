@@ -10,7 +10,5 @@ namespace QLSV.Entity
     {
         protected string UserName { get; set; }
         protected string PassWord { get; set; }
-
-
     }
 }

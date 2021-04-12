@@ -156,6 +156,7 @@ namespace QLSV.AppForm
             this.rEMVCECOURSEToolStripMenuItem.Name = "rEMVCECOURSEToolStripMenuItem";
             this.rEMVCECOURSEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
             this.rEMVCECOURSEToolStripMenuItem.Text = "REMOVE COURSE";
+            this.rEMVCECOURSEToolStripMenuItem.Click += new System.EventHandler(this.rEMVCECOURSEToolStripMenuItem_Click);
             // 
             // mANAGECOURCEToolStripMenuItem
             // 

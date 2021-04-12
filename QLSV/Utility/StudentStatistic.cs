@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace QLSV.Utility
 {
-    class Statistic
+    class StudentStatistic
     {
         public DataSet femaleMaleAmount()
         {

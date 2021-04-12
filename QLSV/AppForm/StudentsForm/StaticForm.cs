@@ -22,7 +22,7 @@ namespace QLSV.AppForm.StudentsForm
 
         private void StaticForm_Load(object sender, EventArgs e)
         {
-            Statistic statistic = new Statistic();
+            StudentStatistic statistic = new StudentStatistic();
             int total = statistic.totalStudent();
             totalStudent_lb.Text = total.ToString();
             DataSet genderData = statistic.femaleMaleAmount();

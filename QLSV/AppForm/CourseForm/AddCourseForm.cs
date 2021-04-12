@@ -19,10 +19,10 @@ namespace QLSV.AppForm.CourseForm
                 {
                     Id = Convert.ToInt32(id_tb.Text),
                     Label = label_tb.Text,
-                    Period = Convert.ToInt32(period_tb.Text),
+                    Period = (int)period_ud.Value,
                     Description = description_tb.Text
                 };
-                if (course.AddCourse())
+                if (course.AddThisCourse())
                 {
                     MessageBox.Show("Succses!");
                 }

@@ -8,11 +8,27 @@ namespace QLSV.Entity
 {
     class Course
     {
+        private int period;
+
         public int Id { get; set; }
         public string Label { get; set; }
-        public int Period { get; set; }
+        public int Period
+        {
+            get { return period; }
+            set
+            {
+                if (period < 10)
+                {
+                    this.Period = 10;
+                }
+                else
+                {
+                    this.Period = value;
+                }
+            }
+        }
         public string Description { get; set; }
-        public bool AddCourse()
+        public bool AddThisCourse()
         {
             DataBase mydb = new DataBase();
             try
@@ -49,7 +65,7 @@ namespace QLSV.Entity
                 mydb.closeConnection();
             }
         }
-        public bool UpdateCourse()
+        public bool UpdateThisCourse()
         {
             DataBase dataBase = new DataBase();
             try
@@ -89,7 +105,6 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
-
         public bool RemoveThisCourse()
         {
             DataBase dataBase = new DataBase();
@@ -122,7 +137,6 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
-
         public List<int> GetAllId()
         {
             List<int> result = new List<int>();

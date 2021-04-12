@@ -30,7 +30,7 @@ namespace QLSV.AppForm.CourseForm
                 course.Description = description_tb.Text;
                 course.Period = Convert.ToInt32(period_ud.Value);
 
-                if (course.UpdateCourse())
+                if (course.UpdateThisCourse())
                 {
                     MessageBox.Show("Success!");
                 }

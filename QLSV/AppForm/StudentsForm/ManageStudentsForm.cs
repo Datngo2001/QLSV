@@ -1,9 +1,10 @@
-﻿using QLSV.Entity;
-using System;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using QLSV.Entity;
+using QLSV.Utility;
 
 namespace QLSV.AppForm.StudentsForm
 {
@@ -16,28 +17,10 @@ namespace QLSV.AppForm.StudentsForm
 
         private void reset_btn_Click(object sender, EventArgs e)
         {
-            foreach (var control in this.Controls)
-            {
-                if(control is TextBox)
-                {
-                    ((TextBox)control).Text = "";
-                }
-                else if(control is RichTextBox)
-                {
-                    ((RichTextBox)control).Text = "";
-                }
-                else if(control is PictureBox)
-                {
-                    ((PictureBox)control).Image = null;
-                }
-                else if (control is DataGridView)
-                {
-                    ((DataGridView)control).DataSource = null;
-                }
+            var statistic = new QLSV.Utility.StudentStatistic();
+            total_lb.Text = "Total student: " + statistic.totalStudent();
 
-                var statistic = new QLSV.Utility.Statistic();
-                total_lb.Text = "Total student: " + statistic.totalStudent();
-            }
+            new FormTool().ClearForm(this);
         }
 
         private void search_btn_Click(object sender, EventArgs e)
@@ -71,16 +54,16 @@ namespace QLSV.AppForm.StudentsForm
             }
             Phone_tb.Text = showResult_dgv.CurrentRow.Cells[5].Value.ToString().Trim();
             Address_rtb.Text = showResult_dgv.CurrentRow.Cells[6].Value.ToString().Trim();
-            byte[] byteImage = (byte[])showResult_dgv.CurrentRow.Cells[7].Value;
-            MemoryStream stream = new MemoryStream(byteImage);
-            student_pcb.Image = Image.FromStream(stream);
+
+            Picture picture = new Picture();
+            student_pcb.Image = picture.ByteArrToImage((byte[])showResult_dgv.CurrentRow.Cells[7].Value);
         }
 
         private void ManageStudentsForm_Load(object sender, EventArgs e)
         {
             try
             {
-                var statistic = new QLSV.Utility.Statistic();
+                var statistic = new QLSV.Utility.StudentStatistic();
                 total_lb.Text += statistic.totalStudent();
             }
             catch (Exception)

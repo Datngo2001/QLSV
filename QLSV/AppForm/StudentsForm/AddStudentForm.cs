@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.IO;
 using QLSV.Entity;
+using QLSV.Utility;
 
 namespace QLSV.AppForm.StudentsForm
 {
@@ -40,7 +41,7 @@ namespace QLSV.AppForm.StudentsForm
             if(student.InsertThisStudent() == true)
             {
                 MessageBox.Show("Add Complete", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                ClearAllText(this);
+                new FormTool().ClearForm(this); 
             }
             else
             {
@@ -64,23 +65,6 @@ namespace QLSV.AppForm.StudentsForm
             }
             pictureBox.Image = Image.FromFile(filepath.ToString());
             pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-        void ClearAllText(Control con)
-        {
-            foreach (Control c in con.Controls)
-            {
-                if (c is TextBox)
-                    ((TextBox)c).Clear();
-                else
-                    ClearAllText(c);
-            }
-            foreach (Control c in con.Controls)
-            {
-                if (c is RichTextBox)
-                    ((RichTextBox)c).Clear();
-                else
-                    ClearAllText(c);
-            }
         }
     }
 }

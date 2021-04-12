@@ -36,8 +36,9 @@ namespace QLSV.AppForm.CourseForm
             this.add_btn = new System.Windows.Forms.Button();
             this.id_tb = new System.Windows.Forms.TextBox();
             this.label_tb = new System.Windows.Forms.TextBox();
-            this.period_tb = new System.Windows.Forms.TextBox();
             this.description_tb = new System.Windows.Forms.RichTextBox();
+            this.period_ud = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.period_ud)).BeginInit();
             this.SuspendLayout();
             // 
             // id_lb
@@ -113,14 +114,6 @@ namespace QLSV.AppForm.CourseForm
             this.label_tb.Size = new System.Drawing.Size(505, 35);
             this.label_tb.TabIndex = 2;
             // 
-            // period_tb
-            // 
-            this.period_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period_tb.Location = new System.Drawing.Point(201, 148);
-            this.period_tb.Name = "period_tb";
-            this.period_tb.Size = new System.Drawing.Size(143, 35);
-            this.period_tb.TabIndex = 2;
-            // 
             // description_tb
             // 
             this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,14 +123,32 @@ namespace QLSV.AppForm.CourseForm
             this.description_tb.TabIndex = 3;
             this.description_tb.Text = "";
             // 
+            // period_ud
+            // 
+            this.period_ud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.period_ud.Location = new System.Drawing.Point(201, 145);
+            this.period_ud.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.period_ud.Name = "period_ud";
+            this.period_ud.Size = new System.Drawing.Size(120, 35);
+            this.period_ud.TabIndex = 5;
+            this.period_ud.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // AddCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(734, 450);
+            this.Controls.Add(this.period_ud);
             this.Controls.Add(this.description_tb);
-            this.Controls.Add(this.period_tb);
             this.Controls.Add(this.label_tb);
             this.Controls.Add(this.id_tb);
             this.Controls.Add(this.add_btn);
@@ -147,6 +158,7 @@ namespace QLSV.AppForm.CourseForm
             this.Controls.Add(this.id_lb);
             this.Name = "AddCourseForm";
             this.Text = "AddCourseForm";
+            ((System.ComponentModel.ISupportInitialize)(this.period_ud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,7 +173,7 @@ namespace QLSV.AppForm.CourseForm
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.TextBox id_tb;
         private System.Windows.Forms.TextBox label_tb;
-        private System.Windows.Forms.TextBox period_tb;
         private System.Windows.Forms.RichTextBox description_tb;
+        private System.Windows.Forms.NumericUpDown period_ud;
     }
 }
