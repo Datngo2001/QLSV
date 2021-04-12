@@ -19,11 +19,11 @@ namespace QLSV.Entity
             {
                 if (period < 10)
                 {
-                    this.Period = 10;
+                    this.period = 10;
                 }
                 else
                 {
-                    this.Period = value;
+                    this.period = value;
                 }
             }
         }

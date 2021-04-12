@@ -45,13 +45,12 @@ namespace QLSV.AppForm.CourseForm
                 throw;
             }
         }
-
         private void select_cb_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
                 int id = Convert.ToInt32(select_cb.Text);
-                course = course.getByID(id);
+                course.getByID(id);
 
                 label_tb.Text = course.Label;
                 period_ud.Value = course.Period;

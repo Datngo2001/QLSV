@@ -15,6 +15,7 @@ namespace QLSV.AppForm.CourseForm
 
         private void remove_btn_Click(object sender, EventArgs e)
         {
+            if (idSearch_tb.Text == "") return;
             try
             {
                 course.Id = Convert.ToInt32(idSearch_tb.Text);
@@ -44,10 +45,14 @@ namespace QLSV.AppForm.CourseForm
         {
             try
             {
-                //if(idSearch_tb.Text != "")
-                //{
-                //    course.getByID(ConidSearch_tb.Text);
-                //}
+                if (idSearch_tb.Text != "")
+                {
+                    course.getByID(Convert.ToInt32(idSearch_tb.Text));
+                    id_tb.Text = course.Id.ToString();
+                    label_tb.Text = course.Label;
+                    period_tb.Text = course.Period.ToString();
+                    description_tb.Text = course.Description;
+                }
             }
             catch (Exception)
             {
