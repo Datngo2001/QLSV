@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using QLSV.AppForm.StudentsForm;
 using QLSV.AppForm.CourseForm;
+using QLSV.AppForm.ScoreForm;
 
 namespace QLSV.AppForm
 {
@@ -70,6 +71,12 @@ namespace QLSV.AppForm
         {
             RemoveCourseForm removeCourseForm = new RemoveCourseForm();
             removeCourseForm.Show();
+        }
+
+        private void aDDSCOREToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCourseForm addCourseForm = new AddCourseForm();
+            addCourseForm.Show();
         }
     }
 }

@@ -44,6 +44,11 @@ namespace QLSV.AppForm
             this.mANAGECOURCEToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRINTToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDSCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rEMOVESCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGESCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aVGSCOREBYSCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pRINTRESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,10 +177,47 @@ namespace QLSV.AppForm
             // 
             // sCOREToolStripMenuItem
             // 
+            this.sCOREToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDSCOREToolStripMenuItem,
+            this.rEMOVESCOREToolStripMenuItem,
+            this.mANAGESCOREToolStripMenuItem,
+            this.aVGSCOREBYSCOREToolStripMenuItem,
+            this.pRINTRESULTToolStripMenuItem});
             this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
             this.sCOREToolStripMenuItem.Text = "SCORE";
+            // 
+            // aDDSCOREToolStripMenuItem
+            // 
+            this.aDDSCOREToolStripMenuItem.Name = "aDDSCOREToolStripMenuItem";
+            this.aDDSCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
+            this.aDDSCOREToolStripMenuItem.Text = "ADD SCORE";
+            this.aDDSCOREToolStripMenuItem.Click += new System.EventHandler(this.aDDSCOREToolStripMenuItem_Click);
+            // 
+            // rEMOVESCOREToolStripMenuItem
+            // 
+            this.rEMOVESCOREToolStripMenuItem.Name = "rEMOVESCOREToolStripMenuItem";
+            this.rEMOVESCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
+            this.rEMOVESCOREToolStripMenuItem.Text = "REMOVE SCORE";
+            // 
+            // mANAGESCOREToolStripMenuItem
+            // 
+            this.mANAGESCOREToolStripMenuItem.Name = "mANAGESCOREToolStripMenuItem";
+            this.mANAGESCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
+            this.mANAGESCOREToolStripMenuItem.Text = "MANAGE SCORE";
+            // 
+            // aVGSCOREBYSCOREToolStripMenuItem
+            // 
+            this.aVGSCOREBYSCOREToolStripMenuItem.Name = "aVGSCOREBYSCOREToolStripMenuItem";
+            this.aVGSCOREBYSCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
+            this.aVGSCOREBYSCOREToolStripMenuItem.Text = "AVG SCORE BY SCORE";
+            // 
+            // pRINTRESULTToolStripMenuItem
+            // 
+            this.pRINTRESULTToolStripMenuItem.Name = "pRINTRESULTToolStripMenuItem";
+            this.pRINTRESULTToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
+            this.pRINTRESULTToolStripMenuItem.Text = "PRINT RESULT";
             // 
             // MainForm
             // 
@@ -212,5 +254,10 @@ namespace QLSV.AppForm
         private System.Windows.Forms.ToolStripMenuItem rEMVCECOURSEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGECOURCEToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRINTToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem aDDSCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rEMOVESCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGESCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aVGSCOREBYSCOREToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pRINTRESULTToolStripMenuItem;
     }
 }
