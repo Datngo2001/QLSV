@@ -37,9 +37,9 @@ namespace QLSV.AppForm.ScoreForm
             this.description_tb = new System.Windows.Forms.RichTextBox();
             this.cource_cb = new System.Windows.Forms.ComboBox();
             this.score_tb = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.studentInfo_dgv = new System.Windows.Forms.DataGridView();
             this.add_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfo_dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // id_lb
@@ -120,15 +120,17 @@ namespace QLSV.AppForm.ScoreForm
             this.score_tb.Size = new System.Drawing.Size(206, 35);
             this.score_tb.TabIndex = 6;
             // 
-            // dataGridView1
+            // studentInfo_dgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(590, 16);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(426, 422);
-            this.dataGridView1.TabIndex = 7;
+            this.studentInfo_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.studentInfo_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.studentInfo_dgv.Location = new System.Drawing.Point(657, 12);
+            this.studentInfo_dgv.Name = "studentInfo_dgv";
+            this.studentInfo_dgv.RowHeadersWidth = 62;
+            this.studentInfo_dgv.RowTemplate.Height = 28;
+            this.studentInfo_dgv.Size = new System.Drawing.Size(482, 422);
+            this.studentInfo_dgv.TabIndex = 7;
             // 
             // add_btn
             // 
@@ -141,15 +143,16 @@ namespace QLSV.AppForm.ScoreForm
             this.add_btn.TabIndex = 8;
             this.add_btn.Text = "Add Score";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
             // AddScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1028, 450);
+            this.ClientSize = new System.Drawing.Size(1151, 450);
             this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.studentInfo_dgv);
             this.Controls.Add(this.score_tb);
             this.Controls.Add(this.cource_cb);
             this.Controls.Add(this.description_tb);
@@ -160,7 +163,8 @@ namespace QLSV.AppForm.ScoreForm
             this.Controls.Add(this.id_lb);
             this.Name = "AddScoreForm";
             this.Text = "AddScoreForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.AddScoreForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.studentInfo_dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,7 +180,7 @@ namespace QLSV.AppForm.ScoreForm
         private System.Windows.Forms.RichTextBox description_tb;
         private System.Windows.Forms.ComboBox cource_cb;
         private System.Windows.Forms.TextBox score_tb;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView studentInfo_dgv;
         private System.Windows.Forms.Button add_btn;
     }
 }

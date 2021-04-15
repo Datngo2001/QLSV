@@ -75,8 +75,8 @@ namespace QLSV.AppForm
 
         private void aDDSCOREToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddCourseForm addCourseForm = new AddCourseForm();
-            addCourseForm.Show();
+            AddScoreForm AddScoreForm = new AddScoreForm();
+            AddScoreForm.Show();
         }
     }
 }

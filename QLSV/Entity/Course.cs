@@ -211,5 +211,31 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        public DataTable GetAll_ID_label()
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand("Select id, label From Courses", dataBase.Connection);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+
+                dataBase.openConnection();
+
+                adapter.Fill(table);
+
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
     }
 }
