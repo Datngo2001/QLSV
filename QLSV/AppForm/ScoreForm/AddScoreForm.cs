@@ -1,4 +1,5 @@
 ﻿using QLSV.Entity;
+using QLSV.Utility;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,6 +57,8 @@ namespace QLSV.AppForm.ScoreForm
                 {
                     MessageBox.Show("Complete!");
                 }
+
+                new FormTool().ClearText(this);
             }
             else
             {

@@ -200,6 +200,7 @@ namespace QLSV.AppForm
             this.rEMOVESCOREToolStripMenuItem.Name = "rEMOVESCOREToolStripMenuItem";
             this.rEMOVESCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
             this.rEMOVESCOREToolStripMenuItem.Text = "REMOVE SCORE";
+            this.rEMOVESCOREToolStripMenuItem.Click += new System.EventHandler(this.rEMOVESCOREToolStripMenuItem_Click);
             // 
             // mANAGESCOREToolStripMenuItem
             // 

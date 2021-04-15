@@ -144,7 +144,34 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        public DataTable getAllScore()
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand("Select * From Score", dataBase.Connection);
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
 
+                dataBase.openConnection();
+
+                adapter.Fill(table);
+
+                dataBase.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
 
     }
 }

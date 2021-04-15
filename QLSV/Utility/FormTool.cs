@@ -28,6 +28,21 @@ namespace QLSV.Utility
                     ClearForm(c);
             }
         }
-
+        public void ClearText(Control con)
+        {
+            foreach (Control c in con.Controls)
+            {
+                if (c is TextBox)
+                {
+                    ((TextBox)c).Clear();
+                }
+                else if (c is RichTextBox)
+                {
+                    ((RichTextBox)c).Clear();
+                }
+                else
+                    ClearForm(c);
+            }
+        }
     }
 }
