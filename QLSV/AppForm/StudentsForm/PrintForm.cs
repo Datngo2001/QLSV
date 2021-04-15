@@ -9,6 +9,7 @@ using Microsoft.Office.Interop.Word;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 using System.IO;
+using QLSV.Entity;
 
 namespace QLSV.AppForm.StudentsForm
 {
@@ -19,7 +20,6 @@ namespace QLSV.AppForm.StudentsForm
         {
             InitializeComponent();
         }
-
         private void PrintForm_Load(object sender, EventArgs e)
         {
             DataBase dataBase = new DataBase();
@@ -29,15 +29,7 @@ namespace QLSV.AppForm.StudentsForm
 
             Table = new System.Data.DataTable();
             adapter.Fill(Table);
-
-            Table.Columns[0].ColumnName = "ID";
-            Table.Columns[1].ColumnName = "First name";
-            Table.Columns[2].ColumnName = "Last name";
-            Table.Columns[3].ColumnName = "Birthdate";
-            Table.Columns[4].ColumnName = "Gender";
-            Table.Columns[5].ColumnName = "Phone";
-            Table.Columns[6].ColumnName = "Adress";
-            Table.Columns[7].ColumnName = "Picture";
+            Table = new Student().StudentsTableNaming(Table);
 
             dataView_gv.RowTemplate.Height = 80;
             dataView_gv.RowTemplate.Resizable = DataGridViewTriState.True;
@@ -48,7 +40,6 @@ namespace QLSV.AppForm.StudentsForm
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataView_gv.AllowUserToAddRows = false;
         }
-
         private void print_btn_Click(object sender, EventArgs e)
         {
             PrintDialog pDlg = new PrintDialog();
@@ -66,7 +57,6 @@ namespace QLSV.AppForm.StudentsForm
                 MessageBox.Show("Đã hủy in");
             }
         }
-
         private void check_btn_Click(object sender, EventArgs e)
         {
             try
@@ -118,6 +108,7 @@ namespace QLSV.AppForm.StudentsForm
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 adapter.Fill(Table);
+                Table = new Student().StudentsTableNaming(Table);
 
                 db.closeConnection();
 
@@ -138,7 +129,6 @@ namespace QLSV.AppForm.StudentsForm
                 throw;
             }
         }
-
         private void yes_rbtn_CheckedChanged(object sender, EventArgs e)
         {
             if(yes_rbtn.Checked == true)
@@ -152,9 +142,14 @@ namespace QLSV.AppForm.StudentsForm
                 dateEnd2_dtp.Enabled = false;
             }
         }
-
         private void Sevefile_btn_Click(object sender, EventArgs e)
         {
+            Report report = new Report()
+            {
+                Title = "Student List Report",
+                Table = (System.Data.DataTable)dataView_gv.DataSource
+            };
+
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.DefaultExt = "*.docx";
             savefile.Filter = "DOCX files(*.docx)|*.docx|Excel files(.xlsx) |*.xlsx";
@@ -164,7 +159,7 @@ namespace QLSV.AppForm.StudentsForm
             {
                 if(savefile.FileName.EndsWith("docx") == true)
                 {
-                    Export_Data_To_Word(dataView_gv, savefile.FileName);
+                    report.toWordReport(savefile.FileName);
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (savefile.FileName.EndsWith("xlsx") == true)

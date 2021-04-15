@@ -9,14 +9,13 @@ namespace QLSV.Entity
     class Student
     {
         private DateTime bdate;
-
         public int ID { get; set; }
         public string Lname { get; set; }
         public string Fname { get; set; }
         public DateTime Bdate
         {
             get { return Convert.ToDateTime(this.bdate.ToShortDateString()); }
-            set { this.bdate = value; } 
+            set { this.bdate = Convert.ToDateTime(value.ToShortDateString()); } 
         }
         public char Gender { get; set; } 
         public string Phone { get; set; }
@@ -195,7 +194,7 @@ namespace QLSV.Entity
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@fn", SqlDbType.VarChar).Value = Fname;
                 command.Parameters.Add("@ln", SqlDbType.VarChar).Value = Lname;
-                command.Parameters.Add("@bdt", SqlDbType.DateTime).Value = Bdate;
+                command.Parameters.Add("@bdt", SqlDbType.Date).Value = Bdate;
                 command.Parameters.Add("@gd", SqlDbType.VarChar).Value = Gender;
                 command.Parameters.Add("@phn", SqlDbType.VarChar).Value = Phone;
                 command.Parameters.Add("@adrs", SqlDbType.VarChar).Value = Address;
@@ -243,7 +242,7 @@ namespace QLSV.Entity
                     , dataBase.Connection);
                 command.Parameters.Add("@Fname", SqlDbType.NVarChar).Value = Fname;
                 command.Parameters.Add("@Lname", SqlDbType.NVarChar).Value = Lname;
-                command.Parameters.Add("@Bdate", SqlDbType.DateTime).Value = Bdate;
+                command.Parameters.Add("@Bdate", SqlDbType.Date).Value = Bdate;
                 command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
                 command.Parameters.Add("@Adress", SqlDbType.NVarChar).Value = Address;
                 command.Parameters.Add("@Picture", SqlDbType.Image).Value = new Picture(this.Picture).toByteArray();
