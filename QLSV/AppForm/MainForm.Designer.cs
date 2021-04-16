@@ -207,6 +207,7 @@ namespace QLSV.AppForm
             this.mANAGESCOREToolStripMenuItem.Name = "mANAGESCOREToolStripMenuItem";
             this.mANAGESCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
             this.mANAGESCOREToolStripMenuItem.Text = "MANAGE SCORE";
+            this.mANAGESCOREToolStripMenuItem.Click += new System.EventHandler(this.mANAGESCOREToolStripMenuItem_Click);
             // 
             // aVGSCOREBYSCOREToolStripMenuItem
             // 

@@ -84,5 +84,11 @@ namespace QLSV.AppForm
             RemoveScoreForm removeScoreForm = new RemoveScoreForm();
             removeScoreForm.Show();
         }
+
+        private void mANAGESCOREToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageScoreForm manageScore = new ManageScoreForm();
+            manageScore.Show();
+        }
     }
 }
