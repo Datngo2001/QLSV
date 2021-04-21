@@ -90,5 +90,11 @@ namespace QLSV.AppForm
             ManageScoreForm manageScore = new ManageScoreForm();
             manageScore.Show();
         }
+
+        private void mANAGECOURCEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageCourseForm manageCourseForm = new ManageCourseForm();
+            manageCourseForm.Show();
+        }
     }
 }

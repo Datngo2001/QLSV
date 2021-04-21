@@ -93,6 +93,5 @@ namespace QLSV.AppForm.ScoreForm
         {
             show_dgv.DataSource = score.getAllScore();
         }
-
     }
 }

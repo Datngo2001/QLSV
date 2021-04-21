@@ -168,6 +168,7 @@ namespace QLSV.AppForm
             this.mANAGECOURCEToolStripMenuItem.Name = "mANAGECOURCEToolStripMenuItem";
             this.mANAGECOURCEToolStripMenuItem.Size = new System.Drawing.Size(350, 46);
             this.mANAGECOURCEToolStripMenuItem.Text = "MANAGE COURCE";
+            this.mANAGECOURCEToolStripMenuItem.Click += new System.EventHandler(this.mANAGECOURCEToolStripMenuItem_Click);
             // 
             // pRINTToolStripMenuItem1
             // 
