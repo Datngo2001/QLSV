@@ -272,7 +272,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public bool CheckCourseName(string courseName, int courseID = 0)
         {
             DataBase db = new DataBase();
@@ -307,7 +306,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public bool RemoveCourse(int id)
         {
             DataBase db = new DataBase();
@@ -338,7 +336,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public bool UpdateCourse(int id, string label, int period, string description)
         {
             DataBase db = new DataBase();
@@ -380,7 +377,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public bool DeleteCourse(int id)
         {
             DataBase db = new DataBase();
@@ -414,7 +410,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public DataTable GetTable(string query)
         {
             DataBase db = new DataBase();
@@ -440,7 +435,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public DataTable GetAllCourses()
         {
             DataBase db = new DataBase();
@@ -458,7 +452,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-
         public DataTable GetCourseByID(int id)
         {
             DataBase db = new DataBase();
@@ -477,7 +470,6 @@ namespace QLSV.Entity
             }
 
         }
-
         public int TotalCourse()
         {
             DataBase db = new DataBase();
@@ -497,5 +489,37 @@ namespace QLSV.Entity
             }
 
         }
+        public DataTable getAvgScoreByCourse()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "SELECT Courses.label, AVG(score.student_score) As AverageGrade " +
+                    "FROM Courses, Score " +
+                    "WHERE Courses.Id = Score.course_id " +
+                    "GROUP BY Courses.label"
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
+
     }
 }

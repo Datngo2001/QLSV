@@ -102,5 +102,11 @@ namespace QLSV.AppForm
             PrintCourseForm printCourseForm = new PrintCourseForm();
             printCourseForm.Show();
         }
+
+        private void aVGSCOREBYSCOREToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AvarageScore avarageScore = new AvarageScore();
+            avarageScore.Show();
+        }
     }
 }

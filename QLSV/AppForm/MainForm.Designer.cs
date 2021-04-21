@@ -216,6 +216,7 @@ namespace QLSV.AppForm
             this.aVGSCOREBYSCOREToolStripMenuItem.Name = "aVGSCOREBYSCOREToolStripMenuItem";
             this.aVGSCOREBYSCOREToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
             this.aVGSCOREBYSCOREToolStripMenuItem.Text = "AVG SCORE BY SCORE";
+            this.aVGSCOREBYSCOREToolStripMenuItem.Click += new System.EventHandler(this.aVGSCOREBYSCOREToolStripMenuItem_Click);
             // 
             // pRINTRESULTToolStripMenuItem
             // 
