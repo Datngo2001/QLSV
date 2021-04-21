@@ -425,11 +425,10 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand(query, db.Connection);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Course");
+                DataTable table = new DataTable();
+                adapter.Fill(table);
                 db.closeConnection();
 
-                DataTable table = dataSet.Tables["Course"];
                 return table;
             }
             catch (Exception)
@@ -447,7 +446,7 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                string query = "SELECT * FROM Course";
+                string query = "SELECT * FROM Courses";
                 return this.GetTable(query);
             }
             catch (Exception)
@@ -465,7 +464,7 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                string query = $"SELECT * FROM Course WHERE id = {id}";
+                string query = $"SELECT * FROM Courses WHERE id = {id}";
                 return this.GetTable(query);
             }
             catch (Exception)

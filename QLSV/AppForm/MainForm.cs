@@ -96,5 +96,11 @@ namespace QLSV.AppForm
             ManageCourseForm manageCourseForm = new ManageCourseForm();
             manageCourseForm.Show();
         }
+
+        private void pRINTToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            PrintCourseForm printCourseForm = new PrintCourseForm();
+            printCourseForm.Show();
+        }
     }
 }

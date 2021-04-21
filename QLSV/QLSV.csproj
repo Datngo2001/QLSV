@@ -73,6 +73,12 @@
     <Compile Include="AppForm\CourseForm\ManageCourseForm.Designer.cs">
       <DependentUpon>ManageCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\CourseForm\PrintCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\CourseForm\PrintCourseForm.Designer.cs">
+      <DependentUpon>PrintCourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\CourseForm\RemoveCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>

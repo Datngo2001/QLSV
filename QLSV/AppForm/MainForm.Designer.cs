@@ -175,6 +175,7 @@ namespace QLSV.AppForm
             this.pRINTToolStripMenuItem1.Name = "pRINTToolStripMenuItem1";
             this.pRINTToolStripMenuItem1.Size = new System.Drawing.Size(350, 46);
             this.pRINTToolStripMenuItem1.Text = "PRINT";
+            this.pRINTToolStripMenuItem1.Click += new System.EventHandler(this.pRINTToolStripMenuItem1_Click);
             // 
             // sCOREToolStripMenuItem
             // 
