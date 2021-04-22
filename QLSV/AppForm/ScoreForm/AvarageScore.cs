@@ -11,5 +11,10 @@ namespace QLSV.AppForm.ScoreForm
             Course course = new Course();
             show_dgv.DataSource = course.getAvgScoreByCourse();
         }
+
+        private void show_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

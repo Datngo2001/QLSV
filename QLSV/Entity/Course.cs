@@ -520,6 +520,35 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        public DataTable allLabel_IdOrder()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "select Courses.Id, Courses.label " +
+                                    "from Courses " +
+                                    "order by Courses.Id"
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
 
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
     }
 }

@@ -323,5 +323,34 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        public DataTable getAllBriefInfo()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "SELECT ID, fname, lname FROM Students_info"
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+
+        }
     }
 }

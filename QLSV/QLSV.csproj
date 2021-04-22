@@ -85,6 +85,12 @@
     <Compile Include="AppForm\CourseForm\RemoveCourseForm.Designer.cs">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\ResultForm\AvgResultScoreForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ResultForm\AvgResultScoreForm.Designer.cs">
+      <DependentUpon>AvgResultScoreForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\ScoreForm\AddScoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ResultForm\AvgResultScoreForm.resx">
+      <DependentUpon>AvgResultScoreForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\ScoreForm\AddScoreForm.resx">
       <DependentUpon>AddScoreForm.cs</DependentUpon>

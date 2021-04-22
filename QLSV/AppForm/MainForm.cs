@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using QLSV.AppForm.StudentsForm;
 using QLSV.AppForm.CourseForm;
 using QLSV.AppForm.ScoreForm;
+using QLSV.AppForm.ResultForm;
 
 namespace QLSV.AppForm
 {
@@ -107,6 +108,12 @@ namespace QLSV.AppForm
         {
             AvarageScore avarageScore = new AvarageScore();
             avarageScore.Show();
+        }
+
+        private void aVGResultByScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AvgResultScoreForm avgResultScoreForm = new AvgResultScoreForm();
+            avgResultScoreForm.Show();
         }
     }
 }

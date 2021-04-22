@@ -172,6 +172,124 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        public DataTable getALL_IdCourseOrder()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "SELECT student_id, course_id, student_score " +
+                                    "FROM Score " +
+                                    "order by student_id, course_id"
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
 
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+
+        }
+        public DataTable getAvg_byStudent()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "SELECT Score.student_id, AVG(Score.student_score) " +
+                                    "FROM Students_info inner join Score on Students_info.ID = Score.student_id " +
+                                    "Group by Score.student_id " +
+                                    "order by Score.student_id "
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+
+        }
+        public DataTable MakeStudentScoreResultTable()
+        {
+            try
+            {
+                Student student = new Student();
+                Course course = new Course();
+                Score score = new Score();
+
+                //create column
+
+                DataTable result = student.getAllBriefInfo();
+                result.Columns[0].ColumnName = "Id";
+                result.Columns[1].ColumnName = "Firt Name";
+                result.Columns[2].ColumnName = "Last Name";
+
+                DataTable coursesLabel = course.allLabel_IdOrder();
+                DataTable briefInfo = student.getAllBriefInfo();
+                DataTable scores = score.getALL_IdCourseOrder();
+                DataTable avgScore = score.getAvg_byStudent();
+
+                for (int i = 0; i < coursesLabel.Rows.Count; i++)
+                {
+                    result.Columns.Add(coursesLabel.Rows[i][1].ToString().Trim());
+                }
+
+                result.Columns.Add("Result");
+
+                //fill score to table 
+                int scoreRow = 0;
+                for (int row = 0; row < result.Rows.Count; row++)
+                {
+                    int courseIndex = 0;
+                    while (result.Rows[row][0].ToString().Trim() == scores.Rows[scoreRow][0].ToString().Trim())
+                    {
+                        result.Rows[row][courseIndex + 3] = scores.Rows[scoreRow][2].ToString().Trim();
+                        courseIndex++;
+                        scoreRow++;
+                        if(scoreRow > scores.Rows.Count - 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+
+                for (int row = 0; row < result.Rows.Count; row++)
+                {
+                    result.Rows[row][result.Columns.Count - 1] = avgScore.Rows[row][1].ToString().Trim();
+                }
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

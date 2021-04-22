@@ -49,6 +49,9 @@ namespace QLSV.AppForm
             this.mANAGESCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aVGSCOREBYSCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pRINTRESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aVGResultByScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.staticResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +62,8 @@ namespace QLSV.AppForm
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Dropdown_Student,
             this.cOURSEToolStripMenuItem,
-            this.sCOREToolStripMenuItem});
+            this.sCOREToolStripMenuItem,
+            this.rESULTToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -224,6 +228,31 @@ namespace QLSV.AppForm
             this.pRINTRESULTToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
             this.pRINTRESULTToolStripMenuItem.Text = "PRINT RESULT";
             // 
+            // rESULTToolStripMenuItem
+            // 
+            this.rESULTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aVGResultByScoreToolStripMenuItem,
+            this.staticResultToolStripMenuItem});
+            this.rESULTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rESULTToolStripMenuItem.Name = "rESULTToolStripMenuItem";
+            this.rESULTToolStripMenuItem.Size = new System.Drawing.Size(124, 42);
+            this.rESULTToolStripMenuItem.Text = "RESULT";
+            // 
+            // aVGResultByScoreToolStripMenuItem
+            // 
+            this.aVGResultByScoreToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.aVGResultByScoreToolStripMenuItem.Name = "aVGResultByScoreToolStripMenuItem";
+            this.aVGResultByScoreToolStripMenuItem.Size = new System.Drawing.Size(364, 46);
+            this.aVGResultByScoreToolStripMenuItem.Text = "AVG result by score";
+            this.aVGResultByScoreToolStripMenuItem.Click += new System.EventHandler(this.aVGResultByScoreToolStripMenuItem_Click);
+            // 
+            // staticResultToolStripMenuItem
+            // 
+            this.staticResultToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staticResultToolStripMenuItem.Name = "staticResultToolStripMenuItem";
+            this.staticResultToolStripMenuItem.Size = new System.Drawing.Size(364, 46);
+            this.staticResultToolStripMenuItem.Text = "Static Result";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -264,5 +293,8 @@ namespace QLSV.AppForm
         private System.Windows.Forms.ToolStripMenuItem mANAGESCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aVGSCOREBYSCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pRINTRESULTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aVGResultByScoreToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem staticResultToolStripMenuItem;
     }
 }

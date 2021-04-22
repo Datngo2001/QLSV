@@ -43,6 +43,7 @@ namespace QLSV.AppForm.ScoreForm
             this.show_dgv.RowTemplate.Height = 28;
             this.show_dgv.Size = new System.Drawing.Size(535, 505);
             this.show_dgv.TabIndex = 0;
+            this.show_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.show_dgv_CellContentClick);
             // 
             // AvarageScore
             // 
