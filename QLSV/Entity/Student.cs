@@ -183,6 +183,41 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        public DataTable findIdFname(string hint)
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "SELECT * FROM Students_info WHERE CONCAT(ID, fname, lname) LIKE '%" +
+                    hint
+                    + "%'", dataBase.Connection);
+
+                dataBase.openConnection();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                table = StudentsTableNaming(table);
+
+                dataBase.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+                dataBase.closeConnection();
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
+
         public bool InsertThisStudent()
         {
             DataBase mydb = new DataBase();

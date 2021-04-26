@@ -129,5 +129,10 @@ namespace QLSV.AppForm.CourseForm
             index = course.GetAllCourses().Rows.Count - 1;
             ShowData(index);
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

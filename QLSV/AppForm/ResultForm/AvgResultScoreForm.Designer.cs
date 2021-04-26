@@ -29,8 +29,14 @@ namespace QLSV.AppForm.ResultForm
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.saveFile_btn = new System.Windows.Forms.Button();
+            this.cancel_btn = new System.Windows.Forms.Button();
+            this.print_btn = new System.Windows.Forms.Button();
+            this.title_pn = new System.Windows.Forms.Panel();
             this.title_lb = new System.Windows.Forms.Label();
             this.textBox_pn = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.search_tb = new System.Windows.Forms.TextBox();
             this.search_btn = new System.Windows.Forms.Button();
             this.search_lb = new System.Windows.Forms.Label();
@@ -40,14 +46,66 @@ namespace QLSV.AppForm.ResultForm
             this.lname_lb = new System.Windows.Forms.Label();
             this.fname_lb = new System.Windows.Forms.Label();
             this.id_lb = new System.Windows.Forms.Label();
-            this.title_pn = new System.Windows.Forms.Panel();
-            this.gridView_pn = new System.Windows.Forms.Panel();
             this.showResult_dgv = new System.Windows.Forms.DataGridView();
-            this.textBox_pn.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.title_pn.SuspendLayout();
-            this.gridView_pn.SuspendLayout();
+            this.textBox_pn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showResult_dgv)).BeginInit();
             this.SuspendLayout();
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.saveFile_btn);
+            this.panel1.Controls.Add(this.cancel_btn);
+            this.panel1.Controls.Add(this.print_btn);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 418);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1469, 136);
+            this.panel1.TabIndex = 0;
+            // 
+            // saveFile_btn
+            // 
+            this.saveFile_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.saveFile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveFile_btn.Location = new System.Drawing.Point(352, 50);
+            this.saveFile_btn.Name = "saveFile_btn";
+            this.saveFile_btn.Size = new System.Drawing.Size(175, 51);
+            this.saveFile_btn.TabIndex = 0;
+            this.saveFile_btn.Text = "Save as File";
+            this.saveFile_btn.UseVisualStyleBackColor = true;
+            this.saveFile_btn.Click += new System.EventHandler(this.saveFile_btn_Click);
+            // 
+            // cancel_btn
+            // 
+            this.cancel_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_btn.Location = new System.Drawing.Point(869, 50);
+            this.cancel_btn.Name = "cancel_btn";
+            this.cancel_btn.Size = new System.Drawing.Size(175, 51);
+            this.cancel_btn.TabIndex = 0;
+            this.cancel_btn.Text = "Cancel";
+            this.cancel_btn.UseVisualStyleBackColor = true;
+            // 
+            // print_btn
+            // 
+            this.print_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.print_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.print_btn.Location = new System.Drawing.Point(614, 50);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(175, 51);
+            this.print_btn.TabIndex = 0;
+            this.print_btn.Text = "Print";
+            this.print_btn.UseVisualStyleBackColor = true;
+            // 
+            // title_pn
+            // 
+            this.title_pn.Controls.Add(this.title_lb);
+            this.title_pn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.title_pn.Location = new System.Drawing.Point(455, 0);
+            this.title_pn.Name = "title_pn";
+            this.title_pn.Size = new System.Drawing.Size(1014, 71);
+            this.title_pn.TabIndex = 30;
             // 
             // title_lb
             // 
@@ -62,6 +120,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             // textBox_pn
             // 
+            this.textBox_pn.Controls.Add(this.label5);
             this.textBox_pn.Controls.Add(this.search_tb);
             this.textBox_pn.Controls.Add(this.search_btn);
             this.textBox_pn.Controls.Add(this.search_lb);
@@ -74,8 +133,17 @@ namespace QLSV.AppForm.ResultForm
             this.textBox_pn.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox_pn.Location = new System.Drawing.Point(0, 0);
             this.textBox_pn.Name = "textBox_pn";
-            this.textBox_pn.Size = new System.Drawing.Size(455, 554);
-            this.textBox_pn.TabIndex = 23;
+            this.textBox_pn.Size = new System.Drawing.Size(455, 418);
+            this.textBox_pn.TabIndex = 29;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(105, 421);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 20);
+            this.label5.TabIndex = 32;
+            this.label5.Text = "Ngô Minh Đạt 19110115";
             // 
             // search_tb
             // 
@@ -94,7 +162,6 @@ namespace QLSV.AppForm.ResultForm
             this.search_btn.TabIndex = 30;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = true;
-            this.search_btn.Click += new System.EventHandler(this.search_btn_Click_1);
             // 
             // search_lb
             // 
@@ -168,34 +235,16 @@ namespace QLSV.AppForm.ResultForm
             this.id_lb.TabIndex = 23;
             this.id_lb.Text = "Student ID:";
             // 
-            // title_pn
-            // 
-            this.title_pn.Controls.Add(this.title_lb);
-            this.title_pn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title_pn.Location = new System.Drawing.Point(455, 0);
-            this.title_pn.Name = "title_pn";
-            this.title_pn.Size = new System.Drawing.Size(1014, 71);
-            this.title_pn.TabIndex = 24;
-            // 
-            // gridView_pn
-            // 
-            this.gridView_pn.Controls.Add(this.showResult_dgv);
-            this.gridView_pn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridView_pn.Location = new System.Drawing.Point(455, 71);
-            this.gridView_pn.Name = "gridView_pn";
-            this.gridView_pn.Size = new System.Drawing.Size(1014, 483);
-            this.gridView_pn.TabIndex = 25;
-            // 
             // showResult_dgv
             // 
             this.showResult_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showResult_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.showResult_dgv.Location = new System.Drawing.Point(0, 0);
+            this.showResult_dgv.Location = new System.Drawing.Point(455, 71);
             this.showResult_dgv.Name = "showResult_dgv";
             this.showResult_dgv.RowHeadersWidth = 62;
             this.showResult_dgv.RowTemplate.Height = 28;
-            this.showResult_dgv.Size = new System.Drawing.Size(1014, 483);
-            this.showResult_dgv.TabIndex = 0;
+            this.showResult_dgv.Size = new System.Drawing.Size(1014, 347);
+            this.showResult_dgv.TabIndex = 31;
             // 
             // AvgResultScoreForm
             // 
@@ -203,25 +252,33 @@ namespace QLSV.AppForm.ResultForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1469, 554);
-            this.Controls.Add(this.gridView_pn);
+            this.Controls.Add(this.showResult_dgv);
             this.Controls.Add(this.title_pn);
             this.Controls.Add(this.textBox_pn);
+            this.Controls.Add(this.panel1);
             this.Name = "AvgResultScoreForm";
             this.Text = "AvgResultScoreForm";
             this.Load += new System.EventHandler(this.AvgResultScoreForm_Load);
-            this.textBox_pn.ResumeLayout(false);
-            this.textBox_pn.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.title_pn.ResumeLayout(false);
             this.title_pn.PerformLayout();
-            this.gridView_pn.ResumeLayout(false);
+            this.textBox_pn.ResumeLayout(false);
+            this.textBox_pn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showResult_dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button saveFile_btn;
+        private System.Windows.Forms.Button cancel_btn;
+        private System.Windows.Forms.Button print_btn;
+        private System.Windows.Forms.Panel title_pn;
         private System.Windows.Forms.Label title_lb;
         private System.Windows.Forms.Panel textBox_pn;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox search_tb;
         private System.Windows.Forms.Button search_btn;
         private System.Windows.Forms.Label search_lb;
@@ -231,8 +288,6 @@ namespace QLSV.AppForm.ResultForm
         private System.Windows.Forms.Label lname_lb;
         private System.Windows.Forms.Label fname_lb;
         private System.Windows.Forms.Label id_lb;
-        private System.Windows.Forms.Panel title_pn;
-        private System.Windows.Forms.Panel gridView_pn;
         private System.Windows.Forms.DataGridView showResult_dgv;
     }
 }

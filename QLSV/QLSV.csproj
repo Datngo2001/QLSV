@@ -198,6 +198,12 @@
     <EmbeddedResource Include="AppForm\CourseForm\EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\CourseForm\ManageCourseForm.resx">
+      <DependentUpon>ManageCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\CourseForm\PrintCourseForm.resx">
+      <DependentUpon>PrintCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,6 +31,7 @@ namespace QLSV.AppForm.ScoreForm
         {
             this.score_dgv = new System.Windows.Forms.DataGridView();
             this.remove_btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.score_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,11 +58,21 @@ namespace QLSV.AppForm.ScoreForm
             this.remove_btn.UseVisualStyleBackColor = false;
             this.remove_btn.Click += new System.EventHandler(this.remove_btn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(47, 404);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 20);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Ngô Minh Đạt 19110115";
+            // 
             // RemoveScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.remove_btn);
             this.Controls.Add(this.score_dgv);
             this.Name = "RemoveScoreForm";
@@ -69,6 +80,7 @@ namespace QLSV.AppForm.ScoreForm
             this.Load += new System.EventHandler(this.RemoveScoreForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.score_dgv)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -76,5 +88,6 @@ namespace QLSV.AppForm.ScoreForm
 
         private System.Windows.Forms.DataGridView score_dgv;
         private System.Windows.Forms.Button remove_btn;
+        private System.Windows.Forms.Label label5;
     }
 }

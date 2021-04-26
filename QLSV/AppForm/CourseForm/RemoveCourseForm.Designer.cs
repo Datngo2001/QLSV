@@ -40,6 +40,7 @@ namespace QLSV.AppForm.CourseForm
             this.id_lb = new System.Windows.Forms.Label();
             this.period_tb = new System.Windows.Forms.TextBox();
             this.id_tb = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // enterID_lb
@@ -156,12 +157,22 @@ namespace QLSV.AppForm.CourseForm
             this.id_tb.Size = new System.Drawing.Size(352, 35);
             this.id_tb.TabIndex = 13;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(613, 271);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Ngô Minh Đạt 19110115";
+            // 
             // RemoveCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Turquoise;
             this.ClientSize = new System.Drawing.Size(914, 556);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.id_tb);
             this.Controls.Add(this.period_tb);
             this.Controls.Add(this.description_tb);
@@ -193,5 +204,6 @@ namespace QLSV.AppForm.CourseForm
         private System.Windows.Forms.Label id_lb;
         private System.Windows.Forms.TextBox period_tb;
         private System.Windows.Forms.TextBox id_tb;
+        private System.Windows.Forms.Label label5;
     }
 }

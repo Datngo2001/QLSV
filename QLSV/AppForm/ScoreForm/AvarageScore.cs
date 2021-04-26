@@ -9,12 +9,12 @@ namespace QLSV.AppForm.ScoreForm
         {
             InitializeComponent();
             Course course = new Course();
-            show_dgv.DataSource = course.getAvgScoreByCourse();
-        }
-
-        private void show_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            score_ch.Series.RemoveAt(0);
+            score_ch.DataSource = course.getAvgScoreByCourse();
+            score_ch.Series.Add("Average Score");
+            score_ch.Series["Average Score"].XValueMember = "label";
+            score_ch.Series["Average Score"].YValueMembers = "AverageGrade";
+            score_ch.Titles.Add("Average Score per Cource Chart");
         }
     }
 }

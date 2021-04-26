@@ -39,6 +39,7 @@ namespace QLSV.AppForm.ScoreForm
             this.score_tb = new System.Windows.Forms.TextBox();
             this.studentInfo_dgv = new System.Windows.Forms.DataGridView();
             this.add_btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.studentInfo_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,12 +146,22 @@ namespace QLSV.AppForm.ScoreForm
             this.add_btn.UseVisualStyleBackColor = false;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(33, 321);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 20);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Ngô Minh Đạt 19110115";
+            // 
             // AddScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1151, 450);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.studentInfo_dgv);
             this.Controls.Add(this.score_tb);
@@ -182,5 +193,6 @@ namespace QLSV.AppForm.ScoreForm
         private System.Windows.Forms.TextBox score_tb;
         private System.Windows.Forms.DataGridView studentInfo_dgv;
         private System.Windows.Forms.Button add_btn;
+        private System.Windows.Forms.Label label5;
     }
 }

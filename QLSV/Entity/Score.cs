@@ -278,7 +278,6 @@ namespace QLSV.Entity
                         }
                     }
                 }
-
                 for (int row = 0; row < result.Rows.Count; row++)
                 {
                     result.Rows[row][result.Columns.Count - 1] = avgScore.Rows[row][1].ToString().Trim();

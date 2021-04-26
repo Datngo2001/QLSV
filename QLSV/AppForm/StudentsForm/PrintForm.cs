@@ -42,20 +42,27 @@ namespace QLSV.AppForm.StudentsForm
         }
         private void print_btn_Click(object sender, EventArgs e)
         {
-            PrintDialog pDlg = new PrintDialog();
-            PrintDocument pDoc = new PrintDocument();
-            pDoc.DocumentName = "Print Document";
-            pDlg.Document = pDoc;
-            pDlg.AllowSelection = true;
-            pDlg.AllowSomePages = true;
-            if (pDlg.ShowDialog() == DialogResult.OK)
+            Report report = new Report()
             {
-                pDoc.Print();
-            }
-            else
-            {
-                MessageBox.Show("Đã hủy in");
-            }
+                Title = "Student List Report",
+                Table = (System.Data.DataTable)dataView_gv.DataSource
+            };
+
+            report.Print();
+
+            //PrintDialog pDlg = new PrintDialog();
+            //PrintDocument pDoc = (PrintDocument)report.getWordDocument();
+            //pDlg.Document = pDoc;
+            //pDlg.AllowSelection = true;
+            //pDlg.AllowSomePages = true;
+            //if (pDlg.ShowDialog() == DialogResult.OK)
+            //{
+            //    pDoc.Print();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Đã hủy in");
+            //}
         }
         private void check_btn_Click(object sender, EventArgs e)
         {
@@ -164,102 +171,10 @@ namespace QLSV.AppForm.StudentsForm
                 }
                 if (savefile.FileName.EndsWith("xlsx") == true)
                 {
-                    ExportToExcel(dataView_gv, savefile.FileName);
+                    report.ToExcelReport(savefile.FileName);
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-        public void Export_Data_To_Word(DataGridView DGV, string filename)
-        {
-            if (DGV.Rows.Count != 0)
-            {
-                int RowCount = DGV.Rows.Count;
-                int ColumnCount = DGV.Columns.Count;
-
-                Document oDoc = new Document();
-                oDoc.Application.Visible = true;
-
-                oDoc.PageSetup.Orientation = WdOrientation.wdOrientLandscape;
-
-                dynamic oRange = oDoc.Content.Application.Selection.Range;
-                string oTemp = "";
-                Object oMissing = System.Reflection.Missing.Value;
-                for (int r = 0; r <= RowCount - 1; r++)
-                {
-                    oTemp = "";
-                    for (int c = 0; c < ColumnCount - 1; c++)
-                    {
-                        oTemp = oTemp + DGV.Rows[r].Cells[c].Value + "\t";
-                    }
-                    var oPara1 = oDoc.Content.Paragraphs.Add(ref oMissing);
-                    oPara1.Range.Text = oTemp;
-                    oPara1.Range.InsertParagraphAfter();
-                    byte[] imgbyte = (byte[])dataView_gv.Rows[r].Cells[7].Value;
-                    MemoryStream ms = new MemoryStream(imgbyte);
-                    //Image sparePicture = Image.FromStream(ms);
-                    Image finalPic = (Image)(new Bitmap(Image.FromStream(ms), new Size(50, 50)));
-                    Clipboard.SetDataObject(finalPic);
-                    var oPara2 = oDoc.Content.Paragraphs.Add(ref oMissing);
-                    oPara2.Range.Paste();
-                    oPara2.Range.InsertParagraphAfter();
-                    oTemp += "\n";
-                }
-                //save the file
-                oDoc.SaveAs2(filename);
-            }
-        }
-        public bool ExportToExcel(DataGridView DGV, string filename)
-        {
-            if (DGV.Rows.Count != 0)
-            {
-                var excelApp = new Excel.Application();
-                // Make the object visible.
-                excelApp.Visible = true;
-
-                // Create a new, empty workbook and add it to the collection returned
-                // by property Workbooks. The new workbook becomes the active workbook.
-                // Add has an optional parameter for specifying a praticular template.
-                // Because no argument is sent in this example, Add creates a new workbook.
-                excelApp.Workbooks.Add();
-
-                // This example uses a single workSheet. The explicit type casting is
-                // removed in a later procedure.
-                Excel._Worksheet workSheet = (Excel.Worksheet)excelApp.ActiveSheet;
-
-                workSheet.Cells[1, "A"] = DGV.Columns[0].Name;
-                workSheet.Cells[1, "B"] = DGV.Columns[1].Name;
-                workSheet.Cells[1, "C"] = DGV.Columns[2].Name;
-                workSheet.Cells[1, "D"] = DGV.Columns[3].Name;
-                workSheet.Cells[1, "E"] = DGV.Columns[4].Name;
-                workSheet.Cells[1, "F"] = DGV.Columns[5].Name;
-                workSheet.Cells[1, "G"] = DGV.Columns[6].Name;
-                workSheet.Cells[1, "H"] = DGV.Columns[7].Name;
-
-                for (int i = 0; i < DGV.Rows.Count; i++)
-                {
-                    workSheet.Cells[i + 2, "A"] = DGV.Rows[i].Cells[0].Value;
-                    workSheet.Cells[i + 2, "B"] = DGV.Rows[i].Cells[1].Value;
-                    workSheet.Cells[i + 2, "C"] = DGV.Rows[i].Cells[2].Value;
-                    workSheet.Cells[i + 2, "D"] = DGV.Rows[i].Cells[3].Value;
-                    workSheet.Cells[i + 2, "E"] = DGV.Rows[i].Cells[4].Value;
-                    workSheet.Cells[i + 2, "F"] = DGV.Rows[i].Cells[5].Value;
-                    workSheet.Cells[i + 2, "G"] = DGV.Rows[i].Cells[6].Value;
-                }
-                workSheet.Columns[1].AutoFit();
-                workSheet.Columns[2].AutoFit();
-                workSheet.Columns[3].AutoFit();
-                workSheet.Columns[4].AutoFit();
-                workSheet.Columns[5].AutoFit();
-                workSheet.Columns[6].AutoFit();
-                workSheet.Columns[7].AutoFit();
-
-                workSheet.SaveAs(filename);
-
-                excelApp.Quit();
-
-                return true;
-            }
-            return false;
         }
     }
 }

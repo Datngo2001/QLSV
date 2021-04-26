@@ -38,6 +38,7 @@ namespace QLSV.AppForm.CourseForm
             this.period_ud = new System.Windows.Forms.NumericUpDown();
             this.description_tb = new System.Windows.Forms.RichTextBox();
             this.edit_btn = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.period_ud)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,12 +134,22 @@ namespace QLSV.AppForm.CourseForm
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(60, 411);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 20);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Ngô Minh Đạt 19110115";
+            // 
             // EditCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(639, 554);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.description_tb);
             this.Controls.Add(this.period_ud);
@@ -167,5 +178,6 @@ namespace QLSV.AppForm.CourseForm
         private System.Windows.Forms.NumericUpDown period_ud;
         private System.Windows.Forms.RichTextBox description_tb;
         private System.Windows.Forms.Button edit_btn;
+        private System.Windows.Forms.Label label5;
     }
 }

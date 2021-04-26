@@ -43,6 +43,7 @@ namespace QLSV.AppForm.ScoreForm
             this.showStudent_btn = new System.Windows.Forms.Button();
             this.showScore_btn = new System.Windows.Forms.Button();
             this.show_dgv = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.show_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,12 +193,22 @@ namespace QLSV.AppForm.ScoreForm
             this.show_dgv.Size = new System.Drawing.Size(781, 553);
             this.show_dgv.TabIndex = 19;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(428, 452);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 20);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Ngô Minh Đạt 19110115";
+            // 
             // ManageScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1419, 634);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.show_dgv);
             this.Controls.Add(this.showScore_btn);
             this.Controls.Add(this.showStudent_btn);
@@ -237,5 +248,6 @@ namespace QLSV.AppForm.ScoreForm
         private System.Windows.Forms.Button showStudent_btn;
         private System.Windows.Forms.Button showScore_btn;
         private System.Windows.Forms.DataGridView show_dgv;
+        private System.Windows.Forms.Label label5;
     }
 }

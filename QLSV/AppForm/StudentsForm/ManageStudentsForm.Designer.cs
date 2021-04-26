@@ -44,6 +44,7 @@ namespace QLSV.AppForm.StudentsForm
             // Id_tb
             // 
             this.Id_tb.Location = new System.Drawing.Point(217, 19);
+            this.Id_tb.Text = "0";
             // 
             // FirstName_tb
             // 
@@ -59,7 +60,6 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // BirthDay_picker
             // 
-            this.BirthDay_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.BirthDay_picker.Location = new System.Drawing.Point(217, 216);
             // 
             // genderBtn_group
@@ -170,7 +170,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(669, 22);
+            this.label9.Location = new System.Drawing.Point(669, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(377, 29);
             this.label9.TabIndex = 27;
