@@ -19,7 +19,7 @@ namespace QLSV.AppForm
                 var studentmanager = new studentManager();
                 if (studentmanager.login(Username_textBox.Text, Password_textBox.Text))
                 {
-                    this.DialogResult = DialogResult.OK;
+                    this.DialogResult = DialogResult.Yes;
                 }
                 else
                 {
@@ -30,7 +30,7 @@ namespace QLSV.AppForm
             {
                 if (user.login(Username_textBox.Text, Password_textBox.Text))
                 {
-                    this.DialogResult = DialogResult.OK;
+                    this.DialogResult = DialogResult.Yes;
                 }
                 else
                 {

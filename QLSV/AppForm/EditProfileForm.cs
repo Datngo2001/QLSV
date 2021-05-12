@@ -47,7 +47,7 @@ namespace QLSV.AppForm
                 username_tb.Text = CurrentUser.UserName;
                 fname_tb.Text = CurrentUser.fname;
                 lname_tb.Text = CurrentUser.lname;
-                id_tb.Text = CurrentUser.Id;
+                id_tb.Text = CurrentUser.Id.ToString();
                 pictureBox.Image = CurrentUser.Avatar;
             }
             else

@@ -20,7 +20,7 @@ namespace QLSV
 
             LoginForm loginForm = new LoginForm();
 
-            if (loginForm.ShowDialog() == DialogResult.OK)
+            if (loginForm.ShowDialog() == DialogResult.Yes)
             {
                 if (loginForm.student_rbtn.Checked) Application.Run(new MainForm());
                 if (loginForm.human_rbtn.Checked) Application.Run(new MainContactForm());

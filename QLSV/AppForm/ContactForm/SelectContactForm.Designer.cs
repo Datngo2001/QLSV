@@ -44,6 +44,7 @@ namespace QLSV.AppForm.ContactForm
             this.dataGridViewContact.RowTemplate.Height = 24;
             this.dataGridViewContact.Size = new System.Drawing.Size(677, 562);
             this.dataGridViewContact.TabIndex = 1;
+            this.dataGridViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContact_CellDoubleClick);
             // 
             // SelectContactForm
             // 
@@ -53,6 +54,7 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.dataGridViewContact);
             this.Name = "SelectContactForm";
             this.Text = "SelectContactForm";
+            this.Load += new System.EventHandler(this.SelectContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
             this.ResumeLayout(false);
 

@@ -9,12 +9,12 @@ namespace QLSV.Entity
 {
     class User
     {
+        DataBase db = new DataBase();
         public bool login(string Username, string Password)
         {
             ProgressDialog progress = new ProgressDialog();
             progress.Show();
 
-            DataBase db = new DataBase();
             DataTable table = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter();
             db.openConnection();
@@ -37,7 +37,7 @@ namespace QLSV.Entity
             if (table.Rows.Count > 0)
             {
                 //load info
-                CurrentUser.Id = table.Rows[0]["id"].ToString();
+                CurrentUser.Id = Convert.ToInt32(table.Rows[0]["id"].ToString());
                 CurrentUser.fname = table.Rows[0]["fname"].ToString();
                 CurrentUser.lname = table.Rows[0]["lname"].ToString();
                 CurrentUser.UserName = table.Rows[0]["UserName"].ToString();
@@ -54,7 +54,6 @@ namespace QLSV.Entity
         }
         public bool signin(string Username, string Password, string id, string fname, string lname, Image image)
         {
-            DataBase db = new DataBase();
             try
             {
                 SqlCommand insertCommand = new SqlCommand(
@@ -101,7 +100,6 @@ namespace QLSV.Entity
         }
         public bool CheckUserName(string username)
         {
-            DataBase db = new DataBase();
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
@@ -131,7 +129,6 @@ namespace QLSV.Entity
         }
         public bool CheckPassword(string password)
         {
-            DataBase db = new DataBase();
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
@@ -164,6 +161,40 @@ namespace QLSV.Entity
         public bool editProfile(string Username, string Password, string id, string fname, string lname, Image image)
         {
             return true;
+        }
+        public DataTable GetUserByID(int id)
+        {
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand($"SELECT * FROM [Users] WHERE id = @id", db.Connection);
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataSet dataSet = new DataSet();
+                adapter.Fill(dataSet, "Users");
+                db.closeConnection();
+
+                DataTable table = dataSet.Tables["Users"];
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public string GetUserFullNameByID(int id)
+        {
+            SqlCommand command = new SqlCommand("SELECT CONCAT(TRIM(lname), ' ', TRIM(fname)) FROM [Users] WHERE id = @id",
+                                                db.Connection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+
+            SqlDataAdapter adapter = new SqlDataAdapter(command);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            return table.Rows[0][0].ToString().Trim();
         }
     }
 }

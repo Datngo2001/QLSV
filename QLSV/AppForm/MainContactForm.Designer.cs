@@ -53,6 +53,7 @@ namespace QLSV.AppForm
             this.linkLabelEdit = new System.Windows.Forms.LinkLabel();
             this.labelName = new System.Windows.Forms.Label();
             this.labelWelcome = new System.Windows.Forms.Label();
+            this.pictureBoxContact = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.buttonRemoveContact = new System.Windows.Forms.Button();
             this.buttonSelectContact = new System.Windows.Forms.Button();
@@ -61,13 +62,12 @@ namespace QLSV.AppForm
             this.buttonEditContact = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.labelGroup = new System.Windows.Forms.Label();
-            this.pictureBoxContact = new System.Windows.Forms.PictureBox();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContact)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // comboBoxSelected2
@@ -113,6 +113,7 @@ namespace QLSV.AppForm
             this.buttonRemoveGroup.TabIndex = 15;
             this.buttonRemoveGroup.Text = "Remove";
             this.buttonRemoveGroup.UseVisualStyleBackColor = true;
+            this.buttonRemoveGroup.Click += new System.EventHandler(this.buttonRemoveGroup_Click);
             // 
             // comboBoxSelected
             // 
@@ -134,6 +135,7 @@ namespace QLSV.AppForm
             this.buttonEditGroup.TabIndex = 12;
             this.buttonEditGroup.Text = "Edit";
             this.buttonEditGroup.UseVisualStyleBackColor = true;
+            this.buttonEditGroup.Click += new System.EventHandler(this.buttonEditGroup_Click);
             // 
             // textBoxNewName
             // 
@@ -208,6 +210,7 @@ namespace QLSV.AppForm
             this.buttonAddGroup.TabIndex = 11;
             this.buttonAddGroup.Text = "Add";
             this.buttonAddGroup.UseVisualStyleBackColor = true;
+            this.buttonAddGroup.Click += new System.EventHandler(this.buttonAddGroup_Click);
             // 
             // textBoxGroupName
             // 
@@ -305,6 +308,7 @@ namespace QLSV.AppForm
             this.linkLabelRefresh.TabIndex = 16;
             this.linkLabelRefresh.TabStop = true;
             this.linkLabelRefresh.Text = "Refresh";
+            this.linkLabelRefresh.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelRefresh_LinkClicked);
             // 
             // linkLabelEdit
             // 
@@ -318,6 +322,7 @@ namespace QLSV.AppForm
             this.linkLabelEdit.TabIndex = 15;
             this.linkLabelEdit.TabStop = true;
             this.linkLabelEdit.Text = "Edit ptofile";
+            this.linkLabelEdit.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelEdit_LinkClicked);
             // 
             // labelName
             // 
@@ -340,6 +345,17 @@ namespace QLSV.AppForm
             this.labelWelcome.Size = new System.Drawing.Size(105, 26);
             this.labelWelcome.TabIndex = 13;
             this.labelWelcome.Text = "Welcome";
+            // 
+            // pictureBoxContact
+            // 
+            this.pictureBoxContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pictureBoxContact.Location = new System.Drawing.Point(17, 24);
+            this.pictureBoxContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBoxContact.Name = "pictureBoxContact";
+            this.pictureBoxContact.Size = new System.Drawing.Size(119, 111);
+            this.pictureBoxContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxContact.TabIndex = 0;
+            this.pictureBoxContact.TabStop = false;
             // 
             // groupBox2
             // 
@@ -408,6 +424,7 @@ namespace QLSV.AppForm
             this.buttonEditContact.TabIndex = 17;
             this.buttonEditContact.Text = "Edit";
             this.buttonEditContact.UseVisualStyleBackColor = true;
+            this.buttonEditContact.Click += new System.EventHandler(this.buttonEditContact_Click);
             // 
             // buttonAddContact
             // 
@@ -419,6 +436,7 @@ namespace QLSV.AppForm
             this.buttonAddContact.TabIndex = 16;
             this.buttonAddContact.Text = "Add";
             this.buttonAddContact.UseVisualStyleBackColor = true;
+            this.buttonAddContact.Click += new System.EventHandler(this.buttonAddContact_Click);
             // 
             // labelGroup
             // 
@@ -430,17 +448,6 @@ namespace QLSV.AppForm
             this.labelGroup.Size = new System.Drawing.Size(227, 69);
             this.labelGroup.TabIndex = 15;
             this.labelGroup.Text = "Group";
-            // 
-            // pictureBoxContact
-            // 
-            this.pictureBoxContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pictureBoxContact.Location = new System.Drawing.Point(17, 24);
-            this.pictureBoxContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBoxContact.Name = "pictureBoxContact";
-            this.pictureBoxContact.Size = new System.Drawing.Size(119, 111);
-            this.pictureBoxContact.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxContact.TabIndex = 0;
-            this.pictureBoxContact.TabStop = false;
             // 
             // MainContactForm
             // 
@@ -469,9 +476,9 @@ namespace QLSV.AppForm
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContact)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContact)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

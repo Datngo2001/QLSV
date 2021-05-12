@@ -71,6 +71,7 @@ namespace QLSV.AppForm.ContactForm
             this.linkLabelShowAll.TabIndex = 5;
             this.linkLabelShowAll.TabStop = true;
             this.linkLabelShowAll.Text = "Show All";
+            this.linkLabelShowAll.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelShowAll_LinkClicked);
             // 
             // linkLabelGroup
             // 
@@ -84,6 +85,7 @@ namespace QLSV.AppForm.ContactForm
             this.linkLabelGroup.TabIndex = 4;
             this.linkLabelGroup.TabStop = true;
             this.linkLabelGroup.Text = "Group";
+            this.linkLabelGroup.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGroup_LinkClicked);
             // 
             // ShowFullContactForm
             // 

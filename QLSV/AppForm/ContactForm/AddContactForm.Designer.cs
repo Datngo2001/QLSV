@@ -74,6 +74,7 @@ namespace QLSV.AppForm.ContactForm
             this.buttonCancel.TabIndex = 39;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonAdd
             // 
@@ -87,6 +88,7 @@ namespace QLSV.AppForm.ContactForm
             this.buttonAdd.TabIndex = 38;
             this.buttonAdd.Text = "Add Contact";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonUpload
             // 
@@ -98,6 +100,7 @@ namespace QLSV.AppForm.ContactForm
             this.buttonUpload.TabIndex = 37;
             this.buttonUpload.Text = "Upload Image";
             this.buttonUpload.UseVisualStyleBackColor = true;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
             // pictureContact
             // 
