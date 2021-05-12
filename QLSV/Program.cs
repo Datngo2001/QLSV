@@ -22,8 +22,8 @@ namespace QLSV
 
             if (loginForm.ShowDialog() == DialogResult.OK)
             {
-                if (loginForm.student_rbtn.Checked)
-                    if (loginForm.human_rbtn.Checked) Application.Run(new MainForm());
+                if (loginForm.student_rbtn.Checked) Application.Run(new MainForm());
+                if (loginForm.human_rbtn.Checked) Application.Run(new MainContactForm());
             }
             else
             {

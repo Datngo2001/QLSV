@@ -61,6 +61,30 @@
     <Compile Include="AppForm\ConfirmPasswordForm.Designer.cs">
       <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\ContactForm\AddContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\AddContactForm.Designer.cs">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\EditContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\EditContactForm.Designer.cs">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\SelectContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\SelectContactForm.Designer.cs">
+      <DependentUpon>SelectContactForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\ShowFullContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ContactForm\ShowFullContactForm.Designer.cs">
+      <DependentUpon>ShowFullContactForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\CourseForm\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +120,12 @@
     </Compile>
     <Compile Include="AppForm\EditProfileForm.Designer.cs">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\MainContactForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\MainContactForm.Designer.cs">
+      <DependentUpon>MainContactForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForm\ResultForm\AvgResultScoreForm.cs">
       <SubType>Form</SubType>
@@ -211,6 +241,18 @@
     <EmbeddedResource Include="AppForm\ConfirmPasswordForm.resx">
       <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ContactForm\AddContactForm.resx">
+      <DependentUpon>AddContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ContactForm\EditContactForm.resx">
+      <DependentUpon>EditContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ContactForm\SelectContactForm.resx">
+      <DependentUpon>SelectContactForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ContactForm\ShowFullContactForm.resx">
+      <DependentUpon>ShowFullContactForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\EditProfileForm.resx">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\MainContactForm.resx">
+      <DependentUpon>MainContactForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\ResultForm\AvgResultScoreForm.resx">
       <DependentUpon>AvgResultScoreForm.cs</DependentUpon>
