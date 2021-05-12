@@ -23,7 +23,6 @@ namespace QLSV.AppForm
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void studentListToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,6 +113,12 @@ namespace QLSV.AppForm
         {
             AvgResultScoreForm avgResultScoreForm = new AvgResultScoreForm();
             avgResultScoreForm.Show();
+        }
+
+        private void editFro_llb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EditProfileForm editProfileForm = new EditProfileForm();
+            editProfileForm.Show();
         }
     }
 }

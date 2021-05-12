@@ -1,53 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using QLSV.Data;
+using QLSV.Entity;
 
 namespace QLSV.AppForm
 {
     public partial class LoginForm : Form
     {
+        User user;
         public LoginForm()
         {
             InitializeComponent();
+            user = new User();
         }
         private void Login_button_Click(object sender, EventArgs e)
         {
-            ProgressDialog progress = new ProgressDialog();
-            progress.Show();
-
-            DataBase db = new DataBase();
-            DataTable table = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            db.openConnection();
-            SqlCommand cm = new SqlCommand(
-                "SELECT * FROM Users WHERE UserName = @User AND Password = @Pass", db.Connection);
-            cm.Parameters.Add("@User", SqlDbType.VarChar).Value = Username_textBox.Text;
-            cm.Parameters.Add("@Pass", SqlDbType.VarChar).Value = Password_textBox.Text;
-            adapter.SelectCommand = cm;
-
-            progress.Bar.Value = 50;
-
-            adapter.Fill(table);
-
-            progress.Bar.Value = 100;
-
-            db.closeConnection();
-
-            progress.Close();
-
-            if (table.Rows.Count > 0)
+            if (student_rbtn.Checked == true)
             {
-                this.DialogResult = DialogResult.OK;
+                var studentmanager = new studentManager();
+                if (studentmanager.login(Username_textBox.Text, Password_textBox.Text))
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            else if(human_rbtn.Checked == true)
             {
-                MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (user.login(Username_textBox.Text, Password_textBox.Text))
+                {
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
         private void LoginForm_Load(object sender, EventArgs e)
@@ -107,6 +95,20 @@ namespace QLSV.AppForm
             {
 
                 throw;
+            }
+        }
+
+        private void student_rbtn_CheckedChanged(object sender, EventArgs e)
+        {
+            if(student_rbtn.Checked == true)
+            {
+                register_lb.Visible = false;
+                ForgetPassword_lb.Visible = false;
+            }
+            else
+            {
+                register_lb.Visible = true;
+                ForgetPassword_lb.Visible = true;
             }
         }
     }

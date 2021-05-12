@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppForm\ConfirmPasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ConfirmPasswordForm.Designer.cs">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\CourseForm\AddCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,12 @@
     </Compile>
     <Compile Include="AppForm\CourseForm\RemoveCourseForm.Designer.cs">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\EditProfileForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\EditProfileForm.Designer.cs">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForm\ResultForm\AvgResultScoreForm.cs">
       <SubType>Form</SubType>
@@ -169,13 +181,15 @@
     <Compile Include="AppForm\StudentsForm\StudentListForm.Designer.cs">
       <DependentUpon>StudentListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CurrentUser.cs" />
     <Compile Include="Data\DataBase.cs" />
+    <Compile Include="Entity\Contact.cs" />
     <Compile Include="Entity\Course.cs" />
+    <Compile Include="Entity\Group.cs" />
     <Compile Include="Entity\Picture.cs" />
     <Compile Include="Entity\Report.cs" />
     <Compile Include="Entity\Score.cs" />
     <Compile Include="Entity\Student.cs" />
-    <Compile Include="Entity\User.cs" />
     <Compile Include="AppForm\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,10 +202,15 @@
     <Compile Include="AppForm\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Entity\studentManager.cs" />
+    <Compile Include="Entity\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utility\FormTool.cs" />
     <Compile Include="Utility\StudentStatistic.cs" />
+    <EmbeddedResource Include="AppForm\ConfirmPasswordForm.resx">
+      <DependentUpon>ConfirmPasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\EditProfileForm.resx">
+      <DependentUpon>EditProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\ResultForm\AvgResultScoreForm.resx">
       <DependentUpon>AvgResultScoreForm.cs</DependentUpon>

@@ -128,7 +128,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(57, 439);
+            this.label8.Location = new System.Drawing.Point(57, 433);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 25);
             this.label8.TabIndex = 7;
@@ -209,7 +209,7 @@ namespace QLSV.AppForm.StudentsForm
             // pictureBox
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox.Location = new System.Drawing.Point(155, 439);
+            this.pictureBox.Location = new System.Drawing.Point(155, 433);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(301, 182);
             this.pictureBox.TabIndex = 17;
@@ -249,7 +249,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // upload_btn
             // 
-            this.upload_btn.Location = new System.Drawing.Point(155, 627);
+            this.upload_btn.Location = new System.Drawing.Point(155, 621);
             this.upload_btn.Name = "upload_btn";
             this.upload_btn.Size = new System.Drawing.Size(302, 35);
             this.upload_btn.TabIndex = 19;

@@ -1,22 +1,17 @@
-﻿using QLSV.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
+﻿using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLSV.Entity;
 
 namespace QLSV.AppForm
 {
     public partial class RegisterForm : Form
     {
+        User user;
         public RegisterForm()
         {
             InitializeComponent();
+            user = new User();
         }
 
         private void cancel_Click(object sender, EventArgs e)
@@ -26,55 +21,37 @@ namespace QLSV.AppForm
 
         private void signin_Click(object sender, EventArgs e)
         {
-            try
+            if(password_tb.Text == reEnter_tb.Text)
             {
-                DataBase db = new DataBase();
-
-                SqlCommand insertCommand = new SqlCommand(
-                    "INSERT INTO Users (UserName, Password)" +
-                    "VALUES (@username, @password)"
-                    , db.Connection);
-
-                SqlCommand checkCommand = new SqlCommand(
-                    "SELECT * FROM Users " +
-                    "WHERE UserName = @username"
-                    , db.Connection);
-                checkCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = username_lb.Text;
-
-                db.openConnection();
-
-                if (checkCommand.ExecuteNonQuery() < 1)
+                if(user.CheckUserName(username_tb.Text) == true)
                 {
-                    if (password_tb.Text == reEnter_tb.Text)
+                    if(user.signin(username_tb.Text, password_tb.Text, id_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image) == true)
                     {
-                        insertCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = username_lb.Text;
-                        insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = password_lb.Text;
-                        if (insertCommand.ExecuteNonQuery() == 1)
-                        {
-                            MessageBox.Show("Register complete", "",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Your password is not unified", "",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Complete!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Your username has been used", "",
-                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Username is existed!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                db.closeConnection();
-
             }
-            catch (Exception E)
+            else
             {
-                Console.WriteLine(E.Message);
-                throw;
+                MessageBox.Show("Password is not match!", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void upload_btn_Click(object sender, EventArgs e)
+        {
+            string filepath = null;
+            OpenFileDialog ofdImages = new OpenFileDialog();
+            if (ofdImages.ShowDialog() == DialogResult.OK)
+            {
+                filepath = ofdImages.FileName;
+            }
+            pictureBox.Image = Image.FromFile(filepath.ToString());
+            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
         }
     }
 }

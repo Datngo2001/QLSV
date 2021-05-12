@@ -269,6 +269,7 @@ namespace QLSV.Entity
                 Word.Document document = winword.Documents.Add(ref missing, ref missing, ref missing, ref missing);
                 document = getWordDocument();
 
+
                 //var dialog = winword.Dialogs[Word.WdWordDialog.wdDialogFilePrint];
 
                 //int dialogResult = dialog.Show(ref missing);

@@ -38,12 +38,14 @@ namespace QLSV.AppForm
             this.Password_label = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.Title_pictureBox = new System.Windows.Forms.PictureBox();
-            this.ForgetPassword = new System.Windows.Forms.LinkLabel();
+            this.ForgetPassword_lb = new System.Windows.Forms.LinkLabel();
             this.register_lb = new System.Windows.Forms.LinkLabel();
             this.password_ttip = new System.Windows.Forms.ToolTip(this.components);
             this.username_ttip = new System.Windows.Forms.ToolTip(this.components);
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.student_rbtn = new System.Windows.Forms.RadioButton();
+            this.human_rbtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.Title_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
@@ -52,7 +54,7 @@ namespace QLSV.AppForm
             // Username_textBox
             // 
             this.errorProvider1.SetError(this.Username_textBox, "Hay nhap username");
-            this.Username_textBox.Location = new System.Drawing.Point(195, 110);
+            this.Username_textBox.Location = new System.Drawing.Point(195, 156);
             this.Username_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Username_textBox.Name = "Username_textBox";
             this.Username_textBox.Size = new System.Drawing.Size(242, 26);
@@ -63,7 +65,7 @@ namespace QLSV.AppForm
             // Password_textBox
             // 
             this.errorProvider2.SetError(this.Password_textBox, "Hay nhap password");
-            this.Password_textBox.Location = new System.Drawing.Point(195, 161);
+            this.Password_textBox.Location = new System.Drawing.Point(195, 207);
             this.Password_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Password_textBox.Name = "Password_textBox";
             this.Password_textBox.Size = new System.Drawing.Size(242, 26);
@@ -77,7 +79,7 @@ namespace QLSV.AppForm
             this.Login_button.BackColor = System.Drawing.Color.SpringGreen;
             this.Login_button.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Login_button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Login_button.Location = new System.Drawing.Point(256, 249);
+            this.Login_button.Location = new System.Drawing.Point(256, 295);
             this.Login_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Login_button.Name = "Login_button";
             this.Login_button.Size = new System.Drawing.Size(162, 57);
@@ -91,7 +93,7 @@ namespace QLSV.AppForm
             this.Cancel_button.BackColor = System.Drawing.Color.Tomato;
             this.Cancel_button.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Cancel_button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Cancel_button.Location = new System.Drawing.Point(33, 249);
+            this.Cancel_button.Location = new System.Drawing.Point(33, 295);
             this.Cancel_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(162, 57);
@@ -105,7 +107,7 @@ namespace QLSV.AppForm
             this.Username_Label.AutoSize = true;
             this.Username_Label.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Bold);
             this.Username_Label.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Username_Label.Location = new System.Drawing.Point(38, 104);
+            this.Username_Label.Location = new System.Drawing.Point(38, 150);
             this.Username_Label.Name = "Username_Label";
             this.Username_Label.Size = new System.Drawing.Size(157, 38);
             this.Username_Label.TabIndex = 4;
@@ -116,7 +118,7 @@ namespace QLSV.AppForm
             this.Password_label.AutoSize = true;
             this.Password_label.Font = new System.Drawing.Font("Segoe UI Black", 14F, System.Drawing.FontStyle.Bold);
             this.Password_label.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Password_label.Location = new System.Drawing.Point(38, 154);
+            this.Password_label.Location = new System.Drawing.Point(38, 200);
             this.Password_label.Name = "Password_label";
             this.Password_label.Size = new System.Drawing.Size(151, 38);
             this.Password_label.TabIndex = 5;
@@ -144,22 +146,22 @@ namespace QLSV.AppForm
             this.Title_pictureBox.TabIndex = 7;
             this.Title_pictureBox.TabStop = false;
             // 
-            // ForgetPassword
+            // ForgetPassword_lb
             // 
-            this.ForgetPassword.AutoSize = true;
-            this.ForgetPassword.LinkColor = System.Drawing.Color.White;
-            this.ForgetPassword.Location = new System.Drawing.Point(109, 198);
-            this.ForgetPassword.Name = "ForgetPassword";
-            this.ForgetPassword.Size = new System.Drawing.Size(175, 20);
-            this.ForgetPassword.TabIndex = 8;
-            this.ForgetPassword.TabStop = true;
-            this.ForgetPassword.Text = "Forgot your password ?";
+            this.ForgetPassword_lb.AutoSize = true;
+            this.ForgetPassword_lb.LinkColor = System.Drawing.Color.White;
+            this.ForgetPassword_lb.Location = new System.Drawing.Point(109, 244);
+            this.ForgetPassword_lb.Name = "ForgetPassword_lb";
+            this.ForgetPassword_lb.Size = new System.Drawing.Size(175, 20);
+            this.ForgetPassword_lb.TabIndex = 8;
+            this.ForgetPassword_lb.TabStop = true;
+            this.ForgetPassword_lb.Text = "Forgot your password ?";
             // 
             // register_lb
             // 
             this.register_lb.AutoSize = true;
             this.register_lb.LinkColor = System.Drawing.Color.White;
-            this.register_lb.Location = new System.Drawing.Point(109, 218);
+            this.register_lb.Location = new System.Drawing.Point(109, 264);
             this.register_lb.Name = "register_lb";
             this.register_lb.Size = new System.Drawing.Size(181, 20);
             this.register_lb.TabIndex = 8;
@@ -179,14 +181,43 @@ namespace QLSV.AppForm
             // 
             this.errorProvider2.ContainerControl = this;
             // 
+            // student_rbtn
+            // 
+            this.student_rbtn.AutoSize = true;
+            this.student_rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.student_rbtn.ForeColor = System.Drawing.Color.White;
+            this.student_rbtn.Location = new System.Drawing.Point(45, 111);
+            this.student_rbtn.Name = "student_rbtn";
+            this.student_rbtn.Size = new System.Drawing.Size(182, 29);
+            this.student_rbtn.TabIndex = 9;
+            this.student_rbtn.Text = "Student Manage";
+            this.student_rbtn.UseVisualStyleBackColor = true;
+            this.student_rbtn.CheckedChanged += new System.EventHandler(this.student_rbtn_CheckedChanged);
+            // 
+            // human_rbtn
+            // 
+            this.human_rbtn.AutoSize = true;
+            this.human_rbtn.Checked = true;
+            this.human_rbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.human_rbtn.ForeColor = System.Drawing.Color.White;
+            this.human_rbtn.Location = new System.Drawing.Point(256, 111);
+            this.human_rbtn.Name = "human_rbtn";
+            this.human_rbtn.Size = new System.Drawing.Size(188, 29);
+            this.human_rbtn.TabIndex = 9;
+            this.human_rbtn.TabStop = true;
+            this.human_rbtn.Text = "Human Resource";
+            this.human_rbtn.UseVisualStyleBackColor = true;
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.ClientSize = new System.Drawing.Size(497, 317);
+            this.ClientSize = new System.Drawing.Size(497, 363);
+            this.Controls.Add(this.human_rbtn);
+            this.Controls.Add(this.student_rbtn);
             this.Controls.Add(this.register_lb);
-            this.Controls.Add(this.ForgetPassword);
+            this.Controls.Add(this.ForgetPassword_lb);
             this.Controls.Add(this.Title_pictureBox);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.Password_label);
@@ -217,11 +248,13 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Label Password_label;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox Title_pictureBox;
-        private System.Windows.Forms.LinkLabel ForgetPassword;
+        private System.Windows.Forms.LinkLabel ForgetPassword_lb;
         private System.Windows.Forms.LinkLabel register_lb;
         private System.Windows.Forms.ToolTip password_ttip;
         private System.Windows.Forms.ToolTip username_ttip;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        public System.Windows.Forms.RadioButton human_rbtn;
+        public System.Windows.Forms.RadioButton student_rbtn;
     }
 }
