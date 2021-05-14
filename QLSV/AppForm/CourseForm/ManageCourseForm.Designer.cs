@@ -46,6 +46,8 @@
             this.listBoxCourse = new System.Windows.Forms.ListBox();
             this.labelTotalCourse = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.semester_tb = new System.Windows.Forms.TextBox();
+            this.semester_lb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +56,7 @@
             this.ID.AutoSize = true;
             this.ID.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ID.Location = new System.Drawing.Point(189, 55);
+            this.ID.Location = new System.Drawing.Point(189, 20);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(56, 36);
             this.ID.TabIndex = 0;
@@ -76,7 +78,7 @@
             this.HoursNumber.AutoSize = true;
             this.HoursNumber.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HoursNumber.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.HoursNumber.Location = new System.Drawing.Point(24, 222);
+            this.HoursNumber.Location = new System.Drawing.Point(24, 187);
             this.HoursNumber.Name = "HoursNumber";
             this.HoursNumber.Size = new System.Drawing.Size(231, 36);
             this.HoursNumber.TabIndex = 2;
@@ -87,7 +89,7 @@
             this.Label.AutoSize = true;
             this.Label.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Label.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.Label.Location = new System.Drawing.Point(146, 140);
+            this.Label.Location = new System.Drawing.Point(146, 105);
             this.Label.Name = "Label";
             this.Label.Size = new System.Drawing.Size(100, 36);
             this.Label.TabIndex = 3;
@@ -96,7 +98,7 @@
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Arial", 13F);
-            this.textBoxID.Location = new System.Drawing.Point(266, 55);
+            this.textBoxID.Location = new System.Drawing.Point(266, 20);
             this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(329, 37);
@@ -105,7 +107,7 @@
             // textBoxLabel
             // 
             this.textBoxLabel.Font = new System.Drawing.Font("Arial", 13F);
-            this.textBoxLabel.Location = new System.Drawing.Point(266, 140);
+            this.textBoxLabel.Location = new System.Drawing.Point(266, 105);
             this.textBoxLabel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxLabel.Name = "textBoxLabel";
             this.textBoxLabel.Size = new System.Drawing.Size(329, 37);
@@ -124,7 +126,7 @@
             // numericUpDown1
             // 
             this.numericUpDown1.Font = new System.Drawing.Font("Arial", 13F);
-            this.numericUpDown1.Location = new System.Drawing.Point(266, 222);
+            this.numericUpDown1.Location = new System.Drawing.Point(266, 187);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             24,
@@ -261,12 +263,33 @@
             this.label5.Text = "Ngô Minh Đạt 19110115";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
+            // semester_tb
+            // 
+            this.semester_tb.Font = new System.Drawing.Font("Arial", 13F);
+            this.semester_tb.Location = new System.Drawing.Point(266, 250);
+            this.semester_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.semester_tb.Name = "semester_tb";
+            this.semester_tb.Size = new System.Drawing.Size(329, 37);
+            this.semester_tb.TabIndex = 23;
+            // 
+            // semester_lb
+            // 
+            this.semester_lb.AutoSize = true;
+            this.semester_lb.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semester_lb.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.semester_lb.Location = new System.Drawing.Point(86, 251);
+            this.semester_lb.Name = "semester_lb";
+            this.semester_lb.Size = new System.Drawing.Size(159, 36);
+            this.semester_lb.TabIndex = 2;
+            this.semester_lb.Text = "Semester:";
+            // 
             // ManageCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1288, 798);
+            this.Controls.Add(this.semester_tb);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labelTotalCourse);
             this.Controls.Add(this.listBoxCourse);
@@ -282,6 +305,7 @@
             this.Controls.Add(this.textBoxLabel);
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.Label);
+            this.Controls.Add(this.semester_lb);
             this.Controls.Add(this.HoursNumber);
             this.Controls.Add(this.Description);
             this.Controls.Add(this.ID);
@@ -315,5 +339,7 @@
         private System.Windows.Forms.Label labelTotalCourse;
         private System.Windows.Forms.ListBox listBoxCourse;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox semester_tb;
+        private System.Windows.Forms.Label semester_lb;
     }
 }

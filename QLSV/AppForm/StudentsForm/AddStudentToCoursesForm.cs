@@ -56,10 +56,10 @@ namespace QLSV.AppForm.StudentsForm
             }
             else
             {
-                listBoxSelectedCourse.DataSource = student.getByID(Convert.ToInt32(comboBoxID.Text));
+                listBoxSelectedCourse.DataSource = student.GetSelectedCourses(Convert.ToInt32(comboBoxID.Text));
             }
-            listBoxSelectedCourse.ValueMember = "id";
-            listBoxSelectedCourse.DisplayMember = "selected_course";
+            listBoxSelectedCourse.ValueMember = "stdId";
+            listBoxSelectedCourse.DisplayMember = "courseId";
             listBoxSelectedCourse.SelectedItem = 0;
         }
 
@@ -77,43 +77,39 @@ namespace QLSV.AppForm.StudentsForm
             if (currSemester == "")
             {
                 MessageBox.Show("Choose semester", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
+                return;
+            }
+            if (student.GetSelectedCourses(currID) == null)
+            {
+                selectedCourse = "";
             }
             else
             {
-                if (student.GetSelectedCourses(currID) == null)
+                selectedCourse = student.GetSelectedCourses(currID);
+            }
+            if (student.CheckValidCourse(selectedCourse, validCourse))
+            {
+                if (selectedCourse == "")
                 {
-                    selectedCourse = "";
+                    selectedCourse += validCourse;
                 }
                 else
                 {
-                    selectedCourse = student.GetSelectedCourses(currID);
+                    selectedCourse += (", " + validCourse);
                 }
-                if (student.CheckValidCourse(selectedCourse, validCourse))
+                if (student.InsertSelectedCourse(currID, selectedCourse))
                 {
-                    if (selectedCourse == "")
-                    {
-                        selectedCourse += validCourse;
-                    }
-                    else
-                    {
-                        selectedCourse += (", " + validCourse);
-                    }
-
-                    if (student.InsertSelectedCourse(currID, selectedCourse))
-                    {
-                        MessageBox.Show("Insert Successfully ", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadListBoxSelectedCourse();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Insert Failed", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                    MessageBox.Show("Insert Successfully ", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadListBoxSelectedCourse();
                 }
                 else
                 {
-                    MessageBox.Show("Course Already Exists", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Insert Failed", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Course Already Exists", "Add Course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -139,12 +135,12 @@ namespace QLSV.AppForm.StudentsForm
 
         private void comboBoxID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listBoxSelectedCourse.DataSource = student.getByID(Convert.ToInt32(comboBoxID.Text));
+            listBoxSelectedCourse.DataSource = student.getByID(Convert.ToInt32(comboBoxID.Text.Trim()));
             listBoxSelectedCourse.ValueMember = "id";
             listBoxSelectedCourse.DisplayMember = "selected_course";
             listBoxSelectedCourse.SelectedItem = 0;
 
-            currID = Convert.ToInt32(comboBoxID.Text);
+            currID = Convert.ToInt32(comboBoxID.Text.Trim());
         }
     }
 }

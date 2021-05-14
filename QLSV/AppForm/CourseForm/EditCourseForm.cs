@@ -29,6 +29,7 @@ namespace QLSV.AppForm.CourseForm
                 course.Label = label_tb.Text;
                 course.Description = description_tb.Text;
                 course.Period = Convert.ToInt32(period_ud.Value);
+                course.Semester = semester_tb.Text;
 
                 if (course.UpdateThisCourse())
                 {
@@ -52,6 +53,7 @@ namespace QLSV.AppForm.CourseForm
                 int id = Convert.ToInt32(select_cb.Text);
                 course.getByID(id);
 
+                semester_tb.Text = course.Semester;
                 label_tb.Text = course.Label;
                 period_ud.Value = course.Period;
                 description_tb.Text = course.Description;

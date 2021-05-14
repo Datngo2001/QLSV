@@ -38,7 +38,8 @@ namespace QLSV.AppForm.CourseForm
             this.label_tb = new System.Windows.Forms.TextBox();
             this.description_tb = new System.Windows.Forms.RichTextBox();
             this.period_ud = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
+            this.comboBoxSemester = new System.Windows.Forms.ComboBox();
+            this.semester_lb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.period_ud)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +92,7 @@ namespace QLSV.AppForm.CourseForm
             this.add_btn.BackColor = System.Drawing.Color.Blue;
             this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.add_btn.Location = new System.Drawing.Point(179, 364);
+            this.add_btn.Location = new System.Drawing.Point(179, 404);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(355, 61);
             this.add_btn.TabIndex = 1;
@@ -142,33 +143,47 @@ namespace QLSV.AppForm.CourseForm
             0,
             0});
             // 
-            // label5
+            // comboBoxSemester
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(431, 151);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Ngô Minh Đạt 19110115";
+            this.comboBoxSemester.Font = new System.Drawing.Font("Arial", 13F);
+            this.comboBoxSemester.FormattingEnabled = true;
+            this.comboBoxSemester.Location = new System.Drawing.Point(201, 338);
+            this.comboBoxSemester.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxSemester.Name = "comboBoxSemester";
+            this.comboBoxSemester.Size = new System.Drawing.Size(333, 39);
+            this.comboBoxSemester.TabIndex = 12;
+            // 
+            // semester_lb
+            // 
+            this.semester_lb.AutoSize = true;
+            this.semester_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semester_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.semester_lb.Location = new System.Drawing.Point(66, 343);
+            this.semester_lb.Name = "semester_lb";
+            this.semester_lb.Size = new System.Drawing.Size(132, 29);
+            this.semester_lb.TabIndex = 0;
+            this.semester_lb.Text = "Semester:";
             // 
             // AddCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(721, 450);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(721, 477);
+            this.Controls.Add(this.comboBoxSemester);
             this.Controls.Add(this.period_ud);
             this.Controls.Add(this.description_tb);
             this.Controls.Add(this.label_tb);
             this.Controls.Add(this.id_tb);
             this.Controls.Add(this.add_btn);
+            this.Controls.Add(this.semester_lb);
             this.Controls.Add(this.desrciption_lb);
             this.Controls.Add(this.period_lb);
             this.Controls.Add(this.label_lb);
             this.Controls.Add(this.id_lb);
             this.Name = "AddCourseForm";
             this.Text = "AddCourseForm";
+            this.Load += new System.EventHandler(this.AddCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.period_ud)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -186,6 +201,7 @@ namespace QLSV.AppForm.CourseForm
         private System.Windows.Forms.TextBox label_tb;
         private System.Windows.Forms.RichTextBox description_tb;
         private System.Windows.Forms.NumericUpDown period_ud;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBoxSemester;
+        private System.Windows.Forms.Label semester_lb;
     }
 }

@@ -38,7 +38,8 @@ namespace QLSV.AppForm.CourseForm
             this.period_ud = new System.Windows.Forms.NumericUpDown();
             this.description_tb = new System.Windows.Forms.RichTextBox();
             this.edit_btn = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.semester_tb = new System.Windows.Forms.TextBox();
+            this.semester_lb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.period_ud)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,7 +81,7 @@ namespace QLSV.AppForm.CourseForm
             this.description_lb.AutoSize = true;
             this.description_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.description_lb.Location = new System.Drawing.Point(72, 263);
+            this.description_lb.Location = new System.Drawing.Point(73, 309);
             this.description_lb.Name = "description_lb";
             this.description_lb.Size = new System.Drawing.Size(153, 29);
             this.description_lb.TabIndex = 0;
@@ -115,7 +116,7 @@ namespace QLSV.AppForm.CourseForm
             // description_tb
             // 
             this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_tb.Location = new System.Drawing.Point(231, 260);
+            this.description_tb.Location = new System.Drawing.Point(232, 306);
             this.description_tb.Name = "description_tb";
             this.description_tb.Size = new System.Drawing.Size(352, 148);
             this.description_tb.TabIndex = 4;
@@ -126,7 +127,7 @@ namespace QLSV.AppForm.CourseForm
             this.edit_btn.BackColor = System.Drawing.Color.Blue;
             this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_btn.ForeColor = System.Drawing.Color.White;
-            this.edit_btn.Location = new System.Drawing.Point(156, 452);
+            this.edit_btn.Location = new System.Drawing.Point(157, 498);
             this.edit_btn.Name = "edit_btn";
             this.edit_btn.Size = new System.Drawing.Size(344, 67);
             this.edit_btn.TabIndex = 5;
@@ -134,28 +135,40 @@ namespace QLSV.AppForm.CourseForm
             this.edit_btn.UseVisualStyleBackColor = false;
             this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
-            // label5
+            // semester_tb
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(60, 411);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 20);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Ngô Minh Đạt 19110115";
+            this.semester_tb.Font = new System.Drawing.Font("Arial", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semester_tb.Location = new System.Drawing.Point(232, 251);
+            this.semester_tb.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.semester_tb.Name = "semester_tb";
+            this.semester_tb.Size = new System.Drawing.Size(351, 37);
+            this.semester_tb.TabIndex = 14;
+            // 
+            // semester_lb
+            // 
+            this.semester_lb.AutoSize = true;
+            this.semester_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.semester_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.semester_lb.Location = new System.Drawing.Point(93, 256);
+            this.semester_lb.Name = "semester_lb";
+            this.semester_lb.Size = new System.Drawing.Size(132, 29);
+            this.semester_lb.TabIndex = 0;
+            this.semester_lb.Text = "Semester:";
             // 
             // EditCourseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(639, 554);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(639, 610);
+            this.Controls.Add(this.semester_tb);
             this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.description_tb);
             this.Controls.Add(this.period_ud);
             this.Controls.Add(this.label_tb);
             this.Controls.Add(this.select_cb);
             this.Controls.Add(this.description_lb);
+            this.Controls.Add(this.semester_lb);
             this.Controls.Add(this.period_lb);
             this.Controls.Add(this.label_lb);
             this.Controls.Add(this.select_lb);
@@ -178,6 +191,7 @@ namespace QLSV.AppForm.CourseForm
         private System.Windows.Forms.NumericUpDown period_ud;
         private System.Windows.Forms.RichTextBox description_tb;
         private System.Windows.Forms.Button edit_btn;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox semester_tb;
+        private System.Windows.Forms.Label semester_lb;
     }
 }

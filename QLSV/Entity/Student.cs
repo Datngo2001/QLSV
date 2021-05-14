@@ -404,7 +404,7 @@ namespace QLSV.Entity
         {
             try
             {
-                string query = $"SELECT selected_course FROM Student WHERE id={id}";
+                string query = $"SELECT courseId FROM Student_Courses WHERE stdId={id}";
                 SqlCommand command = new SqlCommand();
                 command.CommandText = query;
                 return this.getByComand(command).Rows[0].Field<string>(0);
@@ -431,10 +431,11 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("UPDATE Students_info SET selected_course=@course WHERE id=@id", db.Connection);
+                SqlCommand command = new SqlCommand("Insert into Student_Courses (stdId, courseId) " +
+                                                     "values (stdId = @stdId, courseId = @courseId)", db.Connection);
 
-                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                command.Parameters.Add("@course", SqlDbType.NVarChar).Value = course;
+                command.Parameters.Add("@stdId", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@courseId", SqlDbType.NVarChar).Value = course;
 
                 db.openConnection();
                 if (command.ExecuteNonQuery() == 1)

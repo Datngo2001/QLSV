@@ -60,8 +60,9 @@ namespace QLSV.AppForm.CourseForm
             string label = textBoxLabel.Text;
             int hour = (int)numericUpDown1.Value;
             string description = textBoxDescription.Text;
+            string semester = semester_tb.Text; 
 
-            if (course.UpdateCourse(id, label, hour, description))
+            if (course.UpdateCourse(id, label, hour, description, semester))
             {
                 MessageBox.Show("Course Updated", "Edit Course", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
