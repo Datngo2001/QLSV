@@ -185,6 +185,7 @@ namespace QLSV.AppForm.StudentsForm
             this.showResult_dgv.RowTemplate.Height = 28;
             this.showResult_dgv.Size = new System.Drawing.Size(1001, 662);
             this.showResult_dgv.TabIndex = 28;
+            this.showResult_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showResult_dgv_CellContentClick);
             this.showResult_dgv.DoubleClick += new System.EventHandler(this.showResult_dgv_DoubleClick);
             // 
             // Search_tb

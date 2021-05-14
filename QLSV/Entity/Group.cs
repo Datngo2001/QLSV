@@ -8,12 +8,11 @@ namespace QLSV.Entity
     {
         DataBase db = new DataBase();
 
-        public bool InsertGroup(int id, string name, int user_id)
+        public bool InsertGroup(string name, int user_id)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO [Group] (id, name, user_id) " +
-                                                "VALUES (@id, @name, @user_id)", db.Connection);
+            SqlCommand command = new SqlCommand("INSERT INTO [Group] (name, user_id) " +
+                                                "VALUES (@name, @user_id)", db.Connection);
 
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@name", SqlDbType.Text).Value = name;
             command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
             
@@ -58,56 +57,75 @@ namespace QLSV.Entity
 
         public bool DeleteGroup(int id, int user_id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM [Group] WHERE id=@id AND user_id=@user_id", db.Connection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-            command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
+            try
+            {
+                SqlCommand command1 = new SqlCommand("DELETE FROM Contact WHERE [group] = 1", db.Connection);
+                command1.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
-            db.openConnection();
-            if (command.ExecuteNonQuery() == 1)
-            {
-                db.closeConnection();
-                return true;
+                SqlCommand command2 = new SqlCommand("DELETE FROM [Group] WHERE id=@id AND user_id=@user_id", db.Connection);
+                command2.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command2.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
+
+                db.openConnection();
+
+                command1.ExecuteNonQuery();
+
+                if (command2.ExecuteNonQuery() == 1)
+                {
+                    db.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    db.closeConnection();
+                    return false;
+                }
             }
-            else
+            catch (System.Exception)
             {
-                db.closeConnection();
-                return false;
+
+                throw;
             }
         }
 
-        public bool CheckGroupExist(string name, string operation, int id = 0, int user_id = 0)
+        public bool CheckGroupExist(string name, string operation)
         {
-            string query = "";
-            SqlCommand command = new SqlCommand();
-
-            if (operation == "add")
+            try
             {
-                query = "SELECT * FROM [Group] WHERE CAST(name AS NVARCHAR) = @name AND user_id = @user_id";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
-                command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
+                string query = "";
+                SqlCommand command = new SqlCommand();
+
+                if (operation == "add")
+                {
+                    query = "SELECT * FROM [Group] WHERE CAST(name AS NVARCHAR) = @name";
+                    command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                }
+                else if (operation == "edit")
+                {
+                    query = "SELECT * FROM [Group] WHERE CAST(name AS NVARCHAR) = @name";
+                    command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
+                }
+
+                command.Connection = db.Connection;
+                command.CommandText = query;
+
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+
+                if (table.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
-            else if (operation == "edit")
+            catch (System.Exception)
             {
-                query = "SELECT * FROM [Group] WHERE CAST(name AS NVARCHAR) = @name AND user_id = @user_id AND id <> @id";
-                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
-                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
-            }
 
-            command.Connection = db.Connection;
-            command.CommandText = query;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            if (table.Rows.Count > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
+                throw;
             }
         }
 

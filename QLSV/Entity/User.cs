@@ -52,13 +52,13 @@ namespace QLSV.Entity
                 return false;
             }
         }
-        public bool signin(string Username, string Password, string id, string fname, string lname, Image image)
+        public bool signin(string Username, string Password, string fname, string lname, Image image)
         {
             try
             {
                 SqlCommand insertCommand = new SqlCommand(
-                    "INSERT INTO Users (UserName, Password, id, fname, lname, pic)" +
-                    "VALUES (@username, @password, @id, @fname, @lname, @pic)"
+                    "INSERT INTO Users (UserName, Password, fname, lname, pic)" +
+                    "VALUES (@username, @password, @fname, @lname, @pic)"
                     , db.Connection);
 
 
@@ -68,7 +68,6 @@ namespace QLSV.Entity
                 {
                     insertCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = Username;
                     insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
-                    insertCommand.Parameters.Add("@id", SqlDbType.NVarChar).Value = id;
                     insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
                     insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
                     insertCommand.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(image).toByteArray();

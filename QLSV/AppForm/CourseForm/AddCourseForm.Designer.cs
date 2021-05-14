@@ -156,7 +156,7 @@ namespace QLSV.AppForm.CourseForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(734, 450);
+            this.ClientSize = new System.Drawing.Size(721, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.period_ud);
             this.Controls.Add(this.description_tb);

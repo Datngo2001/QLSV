@@ -72,5 +72,10 @@ namespace QLSV.AppForm.StudentsForm
                 throw;
             }
         }
+
+        private void showResult_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

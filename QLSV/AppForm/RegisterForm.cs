@@ -25,7 +25,7 @@ namespace QLSV.AppForm
             {
                 if(user.CheckUserName(username_tb.Text) == true)
                 {
-                    if(user.signin(username_tb.Text, password_tb.Text, id_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image) == true)
+                    if(user.signin(username_tb.Text, password_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image) == true)
                     {
                         MessageBox.Show("Complete!", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();

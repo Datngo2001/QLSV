@@ -25,9 +25,14 @@ namespace QLSV.AppForm
                                     ")";
             labelName.Text = user.GetUserFullNameByID(id);
 
-            pictureBoxContact.Image = new Picture().ByteArrToImage((byte[])user.GetUserByID(id).Rows[0]["picture"]);
+            //if (user.GetUserByID(id).Rows[0]["pic"] != System.DBNull.Value)
+            //    pictureBoxContact.Image = new Picture().ByteArrToImage((byte[])user.GetUserByID(id).Rows[0]["pic"]);
+
+            pictureBoxContact.Image = CurrentUser.Avatar;
 
             this.ReloadComboBox();
+            comboBoxSelected.SelectedIndex = -1;
+            comboBoxSelected2.SelectedIndex = -1;
         }
 
         private void ReloadComboBox()
@@ -97,16 +102,14 @@ namespace QLSV.AppForm
         {
             try
             {
-                int id = Convert.ToInt32(textBoxGroupID.Text);
                 string name = textBoxGroupName.Text;
                 int user_id = CurrentUser.Id;
 
-                if (!(group.CheckGroupExist(name, "add", id, user_id)))
+                if (!(group.CheckGroupExist(name, "add")))
                 {
-                    if (group.InsertGroup(id, name, user_id))
+                    if (group.InsertGroup(name, user_id))
                     {
                         MessageBox.Show("Insert Successfully", "Insert Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        textBoxGroupID.Text = "";
                         textBoxGroupName.Text = "";
                     }
                     else
@@ -118,6 +121,7 @@ namespace QLSV.AppForm
                 {
                     MessageBox.Show("Group Already Exists", "Insert Group", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                refresh();
             }
             catch
             {
@@ -135,7 +139,7 @@ namespace QLSV.AppForm
                 string name = textBoxNewName.Text.Trim();
                 int user_id = CurrentUser.Id;
 
-                if (!(group.CheckGroupExist(name, "edit", id, user_id)))
+                if (!(group.CheckGroupExist(name, "edit")))
                 {
                     if (group.UpdateGroup(id, name, user_id))
                     {
@@ -152,6 +156,7 @@ namespace QLSV.AppForm
                 {
                     MessageBox.Show("Group Already Exists", "Edit Group", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
+                refresh();
             }
             catch
             {
@@ -165,6 +170,7 @@ namespace QLSV.AppForm
             try
             {
                 int idx = comboBoxSelected2.SelectedIndex;
+                if (idx < 0) return;
                 int id = Convert.ToInt32(group.GetAllGroup().Rows[idx][0]);
                 int user_id = CurrentUser.Id;
 
@@ -177,6 +183,7 @@ namespace QLSV.AppForm
                 {
                     MessageBox.Show("Error", "Remove Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
+                refresh();
             }
             catch
             {
@@ -192,9 +199,13 @@ namespace QLSV.AppForm
 
         private void linkLabelRefresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            refresh();
+        }
+
+        private void refresh()
+        {
             this.ReloadComboBox();
             textBoxContactID.Text = "";
-            textBoxGroupID.Text = "";
             textBoxGroupName.Text = "";
             textBoxNewName.Text = "";
             comboBoxSelected.Text = "";

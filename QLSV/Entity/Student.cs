@@ -217,7 +217,6 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
-
         public bool InsertThisStudent()
         {
             DataBase mydb = new DataBase();
@@ -386,6 +385,78 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
 
+        }
+        public DataTable GetAllStudent()
+        {
+            try
+            {
+                SqlCommand command = new SqlCommand();
+                command.CommandText = "SELECT * FROM Students_info";
+                return this.getByComand(command);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public string GetSelectedCourses(int id)
+        {
+            try
+            {
+                string query = $"SELECT selected_course FROM Student WHERE id={id}";
+                SqlCommand command = new SqlCommand();
+                command.CommandText = query;
+                return this.getByComand(command).Rows[0].Field<string>(0);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool CheckValidCourse(string selectedCourse, string currCourse)
+        {
+            if (selectedCourse.Contains(currCourse))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        public bool InsertSelectedCourse(int id, string course)
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand("UPDATE Students_info SET selected_course=@course WHERE id=@id", db.Connection);
+
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@course", SqlDbType.NVarChar).Value = course;
+
+                db.openConnection();
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    db.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    db.closeConnection();
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
         }
     }
 }

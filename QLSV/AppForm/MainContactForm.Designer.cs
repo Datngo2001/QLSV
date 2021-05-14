@@ -39,12 +39,10 @@ namespace QLSV.AppForm
             this.labelNewGroup = new System.Windows.Forms.Label();
             this.labelSelectGoup = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBoxGroupID = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonAddGroup = new System.Windows.Forms.Button();
             this.textBoxGroupName = new System.Windows.Forms.TextBox();
             this.labelGroupID = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonShowList = new System.Windows.Forms.Button();
             this.labelContact = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -173,7 +171,7 @@ namespace QLSV.AppForm
             this.groupBox4.Controls.Add(this.textBoxNewName);
             this.groupBox4.Controls.Add(this.labelNewGroup);
             this.groupBox4.Controls.Add(this.labelSelectGoup);
-            this.groupBox4.Location = new System.Drawing.Point(597, 396);
+            this.groupBox4.Location = new System.Drawing.Point(597, 386);
             this.groupBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -181,70 +179,52 @@ namespace QLSV.AppForm
             this.groupBox4.TabIndex = 22;
             this.groupBox4.TabStop = false;
             // 
-            // textBoxGroupID
+            // groupBox3
             // 
-            this.textBoxGroupID.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxGroupID.Location = new System.Drawing.Point(235, 14);
-            this.textBoxGroupID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxGroupID.Name = "textBoxGroupID";
-            this.textBoxGroupID.Size = new System.Drawing.Size(205, 38);
-            this.textBoxGroupID.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(105, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(119, 26);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Group ID:";
+            this.groupBox3.Controls.Add(this.buttonAddGroup);
+            this.groupBox3.Controls.Add(this.textBoxGroupName);
+            this.groupBox3.Controls.Add(this.labelGroupID);
+            this.groupBox3.Location = new System.Drawing.Point(599, 279);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox3.Size = new System.Drawing.Size(595, 82);
+            this.groupBox3.TabIndex = 21;
+            this.groupBox3.TabStop = false;
             // 
             // buttonAddGroup
             // 
+            this.buttonAddGroup.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.buttonAddGroup.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAddGroup.Location = new System.Drawing.Point(447, 38);
+            this.buttonAddGroup.Location = new System.Drawing.Point(443, 22);
             this.buttonAddGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAddGroup.Name = "buttonAddGroup";
-            this.buttonAddGroup.Size = new System.Drawing.Size(142, 48);
-            this.buttonAddGroup.TabIndex = 11;
+            this.buttonAddGroup.Size = new System.Drawing.Size(142, 38);
+            this.buttonAddGroup.TabIndex = 14;
             this.buttonAddGroup.Text = "Add";
             this.buttonAddGroup.UseVisualStyleBackColor = true;
             this.buttonAddGroup.Click += new System.EventHandler(this.buttonAddGroup_Click);
             // 
             // textBoxGroupName
             // 
+            this.textBoxGroupName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.textBoxGroupName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxGroupName.Location = new System.Drawing.Point(234, 72);
+            this.textBoxGroupName.Location = new System.Drawing.Point(232, 22);
             this.textBoxGroupName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxGroupName.Name = "textBoxGroupName";
             this.textBoxGroupName.Size = new System.Drawing.Size(205, 38);
-            this.textBoxGroupName.TabIndex = 8;
+            this.textBoxGroupName.TabIndex = 13;
             // 
             // labelGroupID
             // 
+            this.labelGroupID.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelGroupID.AutoSize = true;
             this.labelGroupID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelGroupID.Location = new System.Drawing.Point(7, 80);
+            this.labelGroupID.Location = new System.Drawing.Point(9, 30);
             this.labelGroupID.Name = "labelGroupID";
             this.labelGroupID.Size = new System.Drawing.Size(217, 26);
-            this.labelGroupID.TabIndex = 1;
+            this.labelGroupID.TabIndex = 12;
             this.labelGroupID.Text = "Enter Group Name:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.textBoxGroupID);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.buttonAddGroup);
-            this.groupBox3.Controls.Add(this.textBoxGroupName);
-            this.groupBox3.Controls.Add(this.labelGroupID);
-            this.groupBox3.Location = new System.Drawing.Point(597, 267);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(595, 121);
-            this.groupBox3.TabIndex = 21;
-            this.groupBox3.TabStop = false;
             // 
             // buttonShowList
             // 
@@ -496,11 +476,6 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Label labelNewGroup;
         private System.Windows.Forms.Label labelSelectGoup;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.TextBox textBoxGroupID;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button buttonAddGroup;
-        private System.Windows.Forms.TextBox textBoxGroupName;
-        private System.Windows.Forms.Label labelGroupID;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonShowList;
         private System.Windows.Forms.Label labelContact;
@@ -519,5 +494,8 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Button buttonEditContact;
         private System.Windows.Forms.Button buttonAddContact;
         private System.Windows.Forms.Label labelGroup;
+        private System.Windows.Forms.Button buttonAddGroup;
+        private System.Windows.Forms.TextBox textBoxGroupName;
+        private System.Windows.Forms.Label labelGroupID;
     }
 }

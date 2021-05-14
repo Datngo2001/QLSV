@@ -39,7 +39,6 @@ namespace QLSV.AppForm.ContactForm
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxLname = new System.Windows.Forms.TextBox();
             this.textBoxFname = new System.Windows.Forms.TextBox();
-            this.textBoxID = new System.Windows.Forms.TextBox();
             this.labelPicture = new System.Windows.Forms.Label();
             this.labelAddress = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
@@ -47,7 +46,6 @@ namespace QLSV.AppForm.ContactForm
             this.labelGroup = new System.Windows.Forms.Label();
             this.labelLname = new System.Windows.Forms.Label();
             this.labelFname = new System.Windows.Forms.Label();
-            this.labelID = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +54,7 @@ namespace QLSV.AppForm.ContactForm
             // 
             this.comboBoxGroup.Font = new System.Drawing.Font("Arial", 12F);
             this.comboBoxGroup.FormattingEnabled = true;
-            this.comboBoxGroup.Location = new System.Drawing.Point(190, 268);
+            this.comboBoxGroup.Location = new System.Drawing.Point(190, 212);
             this.comboBoxGroup.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.comboBoxGroup.Name = "comboBoxGroup";
             this.comboBoxGroup.Size = new System.Drawing.Size(319, 35);
@@ -67,7 +65,7 @@ namespace QLSV.AppForm.ContactForm
             this.buttonCancel.BackColor = System.Drawing.Color.Red;
             this.buttonCancel.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonCancel.Location = new System.Drawing.Point(300, 972);
+            this.buttonCancel.Location = new System.Drawing.Point(301, 916);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(209, 65);
@@ -81,7 +79,7 @@ namespace QLSV.AppForm.ContactForm
             this.buttonAdd.BackColor = System.Drawing.Color.Lime;
             this.buttonAdd.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
-            this.buttonAdd.Location = new System.Drawing.Point(26, 972);
+            this.buttonAdd.Location = new System.Drawing.Point(28, 916);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(209, 65);
@@ -93,7 +91,7 @@ namespace QLSV.AppForm.ContactForm
             // buttonUpload
             // 
             this.buttonUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpload.Location = new System.Drawing.Point(190, 912);
+            this.buttonUpload.Location = new System.Drawing.Point(189, 857);
             this.buttonUpload.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.buttonUpload.Name = "buttonUpload";
             this.buttonUpload.Size = new System.Drawing.Size(320, 38);
@@ -105,7 +103,7 @@ namespace QLSV.AppForm.ContactForm
             // pictureContact
             // 
             this.pictureContact.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureContact.Location = new System.Drawing.Point(190, 671);
+            this.pictureContact.Location = new System.Drawing.Point(190, 615);
             this.pictureContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureContact.Name = "pictureContact";
             this.pictureContact.Size = new System.Drawing.Size(320, 234);
@@ -116,7 +114,7 @@ namespace QLSV.AppForm.ContactForm
             // textBoxPhone
             // 
             this.textBoxPhone.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPhone.Location = new System.Drawing.Point(190, 341);
+            this.textBoxPhone.Location = new System.Drawing.Point(190, 285);
             this.textBoxPhone.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(319, 35);
@@ -125,7 +123,7 @@ namespace QLSV.AppForm.ContactForm
             // textBoxEmail
             // 
             this.textBoxEmail.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEmail.Location = new System.Drawing.Point(190, 420);
+            this.textBoxEmail.Location = new System.Drawing.Point(190, 364);
             this.textBoxEmail.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(319, 35);
@@ -134,7 +132,7 @@ namespace QLSV.AppForm.ContactForm
             // textBoxAddress
             // 
             this.textBoxAddress.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAddress.Location = new System.Drawing.Point(190, 499);
+            this.textBoxAddress.Location = new System.Drawing.Point(190, 443);
             this.textBoxAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxAddress.Multiline = true;
             this.textBoxAddress.Name = "textBoxAddress";
@@ -144,7 +142,7 @@ namespace QLSV.AppForm.ContactForm
             // textBoxLname
             // 
             this.textBoxLname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLname.Location = new System.Drawing.Point(190, 195);
+            this.textBoxLname.Location = new System.Drawing.Point(190, 139);
             this.textBoxLname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxLname.Name = "textBoxLname";
             this.textBoxLname.Size = new System.Drawing.Size(319, 35);
@@ -153,27 +151,18 @@ namespace QLSV.AppForm.ContactForm
             // textBoxFname
             // 
             this.textBoxFname.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxFname.Location = new System.Drawing.Point(190, 128);
+            this.textBoxFname.Location = new System.Drawing.Point(190, 72);
             this.textBoxFname.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxFname.Name = "textBoxFname";
             this.textBoxFname.Size = new System.Drawing.Size(319, 35);
             this.textBoxFname.TabIndex = 31;
-            // 
-            // textBoxID
-            // 
-            this.textBoxID.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxID.Location = new System.Drawing.Point(191, 69);
-            this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBoxID.Name = "textBoxID";
-            this.textBoxID.Size = new System.Drawing.Size(319, 35);
-            this.textBoxID.TabIndex = 30;
             // 
             // labelPicture
             // 
             this.labelPicture.AutoSize = true;
             this.labelPicture.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPicture.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelPicture.Location = new System.Drawing.Point(67, 671);
+            this.labelPicture.Location = new System.Drawing.Point(67, 615);
             this.labelPicture.Name = "labelPicture";
             this.labelPicture.Size = new System.Drawing.Size(110, 32);
             this.labelPicture.TabIndex = 29;
@@ -184,7 +173,7 @@ namespace QLSV.AppForm.ContactForm
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelAddress.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelAddress.Location = new System.Drawing.Point(52, 499);
+            this.labelAddress.Location = new System.Drawing.Point(52, 443);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(126, 32);
             this.labelAddress.TabIndex = 28;
@@ -195,7 +184,7 @@ namespace QLSV.AppForm.ContactForm
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelEmail.Location = new System.Drawing.Point(84, 424);
+            this.labelEmail.Location = new System.Drawing.Point(84, 368);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(93, 32);
             this.labelEmail.TabIndex = 27;
@@ -206,7 +195,7 @@ namespace QLSV.AppForm.ContactForm
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPhone.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelPhone.Location = new System.Drawing.Point(72, 345);
+            this.labelPhone.Location = new System.Drawing.Point(72, 289);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(104, 32);
             this.labelPhone.TabIndex = 26;
@@ -217,7 +206,7 @@ namespace QLSV.AppForm.ContactForm
             this.labelGroup.AutoSize = true;
             this.labelGroup.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelGroup.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelGroup.Location = new System.Drawing.Point(75, 272);
+            this.labelGroup.Location = new System.Drawing.Point(75, 216);
             this.labelGroup.Name = "labelGroup";
             this.labelGroup.Size = new System.Drawing.Size(101, 32);
             this.labelGroup.TabIndex = 25;
@@ -228,7 +217,7 @@ namespace QLSV.AppForm.ContactForm
             this.labelLname.AutoSize = true;
             this.labelLname.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelLname.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelLname.Location = new System.Drawing.Point(22, 199);
+            this.labelLname.Location = new System.Drawing.Point(22, 143);
             this.labelLname.Name = "labelLname";
             this.labelLname.Size = new System.Drawing.Size(158, 32);
             this.labelLname.TabIndex = 24;
@@ -239,22 +228,11 @@ namespace QLSV.AppForm.ContactForm
             this.labelFname.AutoSize = true;
             this.labelFname.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelFname.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelFname.Location = new System.Drawing.Point(20, 128);
+            this.labelFname.Location = new System.Drawing.Point(20, 72);
             this.labelFname.Name = "labelFname";
             this.labelFname.Size = new System.Drawing.Size(159, 32);
             this.labelFname.TabIndex = 23;
             this.labelFname.Text = "First Name:";
-            // 
-            // labelID
-            // 
-            this.labelID.AutoSize = true;
-            this.labelID.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelID.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelID.Location = new System.Drawing.Point(25, 69);
-            this.labelID.Name = "labelID";
-            this.labelID.Size = new System.Drawing.Size(155, 32);
-            this.labelID.TabIndex = 22;
-            this.labelID.Text = "Contact ID:";
             // 
             // label1
             // 
@@ -271,8 +249,9 @@ namespace QLSV.AppForm.ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(530, 1050);
+            this.ClientSize = new System.Drawing.Size(530, 990);
             this.Controls.Add(this.comboBoxGroup);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAdd);
@@ -283,7 +262,6 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.textBoxAddress);
             this.Controls.Add(this.textBoxLname);
             this.Controls.Add(this.textBoxFname);
-            this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelPicture);
             this.Controls.Add(this.labelAddress);
             this.Controls.Add(this.labelEmail);
@@ -291,10 +269,10 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.labelGroup);
             this.Controls.Add(this.labelLname);
             this.Controls.Add(this.labelFname);
-            this.Controls.Add(this.labelID);
             this.Controls.Add(this.label1);
             this.Name = "AddContactForm";
             this.Text = "AddContactForm";
+            this.Load += new System.EventHandler(this.AddContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -313,7 +291,6 @@ namespace QLSV.AppForm.ContactForm
         private System.Windows.Forms.TextBox textBoxAddress;
         private System.Windows.Forms.TextBox textBoxLname;
         private System.Windows.Forms.TextBox textBoxFname;
-        private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label labelPicture;
         private System.Windows.Forms.Label labelAddress;
         private System.Windows.Forms.Label labelEmail;
@@ -321,7 +298,6 @@ namespace QLSV.AppForm.ContactForm
         private System.Windows.Forms.Label labelGroup;
         private System.Windows.Forms.Label labelLname;
         private System.Windows.Forms.Label labelFname;
-        private System.Windows.Forms.Label labelID;
         private System.Windows.Forms.Label label1;
     }
 }

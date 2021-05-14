@@ -286,6 +286,7 @@ namespace QLSV.AppForm.ContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(556, 1016);
             this.Controls.Add(this.comboBoxGroup);
@@ -311,6 +312,7 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.labelEdit);
             this.Name = "EditContactForm";
             this.Text = "EditContactForm";
+            this.Load += new System.EventHandler(this.EditContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

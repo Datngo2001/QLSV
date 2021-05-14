@@ -47,6 +47,7 @@ namespace QLSV.AppForm.ResultForm
             this.fname_lb = new System.Windows.Forms.Label();
             this.id_lb = new System.Windows.Forms.Label();
             this.showResult_dgv = new System.Windows.Forms.DataGridView();
+            this.refresh_llb = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.title_pn.SuspendLayout();
             this.textBox_pn.SuspendLayout();
@@ -86,6 +87,7 @@ namespace QLSV.AppForm.ResultForm
             this.cancel_btn.TabIndex = 0;
             this.cancel_btn.Text = "Cancel";
             this.cancel_btn.UseVisualStyleBackColor = true;
+            this.cancel_btn.Click += new System.EventHandler(this.cancel_btn_Click_1);
             // 
             // print_btn
             // 
@@ -100,6 +102,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             // title_pn
             // 
+            this.title_pn.Controls.Add(this.refresh_llb);
             this.title_pn.Controls.Add(this.title_lb);
             this.title_pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.title_pn.Location = new System.Drawing.Point(455, 0);
@@ -162,6 +165,7 @@ namespace QLSV.AppForm.ResultForm
             this.search_btn.TabIndex = 30;
             this.search_btn.Text = "Search";
             this.search_btn.UseVisualStyleBackColor = true;
+            this.search_btn.Click += new System.EventHandler(this.search_btn_Click);
             // 
             // search_lb
             // 
@@ -246,6 +250,18 @@ namespace QLSV.AppForm.ResultForm
             this.showResult_dgv.Size = new System.Drawing.Size(1014, 347);
             this.showResult_dgv.TabIndex = 31;
             // 
+            // refresh_llb
+            // 
+            this.refresh_llb.AutoSize = true;
+            this.refresh_llb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh_llb.Location = new System.Drawing.Point(923, 24);
+            this.refresh_llb.Name = "refresh_llb";
+            this.refresh_llb.Size = new System.Drawing.Size(79, 25);
+            this.refresh_llb.TabIndex = 20;
+            this.refresh_llb.TabStop = true;
+            this.refresh_llb.Text = "Refresh";
+            this.refresh_llb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.refresh_llb_LinkClicked);
+            // 
             // AvgResultScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -289,5 +305,6 @@ namespace QLSV.AppForm.ResultForm
         private System.Windows.Forms.Label fname_lb;
         private System.Windows.Forms.Label id_lb;
         private System.Windows.Forms.DataGridView showResult_dgv;
+        private System.Windows.Forms.LinkLabel refresh_llb;
     }
 }

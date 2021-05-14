@@ -28,18 +28,20 @@ namespace QLSV.Entity
             }
         }
         public string Description { get; set; }
+        public string Semester { get; set; }
         public bool AddThisCourse()
         {
             DataBase mydb = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Courses (Id, label, period, description)" +
-                    "VALUES (@Id, @label, @period, @desciption)", mydb.Connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Courses (Id, label, period, description, semester)" +
+                    "VALUES (@Id, @label, @period, @desciption, @semester)", mydb.Connection);
 
                 command.Parameters.Add("@Id", SqlDbType.Int).Value = Id;
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = Label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = Period;
                 command.Parameters.Add("@desciption", SqlDbType.Text).Value = Description;
+                command.Parameters.Add("@semester", SqlDbType.VarChar).Value = Semester;
 
                 mydb.openConnection();
 
@@ -75,6 +77,7 @@ namespace QLSV.Entity
                     " SET " +
                     "label = @label," +
                     "period = @period," +
+                    "semester = @semester" +
                     "description = @description" +
                     " WHERE id = @ID"
                     , dataBase.Connection);
@@ -82,6 +85,7 @@ namespace QLSV.Entity
                 command.Parameters.Add("@period", SqlDbType.Int).Value = Period;
                 command.Parameters.Add("@description", SqlDbType.Text).Value = Description;
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
+                command.Parameters.Add("@semester", SqlDbType.VarChar).Value = Semester;
 
                 dataBase.openConnection();
                 if (command.ExecuteNonQuery() == 1)
@@ -237,18 +241,19 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
-        public bool InsertCourse(int id, string label, int period, string description)
+        public bool InsertCourse(int id, string label, int period, string description, string semester)
         {
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Course (id, label, period, description) "
-                                  + "VALUES (@id, @label, @period, @description)", db.Connection);
+                SqlCommand command = new SqlCommand("INSERT INTO Course (id, label, period, description, semester) "
+                                  + "VALUES (@id, @label, @period, @description, @semester)", db.Connection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 command.Parameters.Add("@label", SqlDbType.VarChar).Value = label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = period;
                 command.Parameters.Add("@description", SqlDbType.Text).Value = description;
+                command.Parameters.Add("@semester", SqlDbType.VarChar).Value = semester;
 
                 db.openConnection();
                 if (command.ExecuteNonQuery() == 1)
@@ -336,7 +341,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-        public bool UpdateCourse(int id, string label, int period, string description)
+        public bool UpdateCourse(int id, string label, int period, string description, string semester)
         {
             DataBase db = new DataBase();
             try
@@ -354,6 +359,7 @@ namespace QLSV.Entity
                 command.Parameters.Add("@period", SqlDbType.Int).Value = period;
                 command.Parameters.Add("@description", SqlDbType.Text).Value = description;
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@semester", SqlDbType.VarChar).Value = semester;
 
                 db.openConnection();
                 if (command.ExecuteNonQuery() == 1)
@@ -532,6 +538,34 @@ namespace QLSV.Entity
                     CommandText = "select Courses.Id, Courses.label " +
                                     "from Courses " +
                                     "order by Courses.Id"
+                };
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
+        public DataTable GetCourseBySemester(string semester)
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = $"SELECT label FROM Course WHERE semester = '{semester}'"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;

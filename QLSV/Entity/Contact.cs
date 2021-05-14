@@ -9,15 +9,14 @@ namespace QLSV.Entity
     {
         DataBase db = new DataBase();
 
-        public bool InsertContact(int id, string fname, string lname, string group, string phone, string email, string address, MemoryStream picture, int user_id)
+        public bool InsertContact(string fname, string lname, int group, string phone, string email, string address, MemoryStream picture, int user_id)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO Contact (id, fname, lname, [group], phone, email, address, picture, user_id) " +
-                                                "VALUES (@id, @fname, @lname, @group, @phone, @email, @address, @picture, @user_id)", db.Connection);
+            SqlCommand command = new SqlCommand("INSERT INTO Contact (fname, lname, [group], phone, email, address, picture, user_id) " +
+                                                "VALUES (@fname, @lname, @group, @phone, @email, @address, @picture, @user_id)", db.Connection);
 
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             command.Parameters.Add("@fname", SqlDbType.Text).Value = fname;
             command.Parameters.Add("@lname", SqlDbType.Text).Value = lname;
-            command.Parameters.Add("@group", SqlDbType.Text).Value = group;
+            command.Parameters.Add("@group", SqlDbType.Int).Value = group;
             command.Parameters.Add("@phone", SqlDbType.Text).Value = phone;
             command.Parameters.Add("@email", SqlDbType.Text).Value = email;
             command.Parameters.Add("@address", SqlDbType.Text).Value = address;
@@ -91,13 +90,12 @@ namespace QLSV.Entity
             }
         }
 
-        public bool CheckContactID(int id, int user_id)
+        public bool CheckUserID(int user_id)
         {
-            string query = "SELECT * FROM Contact WHERE user_id = @user_id AND id = @id";
+            string query = "SELECT * FROM Contact WHERE user_id = @user_id";
 
             SqlCommand command = new SqlCommand(query, db.Connection);
             command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();

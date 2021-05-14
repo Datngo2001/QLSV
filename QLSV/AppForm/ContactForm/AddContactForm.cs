@@ -27,10 +27,9 @@ namespace QLSV.AppForm.ContactForm
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(textBoxID.Text.Trim());
             string fname = textBoxFname.Text.Trim();
             string lname = textBoxLname.Text.Trim();
-            string _group = comboBoxGroup.Text.Trim();
+            int _group = Convert.ToInt32(comboBoxGroup.Text.Trim());
             string phone = textBoxPhone.Text.Trim();
             string email = textBoxEmail.Text.Trim();
             string address = textBoxAddress.Text.Trim();
@@ -41,9 +40,9 @@ namespace QLSV.AppForm.ContactForm
 
             if (verif())
             {
-                if (!contact.CheckContactID(id, user_id))
+                if (!contact.CheckUserID(user_id))
                 {
-                    if (contact.InsertContact(id, fname, lname, _group, phone, email, address, pic, user_id))
+                    if (contact.InsertContact(fname, lname, _group, phone, email, address, pic, user_id))
                     {
                         MessageBox.Show("New Contact Added", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.ClearText();
@@ -66,8 +65,7 @@ namespace QLSV.AppForm.ContactForm
 
         bool verif()
         {
-            if ((textBoxID.Text.Trim() == "")
-                || (textBoxFname.Text.Trim() == "")
+            if ((textBoxFname.Text.Trim() == "")
                 || (textBoxLname.Text.Trim() == "")
                 || (comboBoxGroup.Text.Trim() == "")
                 || (textBoxPhone.Text.Trim() == "")
@@ -100,7 +98,6 @@ namespace QLSV.AppForm.ContactForm
         }
         private void ClearText()
         {
-            textBoxID.Text = "";
             textBoxFname.Text = "";
             textBoxLname.Text = "";
             textBoxAddress.Text = "";
@@ -109,5 +106,6 @@ namespace QLSV.AppForm.ContactForm
             comboBoxGroup.Text = "";
             pictureContact.Image = null;
         }
+
     }
 }

@@ -186,5 +186,11 @@ namespace QLSV.AppForm.StudentsForm
                 throw;
             }
         }
+
+        private void courses_btn_Click(object sender, EventArgs e)
+        {
+            AddStudentToCoursesForm addStudentToCoursesForm = new AddStudentToCoursesForm();
+            addStudentToCoursesForm.Show();
+        }
     }
 }

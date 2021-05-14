@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using QLSV.Entity;
 
@@ -65,6 +67,41 @@ namespace QLSV.AppForm.ResultForm
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void cancel_btn_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            DataTable scoreTable = (DataTable)showResult_dgv.DataSource;
+            List<DataRow> dataRows = new List<DataRow>();
+            foreach (DataRow row in scoreTable.Rows)
+            {
+                if (search_tb.Text.Contains(row["Id"].ToString().Trim()) 
+                    | search_tb.Text.Contains(row["Firt Name"].ToString().Trim())
+                    | search_tb.Text.Contains(row["Last Name"].ToString().Trim()))
+                {
+                    dataRows.Add(row);
+                }
+            }
+            DataTable resultTable = new DataTable();
+            foreach (DataColumn column in scoreTable.Columns)
+            {
+                resultTable.Columns.Add().ColumnName = column.ColumnName;
+            }
+            foreach (DataRow row in dataRows)
+            {
+                resultTable.Rows.Add().ItemArray = row.ItemArray;
+            }
+            showResult_dgv.DataSource = resultTable;
+        }
+
+        private void refresh_llb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            showResult_dgv.DataSource = score.MakeStudentScoreResultTable();
         }
     }
 }
