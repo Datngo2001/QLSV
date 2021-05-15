@@ -22,6 +22,7 @@ namespace QLSV.AppForm.StudentsForm
             {
                 filepath = ofdImages.FileName;
             }
+            if (filepath == null) return;
             student_pcb.Image = Image.FromFile(filepath.ToString());
             student_pcb.SizeMode = PictureBoxSizeMode.StretchImage;
         }

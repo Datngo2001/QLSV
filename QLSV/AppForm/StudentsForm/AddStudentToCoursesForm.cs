@@ -22,7 +22,6 @@ namespace QLSV.AppForm.StudentsForm
         {
             InitializeComponent();
         }
-
         private void AddCourseToStudent_Load(object sender, EventArgs e)
         {
             course = new Course();
