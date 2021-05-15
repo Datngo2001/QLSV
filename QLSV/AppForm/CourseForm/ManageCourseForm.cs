@@ -80,7 +80,7 @@ namespace QLSV.AppForm.CourseForm
 
                 if ((MessageBox.Show("Are you sure to delete course?", "Remove course", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
                 {
-                    if (course.DeleteCourse(id))
+                    if (course.RemoveCourse(id))
                     {
                         textBoxID.Text = "";
                         textBoxLabel.Text = "";

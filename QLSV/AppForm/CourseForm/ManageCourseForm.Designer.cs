@@ -56,7 +56,7 @@
             this.ID.AutoSize = true;
             this.ID.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.ID.Location = new System.Drawing.Point(189, 20);
+            this.ID.Location = new System.Drawing.Point(189, 39);
             this.ID.Name = "ID";
             this.ID.Size = new System.Drawing.Size(56, 36);
             this.ID.TabIndex = 0;
@@ -98,7 +98,7 @@
             // textBoxID
             // 
             this.textBoxID.Font = new System.Drawing.Font("Arial", 13F);
-            this.textBoxID.Location = new System.Drawing.Point(266, 20);
+            this.textBoxID.Location = new System.Drawing.Point(266, 39);
             this.textBoxID.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBoxID.Name = "textBoxID";
             this.textBoxID.Size = new System.Drawing.Size(329, 37);
@@ -287,6 +287,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1288, 798);
             this.Controls.Add(this.semester_tb);

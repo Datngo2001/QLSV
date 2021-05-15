@@ -190,6 +190,7 @@ namespace QLSV.AppForm.StudentsForm
         private void courses_btn_Click(object sender, EventArgs e)
         {
             AddStudentToCoursesForm addStudentToCoursesForm = new AddStudentToCoursesForm();
+            addStudentToCoursesForm.currId = Id_tb.Text.Trim();
             addStudentToCoursesForm.Show();
         }
     }

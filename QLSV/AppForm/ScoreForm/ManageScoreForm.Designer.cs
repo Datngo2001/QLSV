@@ -43,14 +43,17 @@ namespace QLSV.AppForm.ScoreForm
             this.showStudent_btn = new System.Windows.Forms.Button();
             this.showScore_btn = new System.Windows.Forms.Button();
             this.show_dgv = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
+            this.list_pn = new System.Windows.Forms.Panel();
+            this.info_pn = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.show_dgv)).BeginInit();
+            this.list_pn.SuspendLayout();
+            this.info_pn.SuspendLayout();
             this.SuspendLayout();
             // 
             // score_tb
             // 
             this.score_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.score_tb.Location = new System.Drawing.Point(228, 125);
+            this.score_tb.Location = new System.Drawing.Point(252, 140);
             this.score_tb.Name = "score_tb";
             this.score_tb.Size = new System.Drawing.Size(206, 35);
             this.score_tb.TabIndex = 14;
@@ -59,7 +62,7 @@ namespace QLSV.AppForm.ScoreForm
             // 
             this.cource_cb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cource_cb.FormattingEnabled = true;
-            this.cource_cb.Location = new System.Drawing.Point(228, 69);
+            this.cource_cb.Location = new System.Drawing.Point(252, 84);
             this.cource_cb.Name = "cource_cb";
             this.cource_cb.Size = new System.Drawing.Size(333, 37);
             this.cource_cb.TabIndex = 13;
@@ -67,7 +70,7 @@ namespace QLSV.AppForm.ScoreForm
             // description_tb
             // 
             this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_tb.Location = new System.Drawing.Point(228, 176);
+            this.description_tb.Location = new System.Drawing.Point(252, 191);
             this.description_tb.Name = "description_tb";
             this.description_tb.Size = new System.Drawing.Size(333, 145);
             this.description_tb.TabIndex = 12;
@@ -76,7 +79,7 @@ namespace QLSV.AppForm.ScoreForm
             // id_tb
             // 
             this.id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id_tb.Location = new System.Drawing.Point(228, 14);
+            this.id_tb.Location = new System.Drawing.Point(252, 29);
             this.id_tb.Name = "id_tb";
             this.id_tb.Size = new System.Drawing.Size(206, 35);
             this.id_tb.TabIndex = 11;
@@ -86,7 +89,7 @@ namespace QLSV.AppForm.ScoreForm
             this.description_lb.AutoSize = true;
             this.description_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.description_lb.Location = new System.Drawing.Point(44, 176);
+            this.description_lb.Location = new System.Drawing.Point(68, 191);
             this.description_lb.Name = "description_lb";
             this.description_lb.Size = new System.Drawing.Size(178, 32);
             this.description_lb.TabIndex = 7;
@@ -97,7 +100,7 @@ namespace QLSV.AppForm.ScoreForm
             this.score_lb.AutoSize = true;
             this.score_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.score_lb.Location = new System.Drawing.Point(119, 125);
+            this.score_lb.Location = new System.Drawing.Point(143, 140);
             this.score_lb.Name = "score_lb";
             this.score_lb.Size = new System.Drawing.Size(103, 32);
             this.score_lb.TabIndex = 8;
@@ -108,7 +111,7 @@ namespace QLSV.AppForm.ScoreForm
             this.cource_lb.AutoSize = true;
             this.cource_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cource_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cource_lb.Location = new System.Drawing.Point(7, 69);
+            this.cource_lb.Location = new System.Drawing.Point(31, 84);
             this.cource_lb.Name = "cource_lb";
             this.cource_lb.Size = new System.Drawing.Size(215, 32);
             this.cource_lb.TabIndex = 9;
@@ -119,7 +122,7 @@ namespace QLSV.AppForm.ScoreForm
             this.id_lb.AutoSize = true;
             this.id_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.id_lb.Location = new System.Drawing.Point(55, 14);
+            this.id_lb.Location = new System.Drawing.Point(79, 29);
             this.id_lb.Name = "id_lb";
             this.id_lb.Size = new System.Drawing.Size(167, 32);
             this.id_lb.TabIndex = 10;
@@ -130,7 +133,7 @@ namespace QLSV.AppForm.ScoreForm
             this.add_btn.BackColor = System.Drawing.Color.Lime;
             this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.add_btn.Location = new System.Drawing.Point(92, 372);
+            this.add_btn.Location = new System.Drawing.Point(116, 387);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(173, 66);
             this.add_btn.TabIndex = 15;
@@ -143,7 +146,7 @@ namespace QLSV.AppForm.ScoreForm
             this.remove_btn.BackColor = System.Drawing.Color.Red;
             this.remove_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remove_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.remove_btn.Location = new System.Drawing.Point(310, 372);
+            this.remove_btn.Location = new System.Drawing.Point(334, 387);
             this.remove_btn.Name = "remove_btn";
             this.remove_btn.Size = new System.Drawing.Size(173, 66);
             this.remove_btn.TabIndex = 16;
@@ -156,7 +159,7 @@ namespace QLSV.AppForm.ScoreForm
             this.avg_btn.BackColor = System.Drawing.Color.Blue;
             this.avg_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.avg_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.avg_btn.Location = new System.Drawing.Point(92, 494);
+            this.avg_btn.Location = new System.Drawing.Point(116, 509);
             this.avg_btn.Name = "avg_btn";
             this.avg_btn.Size = new System.Drawing.Size(391, 92);
             this.avg_btn.TabIndex = 17;
@@ -165,7 +168,7 @@ namespace QLSV.AppForm.ScoreForm
             // 
             // showStudent_btn
             // 
-            this.showStudent_btn.Location = new System.Drawing.Point(793, 16);
+            this.showStudent_btn.Location = new System.Drawing.Point(145, 26);
             this.showStudent_btn.Name = "showStudent_btn";
             this.showStudent_btn.Size = new System.Drawing.Size(192, 36);
             this.showStudent_btn.TabIndex = 18;
@@ -175,7 +178,7 @@ namespace QLSV.AppForm.ScoreForm
             // 
             // showScore_btn
             // 
-            this.showScore_btn.Location = new System.Drawing.Point(1122, 16);
+            this.showScore_btn.Location = new System.Drawing.Point(473, 26);
             this.showScore_btn.Name = "showScore_btn";
             this.showScore_btn.Size = new System.Drawing.Size(192, 36);
             this.showScore_btn.TabIndex = 18;
@@ -186,49 +189,61 @@ namespace QLSV.AppForm.ScoreForm
             // show_dgv
             // 
             this.show_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.show_dgv.Location = new System.Drawing.Point(626, 69);
+            this.show_dgv.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.show_dgv.Location = new System.Drawing.Point(0, 81);
             this.show_dgv.Name = "show_dgv";
             this.show_dgv.RowHeadersWidth = 62;
             this.show_dgv.RowTemplate.Height = 28;
-            this.show_dgv.Size = new System.Drawing.Size(781, 553);
+            this.show_dgv.Size = new System.Drawing.Size(775, 553);
             this.show_dgv.TabIndex = 19;
             // 
-            // label5
+            // list_pn
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(428, 452);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 20);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Ngô Minh Đạt 19110115";
+            this.list_pn.Controls.Add(this.show_dgv);
+            this.list_pn.Controls.Add(this.showScore_btn);
+            this.list_pn.Controls.Add(this.showStudent_btn);
+            this.list_pn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.list_pn.Location = new System.Drawing.Point(636, 0);
+            this.list_pn.Name = "list_pn";
+            this.list_pn.Size = new System.Drawing.Size(775, 634);
+            this.list_pn.TabIndex = 21;
+            // 
+            // info_pn
+            // 
+            this.info_pn.Controls.Add(this.id_lb);
+            this.info_pn.Controls.Add(this.cource_lb);
+            this.info_pn.Controls.Add(this.avg_btn);
+            this.info_pn.Controls.Add(this.score_lb);
+            this.info_pn.Controls.Add(this.remove_btn);
+            this.info_pn.Controls.Add(this.description_lb);
+            this.info_pn.Controls.Add(this.add_btn);
+            this.info_pn.Controls.Add(this.id_tb);
+            this.info_pn.Controls.Add(this.score_tb);
+            this.info_pn.Controls.Add(this.description_tb);
+            this.info_pn.Controls.Add(this.cource_cb);
+            this.info_pn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.info_pn.Location = new System.Drawing.Point(0, 0);
+            this.info_pn.Name = "info_pn";
+            this.info_pn.Size = new System.Drawing.Size(599, 634);
+            this.info_pn.TabIndex = 22;
             // 
             // ManageScoreForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1419, 634);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.show_dgv);
-            this.Controls.Add(this.showScore_btn);
-            this.Controls.Add(this.showStudent_btn);
-            this.Controls.Add(this.avg_btn);
-            this.Controls.Add(this.remove_btn);
-            this.Controls.Add(this.add_btn);
-            this.Controls.Add(this.score_tb);
-            this.Controls.Add(this.cource_cb);
-            this.Controls.Add(this.description_tb);
-            this.Controls.Add(this.id_tb);
-            this.Controls.Add(this.description_lb);
-            this.Controls.Add(this.score_lb);
-            this.Controls.Add(this.cource_lb);
-            this.Controls.Add(this.id_lb);
+            this.ClientSize = new System.Drawing.Size(1411, 634);
+            this.Controls.Add(this.info_pn);
+            this.Controls.Add(this.list_pn);
+            this.MaximumSize = new System.Drawing.Size(1433, 690);
             this.Name = "ManageScoreForm";
             this.Text = "ManageScoreForm";
             this.Load += new System.EventHandler(this.ManageScoreForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.show_dgv)).EndInit();
+            this.list_pn.ResumeLayout(false);
+            this.info_pn.ResumeLayout(false);
+            this.info_pn.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -248,6 +263,7 @@ namespace QLSV.AppForm.ScoreForm
         private System.Windows.Forms.Button showStudent_btn;
         private System.Windows.Forms.Button showScore_btn;
         private System.Windows.Forms.DataGridView show_dgv;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel list_pn;
+        private System.Windows.Forms.Panel info_pn;
     }
 }

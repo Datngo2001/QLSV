@@ -400,14 +400,15 @@ namespace QLSV.Entity
                 throw;
             }
         }
-        public string GetSelectedCourses(int id)
+        public DataTable GetSelectedCourses(int id)
         {
             try
             {
-                string query = $"SELECT courseId FROM Student_Courses WHERE stdId={id}";
-                SqlCommand command = new SqlCommand();
-                command.CommandText = query;
-                return this.getByComand(command).Rows[0].Field<string>(0);
+                SqlCommand command = new SqlCommand("SELECT * FROM Student_Courses " +
+                                                    "inner join Courses on Student_Courses.courseId = Courses.Id " +
+                                                    "WHERE stdId=@id");
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                return this.getByComand(command);
             }
             catch (Exception)
             {
@@ -426,16 +427,16 @@ namespace QLSV.Entity
                 return true;
             }
         }
-        public bool InsertSelectedCourse(int id, string course)
+        public bool InsertSelectedCourse(string id, int course)
         {
             DataBase db = new DataBase();
             try
             {
                 SqlCommand command = new SqlCommand("Insert into Student_Courses (stdId, courseId) " +
-                                                     "values (stdId = @stdId, courseId = @courseId)", db.Connection);
+                                                     "values (@stdId, @courseId)", db.Connection);
 
                 command.Parameters.Add("@stdId", SqlDbType.Int).Value = id;
-                command.Parameters.Add("@courseId", SqlDbType.NVarChar).Value = course;
+                command.Parameters.Add("@courseId", SqlDbType.Int).Value = course;
 
                 db.openConnection();
                 if (command.ExecuteNonQuery() == 1)

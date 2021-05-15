@@ -16,15 +16,14 @@ namespace QLSV.AppForm.CourseForm
             try
             {
                 Course course = new Course();
-                int id = Convert.ToInt32(id_tb.Text);
                 string label = label_tb.Text;
                 int period = (int)period_ud.Value;
                 string description = description_tb.Text;
                 string semester = comboBoxSemester.Text;
 
-                if (period < 1 || period > 24)
+                if (period < 10 || period > 15)
                 {
-                    MessageBox.Show("The course period must be between 1 and 24 hours", "Invalid course period", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("The course period must be between 10 and 15 week", "Invalid course period", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else if (comboBoxSemester.Text == "")
                 {
@@ -34,9 +33,9 @@ namespace QLSV.AppForm.CourseForm
                 {
                     MessageBox.Show("Add a course name", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                else if (course.CheckCourseName(label, id))
+                else if (course.CheckCourseName(label))
                 {
-                    if (course.InsertCourse(id, label, period, description, semester))
+                    if (course.InsertCourse(label, period, description, semester))
                     {
                         MessageBox.Show("New course inserted", "Add course", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -60,12 +59,9 @@ namespace QLSV.AppForm.CourseForm
 
         private void AddCourseForm_Load(object sender, EventArgs e)
         {
-            int year = 2019;
-            for (int i = 0; i < 10; i++)
-            {
-                comboBoxSemester.Items.Add($"{year}-{year + 1}");
-                year += 1;
-            }
+            comboBoxSemester.Items.Add("1");
+            comboBoxSemester.Items.Add("2");
+            comboBoxSemester.Items.Add("3");
         }
     }
 }
