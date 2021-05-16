@@ -74,7 +74,7 @@ namespace QLSV.AppForm.CourseForm
                 }
                 if (savefile.FileName.EndsWith("xlsx") == true)
                 {
-                    //ExportToExcel(showResult_dgv, savefile.FileName);
+                    report.ToExcelReport(savefile.FileName);
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

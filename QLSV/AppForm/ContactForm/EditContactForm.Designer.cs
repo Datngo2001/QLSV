@@ -107,10 +107,10 @@ namespace QLSV.AppForm.ContactForm
             // buttonUpload
             // 
             this.buttonUpload.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpload.Location = new System.Drawing.Point(457, 339);
+            this.buttonUpload.Location = new System.Drawing.Point(457, 338);
             this.buttonUpload.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(238, 25);
+            this.buttonUpload.Size = new System.Drawing.Size(238, 26);
             this.buttonUpload.TabIndex = 47;
             this.buttonUpload.Text = "Upload Image";
             this.buttonUpload.UseVisualStyleBackColor = true;
@@ -319,7 +319,7 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.labelEdit);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditContactForm";
             this.Text = "EditContactForm";
             this.Load += new System.EventHandler(this.EditContactForm_Load);
