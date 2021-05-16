@@ -30,13 +30,13 @@ namespace QLSV.AppForm
         private void InitializeComponent()
         {
             this.upload_btn = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
+            this.picture_lb = new System.Windows.Forms.Label();
             this.lname_tb = new System.Windows.Forms.TextBox();
             this.fname_tb = new System.Windows.Forms.TextBox();
             this.id_tb = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lname_lb = new System.Windows.Forms.Label();
+            this.fname_lb = new System.Windows.Forms.Label();
+            this.id_lb = new System.Windows.Forms.Label();
             this.profile_lb = new System.Windows.Forms.Label();
             this.reEnter_tb = new System.Windows.Forms.TextBox();
             this.password_tb = new System.Windows.Forms.TextBox();
@@ -60,16 +60,16 @@ namespace QLSV.AppForm
             this.upload_btn.UseVisualStyleBackColor = true;
             this.upload_btn.Click += new System.EventHandler(this.upload_btn_Click);
             // 
-            // label8
+            // picture_lb
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label8.Location = new System.Drawing.Point(174, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 29);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "Picture:";
+            this.picture_lb.AutoSize = true;
+            this.picture_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.picture_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.picture_lb.Location = new System.Drawing.Point(174, 240);
+            this.picture_lb.Name = "picture_lb";
+            this.picture_lb.Size = new System.Drawing.Size(102, 29);
+            this.picture_lb.TabIndex = 38;
+            this.picture_lb.Text = "Picture:";
             // 
             // lname_tb
             // 
@@ -96,38 +96,38 @@ namespace QLSV.AppForm
             this.id_tb.TabIndex = 35;
             this.id_tb.Text = " ";
             // 
-            // label3
+            // lname_lb
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(134, 191);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(144, 29);
-            this.label3.TabIndex = 34;
-            this.label3.Text = "Last Name:";
+            this.lname_lb.AutoSize = true;
+            this.lname_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lname_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lname_lb.Location = new System.Drawing.Point(134, 191);
+            this.lname_lb.Name = "lname_lb";
+            this.lname_lb.Size = new System.Drawing.Size(144, 29);
+            this.lname_lb.TabIndex = 34;
+            this.lname_lb.Text = "Last Name:";
             // 
-            // label2
+            // fname_lb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(131, 140);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 29);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "First Name:";
+            this.fname_lb.AutoSize = true;
+            this.fname_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.fname_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.fname_lb.Location = new System.Drawing.Point(131, 140);
+            this.fname_lb.Name = "fname_lb";
+            this.fname_lb.Size = new System.Drawing.Size(148, 29);
+            this.fname_lb.TabIndex = 33;
+            this.fname_lb.Text = "First Name:";
             // 
-            // label1
+            // id_lb
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(132, 87);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 29);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "Student ID:";
+            this.id_lb.AutoSize = true;
+            this.id_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.id_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.id_lb.Location = new System.Drawing.Point(132, 87);
+            this.id_lb.Name = "id_lb";
+            this.id_lb.Size = new System.Drawing.Size(141, 29);
+            this.id_lb.TabIndex = 32;
+            this.id_lb.Text = "Student ID:";
             // 
             // profile_lb
             // 
@@ -242,13 +242,13 @@ namespace QLSV.AppForm
             this.ClientSize = new System.Drawing.Size(651, 729);
             this.Controls.Add(this.upload_btn);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.picture_lb);
             this.Controls.Add(this.lname_tb);
             this.Controls.Add(this.fname_tb);
             this.Controls.Add(this.id_tb);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lname_lb);
+            this.Controls.Add(this.fname_lb);
+            this.Controls.Add(this.id_lb);
             this.Controls.Add(this.profile_lb);
             this.Controls.Add(this.reEnter_tb);
             this.Controls.Add(this.password_tb);
@@ -271,13 +271,13 @@ namespace QLSV.AppForm
 
         private System.Windows.Forms.Button upload_btn;
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label picture_lb;
         private System.Windows.Forms.TextBox lname_tb;
         private System.Windows.Forms.TextBox fname_tb;
         private System.Windows.Forms.TextBox id_tb;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lname_lb;
+        private System.Windows.Forms.Label fname_lb;
+        private System.Windows.Forms.Label id_lb;
         private System.Windows.Forms.Label profile_lb;
         private System.Windows.Forms.TextBox reEnter_tb;
         private System.Windows.Forms.TextBox password_tb;

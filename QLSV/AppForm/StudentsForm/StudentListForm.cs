@@ -29,7 +29,7 @@ namespace QLSV.AppForm.StudentsForm
 
         private void Refresh_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
+            list_dgv.DataSource = null;
             ShowList();
         }
 
@@ -47,16 +47,16 @@ namespace QLSV.AppForm.StudentsForm
 
                 progress.Bar.Value = 50;
 
-                dataGridView1.RowTemplate.Height = 80;
+                list_dgv.RowTemplate.Height = 80;
 
                 table = student.StudentsTableNaming(table);
 
-                dataGridView1.DataSource = table;
-                dataGridView1.ReadOnly = true;
+                list_dgv.DataSource = table;
+                list_dgv.ReadOnly = true;
                 DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-                imageColumn = (DataGridViewImageColumn)dataGridView1.Columns[7];
+                imageColumn = (DataGridViewImageColumn)list_dgv.Columns[7];
                 imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
-                dataGridView1.AllowUserToAddRows = false;
+                list_dgv.AllowUserToAddRows = false;
 
                 progress.Bar.Value = 50;
 
@@ -76,7 +76,7 @@ namespace QLSV.AppForm.StudentsForm
             try
             {
                 EditDeleteStudentForm editDelete = new EditDeleteStudentForm();
-                editDelete.InputStudent(Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString().Trim()));
+                editDelete.InputStudent(Convert.ToInt32(list_dgv.CurrentRow.Cells[0].Value.ToString().Trim()));
                 editDelete.Show();
                 return true;
             }

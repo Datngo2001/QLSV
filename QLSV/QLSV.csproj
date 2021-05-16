@@ -91,6 +91,12 @@
     <Compile Include="AppForm\CourseForm\AddCourseForm.Designer.cs">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\CourseForm\CourseStudenListtForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\CourseForm\CourseStudenListtForm.Designer.cs">
+      <DependentUpon>CourseStudenListtForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\CourseForm\EditCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\AddCourseForm.resx">
       <DependentUpon>AddCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\CourseForm\CourseStudenListtForm.resx">
+      <DependentUpon>CourseStudenListtForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\CourseForm\EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>

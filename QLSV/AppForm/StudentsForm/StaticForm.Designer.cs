@@ -33,8 +33,8 @@ namespace QLSV.AppForm.StudentsForm
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.genderChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.gender_lb = new System.Windows.Forms.Label();
+            this.totalStd_lb = new System.Windows.Forms.Label();
             this.totalStudent_lb = new System.Windows.Forms.Label();
             this.male_lb = new System.Windows.Forms.Label();
             this.malePercent_lb = new System.Windows.Forms.Label();
@@ -60,25 +60,25 @@ namespace QLSV.AppForm.StudentsForm
             this.genderChart.TabIndex = 0;
             this.genderChart.Text = "chart1";
             // 
-            // label2
+            // gender_lb
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 80);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Gender:";
+            this.gender_lb.AutoSize = true;
+            this.gender_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gender_lb.Location = new System.Drawing.Point(12, 80);
+            this.gender_lb.Name = "gender_lb";
+            this.gender_lb.Size = new System.Drawing.Size(100, 29);
+            this.gender_lb.TabIndex = 1;
+            this.gender_lb.Text = "Gender:";
             // 
-            // label1
+            // totalStd_lb
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 27);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 29);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Total Student:";
+            this.totalStd_lb.AutoSize = true;
+            this.totalStd_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalStd_lb.Location = new System.Drawing.Point(12, 27);
+            this.totalStd_lb.Name = "totalStd_lb";
+            this.totalStd_lb.Size = new System.Drawing.Size(162, 29);
+            this.totalStd_lb.TabIndex = 2;
+            this.totalStd_lb.Text = "Total Student:";
             // 
             // totalStudent_lb
             // 
@@ -141,8 +141,8 @@ namespace QLSV.AppForm.StudentsForm
             this.Controls.Add(this.malePercent_lb);
             this.Controls.Add(this.male_lb);
             this.Controls.Add(this.totalStudent_lb);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.totalStd_lb);
+            this.Controls.Add(this.gender_lb);
             this.Controls.Add(this.genderChart);
             this.Name = "StaticForm";
             this.Text = "StaticForm";
@@ -156,8 +156,8 @@ namespace QLSV.AppForm.StudentsForm
         #endregion
 
         private System.Windows.Forms.DataVisualization.Charting.Chart genderChart;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label gender_lb;
+        private System.Windows.Forms.Label totalStd_lb;
         private System.Windows.Forms.Label totalStudent_lb;
         private System.Windows.Forms.Label male_lb;
         private System.Windows.Forms.Label malePercent_lb;

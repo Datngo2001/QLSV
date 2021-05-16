@@ -64,11 +64,11 @@ namespace QLSV.AppForm
             {
                 if (Username_textBox.Text.Length != 0)
                 {
-                    errorProvider1.SetError(Username_textBox, null);
+                    username_eprd.SetError(Username_textBox, null);
                 }
                 else
                 {
-                    errorProvider1.SetError(Username_textBox, "Please enter username!");
+                    username_eprd.SetError(Username_textBox, "Please enter username!");
                 }
             }
             catch (Exception)
@@ -84,11 +84,11 @@ namespace QLSV.AppForm
             {
                 if (Password_textBox.Text.Length != 0)
                 {
-                    errorProvider2.SetError(Password_textBox, null);
+                    password_eprd.SetError(Password_textBox, null);
                 }
                 else
                 {
-                    errorProvider2.SetError(Password_textBox, "Please enter password!");
+                    password_eprd.SetError(Password_textBox, "Please enter password!");
                 }
             }
             catch (Exception)

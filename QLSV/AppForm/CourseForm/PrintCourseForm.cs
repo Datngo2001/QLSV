@@ -25,15 +25,15 @@ namespace QLSV.AppForm.CourseForm
 
         private void PrintCourseForm_Load(object sender, EventArgs e)
         {
-            dataGridViewCourse.DataSource = course.GetAllCourses();
-            dataGridViewCourse.RowTemplate.Height = 70;
-            dataGridViewCourse.ReadOnly = true;
-            dataGridViewCourse.AllowUserToAddRows = false;
+            course_dgv.DataSource = course.GetAllCourses();
+            course_dgv.RowTemplate.Height = 70;
+            course_dgv.ReadOnly = true;
+            course_dgv.AllowUserToAddRows = false;
 
-            dataGridViewCourse.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCourse.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCourse.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dataGridViewCourse.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            course_dgv.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            course_dgv.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            course_dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            course_dgv.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -53,21 +53,28 @@ namespace QLSV.AppForm.CourseForm
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            Report report = new Report()
+            {
+                Title = "Course Report",
+                Table = (System.Data.DataTable)course_dgv.DataSource
+            };
+
             SaveFileDialog savefile = new SaveFileDialog();
+            savefile.FileName = "Report";
             savefile.DefaultExt = "*.docx";
-            savefile.Filter = "DOCX files(*.docx)|*.docx|Excel files(.xlsx)|*.xlsx |CSV (*.csv)|*.csv";
-            savefile.InitialDirectory = @"D:\";
+            savefile.Filter = "DOCX files(*.docx)|*.docx|Excel files(.xlsx) |*.xlsx";
+
 
             if (savefile.ShowDialog() == DialogResult.OK && savefile.FileName.Length > 0)
             {
                 if (savefile.FileName.EndsWith("docx") == true)
                 {
-                    ToWord(dataGridViewCourse, savefile.FileName);
+                    report.toWordReport(savefile.FileName);
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 if (savefile.FileName.EndsWith("xlsx") == true)
                 {
-                    ToExcel(dataGridViewCourse, savefile.FileName);
+                    //ExportToExcel(showResult_dgv, savefile.FileName);
                     MessageBox.Show("File saved!", "Message Dialog", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }

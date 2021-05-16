@@ -251,7 +251,6 @@ namespace QLSV.Entity
                 result.Columns[2].ColumnName = "Last Name";
 
                 DataTable coursesLabel = course.allLabel_IdOrder();
-                DataTable briefInfo = student.getAllBriefInfo();
                 DataTable scores = score.getALL_IdCourseOrder();
                 DataTable avgScore = score.getAvg_byStudent();
 

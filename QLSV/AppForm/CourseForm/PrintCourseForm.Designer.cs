@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
-            this.dataGridViewCourse = new System.Windows.Forms.DataGridView();
+            this.course_dgv = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.course_dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonSave
@@ -63,36 +63,36 @@
             this.buttonPrint.UseVisualStyleBackColor = false;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
-            // dataGridViewCourse
+            // course_dgv
             // 
-            this.dataGridViewCourse.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewCourse.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewCourse.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 13F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCourse.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewCourse.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCourse.Location = new System.Drawing.Point(14, 15);
-            this.dataGridViewCourse.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dataGridViewCourse.Name = "dataGridViewCourse";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewCourse.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridViewCourse.RowHeadersWidth = 70;
-            this.dataGridViewCourse.RowTemplate.Height = 24;
-            this.dataGridViewCourse.Size = new System.Drawing.Size(1005, 439);
-            this.dataGridViewCourse.TabIndex = 3;
-            this.dataGridViewCourse.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.course_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.course_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.course_dgv.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 13F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.course_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.course_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.course_dgv.Location = new System.Drawing.Point(14, 15);
+            this.course_dgv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.course_dgv.Name = "course_dgv";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.course_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.course_dgv.RowHeadersWidth = 70;
+            this.course_dgv.RowTemplate.Height = 24;
+            this.course_dgv.Size = new System.Drawing.Size(1005, 439);
+            this.course_dgv.TabIndex = 3;
+            this.course_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label5
             // 
@@ -110,14 +110,14 @@
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1032, 601);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridViewCourse);
+            this.Controls.Add(this.course_dgv);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonSave);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "PrintCourseForm";
             this.Text = "PrintCourseForm";
             this.Load += new System.EventHandler(this.PrintCourseForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCourse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.course_dgv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,7 +126,7 @@
         #endregion
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonPrint;
-        private System.Windows.Forms.DataGridView dataGridViewCourse;
+        private System.Windows.Forms.DataGridView course_dgv;
         private System.Windows.Forms.Label label5;
     }
 }

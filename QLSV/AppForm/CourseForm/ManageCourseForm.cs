@@ -19,31 +19,40 @@ namespace QLSV.AppForm.CourseForm
         private void ManageCourseForm_Load(object sender, EventArgs e)
         {
             ReloadListBoxData();
+            semester_cb.Items.Add("1");
+            semester_cb.Items.Add("2");
+            semester_cb.Items.Add("3");
+
+            course_lstb.SelectedIndexChanged += new System.EventHandler(this.listBoxCourse_SelectedIndexChanged);
+            course_lstb.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.course_lstb_MouseDoubleClick);
+
+            ShowData(course_lstb.SelectedIndex);
         }
 
         void ReloadListBoxData()
         {
-            listBoxCourse.DataSource = course.GetAllCourses();
-            listBoxCourse.ValueMember = "id";
-            listBoxCourse.DisplayMember = "label";
-            listBoxCourse.SelectedItem = 0;
-            labelTotalCourse.Text = ("Total Course: " + course.TotalCourse());
+            course_lstb.DataSource = course.GetAllCourses();
+            course_lstb.ValueMember = "id";
+            course_lstb.DisplayMember = "label";
+            course_lstb.SelectedItem = 0;
+            totalCourse_lb.Text = ("Total Course: " + course.TotalCourse());
         }
 
         void ShowData(int idx)
         {
             DataRow dataRow = course.GetAllCourses().Rows[idx];
-            listBoxCourse.SelectedIndex = idx;
-            textBoxID.Text = dataRow.ItemArray[0].ToString();
-            textBoxLabel.Text = dataRow.ItemArray[1].ToString();
-            numericUpDown1.Value = int.Parse(dataRow.ItemArray[2].ToString());
-            textBoxDescription.Text = dataRow.ItemArray[3].ToString();
+            course_lstb.SelectedIndex = idx;
+            id_tb.Text = dataRow["Id"].ToString().Trim();
+            label_tb.Text = dataRow["label"].ToString().Trim();
+            period_ud.Value = int.Parse(dataRow.ItemArray[2].ToString());
+            description_rtb.Text = dataRow.ItemArray[3].ToString().Trim();
+            semester_cb.Text = dataRow["semester"].ToString().Trim();
         }
 
         private void listBoxCourse_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataRowView dataRowView = (DataRowView)listBoxCourse.SelectedItem;
-            index = listBoxCourse.SelectedIndex;
+            DataRowView dataRowView = (DataRowView)course_lstb.SelectedItem;
+            index = course_lstb.SelectedIndex;
             ShowData(index);
         }
 
@@ -56,11 +65,11 @@ namespace QLSV.AppForm.CourseForm
 
         private void buttonEdit_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(textBoxID.Text);
-            string label = textBoxLabel.Text;
-            int hour = (int)numericUpDown1.Value;
-            string description = textBoxDescription.Text;
-            string semester = semester_tb.Text; 
+            int id = Convert.ToInt32(id_tb.Text);
+            string label = label_tb.Text;
+            int hour = (int)period_ud.Value;
+            string description = description_rtb.Text;
+            string semester = semester_cb.Text; 
 
             if (course.UpdateCourse(id, label, hour, description, semester))
             {
@@ -76,16 +85,16 @@ namespace QLSV.AppForm.CourseForm
         {
             try
             {
-                int id = Convert.ToInt32(textBoxID.Text);
+                int id = Convert.ToInt32(id_tb.Text);
 
                 if ((MessageBox.Show("Are you sure to delete course?", "Remove course", MessageBoxButtons.YesNo, MessageBoxIcon.Question)) == DialogResult.Yes)
                 {
                     if (course.RemoveCourse(id))
                     {
-                        textBoxID.Text = "";
-                        textBoxLabel.Text = "";
-                        textBoxDescription.Text = "";
-                        numericUpDown1.Value = 0;
+                        id_tb.Text = "";
+                        label_tb.Text = "";
+                        description_rtb.Text = "";
+                        period_ud.Value = 0;
                     }
                     else
                     {
@@ -130,10 +139,13 @@ namespace QLSV.AppForm.CourseForm
             index = course.GetAllCourses().Rows.Count - 1;
             ShowData(index);
         }
-
-        private void label5_Click(object sender, EventArgs e)
+        private void course_lstb_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
+            CourseStudenListtForm courseStudenListt = new CourseStudenListtForm();
+            courseStudenListt.courseId = Convert.ToInt32(id_tb.Text.Trim());
+            courseStudenListt.courseLabel = label_tb.Text;
+            courseStudenListt.courseSemester = semester_cb.Text;
+            courseStudenListt.Show();
         }
     }
 }

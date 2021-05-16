@@ -29,7 +29,7 @@ namespace QLSV.AppForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.main_menuStrip = new System.Windows.Forms.MenuStrip();
             this.Dropdown_Student = new System.Windows.Forms.ToolStripMenuItem();
             this.item_NewStudent = new System.Windows.Forms.ToolStripMenuItem();
             this.studentListToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,23 +52,24 @@ namespace QLSV.AppForm
             this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aVGResultByScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staticResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1.SuspendLayout();
+            this.main_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
-            // menuStrip1
+            // main_menuStrip
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.main_menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.main_menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.main_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Dropdown_Student,
             this.cOURSEToolStripMenuItem,
             this.sCOREToolStripMenuItem,
             this.rESULTToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(969, 46);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "STUDENT";
+            this.main_menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.main_menuStrip.Name = "main_menuStrip";
+            this.main_menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            this.main_menuStrip.Size = new System.Drawing.Size(969, 46);
+            this.main_menuStrip.TabIndex = 0;
+            this.main_menuStrip.Text = "STUDENT";
             // 
             // Dropdown_Student
             // 
@@ -258,21 +259,21 @@ namespace QLSV.AppForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(969, 553);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.main_menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Text = "QLSV";
             this.Load += new System.EventHandler(this.MainForm_Load);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.main_menuStrip.ResumeLayout(false);
+            this.main_menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip main_menuStrip;
         private System.Windows.Forms.ToolStripMenuItem Dropdown_Student;
         private System.Windows.Forms.ToolStripMenuItem item_NewStudent;
         private System.Windows.Forms.ToolStripMenuItem studentListToolStripMenuItem;

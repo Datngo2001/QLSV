@@ -34,6 +34,7 @@ namespace QLSV.AppForm.ResultForm
             this.cancel_btn = new System.Windows.Forms.Button();
             this.print_btn = new System.Windows.Forms.Button();
             this.title_pn = new System.Windows.Forms.Panel();
+            this.refresh_llb = new System.Windows.Forms.LinkLabel();
             this.title_lb = new System.Windows.Forms.Label();
             this.textBox_pn = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@ namespace QLSV.AppForm.ResultForm
             this.fname_lb = new System.Windows.Forms.Label();
             this.id_lb = new System.Windows.Forms.Label();
             this.showResult_dgv = new System.Windows.Forms.DataGridView();
-            this.refresh_llb = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.title_pn.SuspendLayout();
             this.textBox_pn.SuspendLayout();
@@ -99,6 +99,7 @@ namespace QLSV.AppForm.ResultForm
             this.print_btn.TabIndex = 0;
             this.print_btn.Text = "Print";
             this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
             // 
             // title_pn
             // 
@@ -109,6 +110,18 @@ namespace QLSV.AppForm.ResultForm
             this.title_pn.Name = "title_pn";
             this.title_pn.Size = new System.Drawing.Size(1014, 71);
             this.title_pn.TabIndex = 30;
+            // 
+            // refresh_llb
+            // 
+            this.refresh_llb.AutoSize = true;
+            this.refresh_llb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.refresh_llb.Location = new System.Drawing.Point(923, 24);
+            this.refresh_llb.Name = "refresh_llb";
+            this.refresh_llb.Size = new System.Drawing.Size(79, 25);
+            this.refresh_llb.TabIndex = 20;
+            this.refresh_llb.TabStop = true;
+            this.refresh_llb.Text = "Refresh";
+            this.refresh_llb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.refresh_llb_LinkClicked);
             // 
             // title_lb
             // 
@@ -249,18 +262,6 @@ namespace QLSV.AppForm.ResultForm
             this.showResult_dgv.RowTemplate.Height = 28;
             this.showResult_dgv.Size = new System.Drawing.Size(1014, 347);
             this.showResult_dgv.TabIndex = 31;
-            // 
-            // refresh_llb
-            // 
-            this.refresh_llb.AutoSize = true;
-            this.refresh_llb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.refresh_llb.Location = new System.Drawing.Point(923, 24);
-            this.refresh_llb.Name = "refresh_llb";
-            this.refresh_llb.Size = new System.Drawing.Size(79, 25);
-            this.refresh_llb.TabIndex = 20;
-            this.refresh_llb.TabStop = true;
-            this.refresh_llb.Text = "Refresh";
-            this.refresh_llb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.refresh_llb_LinkClicked);
             // 
             // AvgResultScoreForm
             // 

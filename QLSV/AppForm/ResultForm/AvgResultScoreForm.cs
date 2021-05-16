@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 using QLSV.Entity;
 
@@ -31,8 +32,13 @@ namespace QLSV.AppForm.ResultForm
 
         private void print_btn_Click(object sender, EventArgs e)
         {
-            PrintDialog printDialog = new PrintDialog();
-            printDialog.ShowDialog();
+            PrintDialog print = new PrintDialog();
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.DocumentName = "Print Document";
+            print.Document = printDoc;
+            print.AllowSelection = true;
+            print.AllowSomePages = true;
+            if (print.ShowDialog() == DialogResult.OK) printDoc.Print();
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)

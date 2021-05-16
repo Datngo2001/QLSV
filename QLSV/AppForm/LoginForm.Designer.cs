@@ -42,18 +42,18 @@ namespace QLSV.AppForm
             this.register_lb = new System.Windows.Forms.LinkLabel();
             this.password_ttip = new System.Windows.Forms.ToolTip(this.components);
             this.username_ttip = new System.Windows.Forms.ToolTip(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.username_eprd = new System.Windows.Forms.ErrorProvider(this.components);
+            this.password_eprd = new System.Windows.Forms.ErrorProvider(this.components);
             this.student_rbtn = new System.Windows.Forms.RadioButton();
             this.human_rbtn = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.Title_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.username_eprd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.password_eprd)).BeginInit();
             this.SuspendLayout();
             // 
             // Username_textBox
             // 
-            this.errorProvider1.SetError(this.Username_textBox, "Hay nhap username");
+            this.username_eprd.SetError(this.Username_textBox, "Hay nhap username");
             this.Username_textBox.Location = new System.Drawing.Point(195, 156);
             this.Username_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Username_textBox.Name = "Username_textBox";
@@ -64,7 +64,7 @@ namespace QLSV.AppForm
             // 
             // Password_textBox
             // 
-            this.errorProvider2.SetError(this.Password_textBox, "Hay nhap password");
+            this.password_eprd.SetError(this.Password_textBox, "Hay nhap password");
             this.Password_textBox.Location = new System.Drawing.Point(195, 207);
             this.Password_textBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Password_textBox.Name = "Password_textBox";
@@ -173,13 +173,13 @@ namespace QLSV.AppForm
             // 
             this.password_ttip.Popup += new System.Windows.Forms.PopupEventHandler(this.password_ttip_Popup);
             // 
-            // errorProvider1
+            // username_eprd
             // 
-            this.errorProvider1.ContainerControl = this;
+            this.username_eprd.ContainerControl = this;
             // 
-            // errorProvider2
+            // password_eprd
             // 
-            this.errorProvider2.ContainerControl = this;
+            this.password_eprd.ContainerControl = this;
             // 
             // student_rbtn
             // 
@@ -232,8 +232,8 @@ namespace QLSV.AppForm
             this.Text = "QLSV Ngo Minh Dat 19110115";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Title_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.username_eprd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.password_eprd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,8 +253,8 @@ namespace QLSV.AppForm
         private System.Windows.Forms.LinkLabel register_lb;
         private System.Windows.Forms.ToolTip password_ttip;
         private System.Windows.Forms.ToolTip username_ttip;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider username_eprd;
+        private System.Windows.Forms.ErrorProvider password_eprd;
         public System.Windows.Forms.RadioButton human_rbtn;
         public System.Windows.Forms.RadioButton student_rbtn;
     }

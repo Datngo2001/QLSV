@@ -57,6 +57,7 @@ namespace QLSV.AppForm.CourseForm
                 label_tb.Text = course.Label;
                 period_ud.Value = course.Period;
                 description_tb.Text = course.Description;
+                semester_tb.Text = course.Semester;
             }
             catch (Exception)
             {

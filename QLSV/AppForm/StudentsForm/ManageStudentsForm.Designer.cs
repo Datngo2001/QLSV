@@ -77,10 +77,10 @@ namespace QLSV.AppForm.StudentsForm
             this.findID_btn.Location = new System.Drawing.Point(408, 18);
             this.findID_btn.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // label7
+            // address_lb
             // 
-            this.label7.Location = new System.Drawing.Point(46, 402);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.address_lb.Location = new System.Drawing.Point(46, 402);
+            this.address_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
             // Address_rtb
             // 
@@ -88,10 +88,10 @@ namespace QLSV.AppForm.StudentsForm
             this.Address_rtb.Margin = new System.Windows.Forms.Padding(2);
             this.Address_rtb.Size = new System.Drawing.Size(301, 86);
             // 
-            // label8
+            // picture_lb
             // 
-            this.label8.Location = new System.Drawing.Point(46, 502);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.picture_lb.Location = new System.Drawing.Point(46, 502);
+            this.picture_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
             // student_pcb
             // 
@@ -99,25 +99,25 @@ namespace QLSV.AppForm.StudentsForm
             this.student_pcb.Margin = new System.Windows.Forms.Padding(2);
             this.student_pcb.Size = new System.Drawing.Size(302, 234);
             // 
-            // Edit
+            // edit_btn
             // 
-            this.Edit.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Edit.Location = new System.Drawing.Point(52, 913);
-            this.Edit.Margin = new System.Windows.Forms.Padding(2);
-            this.Edit.Size = new System.Drawing.Size(256, 45);
+            this.edit_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.edit_btn.Location = new System.Drawing.Point(52, 913);
+            this.edit_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.edit_btn.Size = new System.Drawing.Size(256, 45);
             // 
-            // Remove
+            // remove_btn
             // 
-            this.Remove.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Remove.Location = new System.Drawing.Point(334, 913);
-            this.Remove.Margin = new System.Windows.Forms.Padding(2);
-            this.Remove.Size = new System.Drawing.Size(168, 45);
+            this.remove_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.remove_btn.Location = new System.Drawing.Point(334, 913);
+            this.remove_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.remove_btn.Size = new System.Drawing.Size(168, 45);
             // 
-            // Upload
+            // upload_btn
             // 
-            this.Upload.Location = new System.Drawing.Point(218, 743);
-            this.Upload.Margin = new System.Windows.Forms.Padding(2);
-            this.Upload.Size = new System.Drawing.Size(301, 40);
+            this.upload_btn.Location = new System.Drawing.Point(218, 743);
+            this.upload_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.upload_btn.Size = new System.Drawing.Size(301, 40);
             // 
             // findByPhone_btn
             // 
@@ -129,42 +129,42 @@ namespace QLSV.AppForm.StudentsForm
             this.firstNameFind_btn.Location = new System.Drawing.Point(408, 74);
             this.firstNameFind_btn.Margin = new System.Windows.Forms.Padding(2);
             // 
-            // Cancel
+            // cancel_btn
             // 
-            this.Cancel.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.Cancel.Location = new System.Drawing.Point(708, 890);
-            this.Cancel.Margin = new System.Windows.Forms.Padding(2);
-            this.Cancel.Size = new System.Drawing.Size(168, 45);
+            this.cancel_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cancel_btn.Location = new System.Drawing.Point(708, 890);
+            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2);
+            this.cancel_btn.Size = new System.Drawing.Size(168, 45);
             // 
-            // label1
+            // id_lb
             // 
-            this.label1.Location = new System.Drawing.Point(46, 18);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.id_lb.Location = new System.Drawing.Point(46, 18);
+            this.id_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
-            // label2
+            // fname_lb
             // 
-            this.label2.Location = new System.Drawing.Point(46, 80);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fname_lb.Location = new System.Drawing.Point(46, 80);
+            this.fname_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
-            // label3
+            // lname_lb
             // 
-            this.label3.Location = new System.Drawing.Point(46, 149);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lname_lb.Location = new System.Drawing.Point(46, 149);
+            this.lname_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
-            // label4
+            // bdate_lb
             // 
-            this.label4.Location = new System.Drawing.Point(46, 215);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bdate_lb.Location = new System.Drawing.Point(46, 215);
+            this.bdate_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
-            // label5
+            // gender_lb
             // 
-            this.label5.Location = new System.Drawing.Point(46, 278);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.gender_lb.Location = new System.Drawing.Point(46, 278);
+            this.gender_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
-            // label6
+            // phone_lb
             // 
-            this.label6.Location = new System.Drawing.Point(46, 335);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.phone_lb.Location = new System.Drawing.Point(46, 335);
+            this.phone_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             // 
             // reset_btn
             // 
@@ -256,23 +256,23 @@ namespace QLSV.AppForm.StudentsForm
             this.Controls.SetChildIndex(this.Phone_tb, 0);
             this.Controls.SetChildIndex(this.BirthDay_picker, 0);
             this.Controls.SetChildIndex(this.genderBtn_group, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
-            this.Controls.SetChildIndex(this.label5, 0);
-            this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.label7, 0);
-            this.Controls.SetChildIndex(this.label8, 0);
+            this.Controls.SetChildIndex(this.id_lb, 0);
+            this.Controls.SetChildIndex(this.fname_lb, 0);
+            this.Controls.SetChildIndex(this.lname_lb, 0);
+            this.Controls.SetChildIndex(this.bdate_lb, 0);
+            this.Controls.SetChildIndex(this.gender_lb, 0);
+            this.Controls.SetChildIndex(this.phone_lb, 0);
+            this.Controls.SetChildIndex(this.address_lb, 0);
+            this.Controls.SetChildIndex(this.picture_lb, 0);
             this.Controls.SetChildIndex(this.findID_btn, 0);
             this.Controls.SetChildIndex(this.findByPhone_btn, 0);
             this.Controls.SetChildIndex(this.firstNameFind_btn, 0);
             this.Controls.SetChildIndex(this.Address_rtb, 0);
             this.Controls.SetChildIndex(this.student_pcb, 0);
-            this.Controls.SetChildIndex(this.Edit, 0);
-            this.Controls.SetChildIndex(this.Remove, 0);
-            this.Controls.SetChildIndex(this.Cancel, 0);
-            this.Controls.SetChildIndex(this.Upload, 0);
+            this.Controls.SetChildIndex(this.edit_btn, 0);
+            this.Controls.SetChildIndex(this.remove_btn, 0);
+            this.Controls.SetChildIndex(this.cancel_btn, 0);
+            this.Controls.SetChildIndex(this.upload_btn, 0);
             this.Controls.SetChildIndex(this.reset_btn, 0);
             this.Controls.SetChildIndex(this.label9, 0);
             this.Controls.SetChildIndex(this.showResult_dgv, 0);

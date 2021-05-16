@@ -76,7 +76,7 @@ namespace QLSV.Entity
                     " SET " +
                     "label = @label," +
                     "period = @period," +
-                    "semester = @semester" +
+                    "semester = @semester, " +
                     "description = @description" +
                     " WHERE id = @ID"
                     , dataBase.Connection);
@@ -369,6 +369,7 @@ namespace QLSV.Entity
                     "UPDATE Courses" +
                     " SET " +
                     "label = @label," +
+                    "semester = @semester," +
                     "period = @period," +
                     "description = @description" +
                     " WHERE id = @ID"
@@ -622,6 +623,51 @@ namespace QLSV.Entity
             {
 
                 throw;
+            }
+        }
+        public DataTable studentsInCourse(int id)
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand("select Students_info.ID, fname, lname, bdate " +
+                                                    "from Students_info inner join Student_Courses " +
+                                                    "on Students_info.ID = Student_Courses.stdId " +
+                                                    "where Student_Courses.courseId = @id", db.Connection);
+                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable courseStudent = new DataTable();
+                db.openConnection();
+                adapter.Fill(courseStudent);
+                db.closeConnection();
+
+                DataTable result = new DataTable();
+                result.Columns.Add().ColumnName = "STT";
+                result.Columns.Add().ColumnName = "Id";
+                result.Columns.Add().ColumnName = "First Name";
+                result.Columns.Add().ColumnName = "Last Name";
+                result.Columns.Add().ColumnName = "Birth Date";
+
+                int index = 1;
+                foreach (DataRow row in courseStudent.Rows)
+                {
+                    DataRow resultRow = result.Rows.Add();
+                    resultRow["STT"] = index;
+                    resultRow["Id"] = row["ID"];
+                    resultRow["First Name"] = row["fname"];
+                    resultRow["Last Name"] = row["bdate"];
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
             }
         }
     }

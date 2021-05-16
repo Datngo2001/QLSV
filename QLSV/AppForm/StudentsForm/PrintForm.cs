@@ -42,13 +42,13 @@ namespace QLSV.AppForm.StudentsForm
         }
         private void print_btn_Click(object sender, EventArgs e)
         {
-            Report report = new Report()
-            {
-                Title = "Student List Report",
-                Table = (System.Data.DataTable)dataView_gv.DataSource
-            };
-
-            report.Print();
+            PrintDialog print = new PrintDialog();
+            PrintDocument printDoc = new PrintDocument();
+            printDoc.DocumentName = "Print Document";
+            print.Document = printDoc;
+            print.AllowSelection = true;
+            print.AllowSomePages = true;
+            if (print.ShowDialog() == DialogResult.OK) printDoc.Print();
 
             //PrintDialog pDlg = new PrintDialog();
             //PrintDocument pDoc = (PrintDocument)report.getWordDocument();

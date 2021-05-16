@@ -19,7 +19,6 @@ namespace QLSV.AppForm.StudentsForm
         {
             var statistic = new QLSV.Utility.StudentStatistic();
             total_lb.Text = "Total student: " + statistic.totalStudent();
-
             new FormTool().ClearForm(this);
         }
 
