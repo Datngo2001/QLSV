@@ -53,6 +53,12 @@ namespace QLSV.AppForm.ScoreForm
                 score.Description = description_tb.Text;
                 score.CourseID = Convert.ToInt32(labelTable.Rows[cource_cb.SelectedIndex][0].ToString());
 
+                if (score.isExisted() == true)
+                {
+                    MessageBox.Show("This student is already have score!");
+                    return;
+                }
+
                 if (score.AddThisScore())
                 {
                     MessageBox.Show("Complete!");

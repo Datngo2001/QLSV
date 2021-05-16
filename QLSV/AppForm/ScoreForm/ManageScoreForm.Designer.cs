@@ -165,6 +165,7 @@ namespace QLSV.AppForm.ScoreForm
             this.avg_btn.TabIndex = 17;
             this.avg_btn.Text = "Average Score By Course";
             this.avg_btn.UseVisualStyleBackColor = false;
+            this.avg_btn.Click += new System.EventHandler(this.avg_btn_Click);
             // 
             // showStudent_btn
             // 

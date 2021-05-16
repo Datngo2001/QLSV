@@ -31,24 +31,24 @@ namespace QLSV.AppForm
             pictureBoxContact.Image = CurrentUser.Avatar;
 
             this.ReloadComboBox();
-            comboBoxSelected.SelectedIndex = -1;
-            comboBoxSelected2.SelectedIndex = -1;
+            group_cb.SelectedIndex = -1;
+            remove_cb.SelectedIndex = -1;
         }
 
         private void ReloadComboBox()
         {
-            comboBoxSelected.DataSource = group.GetAllGroup();
-            comboBoxSelected.ValueMember = "id";
-            comboBoxSelected.DisplayMember = "name";
-            comboBoxSelected.SelectedItem = 0;
+            group_cb.DataSource = group.GetAllGroup();
+            group_cb.ValueMember = "id";
+            group_cb.DisplayMember = "name";
+            group_cb.SelectedItem = 0;
 
-            comboBoxSelected2.DataSource = group.GetAllGroup();
-            comboBoxSelected2.ValueMember = "id";
-            comboBoxSelected2.DisplayMember = "name";
-            comboBoxSelected2.SelectedItem = 0;
+            remove_cb.DataSource = group.GetAllGroup();
+            remove_cb.ValueMember = "id";
+            remove_cb.DisplayMember = "name";
+            remove_cb.SelectedItem = 0;
 
-            comboBoxSelected.Text = "";
-            comboBoxSelected2.Text = "";
+            group_cb.Text = "";
+            remove_cb.Text = "";
         }
 
         private void buttonAddContact_Click(object sender, EventArgs e)
@@ -134,7 +134,7 @@ namespace QLSV.AppForm
         {
             try
             {
-                int idx = comboBoxSelected.SelectedIndex;
+                int idx = group_cb.SelectedIndex;
                 int id = Convert.ToInt32(group.GetAllGroup().Rows[idx][0]);
                 string name = textBoxNewName.Text.Trim();
                 int user_id = CurrentUser.Id;
@@ -145,7 +145,7 @@ namespace QLSV.AppForm
                     {
                         MessageBox.Show("Edit Successfully", "Edit Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         textBoxNewName.Text = "";
-                        comboBoxSelected.Text = "";
+                        group_cb.Text = "";
                     }
                     else
                     {
@@ -169,7 +169,7 @@ namespace QLSV.AppForm
         {
             try
             {
-                int idx = comboBoxSelected2.SelectedIndex;
+                int idx = remove_cb.SelectedIndex;
                 if (idx < 0) return;
                 int id = Convert.ToInt32(group.GetAllGroup().Rows[idx][0]);
                 int user_id = CurrentUser.Id;
@@ -177,7 +177,7 @@ namespace QLSV.AppForm
                 if (group.DeleteGroup(id, user_id))
                 {
                     MessageBox.Show("Remove Successfully", "Remove Group", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    comboBoxSelected2.Text = "";
+                    remove_cb.Text = "";
                 }
                 else
                 {
@@ -194,7 +194,8 @@ namespace QLSV.AppForm
 
         private void linkLabelEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            EditProfileForm editProfileForm = new EditProfileForm();
+            editProfileForm.Show();
         }
 
         private void linkLabelRefresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -208,8 +209,8 @@ namespace QLSV.AppForm
             textBoxContactID.Text = "";
             textBoxGroupName.Text = "";
             textBoxNewName.Text = "";
-            comboBoxSelected.Text = "";
-            comboBoxSelected2.Text = "";
+            group_cb.Text = "";
+            remove_cb.Text = "";
         }
     }
 }

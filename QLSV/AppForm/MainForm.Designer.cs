@@ -252,6 +252,7 @@ namespace QLSV.AppForm
             this.staticResultToolStripMenuItem.Name = "staticResultToolStripMenuItem";
             this.staticResultToolStripMenuItem.Size = new System.Drawing.Size(364, 46);
             this.staticResultToolStripMenuItem.Text = "Static Result";
+            this.staticResultToolStripMenuItem.Click += new System.EventHandler(this.staticResultToolStripMenuItem_Click);
             // 
             // MainForm
             // 

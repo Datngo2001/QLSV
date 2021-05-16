@@ -25,19 +25,19 @@ namespace QLSV.AppForm.StudentsForm
             StudentStatistic statistic = new StudentStatistic();
             int total = statistic.totalStudent();
             totalStudent_lb.Text = total.ToString();
-            DataSet genderData = statistic.femaleMaleAmount();
-            genderChart.DataSource = genderData;
-
-            genderChart.Series.Add("genderAmount");
-            genderChart.Series["genderAmount"].XValueMember = "gender";
-            genderChart.Series["genderAmount"].YValueMembers = "amount";
-            genderChart.Titles.Add("Gender Chart");
-            genderChart.Series.RemoveAt(0);
 
             int female = statistic.femaleAmount();
             int male = statistic.maleAmount();
             malePercent_lb.Text = ((male * 100.0) / total).ToString() + "%";
             femalePercent_lb.Text = ((female * 100.0) / total).ToString() + "%";
+
+            var seri = genderChart.Series.Add("genderAmount");
+            seri.IsValueShownAsLabel = true;
+            seri.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            seri.Points.AddXY("Male", (male * 100.0) / total);
+            seri.Points.AddXY("Female", (female * 100.0) / total);
+            genderChart.Titles.Add("Gender Chart");
+            genderChart.Series.RemoveAt(0);
         }
     }
 }

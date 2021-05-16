@@ -63,33 +63,37 @@ namespace QLSV.AppForm.StudentsForm
             // Id_tb
             // 
             this.Id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Id_tb.Location = new System.Drawing.Point(218, 75);
+            this.Id_tb.Location = new System.Drawing.Point(145, 49);
+            this.Id_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Id_tb.Name = "Id_tb";
-            this.Id_tb.Size = new System.Drawing.Size(186, 35);
+            this.Id_tb.Size = new System.Drawing.Size(125, 26);
             this.Id_tb.TabIndex = 0;
             // 
             // FirstName_tb
             // 
             this.FirstName_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FirstName_tb.Location = new System.Drawing.Point(218, 148);
+            this.FirstName_tb.Location = new System.Drawing.Point(145, 96);
+            this.FirstName_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.FirstName_tb.Name = "FirstName_tb";
-            this.FirstName_tb.Size = new System.Drawing.Size(186, 35);
+            this.FirstName_tb.Size = new System.Drawing.Size(125, 26);
             this.FirstName_tb.TabIndex = 0;
             // 
             // LastName_tb
             // 
             this.LastName_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LastName_tb.Location = new System.Drawing.Point(218, 223);
+            this.LastName_tb.Location = new System.Drawing.Point(145, 145);
+            this.LastName_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.LastName_tb.Name = "LastName_tb";
-            this.LastName_tb.Size = new System.Drawing.Size(301, 35);
+            this.LastName_tb.Size = new System.Drawing.Size(202, 26);
             this.LastName_tb.TabIndex = 0;
             // 
             // Phone_tb
             // 
             this.Phone_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Phone_tb.Location = new System.Drawing.Point(218, 469);
+            this.Phone_tb.Location = new System.Drawing.Point(145, 305);
+            this.Phone_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Phone_tb.Name = "Phone_tb";
-            this.Phone_tb.Size = new System.Drawing.Size(186, 35);
+            this.Phone_tb.Size = new System.Drawing.Size(125, 26);
             this.Phone_tb.TabIndex = 0;
             // 
             // BirthDay_picker
@@ -97,9 +101,10 @@ namespace QLSV.AppForm.StudentsForm
             this.BirthDay_picker.CustomFormat = "dd-mm-yyyy";
             this.BirthDay_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BirthDay_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.BirthDay_picker.Location = new System.Drawing.Point(218, 305);
+            this.BirthDay_picker.Location = new System.Drawing.Point(145, 198);
+            this.BirthDay_picker.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.BirthDay_picker.Name = "BirthDay_picker";
-            this.BirthDay_picker.Size = new System.Drawing.Size(301, 35);
+            this.BirthDay_picker.Size = new System.Drawing.Size(202, 26);
             this.BirthDay_picker.TabIndex = 1;
             this.BirthDay_picker.Value = new System.DateTime(2001, 1, 1, 0, 0, 0, 0);
             // 
@@ -108,18 +113,21 @@ namespace QLSV.AppForm.StudentsForm
             this.genderBtn_group.Controls.Add(this.female_rbtn);
             this.genderBtn_group.Controls.Add(this.male_rbtn);
             this.genderBtn_group.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.genderBtn_group.Location = new System.Drawing.Point(218, 366);
+            this.genderBtn_group.Location = new System.Drawing.Point(145, 238);
+            this.genderBtn_group.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.genderBtn_group.Name = "genderBtn_group";
-            this.genderBtn_group.Size = new System.Drawing.Size(302, 58);
+            this.genderBtn_group.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.genderBtn_group.Size = new System.Drawing.Size(201, 38);
             this.genderBtn_group.TabIndex = 19;
             this.genderBtn_group.TabStop = false;
             // 
             // female_rbtn
             // 
             this.female_rbtn.AutoSize = true;
-            this.female_rbtn.Location = new System.Drawing.Point(176, 15);
+            this.female_rbtn.Location = new System.Drawing.Point(117, 10);
+            this.female_rbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.female_rbtn.Name = "female_rbtn";
-            this.female_rbtn.Size = new System.Drawing.Size(120, 33);
+            this.female_rbtn.Size = new System.Drawing.Size(80, 24);
             this.female_rbtn.TabIndex = 1;
             this.female_rbtn.TabStop = true;
             this.female_rbtn.Text = "Female";
@@ -128,9 +136,10 @@ namespace QLSV.AppForm.StudentsForm
             // male_rbtn
             // 
             this.male_rbtn.AutoSize = true;
-            this.male_rbtn.Location = new System.Drawing.Point(16, 15);
+            this.male_rbtn.Location = new System.Drawing.Point(11, 10);
+            this.male_rbtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.male_rbtn.Name = "male_rbtn";
-            this.male_rbtn.Size = new System.Drawing.Size(91, 33);
+            this.male_rbtn.Size = new System.Drawing.Size(61, 24);
             this.male_rbtn.TabIndex = 0;
             this.male_rbtn.TabStop = true;
             this.male_rbtn.Text = "Male";
@@ -140,9 +149,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.id_lb.AutoSize = true;
             this.id_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.id_lb.Location = new System.Drawing.Point(46, 75);
+            this.id_lb.Location = new System.Drawing.Point(31, 49);
+            this.id_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.id_lb.Name = "id_lb";
-            this.id_lb.Size = new System.Drawing.Size(42, 29);
+            this.id_lb.Size = new System.Drawing.Size(30, 20);
             this.id_lb.TabIndex = 20;
             this.id_lb.Text = "ID:";
             // 
@@ -150,9 +160,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.fname_lb.AutoSize = true;
             this.fname_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fname_lb.Location = new System.Drawing.Point(46, 152);
+            this.fname_lb.Location = new System.Drawing.Point(31, 99);
+            this.fname_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.fname_lb.Name = "fname_lb";
-            this.fname_lb.Size = new System.Drawing.Size(137, 29);
+            this.fname_lb.Size = new System.Drawing.Size(90, 20);
             this.fname_lb.TabIndex = 20;
             this.fname_lb.Text = "First Name:";
             // 
@@ -160,9 +171,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.lname_lb.AutoSize = true;
             this.lname_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lname_lb.Location = new System.Drawing.Point(46, 223);
+            this.lname_lb.Location = new System.Drawing.Point(31, 145);
+            this.lname_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lname_lb.Name = "lname_lb";
-            this.lname_lb.Size = new System.Drawing.Size(134, 29);
+            this.lname_lb.Size = new System.Drawing.Size(90, 20);
             this.lname_lb.TabIndex = 20;
             this.lname_lb.Text = "Last Name:";
             // 
@@ -170,9 +182,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.bdate_lb.AutoSize = true;
             this.bdate_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bdate_lb.Location = new System.Drawing.Point(46, 305);
+            this.bdate_lb.Location = new System.Drawing.Point(31, 198);
+            this.bdate_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.bdate_lb.Name = "bdate_lb";
-            this.bdate_lb.Size = new System.Drawing.Size(115, 29);
+            this.bdate_lb.Size = new System.Drawing.Size(78, 20);
             this.bdate_lb.TabIndex = 20;
             this.bdate_lb.Text = "Birth Day:";
             // 
@@ -180,9 +193,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.gender_lb.AutoSize = true;
             this.gender_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gender_lb.Location = new System.Drawing.Point(46, 382);
+            this.gender_lb.Location = new System.Drawing.Point(31, 248);
+            this.gender_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gender_lb.Name = "gender_lb";
-            this.gender_lb.Size = new System.Drawing.Size(100, 29);
+            this.gender_lb.Size = new System.Drawing.Size(67, 20);
             this.gender_lb.TabIndex = 20;
             this.gender_lb.Text = "Gender:";
             // 
@@ -190,18 +204,20 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.phone_lb.AutoSize = true;
             this.phone_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phone_lb.Location = new System.Drawing.Point(46, 472);
+            this.phone_lb.Location = new System.Drawing.Point(31, 307);
+            this.phone_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.phone_lb.Name = "phone_lb";
-            this.phone_lb.Size = new System.Drawing.Size(89, 29);
+            this.phone_lb.Size = new System.Drawing.Size(59, 20);
             this.phone_lb.TabIndex = 20;
             this.phone_lb.Text = "Phone:";
             // 
             // findID_btn
             // 
             this.findID_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findID_btn.Location = new System.Drawing.Point(408, 75);
+            this.findID_btn.Location = new System.Drawing.Point(272, 49);
+            this.findID_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.findID_btn.Name = "findID_btn";
-            this.findID_btn.Size = new System.Drawing.Size(110, 40);
+            this.findID_btn.Size = new System.Drawing.Size(73, 26);
             this.findID_btn.TabIndex = 21;
             this.findID_btn.Text = "Find";
             this.findID_btn.UseVisualStyleBackColor = true;
@@ -211,18 +227,20 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.address_lb.AutoSize = true;
             this.address_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address_lb.Location = new System.Drawing.Point(580, 75);
+            this.address_lb.Location = new System.Drawing.Point(387, 49);
+            this.address_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.address_lb.Name = "address_lb";
-            this.address_lb.Size = new System.Drawing.Size(108, 29);
+            this.address_lb.Size = new System.Drawing.Size(72, 20);
             this.address_lb.TabIndex = 20;
             this.address_lb.Text = "Address:";
             // 
             // Address_rtb
             // 
             this.Address_rtb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Address_rtb.Location = new System.Drawing.Point(716, 75);
+            this.Address_rtb.Location = new System.Drawing.Point(477, 49);
+            this.Address_rtb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Address_rtb.Name = "Address_rtb";
-            this.Address_rtb.Size = new System.Drawing.Size(388, 226);
+            this.Address_rtb.Size = new System.Drawing.Size(260, 148);
             this.Address_rtb.TabIndex = 22;
             this.Address_rtb.Text = "";
             // 
@@ -230,9 +248,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.picture_lb.AutoSize = true;
             this.picture_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.picture_lb.Location = new System.Drawing.Point(580, 318);
+            this.picture_lb.Location = new System.Drawing.Point(387, 207);
+            this.picture_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.picture_lb.Name = "picture_lb";
-            this.picture_lb.Size = new System.Drawing.Size(87, 29);
+            this.picture_lb.Size = new System.Drawing.Size(56, 20);
             this.picture_lb.TabIndex = 20;
             this.picture_lb.Text = "Pictire:";
             // 
@@ -242,9 +261,10 @@ namespace QLSV.AppForm.StudentsForm
             this.edit_btn.BackColor = System.Drawing.Color.LimeGreen;
             this.edit_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.edit_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.edit_btn.Location = new System.Drawing.Point(240, 657);
+            this.edit_btn.Location = new System.Drawing.Point(160, 445);
+            this.edit_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(256, 58);
+            this.edit_btn.Size = new System.Drawing.Size(171, 38);
             this.edit_btn.TabIndex = 24;
             this.edit_btn.Text = "Edit";
             this.edit_btn.UseVisualStyleBackColor = false;
@@ -256,9 +276,10 @@ namespace QLSV.AppForm.StudentsForm
             this.remove_btn.BackColor = System.Drawing.Color.Red;
             this.remove_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remove_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.remove_btn.Location = new System.Drawing.Point(546, 657);
+            this.remove_btn.Location = new System.Drawing.Point(364, 445);
+            this.remove_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.remove_btn.Name = "remove_btn";
-            this.remove_btn.Size = new System.Drawing.Size(168, 58);
+            this.remove_btn.Size = new System.Drawing.Size(112, 38);
             this.remove_btn.TabIndex = 24;
             this.remove_btn.Text = "Remove";
             this.remove_btn.UseVisualStyleBackColor = false;
@@ -266,9 +287,10 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // upload_btn
             // 
-            this.upload_btn.Location = new System.Drawing.Point(716, 595);
+            this.upload_btn.Location = new System.Drawing.Point(477, 387);
+            this.upload_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.upload_btn.Name = "upload_btn";
-            this.upload_btn.Size = new System.Drawing.Size(388, 40);
+            this.upload_btn.Size = new System.Drawing.Size(259, 26);
             this.upload_btn.TabIndex = 25;
             this.upload_btn.Text = "Upload Image";
             this.upload_btn.UseVisualStyleBackColor = true;
@@ -277,9 +299,10 @@ namespace QLSV.AppForm.StudentsForm
             // findByPhone_btn
             // 
             this.findByPhone_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.findByPhone_btn.Location = new System.Drawing.Point(408, 469);
+            this.findByPhone_btn.Location = new System.Drawing.Point(272, 305);
+            this.findByPhone_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.findByPhone_btn.Name = "findByPhone_btn";
-            this.findByPhone_btn.Size = new System.Drawing.Size(110, 40);
+            this.findByPhone_btn.Size = new System.Drawing.Size(73, 26);
             this.findByPhone_btn.TabIndex = 21;
             this.findByPhone_btn.Text = "Find";
             this.findByPhone_btn.UseVisualStyleBackColor = true;
@@ -288,9 +311,10 @@ namespace QLSV.AppForm.StudentsForm
             // firstNameFind_btn
             // 
             this.firstNameFind_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstNameFind_btn.Location = new System.Drawing.Point(408, 148);
+            this.firstNameFind_btn.Location = new System.Drawing.Point(272, 96);
+            this.firstNameFind_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.firstNameFind_btn.Name = "firstNameFind_btn";
-            this.firstNameFind_btn.Size = new System.Drawing.Size(110, 40);
+            this.firstNameFind_btn.Size = new System.Drawing.Size(73, 26);
             this.firstNameFind_btn.TabIndex = 21;
             this.firstNameFind_btn.Text = "Find";
             this.firstNameFind_btn.UseVisualStyleBackColor = true;
@@ -302,9 +326,10 @@ namespace QLSV.AppForm.StudentsForm
             this.cancel_btn.BackColor = System.Drawing.Color.DarkGray;
             this.cancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.cancel_btn.Location = new System.Drawing.Point(758, 657);
+            this.cancel_btn.Location = new System.Drawing.Point(505, 445);
+            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cancel_btn.Name = "cancel_btn";
-            this.cancel_btn.Size = new System.Drawing.Size(168, 58);
+            this.cancel_btn.Size = new System.Drawing.Size(112, 38);
             this.cancel_btn.TabIndex = 24;
             this.cancel_btn.Text = "Cancel";
             this.cancel_btn.UseVisualStyleBackColor = false;
@@ -315,9 +340,10 @@ namespace QLSV.AppForm.StudentsForm
             this.courses_btn.BackColor = System.Drawing.SystemColors.ControlLight;
             this.courses_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.courses_btn.ForeColor = System.Drawing.Color.Black;
-            this.courses_btn.Location = new System.Drawing.Point(218, 549);
+            this.courses_btn.Location = new System.Drawing.Point(145, 357);
+            this.courses_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.courses_btn.Name = "courses_btn";
-            this.courses_btn.Size = new System.Drawing.Size(302, 40);
+            this.courses_btn.Size = new System.Drawing.Size(201, 26);
             this.courses_btn.TabIndex = 24;
             this.courses_btn.Text = "Add Course";
             this.courses_btn.UseVisualStyleBackColor = false;
@@ -327,28 +353,30 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.cources_lb.AutoSize = true;
             this.cources_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cources_lb.Location = new System.Drawing.Point(46, 555);
+            this.cources_lb.Location = new System.Drawing.Point(31, 361);
+            this.cources_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.cources_lb.Name = "cources_lb";
-            this.cources_lb.Size = new System.Drawing.Size(109, 29);
+            this.cources_lb.Size = new System.Drawing.Size(72, 20);
             this.cources_lb.TabIndex = 20;
             this.cources_lb.Text = "Cources:";
             // 
             // student_pcb
             // 
             this.student_pcb.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.student_pcb.Location = new System.Drawing.Point(716, 318);
+            this.student_pcb.Location = new System.Drawing.Point(477, 207);
+            this.student_pcb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.student_pcb.Name = "student_pcb";
-            this.student_pcb.Size = new System.Drawing.Size(388, 271);
+            this.student_pcb.Size = new System.Drawing.Size(259, 176);
             this.student_pcb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.student_pcb.TabIndex = 23;
             this.student_pcb.TabStop = false;
             // 
             // EditDeleteStudentForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1164, 732);
+            this.ClientSize = new System.Drawing.Size(776, 492);
             this.Controls.Add(this.upload_btn);
             this.Controls.Add(this.cancel_btn);
             this.Controls.Add(this.courses_btn);
@@ -374,6 +402,7 @@ namespace QLSV.AppForm.StudentsForm
             this.Controls.Add(this.LastName_tb);
             this.Controls.Add(this.FirstName_tb);
             this.Controls.Add(this.Id_tb);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditDeleteStudentForm";
             this.Text = "Edit and Delete";
             this.Load += new System.EventHandler(this.EditDeleteStudentForm_Load);

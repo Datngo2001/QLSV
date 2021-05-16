@@ -140,7 +140,7 @@ namespace QLSV.AppForm.ScoreForm
             this.add_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.add_btn.Location = new System.Drawing.Point(233, 351);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(173, 66);
+            this.add_btn.Size = new System.Drawing.Size(333, 66);
             this.add_btn.TabIndex = 8;
             this.add_btn.Text = "Add Score";
             this.add_btn.UseVisualStyleBackColor = false;

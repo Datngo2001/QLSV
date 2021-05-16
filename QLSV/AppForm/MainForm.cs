@@ -120,5 +120,11 @@ namespace QLSV.AppForm
             EditProfileForm editProfileForm = new EditProfileForm();
             editProfileForm.Show();
         }
+
+        private void staticResultToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ResultStatisticForm resultStatisticForm = new ResultStatisticForm();
+            resultStatisticForm.Show();
+        }
     }
 }

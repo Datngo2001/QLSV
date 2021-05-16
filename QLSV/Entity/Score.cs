@@ -1,11 +1,7 @@
 ﻿using QLSV.Data;
 using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace QLSV.Entity
 {
@@ -261,27 +257,45 @@ namespace QLSV.Entity
 
                 result.Columns.Add("Result");
 
+                //test empty
+                if (scores.Rows.Count < 1) return result;
+
                 //fill score to table 
                 int scoreRow = 0;
                 for (int row = 0; row < result.Rows.Count; row++)
                 {
-                    int courseIndex = 0;
-                    while (result.Rows[row][0].ToString().Trim() == scores.Rows[scoreRow][0].ToString().Trim())
+                    try
                     {
-                        result.Rows[row][courseIndex + 3] = scores.Rows[scoreRow][2].ToString().Trim();
-                        courseIndex++;
-                        scoreRow++;
-                        if(scoreRow > scores.Rows.Count - 1)
+                        int courseIndex = 0;
+                        while (result.Rows[row][0].ToString().Trim() == scores.Rows[scoreRow][0].ToString().Trim())
                         {
-                            break;
+                            result.Rows[row][courseIndex + 3] = scores.Rows[scoreRow][2].ToString().Trim();
+                            courseIndex++;
+                            scoreRow++;
+                            if (scoreRow > scores.Rows.Count - 1)
+                            {
+                                break;
+                            }
                         }
                     }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
                 }
+                // fill avg score
                 for (int row = 0; row < result.Rows.Count; row++)
                 {
-                    result.Rows[row][result.Columns.Count - 1] = avgScore.Rows[row][1].ToString().Trim();
+                    try
+                    {
+                        result.Rows[row][result.Columns.Count - 1] 
+                            = avgScore.Rows[row][1].ToString().Trim();
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
                 }
-
                 return result;
             }
             catch (Exception)
@@ -289,5 +303,116 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        public bool isExisted()
+        {
+            DataBase mydb = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand("Select * from Score where student_id = @student_id and course_id = @course_id", mydb.Connection);
+
+                command.Parameters.Add("@student_id", SqlDbType.NVarChar).Value = StudentID;
+                command.Parameters.Add("@course_id", SqlDbType.Int).Value = CourseID;
+
+                mydb.openConnection();
+
+                if (command.ExecuteScalar() != null)
+                {
+                    mydb.closeConnection();
+                    return true;
+                }
+                else
+                {
+                    mydb.closeConnection();
+                    return false;
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            finally
+            {
+                mydb.closeConnection();
+            }
+        }
+        public int getPassNumber()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "select count(A.student_id) " +
+                        "from (SELECT Score.student_id, AVG(Score.student_score) as avgScore " +
+                        "FROM Students_info inner join Score on Students_info.ID = Score.student_id " +
+                        "Group by Score.student_id " +
+                        "HAVING AVG(Score.student_score) >= 5) as A"
+                };
+                int result;
+                try
+                {
+                    result = (int)command.ExecuteScalar();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+                db.closeConnection();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
+        public int getFailNumber()
+        {
+            DataBase db = new DataBase();
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "select count(A.student_id) " +
+                        "from (SELECT Score.student_id, AVG(Score.student_score) as avgScore " +
+                        "FROM Students_info inner join Score on Students_info.ID = Score.student_id " +
+                        "Group by Score.student_id " +
+                        "HAVING AVG(Score.student_score) < 5 and AVG(Score.student_score) >= 0) as A"
+                };
+
+                int result = 0;
+                try
+                {
+                    result = (int)command.ExecuteScalar();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+
+                db.closeConnection();
+
+                return result;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
+        //public DataTable get
     }
 }

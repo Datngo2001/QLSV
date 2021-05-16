@@ -121,10 +121,10 @@
     <Compile Include="AppForm\CourseForm\RemoveCourseForm.Designer.cs">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AppForm\EditProfileForm.cs">
+    <Compile Include="AppForm\ContactForm\EditProfileForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AppForm\EditProfileForm.Designer.cs">
+    <Compile Include="AppForm\ContactForm\EditProfileForm.Designer.cs">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForm\MainContactForm.cs">
@@ -138,6 +138,12 @@
     </Compile>
     <Compile Include="AppForm\ResultForm\AvgResultScoreForm.Designer.cs">
       <DependentUpon>AvgResultScoreForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppForm\ResultForm\ResultStatisticForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\ResultForm\ResultStatisticForm.Designer.cs">
+      <DependentUpon>ResultStatisticForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AppForm\ScoreForm\AddScoreForm.cs">
       <SubType>Form</SubType>
@@ -283,7 +289,7 @@
     <EmbeddedResource Include="AppForm\CourseForm\RemoveCourseForm.resx">
       <DependentUpon>RemoveCourseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AppForm\EditProfileForm.resx">
+    <EmbeddedResource Include="AppForm\ContactForm\EditProfileForm.resx">
       <DependentUpon>EditProfileForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\MainContactForm.resx">
@@ -291,6 +297,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\ResultForm\AvgResultScoreForm.resx">
       <DependentUpon>AvgResultScoreForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\ResultForm\ResultStatisticForm.resx">
+      <DependentUpon>ResultStatisticForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AppForm\ScoreForm\AddScoreForm.resx">
       <DependentUpon>AddScoreForm.cs</DependentUpon>

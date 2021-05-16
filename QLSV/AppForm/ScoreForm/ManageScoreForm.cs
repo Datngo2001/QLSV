@@ -93,5 +93,11 @@ namespace QLSV.AppForm.ScoreForm
         {
             show_dgv.DataSource = score.getAllScore();
         }
+
+        private void avg_btn_Click(object sender, EventArgs e)
+        {
+            AvarageScore avarageScore = new AvarageScore();
+            avarageScore.Show();
+        } 
     }
 }

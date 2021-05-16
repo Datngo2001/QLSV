@@ -16,7 +16,17 @@ namespace QLSV.AppForm
 
         private void saveChange_btn_Click(object sender, EventArgs e)
         {
-
+            if(user.editProfile(CurrentUser.Id, username_tb.Text, password_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image))
+            {
+                MessageBox.Show("Edit complete!");
+                user.login(username_tb.Text, password_tb.Text);
+            }
+            else
+            {
+                MessageBox.Show("Something wrong!");
+                return;
+            }
+            
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)
@@ -47,7 +57,6 @@ namespace QLSV.AppForm
                 username_tb.Text = CurrentUser.UserName;
                 fname_tb.Text = CurrentUser.fname;
                 lname_tb.Text = CurrentUser.lname;
-                id_tb.Text = CurrentUser.Id.ToString();
                 pictureBox.Image = CurrentUser.Avatar;
             }
             else

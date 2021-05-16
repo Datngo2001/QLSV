@@ -157,9 +157,54 @@ namespace QLSV.Entity
             }
 
         }
-        public bool editProfile(string Username, string Password, string id, string fname, string lname, Image image)
+        public bool editProfile(int id, string Username, string Password, string fname, string lname, Image image)
         {
-            return true;
+            try
+            {
+                SqlCommand insertCommand = new SqlCommand(
+                    "UPDATE Users SET " +
+                    "UsernName = @username, " +
+                    "Password = @password, " +
+                    "fname = @fname, " +
+                    "lname = @lname, " +
+                    "pic = @pic"
+                    , db.Connection);
+
+
+                db.openConnection();
+
+                if (CheckUserName(Username) == true)
+                {
+                    insertCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = Username;
+                    insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
+                    insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+                    insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+                    insertCommand.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(image).toByteArray();
+
+                    if (insertCommand.ExecuteNonQuery() == 1)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception E)
+            {
+                Console.WriteLine(E.Message);
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
         }
         public DataTable GetUserByID(int id)
         {
