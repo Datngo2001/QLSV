@@ -126,5 +126,16 @@ namespace QLSV.AppForm
             ResultStatisticForm resultStatisticForm = new ResultStatisticForm();
             resultStatisticForm.Show();
         }
+
+        private void aDDNEWACCOUNTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewManagerAccForm newManagerAccForm = new NewManagerAccForm();
+            newManagerAccForm.Show();
+        }
+
+        private void pRINTRESULTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

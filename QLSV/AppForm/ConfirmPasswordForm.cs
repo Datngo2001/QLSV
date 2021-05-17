@@ -14,22 +14,40 @@ namespace QLSV.AppForm
     public partial class ConfirmPasswordForm : Form
     {
         User user;
+        studentManager manager;
         public ConfirmPasswordForm()
         {
             InitializeComponent();
             user = new User();
+            manager = new studentManager();
         }
 
         private void confirm_btn_Click(object sender, EventArgs e)
         {
-            if(user.CheckPassword(pass_tb.Text) == true)
+            if (CurrentUser.isAdmin == true)
             {
-                this.DialogResult = DialogResult.Yes;
+                if (manager.CheckPassword(pass_tb.Text) == true)
+                {
+                    this.DialogResult = DialogResult.Yes;
+                }
+                else
+                {
+                    MessageBox.Show("Password not match!");
+                    this.DialogResult = DialogResult.No;
+                }
             }
             else
             {
-                MessageBox.Show("Password not match!");
-                this.DialogResult = DialogResult.No;
+                if (user.CheckPassword(pass_tb.Text) == true)
+                {
+                    this.DialogResult = DialogResult.Yes;
+                }
+                else
+                {
+                    MessageBox.Show("Password not match!");
+                    this.DialogResult = DialogResult.No;
+                }
+
             }
         }
     }

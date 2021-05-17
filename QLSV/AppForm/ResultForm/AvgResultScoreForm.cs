@@ -103,11 +103,17 @@ namespace QLSV.AppForm.ResultForm
                 resultTable.Rows.Add().ItemArray = row.ItemArray;
             }
             showResult_dgv.DataSource = resultTable;
+            id_tb.Text = scoreTable.Rows[0]["Id"].ToString().Trim();
+            fname_tx.Text = scoreTable.Rows[0]["Firt Name"].ToString().Trim();
+            lname_tb.Text = scoreTable.Rows[0]["Last Name"].ToString().Trim();
         }
 
         private void refresh_llb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             showResult_dgv.DataSource = score.MakeStudentScoreResultTable();
+            id_tb.Text = "";
+            fname_tx.Text = "";
+            lname_tb.Text = "";
         }
     }
 }

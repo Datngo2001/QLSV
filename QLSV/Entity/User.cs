@@ -37,10 +37,10 @@ namespace QLSV.Entity
             if (table.Rows.Count > 0)
             {
                 //load info
-                CurrentUser.Id = Convert.ToInt32(table.Rows[0]["id"].ToString());
-                CurrentUser.fname = table.Rows[0]["fname"].ToString();
-                CurrentUser.lname = table.Rows[0]["lname"].ToString();
-                CurrentUser.UserName = table.Rows[0]["UserName"].ToString();
+                CurrentUser.Id = Convert.ToInt32(table.Rows[0]["id"].ToString().Trim());
+                CurrentUser.fname = table.Rows[0]["fname"].ToString().Trim();
+                CurrentUser.lname = table.Rows[0]["lname"].ToString().Trim();
+                CurrentUser.UserName = table.Rows[0]["UserName"].ToString().Trim();
                 if(table.Rows[0]["pic"] != System.DBNull.Value)
                 {
                     CurrentUser.Avatar = new Picture().ByteArrToImage((byte[])table.Rows[0]["pic"]);
@@ -107,7 +107,7 @@ namespace QLSV.Entity
                     , db.Connection);
                 checkCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
                 db.openConnection();
-                if(checkCommand.ExecuteNonQuery() < 1)
+                if(checkCommand.ExecuteScalar()  == null)
                 {
                     return true;
                 }
@@ -137,7 +137,7 @@ namespace QLSV.Entity
                 checkCommand.Parameters.Add("@User", SqlDbType.NVarChar).Value = CurrentUser.UserName;
                 checkCommand.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = password;
                 db.openConnection();
-                if (checkCommand.ExecuteNonQuery() > 1)
+                if (checkCommand.ExecuteScalar() != null)
                 {
                     return true;
                 }

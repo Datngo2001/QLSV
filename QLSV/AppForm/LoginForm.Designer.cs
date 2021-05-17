@@ -38,7 +38,6 @@ namespace QLSV.AppForm
             this.Password_label = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.Title_pictureBox = new System.Windows.Forms.PictureBox();
-            this.ForgetPassword_lb = new System.Windows.Forms.LinkLabel();
             this.register_lb = new System.Windows.Forms.LinkLabel();
             this.password_ttip = new System.Windows.Forms.ToolTip(this.components);
             this.username_ttip = new System.Windows.Forms.ToolTip(this.components);
@@ -79,7 +78,7 @@ namespace QLSV.AppForm
             this.Login_button.BackColor = System.Drawing.Color.SpringGreen;
             this.Login_button.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Login_button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Login_button.Location = new System.Drawing.Point(256, 295);
+            this.Login_button.Location = new System.Drawing.Point(300, 295);
             this.Login_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Login_button.Name = "Login_button";
             this.Login_button.Size = new System.Drawing.Size(162, 57);
@@ -93,7 +92,7 @@ namespace QLSV.AppForm
             this.Cancel_button.BackColor = System.Drawing.Color.Tomato;
             this.Cancel_button.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.Cancel_button.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.Cancel_button.Location = new System.Drawing.Point(33, 295);
+            this.Cancel_button.Location = new System.Drawing.Point(45, 295);
             this.Cancel_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Cancel_button.Name = "Cancel_button";
             this.Cancel_button.Size = new System.Drawing.Size(162, 57);
@@ -146,22 +145,11 @@ namespace QLSV.AppForm
             this.Title_pictureBox.TabIndex = 7;
             this.Title_pictureBox.TabStop = false;
             // 
-            // ForgetPassword_lb
-            // 
-            this.ForgetPassword_lb.AutoSize = true;
-            this.ForgetPassword_lb.LinkColor = System.Drawing.Color.White;
-            this.ForgetPassword_lb.Location = new System.Drawing.Point(109, 244);
-            this.ForgetPassword_lb.Name = "ForgetPassword_lb";
-            this.ForgetPassword_lb.Size = new System.Drawing.Size(175, 20);
-            this.ForgetPassword_lb.TabIndex = 8;
-            this.ForgetPassword_lb.TabStop = true;
-            this.ForgetPassword_lb.Text = "Forgot your password ?";
-            // 
             // register_lb
             // 
             this.register_lb.AutoSize = true;
             this.register_lb.LinkColor = System.Drawing.Color.White;
-            this.register_lb.Location = new System.Drawing.Point(109, 264);
+            this.register_lb.Location = new System.Drawing.Point(191, 252);
             this.register_lb.Name = "register_lb";
             this.register_lb.Size = new System.Drawing.Size(181, 20);
             this.register_lb.TabIndex = 8;
@@ -218,7 +206,6 @@ namespace QLSV.AppForm
             this.Controls.Add(this.human_rbtn);
             this.Controls.Add(this.student_rbtn);
             this.Controls.Add(this.register_lb);
-            this.Controls.Add(this.ForgetPassword_lb);
             this.Controls.Add(this.Title_pictureBox);
             this.Controls.Add(this.Title);
             this.Controls.Add(this.Password_label);
@@ -249,7 +236,6 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Label Password_label;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox Title_pictureBox;
-        private System.Windows.Forms.LinkLabel ForgetPassword_lb;
         private System.Windows.Forms.LinkLabel register_lb;
         private System.Windows.Forms.ToolTip password_ttip;
         private System.Windows.Forms.ToolTip username_ttip;

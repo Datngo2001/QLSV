@@ -103,12 +103,10 @@ namespace QLSV.AppForm
             if(student_rbtn.Checked == true)
             {
                 register_lb.Visible = false;
-                ForgetPassword_lb.Visible = false;
             }
             else
             {
                 register_lb.Visible = true;
-                ForgetPassword_lb.Visible = true;
             }
         }
     }

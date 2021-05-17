@@ -82,14 +82,6 @@ namespace QLSV.Entity
                         //check for image cell and print
                         if (Table.Rows[i][j].GetType() == typeof(byte[]))
                         {
-                            //Image image = new Picture().ByteArrToImage((byte[])Table.Rows[i][j]);
-                            //// resize image
-                            //Bitmap bitmap = new Bitmap(image, new Size(90, 90));
-                            //image = (Image)bitmap;
-
-                            //Clipboard.SetImage(image);
-                            //workSheet.Cells[i + 4, j + 1].PasteSpecial();
-                            //Clipboard.Clear();
 
                         }
                         else if (Table.Rows[i][j].GetType() == typeof(DateTime))
@@ -248,7 +240,6 @@ namespace QLSV.Entity
                 throw;
             }
         }
-
         public void Print()
         {
             //Create an instance for word app  
@@ -291,6 +282,5 @@ namespace QLSV.Entity
                 throw;
             }
         }
-
     }
 }

@@ -48,22 +48,23 @@ namespace QLSV.AppForm
             this.rEMOVESCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGESCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aVGSCOREBYSCOREToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pRINTRESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rESULTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aVGResultByScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staticResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mANAGERACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aDDNEWACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.main_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_menuStrip
             // 
-            this.main_menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.main_menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.main_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Dropdown_Student,
             this.cOURSEToolStripMenuItem,
             this.sCOREToolStripMenuItem,
-            this.rESULTToolStripMenuItem});
+            this.rESULTToolStripMenuItem,
+            this.mANAGERACCOUNTToolStripMenuItem});
             this.main_menuStrip.Location = new System.Drawing.Point(0, 0);
             this.main_menuStrip.Name = "main_menuStrip";
             this.main_menuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
@@ -187,8 +188,7 @@ namespace QLSV.AppForm
             this.aDDSCOREToolStripMenuItem,
             this.rEMOVESCOREToolStripMenuItem,
             this.mANAGESCOREToolStripMenuItem,
-            this.aVGSCOREBYSCOREToolStripMenuItem,
-            this.pRINTRESULTToolStripMenuItem});
+            this.aVGSCOREBYSCOREToolStripMenuItem});
             this.sCOREToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sCOREToolStripMenuItem.Name = "sCOREToolStripMenuItem";
             this.sCOREToolStripMenuItem.Size = new System.Drawing.Size(116, 42);
@@ -222,12 +222,6 @@ namespace QLSV.AppForm
             this.aVGSCOREBYSCOREToolStripMenuItem.Text = "AVG SCORE BY SCORE";
             this.aVGSCOREBYSCOREToolStripMenuItem.Click += new System.EventHandler(this.aVGSCOREBYSCOREToolStripMenuItem_Click);
             // 
-            // pRINTRESULTToolStripMenuItem
-            // 
-            this.pRINTRESULTToolStripMenuItem.Name = "pRINTRESULTToolStripMenuItem";
-            this.pRINTRESULTToolStripMenuItem.Size = new System.Drawing.Size(395, 46);
-            this.pRINTRESULTToolStripMenuItem.Text = "PRINT RESULT";
-            // 
             // rESULTToolStripMenuItem
             // 
             this.rESULTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -254,11 +248,30 @@ namespace QLSV.AppForm
             this.staticResultToolStripMenuItem.Text = "Static Result";
             this.staticResultToolStripMenuItem.Click += new System.EventHandler(this.staticResultToolStripMenuItem_Click);
             // 
+            // mANAGERACCOUNTToolStripMenuItem
+            // 
+            this.mANAGERACCOUNTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aDDNEWACCOUNTToolStripMenuItem});
+            this.mANAGERACCOUNTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.mANAGERACCOUNTToolStripMenuItem.Name = "mANAGERACCOUNTToolStripMenuItem";
+            this.mANAGERACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(297, 42);
+            this.mANAGERACCOUNTToolStripMenuItem.Text = "MANAGER ACCOUNT";
+            // 
+            // aDDNEWACCOUNTToolStripMenuItem
+            // 
+            this.aDDNEWACCOUNTToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.aDDNEWACCOUNTToolStripMenuItem.Name = "aDDNEWACCOUNTToolStripMenuItem";
+            this.aDDNEWACCOUNTToolStripMenuItem.Size = new System.Drawing.Size(384, 46);
+            this.aDDNEWACCOUNTToolStripMenuItem.Text = "ADD NEW ACCOUNT";
+            this.aDDNEWACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.aDDNEWACCOUNTToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BackgroundImage = global::QLSV.Properties.Resources.mainFormBackGroup;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(969, 553);
             this.Controls.Add(this.main_menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -293,9 +306,10 @@ namespace QLSV.AppForm
         private System.Windows.Forms.ToolStripMenuItem rEMOVESCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGESCOREToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aVGSCOREBYSCOREToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pRINTRESULTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rESULTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aVGResultByScoreToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem staticResultToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mANAGERACCOUNTToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aDDNEWACCOUNTToolStripMenuItem;
     }
 }

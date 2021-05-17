@@ -133,6 +133,12 @@
     <Compile Include="AppForm\MainContactForm.Designer.cs">
       <DependentUpon>MainContactForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppForm\NewManagerAccForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AppForm\NewManagerAccForm.Designer.cs">
+      <DependentUpon>NewManagerAccForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AppForm\ResultForm\AvgResultScoreForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,6 +301,9 @@
     <EmbeddedResource Include="AppForm\MainContactForm.resx">
       <DependentUpon>MainContactForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AppForm\NewManagerAccForm.resx">
+      <DependentUpon>NewManagerAccForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AppForm\ResultForm\AvgResultScoreForm.resx">
       <DependentUpon>AvgResultScoreForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -376,6 +385,8 @@
   <ItemGroup>
     <None Include="Resources\User.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\mainFormBackGroup.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
