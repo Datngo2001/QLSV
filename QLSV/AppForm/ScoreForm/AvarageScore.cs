@@ -23,6 +23,7 @@ namespace QLSV.AppForm.ScoreForm
             score_ch.Series.Add("Average Score");
             score_ch.Series["Average Score"].XValueMember = "label";
             score_ch.Series["Average Score"].YValueMembers = "AverageGrade";
+            score_ch.Series["Average Score"].IsValueShownAsLabel = true;
             score_ch.Titles.Add("Average Score per Cource Chart");
 
         }

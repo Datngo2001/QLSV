@@ -18,17 +18,7 @@ namespace QLSV.AppForm
 
         private void MainContactForm_Load(object sender, EventArgs e)
         {
-            int id = CurrentUser.Id;
-
-            labelWelcome.Text = "Welcome Back (" +
-                                    user.GetUserByID(id).Rows[0]["username"].ToString().Trim() +
-                                    ")";
-            labelName.Text = user.GetUserFullNameByID(id);
-
-            //if (user.GetUserByID(id).Rows[0]["pic"] != System.DBNull.Value)
-            //    pictureBoxContact.Image = new Picture().ByteArrToImage((byte[])user.GetUserByID(id).Rows[0]["pic"]);
-
-            pictureBoxContact.Image = CurrentUser.Avatar;
+            loadProfile();
 
             this.ReloadComboBox();
             group_cb.SelectedIndex = -1;
@@ -149,12 +139,12 @@ namespace QLSV.AppForm
                     }
                     else
                     {
-                        MessageBox.Show("Error", "Edit Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("You are not the owner of this group!", "Edit Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Group Already Exists", "Edit Group", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Error!", "Edit Group", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 refresh();
             }
@@ -181,7 +171,7 @@ namespace QLSV.AppForm
                 }
                 else
                 {
-                    MessageBox.Show("Error", "Remove Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("You are not the owner of this group!", "Remove Group", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 refresh();
             }
@@ -196,6 +186,14 @@ namespace QLSV.AppForm
         {
             EditProfileForm editProfileForm = new EditProfileForm();
             editProfileForm.Show();
+            try
+            {
+                pictureBoxContact.Image = CurrentUser.Avatar;
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
 
         private void linkLabelRefresh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -211,6 +209,14 @@ namespace QLSV.AppForm
             textBoxNewName.Text = "";
             group_cb.Text = "";
             remove_cb.Text = "";
+            try
+            {
+                loadProfile();
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
 
         private void logout_llb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -222,6 +228,16 @@ namespace QLSV.AppForm
             CurrentUser.UserName = "";
             CurrentUser.isAdmin = false;
             Program.logout();
+        }
+        private void loadProfile()
+        {
+            int id = CurrentUser.Id;
+
+            labelWelcome.Text = "Welcome Back (" +
+                                    CurrentUser.UserName +
+                                    ")";
+            labelName.Text = CurrentUser.fname + CurrentUser.lname;
+            pictureBoxContact.Image = CurrentUser.Avatar;
         }
     }
 }

@@ -39,12 +39,11 @@ namespace QLSV.AppForm.ContactForm
         private void listBoxGroup_DoubleClick(object sender, EventArgs e)
         {
 
-            int idx = listBoxGroup.SelectedIndex;
+            int idx = (int)listBoxGroup.SelectedValue;
             if (idx < 0) return;
-            DataTable allgroup = group.GetAllGroup();
-            string _group = group.GetAllGroup().Rows[idx].ItemArray[1].ToString();
-            DataTable table = contact.GetContactByGroup(_group);
-            this.ShowContact(table);
+            DataTable allcontact = group.getAllContactInGroup(idx);
+            
+            this.ShowContact(allcontact);
         }
 
         private void ShowContact(DataTable table)
@@ -53,16 +52,24 @@ namespace QLSV.AppForm.ContactForm
             dataGridViewShowAll.RowTemplate.Height = 80;
             dataGridViewShowAll.ReadOnly = true;
             DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
-            imageColumn = (DataGridViewImageColumn)dataGridViewShowAll.Columns[6];
+            imageColumn = (DataGridViewImageColumn)dataGridViewShowAll.Columns["picture"];
             imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridViewShowAll.AllowUserToAddRows = false;
         }
         private void ShowAllGroup()
         {
-            listBoxGroup.DataSource = group.GetAllGroup();
-            listBoxGroup.ValueMember = "id";
-            listBoxGroup.DisplayMember = "name";
-            listBoxGroup.SelectedItem = 0;
+            try
+            {
+                User user = new User();
+                listBoxGroup.DataSource = user.getJoinedGroup(CurrentUser.Id);
+                listBoxGroup.ValueMember = "id";
+                listBoxGroup.DisplayMember = "name";
+                listBoxGroup.SelectedItem = 0;
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

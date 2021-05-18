@@ -38,22 +38,24 @@ namespace QLSV.AppForm.ContactForm
             this.dataGridViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewContact.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewContact.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridViewContact.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dataGridViewContact.Name = "dataGridViewContact";
             this.dataGridViewContact.RowHeadersWidth = 51;
             this.dataGridViewContact.RowTemplate.Height = 24;
-            this.dataGridViewContact.Size = new System.Drawing.Size(677, 562);
+            this.dataGridViewContact.Size = new System.Drawing.Size(451, 365);
             this.dataGridViewContact.TabIndex = 1;
             this.dataGridViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewContact_CellDoubleClick);
             // 
             // SelectContactForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 562);
+            this.ClientSize = new System.Drawing.Size(451, 365);
             this.Controls.Add(this.dataGridViewContact);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "SelectContactForm";
-            this.Text = "SelectContactForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Select Contact";
             this.Load += new System.EventHandler(this.SelectContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewContact)).EndInit();
             this.ResumeLayout(false);

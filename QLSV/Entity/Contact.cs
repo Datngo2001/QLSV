@@ -1,7 +1,9 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.IO;
 using QLSV.Data;
+using QLSV.Entity;
 
 namespace QLSV.Entity
 {
@@ -9,7 +11,7 @@ namespace QLSV.Entity
     {
         DataBase db = new DataBase();
 
-        public bool InsertContact(string fname, string lname, int group, string phone, string email, string address, MemoryStream picture, int user_id)
+        public bool InsertContact(string fname, string lname, int group, string phone, string email, string address, Image picture, int user_id)
         {
             SqlCommand command = new SqlCommand("INSERT INTO Contact (fname, lname, [group], phone, email, address, picture, user_id) " +
                                                 "VALUES (@fname, @lname, @group, @phone, @email, @address, @picture, @user_id)", db.Connection);
@@ -20,7 +22,7 @@ namespace QLSV.Entity
             command.Parameters.Add("@phone", SqlDbType.Text).Value = phone;
             command.Parameters.Add("@email", SqlDbType.Text).Value = email;
             command.Parameters.Add("@address", SqlDbType.Text).Value = address;
-            command.Parameters.Add("@picture", SqlDbType.Image).Value = picture.ToArray();
+            command.Parameters.Add("@picture", SqlDbType.Image).Value = new Picture(picture).toByteArray();
             command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
 
             db.openConnection();
@@ -36,7 +38,7 @@ namespace QLSV.Entity
             }
         }
 
-        public bool UpdateContact(int id, string fname, string lname, string group, string phone, string email, string address, MemoryStream picture)
+        public bool UpdateContact(int id, string fname, string lname, string group, string phone, string email, string address, Image picture)
         {
             SqlCommand command = new SqlCommand("UPDATE Contact " +
                                                 "SET " +
@@ -57,7 +59,7 @@ namespace QLSV.Entity
             command.Parameters.Add("@phone", SqlDbType.Text).Value = phone;
             command.Parameters.Add("@email", SqlDbType.Text).Value = email;
             command.Parameters.Add("@address", SqlDbType.Text).Value = address;
-            command.Parameters.Add("@picture", SqlDbType.Image).Value = picture.ToArray();
+            command.Parameters.Add("@picture", SqlDbType.Image).Value = new Picture(picture).toByteArray();
 
             db.openConnection();
             if (command.ExecuteNonQuery() == 1)
@@ -86,27 +88,6 @@ namespace QLSV.Entity
             else
             {
                 db.closeConnection();
-                return false;
-            }
-        }
-
-        public bool CheckUserID(int user_id)
-        {
-            string query = "SELECT * FROM Contact WHERE user_id = @user_id";
-
-            SqlCommand command = new SqlCommand(query, db.Connection);
-            command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            if (table.Rows.Count > 0)
-            {
-                return true;
-            }
-            else
-            {
                 return false;
             }
         }

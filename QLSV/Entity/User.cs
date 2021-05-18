@@ -56,16 +56,15 @@ namespace QLSV.Entity
         {
             try
             {
-                SqlCommand insertCommand = new SqlCommand(
+                if (CheckUserName(Username) == true)
+                {
+                    SqlCommand insertCommand = new SqlCommand(
                     "INSERT INTO Users (UserName, Password, fname, lname, pic)" +
                     "VALUES (@username, @password, @fname, @lname, @pic)"
                     , db.Connection);
 
+                    db.openConnection();
 
-                db.openConnection();
-
-                if (CheckUserName(Username) == true)
-                {
                     insertCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = Username;
                     insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
                     insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
@@ -157,13 +156,12 @@ namespace QLSV.Entity
             }
 
         }
-        public bool editProfile(int id, string Username, string Password, string fname, string lname, Image image)
+        public bool editProfile(int id, string Password, string fname, string lname, Image image)
         {
             try
             {
                 SqlCommand insertCommand = new SqlCommand(
                     "UPDATE Users SET " +
-                    "UsernName = @username, " +
                     "Password = @password, " +
                     "fname = @fname, " +
                     "lname = @lname, " +
@@ -173,23 +171,51 @@ namespace QLSV.Entity
 
                 db.openConnection();
 
-                if (CheckUserName(Username) == true)
+                insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
+                insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+                insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+                insertCommand.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(image).toByteArray();
+
+                if (insertCommand.ExecuteNonQuery() > 0)
                 {
-                    insertCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = Username;
-                    insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
-                    insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
-                    insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
-                    insertCommand.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(image).toByteArray();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception E)
+            {
+                Console.WriteLine(E.Message);
+                throw;
+            }
+            finally
+            {
+                db.closeConnection();
+            }
+        }
+        public bool editProfile(int id, string fname, string lname, Image image)
+        {
+            try
+            {
+                SqlCommand insertCommand = new SqlCommand(
+                    "UPDATE Users SET " +
+                    "fname = @fname, " +
+                    "lname = @lname, " +
+                    "pic = @pic"
+                    , db.Connection);
 
-                    if (insertCommand.ExecuteNonQuery() == 1)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
 
+                db.openConnection();
+
+                insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
+                insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
+                insertCommand.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(image).toByteArray();
+
+                if (insertCommand.ExecuteNonQuery() > 0)
+                {
+                    return true;
                 }
                 else
                 {
@@ -239,6 +265,29 @@ namespace QLSV.Entity
             adapter.Fill(table);
 
             return table.Rows[0][0].ToString().Trim();
+        }
+        public DataTable getJoinedGroup(int user_id)
+        {
+            try
+            {
+                db.openConnection();
+                SqlCommand command = new SqlCommand($"SELECT [Group].id, [Group].name, [Group].user_id" +
+                    $" FROM [Group] inner join Contact on [Group].id = Contact.[group]" +
+                    $" WHERE Contact.[user_id] = @user_id", db.Connection);
+                command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                db.closeConnection();
+
+                return table;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

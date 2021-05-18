@@ -139,7 +139,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.password_lb);
             this.Controls.Add(this.username_lb);
             this.Name = "NewManagerAccForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add a new manager";
             this.ResumeLayout(false);
             this.PerformLayout();

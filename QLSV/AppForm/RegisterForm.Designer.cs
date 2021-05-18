@@ -235,6 +235,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.password_lb);
             this.Controls.Add(this.username_lb);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

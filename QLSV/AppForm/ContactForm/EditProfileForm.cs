@@ -16,17 +16,37 @@ namespace QLSV.AppForm
 
         private void saveChange_btn_Click(object sender, EventArgs e)
         {
-            if(user.editProfile(CurrentUser.Id, username_tb.Text, password_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image))
-            {
-                MessageBox.Show("Edit complete!");
-                user.login(username_tb.Text, password_tb.Text);
-            }
-            else
-            {
-                MessageBox.Show("Something wrong!");
+            if(username_tb.Text == ""){
+                MessageBox.Show("Username can not empty complete!");
                 return;
             }
-            
+            if(password_tb.Text == "")
+            {
+                if (user.editProfile(CurrentUser.Id, fname_tb.Text, lname_tb.Text, pictureBox.Image))
+                {
+                    MessageBox.Show("Edit complete!");
+                    user.login(username_tb.Text, password_tb.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Something wrong!");
+                    return;
+                }
+                return;
+            }
+            if (password_tb.Text == reEnter_tb.Text)
+            {
+                if (user.editProfile(CurrentUser.Id, password_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image))
+                {
+                    MessageBox.Show("Edit complete!");
+                    user.login(username_tb.Text, password_tb.Text);
+                }
+                else
+                {
+                    MessageBox.Show("Something wrong!");
+                    return;
+                }
+            }
         }
 
         private void cancel_btn_Click(object sender, EventArgs e)

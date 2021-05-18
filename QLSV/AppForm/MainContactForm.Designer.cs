@@ -47,6 +47,7 @@ namespace QLSV.AppForm
             this.labelContact = new System.Windows.Forms.Label();
             this.head_gb = new System.Windows.Forms.GroupBox();
             this.spliter_lb = new System.Windows.Forms.Label();
+            this.logout_llb = new System.Windows.Forms.LinkLabel();
             this.linkLabelRefresh = new System.Windows.Forms.LinkLabel();
             this.linkLabelEdit = new System.Windows.Forms.LinkLabel();
             this.labelName = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@ namespace QLSV.AppForm
             this.buttonEditContact = new System.Windows.Forms.Button();
             this.buttonAddContact = new System.Windows.Forms.Button();
             this.labelGroup = new System.Windows.Forms.Label();
-            this.logout_llb = new System.Windows.Forms.LinkLabel();
             this.remove_gb.SuspendLayout();
             this.editGroup_gb.SuspendLayout();
             this.addGroup_gb.SuspendLayout();
@@ -278,6 +278,21 @@ namespace QLSV.AppForm
             this.spliter_lb.TabIndex = 17;
             this.spliter_lb.Text = "||";
             // 
+            // logout_llb
+            // 
+            this.logout_llb.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
+            this.logout_llb.AutoSize = true;
+            this.logout_llb.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.logout_llb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout_llb.LinkColor = System.Drawing.Color.Black;
+            this.logout_llb.Location = new System.Drawing.Point(1099, 114);
+            this.logout_llb.Name = "logout_llb";
+            this.logout_llb.Size = new System.Drawing.Size(87, 29);
+            this.logout_llb.TabIndex = 16;
+            this.logout_llb.TabStop = true;
+            this.logout_llb.Text = "Logout";
+            this.logout_llb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logout_llb_LinkClicked);
+            // 
             // linkLabelRefresh
             // 
             this.linkLabelRefresh.ActiveLinkColor = System.Drawing.Color.Silver;
@@ -431,21 +446,6 @@ namespace QLSV.AppForm
             this.labelGroup.TabIndex = 15;
             this.labelGroup.Text = "Group";
             // 
-            // logout_llb
-            // 
-            this.logout_llb.ActiveLinkColor = System.Drawing.Color.DeepSkyBlue;
-            this.logout_llb.AutoSize = true;
-            this.logout_llb.BackColor = System.Drawing.Color.MediumTurquoise;
-            this.logout_llb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logout_llb.LinkColor = System.Drawing.Color.Black;
-            this.logout_llb.Location = new System.Drawing.Point(1099, 114);
-            this.logout_llb.Name = "logout_llb";
-            this.logout_llb.Size = new System.Drawing.Size(87, 29);
-            this.logout_llb.TabIndex = 16;
-            this.logout_llb.TabStop = true;
-            this.logout_llb.Text = "Logout";
-            this.logout_llb.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logout_llb_LinkClicked);
-            // 
             // MainContactForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -463,6 +463,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.buttonAddContact);
             this.Controls.Add(this.labelGroup);
             this.Name = "MainContactForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainContactForm";
             this.Load += new System.EventHandler(this.MainContactForm_Load);
             this.remove_gb.ResumeLayout(false);

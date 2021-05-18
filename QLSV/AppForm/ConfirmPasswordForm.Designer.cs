@@ -78,6 +78,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.pass_tb);
             this.Controls.Add(this.tittle_lb);
             this.Name = "ConfirmPasswordForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConfirmPasswordForm";
             this.ResumeLayout(false);
             this.PerformLayout();

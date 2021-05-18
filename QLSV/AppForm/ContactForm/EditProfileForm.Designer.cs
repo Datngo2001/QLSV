@@ -151,6 +151,7 @@ namespace QLSV.AppForm
             this.username_tb.Location = new System.Drawing.Point(179, 278);
             this.username_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.username_tb.Name = "username_tb";
+            this.username_tb.ReadOnly = true;
             this.username_tb.Size = new System.Drawing.Size(203, 26);
             this.username_tb.TabIndex = 28;
             // 
@@ -225,6 +226,7 @@ namespace QLSV.AppForm
             this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(201, 118);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox.TabIndex = 39;
             this.pictureBox.TabStop = false;
             // 
@@ -252,7 +254,8 @@ namespace QLSV.AppForm
             this.Controls.Add(this.username_lb);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditProfileForm";
-            this.Text = "EditProfileForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Profile";
             this.Load += new System.EventHandler(this.EditProfileForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);

@@ -33,7 +33,6 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.course_dgv = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.course_dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,10 +40,10 @@
             // 
             this.buttonSave.BackColor = System.Drawing.Color.Blue;
             this.buttonSave.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.buttonSave.Location = new System.Drawing.Point(245, 472);
-            this.buttonSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonSave.Location = new System.Drawing.Point(163, 307);
+            this.buttonSave.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(210, 89);
+            this.buttonSave.Size = new System.Drawing.Size(140, 58);
             this.buttonSave.TabIndex = 1;
             this.buttonSave.Text = "Save to File";
             this.buttonSave.UseVisualStyleBackColor = false;
@@ -54,10 +53,10 @@
             // 
             this.buttonPrint.BackColor = System.Drawing.Color.LightGray;
             this.buttonPrint.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold);
-            this.buttonPrint.Location = new System.Drawing.Point(546, 472);
-            this.buttonPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.buttonPrint.Location = new System.Drawing.Point(364, 307);
+            this.buttonPrint.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(210, 89);
+            this.buttonPrint.Size = new System.Drawing.Size(140, 58);
             this.buttonPrint.TabIndex = 2;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = false;
@@ -77,8 +76,8 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.course_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.course_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.course_dgv.Location = new System.Drawing.Point(14, 15);
-            this.course_dgv.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.course_dgv.Location = new System.Drawing.Point(9, 10);
+            this.course_dgv.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.course_dgv.Name = "course_dgv";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
@@ -90,36 +89,25 @@
             this.course_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.course_dgv.RowHeadersWidth = 70;
             this.course_dgv.RowTemplate.Height = 24;
-            this.course_dgv.Size = new System.Drawing.Size(1005, 439);
+            this.course_dgv.Size = new System.Drawing.Size(670, 285);
             this.course_dgv.TabIndex = 3;
             this.course_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(801, 511);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(182, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Ngô Minh Đạt 19110115";
-            // 
             // PrintCourseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1032, 601);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(688, 391);
             this.Controls.Add(this.course_dgv);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonSave);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.Name = "PrintCourseForm";
-            this.Text = "PrintCourseForm";
+            this.Text = "Print Course";
             this.Load += new System.EventHandler(this.PrintCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.course_dgv)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -127,6 +115,5 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.DataGridView course_dgv;
-        private System.Windows.Forms.Label label5;
     }
 }

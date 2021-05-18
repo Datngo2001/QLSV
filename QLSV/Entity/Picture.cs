@@ -34,8 +34,7 @@ namespace QLSV.Entity
             }
             catch (Exception)
             {
-
-                throw;
+                return null;
             }
         }
         public Image ByteArrToImage(byte[] arr)
@@ -48,8 +47,7 @@ namespace QLSV.Entity
             }
             catch (Exception)
             {
-
-                throw;
+                return null;
             }
         }
     }

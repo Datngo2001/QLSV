@@ -61,17 +61,17 @@ namespace QLSV.AppForm.ResultForm
             this.panel1.Controls.Add(this.print_btn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 272);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(856, 88);
+            this.panel1.Size = new System.Drawing.Size(1130, 88);
             this.panel1.TabIndex = 0;
             // 
             // saveFile_btn
             // 
             this.saveFile_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.saveFile_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveFile_btn.Location = new System.Drawing.Point(174, 32);
-            this.saveFile_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveFile_btn.Location = new System.Drawing.Point(311, 32);
+            this.saveFile_btn.Margin = new System.Windows.Forms.Padding(2);
             this.saveFile_btn.Name = "saveFile_btn";
             this.saveFile_btn.Size = new System.Drawing.Size(117, 33);
             this.saveFile_btn.TabIndex = 0;
@@ -83,8 +83,8 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.cancel_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_btn.Location = new System.Drawing.Point(518, 32);
-            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancel_btn.Location = new System.Drawing.Point(655, 32);
+            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(117, 33);
             this.cancel_btn.TabIndex = 0;
@@ -96,8 +96,8 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.print_btn.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.print_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.print_btn.Location = new System.Drawing.Point(348, 32);
-            this.print_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.print_btn.Location = new System.Drawing.Point(485, 32);
+            this.print_btn.Margin = new System.Windows.Forms.Padding(2);
             this.print_btn.Name = "print_btn";
             this.print_btn.Size = new System.Drawing.Size(117, 33);
             this.print_btn.TabIndex = 0;
@@ -110,9 +110,9 @@ namespace QLSV.AppForm.ResultForm
             this.title_pn.Controls.Add(this.title_lb);
             this.title_pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.title_pn.Location = new System.Drawing.Point(303, 0);
-            this.title_pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.title_pn.Margin = new System.Windows.Forms.Padding(2);
             this.title_pn.Name = "title_pn";
-            this.title_pn.Size = new System.Drawing.Size(553, 46);
+            this.title_pn.Size = new System.Drawing.Size(827, 46);
             this.title_pn.TabIndex = 30;
             // 
             // title_lb
@@ -155,7 +155,7 @@ namespace QLSV.AppForm.ResultForm
             this.textBox_pn.Controls.Add(this.id_lb);
             this.textBox_pn.Dock = System.Windows.Forms.DockStyle.Left;
             this.textBox_pn.Location = new System.Drawing.Point(0, 0);
-            this.textBox_pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_pn.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_pn.Name = "textBox_pn";
             this.textBox_pn.Size = new System.Drawing.Size(303, 272);
             this.textBox_pn.TabIndex = 29;
@@ -174,7 +174,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.search_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_tb.Location = new System.Drawing.Point(111, 223);
-            this.search_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_tb.Margin = new System.Windows.Forms.Padding(2);
             this.search_tb.Name = "search_tb";
             this.search_tb.Size = new System.Drawing.Size(146, 23);
             this.search_tb.TabIndex = 31;
@@ -183,7 +183,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.search_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search_btn.Location = new System.Drawing.Point(8, 218);
-            this.search_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.search_btn.Margin = new System.Windows.Forms.Padding(2);
             this.search_btn.Name = "search_btn";
             this.search_btn.Size = new System.Drawing.Size(81, 29);
             this.search_btn.TabIndex = 30;
@@ -207,7 +207,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.lname_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lname_tb.Location = new System.Drawing.Point(111, 145);
-            this.lname_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lname_tb.Margin = new System.Windows.Forms.Padding(2);
             this.lname_tb.Name = "lname_tb";
             this.lname_tb.ReadOnly = true;
             this.lname_tb.Size = new System.Drawing.Size(146, 23);
@@ -217,7 +217,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.fname_tx.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fname_tx.Location = new System.Drawing.Point(111, 97);
-            this.fname_tx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fname_tx.Margin = new System.Windows.Forms.Padding(2);
             this.fname_tx.Name = "fname_tx";
             this.fname_tx.ReadOnly = true;
             this.fname_tx.Size = new System.Drawing.Size(146, 23);
@@ -227,7 +227,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             this.id_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.id_tb.Location = new System.Drawing.Point(111, 45);
-            this.id_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.id_tb.Margin = new System.Windows.Forms.Padding(2);
             this.id_tb.Name = "id_tb";
             this.id_tb.ReadOnly = true;
             this.id_tb.Size = new System.Drawing.Size(146, 23);
@@ -275,11 +275,11 @@ namespace QLSV.AppForm.ResultForm
             this.showResult_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showResult_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showResult_dgv.Location = new System.Drawing.Point(303, 46);
-            this.showResult_dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.showResult_dgv.Margin = new System.Windows.Forms.Padding(2);
             this.showResult_dgv.Name = "showResult_dgv";
             this.showResult_dgv.RowHeadersWidth = 62;
             this.showResult_dgv.RowTemplate.Height = 28;
-            this.showResult_dgv.Size = new System.Drawing.Size(553, 226);
+            this.showResult_dgv.Size = new System.Drawing.Size(827, 226);
             this.showResult_dgv.TabIndex = 31;
             // 
             // AvgResultScoreForm
@@ -287,14 +287,14 @@ namespace QLSV.AppForm.ResultForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(856, 360);
+            this.ClientSize = new System.Drawing.Size(1130, 360);
             this.Controls.Add(this.showResult_dgv);
             this.Controls.Add(this.title_pn);
             this.Controls.Add(this.textBox_pn);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AvgResultScoreForm";
-            this.Text = "AvgResultScoreForm";
+            this.Text = "S";
             this.Load += new System.EventHandler(this.AvgResultScoreForm_Load);
             this.panel1.ResumeLayout(false);
             this.title_pn.ResumeLayout(false);

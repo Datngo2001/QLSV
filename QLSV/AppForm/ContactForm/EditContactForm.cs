@@ -83,9 +83,7 @@ namespace QLSV.AppForm.ContactForm
             string email = textBoxEmail.Text.Trim();
             string address = textBoxAddress.Text.Trim();
             int user_id = CurrentUser.Id;
-
-            MemoryStream picture = new MemoryStream();
-            pictureContact.Image.Save(picture, pictureContact.Image.RawFormat);
+            Image picture = pictureContact.Image;
 
             if (contact.UpdateContact(id, fname, lname, _group, phone, email, address, picture))
             {

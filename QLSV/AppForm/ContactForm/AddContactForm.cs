@@ -29,32 +29,23 @@ namespace QLSV.AppForm.ContactForm
         {
             string fname = textBoxFname.Text.Trim();
             string lname = textBoxLname.Text.Trim();
-            int _group = Convert.ToInt32(comboBoxGroup.Text.Trim());
+            int _group = (int)comboBoxGroup.SelectedValue;
             string phone = textBoxPhone.Text.Trim();
             string email = textBoxEmail.Text.Trim();
             string address = textBoxAddress.Text.Trim();
             int user_id = CurrentUser.Id;
-
-            MemoryStream pic = new MemoryStream();
-            pictureContact.Image.Save(pic, pictureContact.Image.RawFormat);
+            Image pic = pictureContact.Image;
 
             if (verif())
             {
-                if (!contact.CheckUserID(user_id))
+                if (contact.InsertContact(fname, lname, _group, phone, email, address, pic, user_id))
                 {
-                    if (contact.InsertContact(fname, lname, _group, phone, email, address, pic, user_id))
-                    {
-                        MessageBox.Show("New Contact Added", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.ClearText();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("New Contact Added", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.ClearText();
                 }
                 else
                 {
-                    MessageBox.Show("Contact Already Exists", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Error", "Add Contact", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

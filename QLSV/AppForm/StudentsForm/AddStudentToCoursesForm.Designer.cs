@@ -82,23 +82,25 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // selectedCourse_lstb
             // 
+            this.selectedCourse_lstb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectedCourse_lstb.FormattingEnabled = true;
             this.selectedCourse_lstb.HorizontalScrollbar = true;
-            this.selectedCourse_lstb.ItemHeight = 20;
+            this.selectedCourse_lstb.ItemHeight = 29;
             this.selectedCourse_lstb.Location = new System.Drawing.Point(36, 157);
             this.selectedCourse_lstb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.selectedCourse_lstb.Name = "selectedCourse_lstb";
-            this.selectedCourse_lstb.Size = new System.Drawing.Size(283, 284);
+            this.selectedCourse_lstb.Size = new System.Drawing.Size(283, 265);
             this.selectedCourse_lstb.TabIndex = 18;
             // 
             // availableCourse_lstb
             // 
+            this.availableCourse_lstb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.availableCourse_lstb.FormattingEnabled = true;
-            this.availableCourse_lstb.ItemHeight = 20;
+            this.availableCourse_lstb.ItemHeight = 29;
             this.availableCourse_lstb.Location = new System.Drawing.Point(467, 156);
             this.availableCourse_lstb.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.availableCourse_lstb.Name = "availableCourse_lstb";
-            this.availableCourse_lstb.Size = new System.Drawing.Size(283, 284);
+            this.availableCourse_lstb.Size = new System.Drawing.Size(283, 265);
             this.availableCourse_lstb.TabIndex = 17;
             // 
             // labelSelectedCourse

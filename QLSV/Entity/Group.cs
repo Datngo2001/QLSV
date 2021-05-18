@@ -59,19 +59,18 @@ namespace QLSV.Entity
         {
             try
             {
-                SqlCommand command1 = new SqlCommand("DELETE FROM Contact WHERE [group] = 1", db.Connection);
-                command1.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
-                SqlCommand command2 = new SqlCommand("DELETE FROM [Group] WHERE id=@id AND user_id=@user_id", db.Connection);
-                command2.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                command2.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
+                SqlCommand deleteCmd = new SqlCommand("DELETE FROM [Group] WHERE id=@id AND user_id=@user_id", db.Connection);
+                deleteCmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                deleteCmd.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
 
                 db.openConnection();
 
-                command1.ExecuteNonQuery();
-
-                if (command2.ExecuteNonQuery() == 1)
+                if (deleteCmd.ExecuteNonQuery() > 0)
                 {
+                    SqlCommand deleteContact = new SqlCommand("DELETE FROM Contact WHERE [group] = @id", db.Connection);
+                    deleteContact.Parameters.Add("@id", SqlDbType.Int).Value = id;
+                    deleteContact.ExecuteNonQuery();
+
                     db.closeConnection();
                     return true;
                 }
@@ -147,6 +146,20 @@ namespace QLSV.Entity
         {
             string query = "SELECT * FROM [Group]";
             return this.GetTable(query);
+        }
+
+        public DataTable getAllContactInGroup(int id)
+        {
+            string query = "SELECT * from Contact WHERE [Contact].[group] = " + id.ToString();
+            db.openConnection();
+            SqlCommand command = new SqlCommand(query, db.Connection);
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            adapter.SelectCommand = command;
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            db.closeConnection();
+
+            return table;
         }
     }
 }

@@ -319,9 +319,10 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.textBoxID);
             this.Controls.Add(this.labelID);
             this.Controls.Add(this.labelEdit);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "EditContactForm";
-            this.Text = "EditContactForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Edit Contact";
             this.Load += new System.EventHandler(this.EditContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).EndInit();
             this.ResumeLayout(false);

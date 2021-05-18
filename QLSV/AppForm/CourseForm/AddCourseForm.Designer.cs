@@ -46,9 +46,10 @@ namespace QLSV.AppForm.CourseForm
             this.label_lb.AutoSize = true;
             this.label_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_lb.Location = new System.Drawing.Point(91, 30);
+            this.label_lb.Location = new System.Drawing.Point(61, 19);
+            this.label_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_lb.Name = "label_lb";
-            this.label_lb.Size = new System.Drawing.Size(85, 29);
+            this.label_lb.Size = new System.Drawing.Size(58, 20);
             this.label_lb.TabIndex = 0;
             this.label_lb.Text = "Label:";
             // 
@@ -57,9 +58,10 @@ namespace QLSV.AppForm.CourseForm
             this.period_lb.AutoSize = true;
             this.period_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.period_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.period_lb.Location = new System.Drawing.Point(75, 150);
+            this.period_lb.Location = new System.Drawing.Point(50, 97);
+            this.period_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.period_lb.Name = "period_lb";
-            this.period_lb.Size = new System.Drawing.Size(98, 29);
+            this.period_lb.Size = new System.Drawing.Size(65, 20);
             this.period_lb.TabIndex = 0;
             this.period_lb.Text = "Period:";
             // 
@@ -68,9 +70,10 @@ namespace QLSV.AppForm.CourseForm
             this.desrciption_lb.AutoSize = true;
             this.desrciption_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desrciption_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.desrciption_lb.Location = new System.Drawing.Point(23, 222);
+            this.desrciption_lb.Location = new System.Drawing.Point(15, 144);
+            this.desrciption_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.desrciption_lb.Name = "desrciption_lb";
-            this.desrciption_lb.Size = new System.Drawing.Size(153, 29);
+            this.desrciption_lb.Size = new System.Drawing.Size(105, 20);
             this.desrciption_lb.TabIndex = 0;
             this.desrciption_lb.Text = "Description:";
             // 
@@ -79,9 +82,10 @@ namespace QLSV.AppForm.CourseForm
             this.add_btn.BackColor = System.Drawing.Color.Blue;
             this.add_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.add_btn.Location = new System.Drawing.Point(113, 380);
+            this.add_btn.Location = new System.Drawing.Point(75, 247);
+            this.add_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(333, 66);
+            this.add_btn.Size = new System.Drawing.Size(222, 43);
             this.add_btn.TabIndex = 1;
             this.add_btn.Text = "ADD COURSE";
             this.add_btn.UseVisualStyleBackColor = false;
@@ -90,31 +94,34 @@ namespace QLSV.AppForm.CourseForm
             // label_tb
             // 
             this.label_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_tb.Location = new System.Drawing.Point(179, 27);
+            this.label_tb.Location = new System.Drawing.Point(119, 18);
+            this.label_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.label_tb.Name = "label_tb";
-            this.label_tb.Size = new System.Drawing.Size(333, 35);
+            this.label_tb.Size = new System.Drawing.Size(223, 26);
             this.label_tb.TabIndex = 2;
             // 
             // description_tb
             // 
             this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_tb.Location = new System.Drawing.Point(179, 219);
+            this.description_tb.Location = new System.Drawing.Point(119, 142);
+            this.description_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.description_tb.Name = "description_tb";
-            this.description_tb.Size = new System.Drawing.Size(333, 96);
+            this.description_tb.Size = new System.Drawing.Size(223, 64);
             this.description_tb.TabIndex = 3;
             this.description_tb.Text = "";
             // 
             // period_ud
             // 
             this.period_ud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.period_ud.Location = new System.Drawing.Point(179, 144);
+            this.period_ud.Location = new System.Drawing.Point(119, 94);
+            this.period_ud.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.period_ud.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.period_ud.Name = "period_ud";
-            this.period_ud.Size = new System.Drawing.Size(120, 35);
+            this.period_ud.Size = new System.Drawing.Size(80, 26);
             this.period_ud.TabIndex = 5;
             this.period_ud.Value = new decimal(new int[] {
             10,
@@ -126,10 +133,10 @@ namespace QLSV.AppForm.CourseForm
             // 
             this.comboBoxSemester.Font = new System.Drawing.Font("Arial", 13F);
             this.comboBoxSemester.FormattingEnabled = true;
-            this.comboBoxSemester.Location = new System.Drawing.Point(179, 82);
-            this.comboBoxSemester.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.comboBoxSemester.Location = new System.Drawing.Point(119, 53);
+            this.comboBoxSemester.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.comboBoxSemester.Name = "comboBoxSemester";
-            this.comboBoxSemester.Size = new System.Drawing.Size(76, 39);
+            this.comboBoxSemester.Size = new System.Drawing.Size(52, 27);
             this.comboBoxSemester.TabIndex = 14;
             // 
             // semester_lb
@@ -137,18 +144,19 @@ namespace QLSV.AppForm.CourseForm
             this.semester_lb.AutoSize = true;
             this.semester_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.semester_lb.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.semester_lb.Location = new System.Drawing.Point(41, 85);
+            this.semester_lb.Location = new System.Drawing.Point(27, 55);
+            this.semester_lb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.semester_lb.Name = "semester_lb";
-            this.semester_lb.Size = new System.Drawing.Size(132, 29);
+            this.semester_lb.Size = new System.Drawing.Size(91, 20);
             this.semester_lb.TabIndex = 13;
             this.semester_lb.Text = "Semester:";
             // 
             // AddCourseForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(564, 477);
+            this.ClientSize = new System.Drawing.Size(376, 310);
             this.Controls.Add(this.comboBoxSemester);
             this.Controls.Add(this.semester_lb);
             this.Controls.Add(this.period_ud);
@@ -158,8 +166,10 @@ namespace QLSV.AppForm.CourseForm
             this.Controls.Add(this.desrciption_lb);
             this.Controls.Add(this.period_lb);
             this.Controls.Add(this.label_lb);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddCourseForm";
-            this.Text = "AddCourseForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Course";
             this.Load += new System.EventHandler(this.AddCourseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.period_ud)).EndInit();
             this.ResumeLayout(false);

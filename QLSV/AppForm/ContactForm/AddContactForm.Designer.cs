@@ -264,9 +264,10 @@ namespace QLSV.AppForm.ContactForm
             this.Controls.Add(this.labelGroup);
             this.Controls.Add(this.labelLname);
             this.Controls.Add(this.labelFname);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AddContactForm";
-            this.Text = "AddContactForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add Contact";
             this.Load += new System.EventHandler(this.AddContactForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureContact)).EndInit();
             this.ResumeLayout(false);
