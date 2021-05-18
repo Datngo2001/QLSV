@@ -398,7 +398,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "SELECT ID, fname, lname FROM Students_info"
+                    CommandText = "SELECT ID, fname, lname FROM Students_info ORDER BY ID"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;

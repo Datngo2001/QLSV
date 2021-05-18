@@ -45,23 +45,29 @@ namespace QLSV.Entity
 
                 mydb.openConnection();
 
-                if (command.ExecuteNonQuery() == 1)
+                try
                 {
-                    mydb.closeConnection();
-                    
-                    return true;
+                    if (command.ExecuteNonQuery() == 1)
+                    {
+                        mydb.closeConnection();
+
+                        return true;
+                    }
+                    else
+                    {
+                        mydb.closeConnection();
+                        return false;
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    mydb.closeConnection();
                     return false;
                 }
 
             }
             catch (Exception)
             {
-
-                throw;
+                return false;
             }
             finally
             {
@@ -284,12 +290,17 @@ namespace QLSV.Entity
                     }
                 }
                 // fill avg score
+                int avgIndex = 0;
                 for (int row = 0; row < result.Rows.Count; row++)
                 {
                     try
                     {
-                        result.Rows[row][result.Columns.Count - 1] 
-                            = avgScore.Rows[row][1].ToString().Trim();
+                        if(result.Rows[row]["Id"].ToString().Trim() == avgScore.Rows[avgIndex][0].ToString().Trim())
+                        {
+                            result.Rows[row][result.Columns.Count - 1]
+                                 = avgScore.Rows[avgIndex][1].ToString().Trim();
+                            avgIndex++;
+                        }
                     }
                     catch (Exception)
                     {

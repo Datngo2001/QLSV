@@ -66,8 +66,16 @@ namespace QLSV.AppForm.StudentsForm
                     Bdate = BirthDay_picker.Value,
                     Address = Address_rtb.Text,
                     Phone = Phone_tb.Text,
-                    Picture = student_pcb.Image
+                    Picture = student_pcb.Image,
                 };
+                if (female_rbtn.Checked)
+                {
+                    student.Gender = 'F';
+                }
+                else if (male_rbtn.Checked)
+                {
+                    student.Gender = 'M';
+                }
                 try
                 {
                     if (student.isExistId(Convert.ToInt32(Id_tb.Text)) > 1)
