@@ -30,5 +30,9 @@ namespace QLSV
                 Application.Exit();
             }
         }
+        public static void logout()
+        {
+            Application.Restart();
+        }
     }
 }

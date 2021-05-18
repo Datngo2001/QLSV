@@ -41,7 +41,7 @@ namespace QLSV.AppForm.StudentsForm
 
                 progress.Show();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM Students_info");
+                SqlCommand command = new SqlCommand("SELECT * FROM Students_info order by ID");
                 Student student = new Student();
                 DataTable table = student.getByComand(command);
 

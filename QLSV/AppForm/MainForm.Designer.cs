@@ -53,11 +53,13 @@ namespace QLSV.AppForm
             this.staticResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mANAGERACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDNEWACCOUNTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logout_btn = new System.Windows.Forms.Button();
             this.main_menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // main_menuStrip
             // 
+            this.main_menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.main_menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.main_menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Dropdown_Student,
@@ -265,6 +267,17 @@ namespace QLSV.AppForm
             this.aDDNEWACCOUNTToolStripMenuItem.Text = "ADD NEW ACCOUNT";
             this.aDDNEWACCOUNTToolStripMenuItem.Click += new System.EventHandler(this.aDDNEWACCOUNTToolStripMenuItem_Click);
             // 
+            // logout_btn
+            // 
+            this.logout_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logout_btn.Location = new System.Drawing.Point(815, 63);
+            this.logout_btn.Name = "logout_btn";
+            this.logout_btn.Size = new System.Drawing.Size(132, 56);
+            this.logout_btn.TabIndex = 1;
+            this.logout_btn.Text = "Logout";
+            this.logout_btn.UseVisualStyleBackColor = true;
+            this.logout_btn.Click += new System.EventHandler(this.logout_btn_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -273,6 +286,7 @@ namespace QLSV.AppForm
             this.BackgroundImage = global::QLSV.Properties.Resources.mainFormBackGroup;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(969, 553);
+            this.Controls.Add(this.logout_btn);
             this.Controls.Add(this.main_menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -311,5 +325,6 @@ namespace QLSV.AppForm
         private System.Windows.Forms.ToolStripMenuItem staticResultToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mANAGERACCOUNTToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aDDNEWACCOUNTToolStripMenuItem;
+        private System.Windows.Forms.Button logout_btn;
     }
 }

@@ -23,8 +23,15 @@ namespace QLSV.AppForm.StudentsForm
                 filepath = ofdImages.FileName;
             }
             if (filepath == null) return;
-            student_pcb.Image = Image.FromFile(filepath.ToString());
-            student_pcb.SizeMode = PictureBoxSizeMode.StretchImage;
+            try
+            {
+                student_pcb.Image = Image.FromFile(filepath.ToString());
+                student_pcb.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void Find_Click(object sender, EventArgs e)
@@ -61,6 +68,22 @@ namespace QLSV.AppForm.StudentsForm
                     Phone = Phone_tb.Text,
                     Picture = student_pcb.Image
                 };
+                try
+                {
+                    if (student.isExistId(Convert.ToInt32(Id_tb.Text)) > 1)
+                    {
+                        MessageBox.Show("Id is duplicated!");
+                        return;
+                    }
+                    if (student.UpdateThisStudent() == true)
+                    {
+                        MessageBox.Show("Edited!");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Id conflict", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             catch (Exception E)
             {

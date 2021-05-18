@@ -40,7 +40,15 @@ namespace QLSV.AppForm.CourseForm
 
         void ShowData(int idx)
         {
-            DataRow dataRow = course.GetAllCourses().Rows[idx];
+            DataRow dataRow;
+            try
+            {
+                dataRow = course.GetAllCourses().Rows[idx];
+            }
+            catch (Exception)
+            {
+                return;
+            }
             course_lstb.SelectedIndex = idx;
             id_tb.Text = dataRow["Id"].ToString().Trim();
             label_tb.Text = dataRow["label"].ToString().Trim();

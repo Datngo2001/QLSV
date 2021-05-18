@@ -212,5 +212,16 @@ namespace QLSV.AppForm
             group_cb.Text = "";
             remove_cb.Text = "";
         }
+
+        private void logout_llb_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CurrentUser.Avatar = null;
+            CurrentUser.fname = "";
+            CurrentUser.lname = "";
+            CurrentUser.Id = 0;
+            CurrentUser.UserName = "";
+            CurrentUser.isAdmin = false;
+            Program.logout();
+        }
     }
 }

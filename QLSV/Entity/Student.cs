@@ -76,6 +76,37 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        public int isExistId(int id)
+        {
+            DataBase dataBase = new DataBase();
+            try
+            {
+                SqlCommand command = new SqlCommand(
+                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE id = @ID", dataBase.Connection);
+                command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = id;
+                dataBase.openConnection();
+
+                DataTable table = new DataTable();
+
+                SqlDataAdapter adapter = new SqlDataAdapter()
+                {
+                    SelectCommand = command
+                };
+
+                adapter.Fill(table);
+
+                return table.Rows.Count;
+            }
+            catch (Exception)
+            {
+                return 0;
+                throw;
+            }
+            finally
+            {
+                dataBase.closeConnection();
+            }
+        }
         public bool getByPhone(string phone)
         {
             DataBase dataBase = new DataBase();
@@ -281,6 +312,7 @@ namespace QLSV.Entity
                 command.Parameters.Add("@Adress", SqlDbType.NVarChar).Value = Address;
                 command.Parameters.Add("@Picture", SqlDbType.Image).Value = new Picture(this.Picture).toByteArray();
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                command.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
 
                 dataBase.openConnection();
                 if (command.ExecuteNonQuery() == 1)

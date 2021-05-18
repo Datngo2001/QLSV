@@ -47,7 +47,15 @@ namespace QLSV.AppForm.CourseForm
             {
                 if (idSearch_tb.Text != "")
                 {
-                    course.getByID(Convert.ToInt32(idSearch_tb.Text));
+                    try
+                    {
+                        course.getByID(Convert.ToInt32(idSearch_tb.Text));
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Not Found!");
+                        return;
+                    }
                     id_tb.Text = course.Id.ToString();
                     label_tb.Text = course.Label;
                     period_tb.Text = course.Period.ToString();

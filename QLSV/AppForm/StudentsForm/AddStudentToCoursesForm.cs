@@ -24,14 +24,20 @@ namespace QLSV.AppForm.StudentsForm
         }
         private void AddCourseToStudent_Load(object sender, EventArgs e)
         {
+            ProgressDialog progressBar = new ProgressDialog();
+            progressBar.Show();
+
             course = new Course();
             student = new Student();
             selectedCourceAdded = new Stack<int>();
 
-            for (int i = 0; i < student.GetAllStudent().Rows.Count; i++)
+            var idTable = student.GetAllStudent();
+            for (int i = 0; i < idTable.Rows.Count; i++)
             {
-                id_cb.Items.Add(student.GetAllStudent().Rows[i].ItemArray[0]);
+                id_cb.Items.Add(idTable.Rows[i].ItemArray[0]);
             }
+
+            progressBar.Bar.Value += 50;
 
             LoadComboBox();
 
@@ -44,8 +50,12 @@ namespace QLSV.AppForm.StudentsForm
 
             LoadListBox();
 
+            progressBar.Bar.Value += 50;
+
             comboBoxSemester.SelectedIndexChanged += new System.EventHandler(this.comboBoxSemester_SelectedIndexChanged);
             id_cb.SelectedIndexChanged += new System.EventHandler(this.id_cb_SelectedIndexChanged);
+
+            progressBar.Close();
         }
         private void LoadComboBox()
         {
@@ -71,9 +81,22 @@ namespace QLSV.AppForm.StudentsForm
             }
             for (int i = 0; i < availableCourse_lstb.Items.Count; i++)
             {
-                if (selectedCourse_lstb.Items.Contains(availableCourse_lstb.Items[i]))
+                for (int j = 0; j < selectedCourse_lstb.Items.Count; j++)
                 {
-                    availableCourse_lstb.Items.Remove(availableCourse_lstb.Items[i]);
+                    try
+                    {
+                        if (
+                        availableCourse_lstb.GetItemText(availableCourse_lstb.Items[i]) ==
+                        selectedCourse_lstb.GetItemText(selectedCourse_lstb.Items[j])
+                    )
+                        {
+                            availableCourse_lstb.Items.Remove(selectedCourse_lstb.Items[j]);
+                        }
+                    }
+                    catch (Exception)
+                    {
+                        continue;
+                    }
                 }
             }
         }
@@ -87,11 +110,19 @@ namespace QLSV.AppForm.StudentsForm
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            while (selectedCourceAdded.Count > 0)
+            try
             {
-                string label = selectedCourse_lstb.GetItemText(selectedCourse_lstb.Items[selectedCourceAdded.Pop()]);
-                int id = course.GetIdByLabel(label);
-                student.InsertSelectedCourse(id_cb.GetItemText(id_cb.SelectedItem), id);
+                while (selectedCourceAdded.Count > 0)
+                {
+                    string label = selectedCourse_lstb.GetItemText(selectedCourse_lstb.Items[selectedCourceAdded.Pop()]);
+                    int id = course.GetIdByLabel(label);
+                    student.InsertSelectedCourse(id_cb.GetItemText(id_cb.SelectedItem), id);
+                }
+                MessageBox.Show("Complete!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Faile!", "",MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -108,9 +139,16 @@ namespace QLSV.AppForm.StudentsForm
         private void remove_btn_Click(object sender, EventArgs e)
         {
             if (selectedCourceAdded.Count == 0) return;
-            int index = selectedCourceAdded.Pop();
-            availableCourse_lstb.Items.Add(selectedCourse_lstb.Items[index]);
-            selectedCourse_lstb.Items.RemoveAt(index);
+            try
+            {
+                int index = selectedCourceAdded.Pop();
+                availableCourse_lstb.Items.Add(selectedCourse_lstb.Items[index]);
+                selectedCourse_lstb.Items.RemoveAt(index);
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void removeAll_btn_Click(object sender, EventArgs e)
@@ -125,7 +163,25 @@ namespace QLSV.AppForm.StudentsForm
 
         private void comboBoxSemester_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LoadListBox();
+            availableCourse_lstb.Items.Clear();
+            var source = course.GetCourseBySemester(comboBoxSemester.Text.Trim());
+            foreach (DataRow row in source.Rows)
+            {
+                availableCourse_lstb.Items.Add(row["label"]);
+            }
+            for (int i = 0; i < availableCourse_lstb.Items.Count; i++)
+            {
+                for (int j = 0; j < selectedCourse_lstb.Items.Count; j++)
+                {
+                    if (
+                        availableCourse_lstb.GetItemText(availableCourse_lstb.Items[i]) ==
+                        selectedCourse_lstb.GetItemText(selectedCourse_lstb.Items[j])
+                    )
+                    {
+                        availableCourse_lstb.Items.Remove(selectedCourse_lstb.Items[j]);
+                    }
+                }
+            }
         }
 
         private void id_cb_SelectedIndexChanged(object sender, EventArgs e)

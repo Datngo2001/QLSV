@@ -38,7 +38,12 @@ namespace QLSV.AppForm.StudentsForm
             {
                 student.Gender = 'M';
             }
-            if(student.InsertThisStudent() == true)
+            if (student.isExistId(Convert.ToInt32(id_tb.Text)) >= 1)
+            {
+                MessageBox.Show("Id is existed!");
+                return;
+            }
+            if (student.InsertThisStudent() == true)
             {
                 MessageBox.Show("Add Complete", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 new FormTool().ClearForm(this); 
@@ -63,8 +68,68 @@ namespace QLSV.AppForm.StudentsForm
             {
                 filepath = ofdImages.FileName;
             }
-            pictureBox.Image = Image.FromFile(filepath.ToString());
-            pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            try
+            {
+                pictureBox.Image = Image.FromFile(filepath.ToString());
+                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void check_btn_Click(object sender, EventArgs e)
+        {
+            Student student = new Student();
+            if (student.isExistId(Convert.ToInt32(id_tb.Text)) >= 1)
+            {
+                MessageBox.Show("Id is existed!");
+            }
+            else
+            {
+                MessageBox.Show("OK");
+            }
+        }
+
+        private void AddStudentForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_lb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lname_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fname_tx_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void phone_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void id_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fname_lb_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void male_rbtn_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

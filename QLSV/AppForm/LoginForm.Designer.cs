@@ -216,6 +216,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.Username_textBox);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "QLSV Ngo Minh Dat 19110115";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Title_pictureBox)).EndInit();

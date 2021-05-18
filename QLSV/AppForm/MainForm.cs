@@ -133,9 +133,15 @@ namespace QLSV.AppForm
             newManagerAccForm.Show();
         }
 
-        private void pRINTRESULTToolStripMenuItem_Click(object sender, EventArgs e)
+        private void logout_btn_Click(object sender, EventArgs e)
         {
-
+            CurrentUser.Avatar = null;
+            CurrentUser.fname = "";
+            CurrentUser.lname = "";
+            CurrentUser.Id = 0;
+            CurrentUser.UserName = "";
+            CurrentUser.isAdmin = false;
+            Program.logout();
         }
     }
 }
