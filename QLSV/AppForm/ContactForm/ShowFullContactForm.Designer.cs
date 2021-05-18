@@ -44,7 +44,7 @@ namespace QLSV.AppForm.ContactForm
             this.dataGridViewShowAll.Name = "dataGridViewShowAll";
             this.dataGridViewShowAll.RowHeadersWidth = 18;
             this.dataGridViewShowAll.RowTemplate.Height = 80;
-            this.dataGridViewShowAll.Size = new System.Drawing.Size(666, 361);
+            this.dataGridViewShowAll.Size = new System.Drawing.Size(1021, 361);
             this.dataGridViewShowAll.TabIndex = 7;
             // 
             // listBoxGroup
@@ -66,7 +66,7 @@ namespace QLSV.AppForm.ContactForm
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(829, 361);
+            this.ClientSize = new System.Drawing.Size(1184, 361);
             this.Controls.Add(this.dataGridViewShowAll);
             this.Controls.Add(this.listBoxGroup);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
