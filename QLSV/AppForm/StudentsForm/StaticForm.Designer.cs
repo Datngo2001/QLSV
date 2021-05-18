@@ -49,7 +49,7 @@ namespace QLSV.AppForm.StudentsForm
             this.genderChart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.genderChart.Legends.Add(legend1);
-            this.genderChart.Location = new System.Drawing.Point(17, 133);
+            this.genderChart.Location = new System.Drawing.Point(12, 231);
             this.genderChart.Name = "genderChart";
             this.genderChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
             series1.ChartArea = "ChartArea1";
@@ -95,7 +95,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.male_lb.AutoSize = true;
             this.male_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.male_lb.Location = new System.Drawing.Point(210, 80);
+            this.male_lb.Location = new System.Drawing.Point(255, 84);
             this.male_lb.Name = "male_lb";
             this.male_lb.Size = new System.Drawing.Size(72, 29);
             this.male_lb.TabIndex = 5;
@@ -105,7 +105,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.malePercent_lb.AutoSize = true;
             this.malePercent_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.malePercent_lb.Location = new System.Drawing.Point(288, 80);
+            this.malePercent_lb.Location = new System.Drawing.Point(333, 84);
             this.malePercent_lb.Name = "malePercent_lb";
             this.malePercent_lb.Size = new System.Drawing.Size(79, 29);
             this.malePercent_lb.TabIndex = 5;
@@ -115,7 +115,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.female_lb.AutoSize = true;
             this.female_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.female_lb.Location = new System.Drawing.Point(401, 80);
+            this.female_lb.Location = new System.Drawing.Point(255, 159);
             this.female_lb.Name = "female_lb";
             this.female_lb.Size = new System.Drawing.Size(101, 29);
             this.female_lb.TabIndex = 5;
@@ -125,7 +125,7 @@ namespace QLSV.AppForm.StudentsForm
             // 
             this.femalePercent_lb.AutoSize = true;
             this.femalePercent_lb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femalePercent_lb.Location = new System.Drawing.Point(508, 80);
+            this.femalePercent_lb.Location = new System.Drawing.Point(362, 159);
             this.femalePercent_lb.Name = "femalePercent_lb";
             this.femalePercent_lb.Size = new System.Drawing.Size(79, 29);
             this.femalePercent_lb.TabIndex = 5;

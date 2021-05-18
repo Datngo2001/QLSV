@@ -1,0 +1,319 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="QLSV.Entity.Contact" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAACACAQAAAAAAAAAAAAAAAAAAAAAAAQAIgAAQA=</HashCode>
+      <FileName>Entity\Contact.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.Course" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMACgEAAEAAggCIIIMAAAAABAAAAAABAAAABokAABIY=</HashCode>
+      <FileName>Entity\Course.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.Group" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAQAAAAAAAAgAAAAAAAAAQAAACAAAAAAFA=</HashCode>
+      <FileName>Entity\Group.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.Picture" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entity\Picture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.Report" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAEAAAAAFQAAAAACAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Entity\Report.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.Score" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggAAAAAEAEiAAAAAAAAAAAAAAAQABQBAAEEQAACBAA=</HashCode>
+      <FileName>Entity\Score.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.Student" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CMCAigAEAAAAwACAAQAAAAAAAAAAAAgCgAAAIITAEIA=</HashCode>
+      <FileName>Entity\Student.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.studentManager" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAACAAAAAAAAAAAABAAAAAAAAIAAEAA=</HashCode>
+      <FileName>Entity\studentManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Entity.User" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAQAAICAAAgEAAAAgAAAAAAAAAAAIAAEAA=</HashCode>
+      <FileName>Entity\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Data.DataBase" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAABAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DataBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Utility.FormTool" Collapsed="true">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Utility\FormTool.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.Utility.StudentStatistic" Collapsed="true">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAACAAAAAAAAAABAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Utility\StudentStatistic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.CurrentUser" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAAABAAAAAQAAAAAAAAAAAgAAQAAAAAAAAA=</HashCode>
+      <FileName>CurrentUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ConfirmPasswordForm" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAACAAAAADAAAAGAAAAIAAABAAAAAAAAQA=</HashCode>
+      <FileName>AppForm\ConfirmPasswordForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.LoginForm" Collapsed="true">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAARgCCABECAAgCAAQKGAAAAiAACQBAgEBAQAQE=</HashCode>
+      <FileName>AppForm\LoginForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.MainContactForm" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>xAICAEJAcCMAkEAEQC2CEHgGEAIIoAEIEEQBDCAiAQA=</HashCode>
+      <FileName>AppForm\MainContactForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.MainForm" Collapsed="true">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQFgIAAAAjaAAAEMBEGEsABiQqCAAJAIEAAAgR4EJBA=</HashCode>
+      <FileName>AppForm\MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.NewManagerAccForm" Collapsed="true">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAALAJAIAAAACAQAAGQAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>AppForm\NewManagerAccForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ProgressDialog" Collapsed="true">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACgAAAAAAACAAAACAAAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>AppForm\ProgressDialog.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.RegisterForm" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABJAAAAAEKAJAJAAAACAQYACQCAAAAAQQAAAAAAAAQA=</HashCode>
+      <FileName>AppForm\RegisterForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.AddStudentForm" Collapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBIEDgoZAzAIAAAEAACAAAAGAKCBAAAQgAAEEIICAEE=</HashCode>
+      <FileName>AppForm\StudentsForm\AddStudentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.AddStudentToCoursesForm" Collapsed="true">
+    <Position X="11.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAIQAACQAhEIDAAjAAggKAAEAoAAgKAAAAAEggAA=</HashCode>
+      <FileName>AppForm\StudentsForm\AddStudentToCoursesForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.EditDeleteStudentForm" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EgAARQgABiIYQEAEBACBUBECACMAAAQQgAAEBCAiGEo=</HashCode>
+      <FileName>AppForm\StudentsForm\EditDeleteStudentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.FindStudentForm" Collapsed="true">
+    <Position X="13.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACACAACQAAFAAAACAAAACAAgAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>AppForm\StudentsForm\FindStudentForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.ManageStudentsForm" Collapsed="true">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAACAAAASQAABEARACAAAACAQAAAAAAAAQAAAAAAAA=</HashCode>
+      <FileName>AppForm\StudentsForm\ManageStudentsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.PrintForm" Collapsed="true">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAYpACIAABAgABCAQAIDARAAAAAAgAAAAgYAAAQ=</HashCode>
+      <FileName>AppForm\StudentsForm\PrintForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.StaticForm" Collapsed="true">
+    <Position X="11.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAACCAEAAAEACGAAAASAAAAAAAAAABABAAAAAA=</HashCode>
+      <FileName>AppForm\StudentsForm\StaticForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.StudentsForm.StudentListForm" Collapsed="true">
+    <Position X="13.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAgCAAAAAAAACAgCACAAAoIAAAAAAEAAAAAAA=</HashCode>
+      <FileName>AppForm\StudentsForm\StudentListForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ScoreForm.AddScoreForm" Collapsed="true">
+    <Position X="0.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACgAAAjAAgFAAQACIKBgCCAAAAAAAAAAAACAICAA=</HashCode>
+      <FileName>AppForm\ScoreForm\AddScoreForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ScoreForm.AvarageScore" Collapsed="true">
+    <Position X="2.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAACAAAAAAAACAAAACgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AppForm\ScoreForm\AvarageScore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ScoreForm.ManageScoreForm" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACgBIAzAAgEAAQBCIKBiCAAsAAAMAAAAAAAAoSAA=</HashCode>
+      <FileName>AppForm\ScoreForm\ManageScoreForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ScoreForm.RemoveScoreForm" Collapsed="true">
+    <Position X="2.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAABAAQACIAAACAAMAAAAAABAAAAAgAAA=</HashCode>
+      <FileName>AppForm\ScoreForm\RemoveScoreForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ResultForm.AvgResultScoreForm" Collapsed="true">
+    <Position X="8" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>UBACCgBAAiQIAFAAIDCIEAACAQAAAAEBAAQAE0QAAEE=</HashCode>
+      <FileName>AppForm\ResultForm\AvgResultScoreForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ResultForm.ResultStatisticForm" Collapsed="true">
+    <Position X="9.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAQABACAEAAAAAACAAAICAAAAAAAgAgAAAAAAAAA=</HashCode>
+      <FileName>AppForm\ResultForm\ResultStatisticForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.CourseForm.AddCourseForm" Collapsed="true">
+    <Position X="8" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAACADAAIEACIECACAACAAAAQAAACAAAAAAAAAA=</HashCode>
+      <FileName>AppForm\CourseForm\AddCourseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.CourseForm.CourseStudenListtForm" Collapsed="true">
+    <Position X="9.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEBAACACACgAAAAFCBAAECAAAAAAABAgAAAAQAJAA=</HashCode>
+      <FileName>AppForm\CourseForm\CourseStudenListtForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.CourseForm.EditCourseForm" Collapsed="true">
+    <Position X="11.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAACCCAAgEAAIGCBCAgCAAAAQAAAAACAAAAAAAA=</HashCode>
+      <FileName>AppForm\CourseForm\EditCourseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.CourseForm.ManageCourseForm" Collapsed="true">
+    <Position X="8" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAAhBCkjBCkEAAIkjFCBACBAAIQAAABAAAAAAhAAI=</HashCode>
+      <FileName>AppForm\CourseForm\ManageCourseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.CourseForm.PrintCourseForm" Collapsed="true">
+    <Position X="9.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAEACAAgAQAAADAAAACACAgAAAAIEAAAAAEAAA=</HashCode>
+      <FileName>AppForm\CourseForm\PrintCourseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.CourseForm.RemoveCourseForm" Collapsed="true">
+    <Position X="11.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAgAAQiACgEAAAECBCAgCAAEAQAAAAAAAAAAgAAA=</HashCode>
+      <FileName>AppForm\CourseForm\RemoveCourseForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ContactForm.AddContactForm" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAQBACBICAAAABmCFggCEAAAkABIAAAAAAAAiAA=</HashCode>
+      <FileName>AppForm\ContactForm\AddContactForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ContactForm.EditContactForm" Collapsed="true">
+    <Position X="2.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QCADAAQAACBICgAAABmCFAgCEAACkABIABACAAEAiAA=</HashCode>
+      <FileName>AppForm\ContactForm\EditContactForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ContactForm.SelectContactForm" Collapsed="true">
+    <Position X="0.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAACAAAgACAACAAAACAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>AppForm\ContactForm\SelectContactForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.ContactForm.ShowFullContactForm" Collapsed="true">
+    <Position X="2.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAAAAACAAAAAAAAiAAAoCAAAABAQBAEAAAIAAAAA=</HashCode>
+      <FileName>AppForm\ContactForm\ShowFullContactForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="QLSV.AppForm.EditProfileForm" Collapsed="true">
+    <Position X="4" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBJAAAAAAOAJAIAAAECAQAACQCAAAAAYAAAAEgAAAUA=</HashCode>
+      <FileName>AppForm\ContactForm\EditProfileForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

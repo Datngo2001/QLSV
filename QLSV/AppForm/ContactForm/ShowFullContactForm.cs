@@ -38,8 +38,15 @@ namespace QLSV.AppForm.ContactForm
 
         private void listBoxGroup_DoubleClick(object sender, EventArgs e)
         {
-
-            int idx = (int)listBoxGroup.SelectedValue;
+            int idx;
+            try
+            {
+                idx = (int)listBoxGroup.SelectedValue;
+            }
+            catch (Exception)
+            {
+                return;
+            }
             if (idx < 0) return;
             DataTable allcontact = group.getAllContactInGroup(idx);
             

@@ -21,10 +21,14 @@ namespace QLSV.AppForm.ContactForm
 
         private void SelectContactForm_Load(object sender, EventArgs e)
         {
+            dataGridViewContact.RowTemplate.Height = 80;
             Contact contact = new Contact();
-
-            string query = "SELECT id, fname, lname, [group] FROM Contact";
-            dataGridViewContact.DataSource = contact.GetTable(query);
+            dataGridViewContact.DataSource = contact.getUserContact(CurrentUser.Id);
+            dataGridViewContact.ReadOnly = true;
+            DataGridViewImageColumn imageColumn = new DataGridViewImageColumn();
+            imageColumn = (DataGridViewImageColumn)dataGridViewContact.Columns["picture"];
+            imageColumn.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            dataGridViewContact.AllowUserToAddRows = false;
         }
 
         private void dataGridViewContact_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

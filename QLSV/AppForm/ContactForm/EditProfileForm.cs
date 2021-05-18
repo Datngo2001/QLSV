@@ -25,7 +25,6 @@ namespace QLSV.AppForm
                 if (user.editProfile(CurrentUser.Id, fname_tb.Text, lname_tb.Text, pictureBox.Image))
                 {
                     MessageBox.Show("Edit complete!");
-                    user.login(username_tb.Text, password_tb.Text);
                 }
                 else
                 {
@@ -39,7 +38,6 @@ namespace QLSV.AppForm
                 if (user.editProfile(CurrentUser.Id, password_tb.Text, fname_tb.Text, lname_tb.Text, pictureBox.Image))
                 {
                     MessageBox.Show("Edit complete!");
-                    user.login(username_tb.Text, password_tb.Text);
                 }
                 else
                 {

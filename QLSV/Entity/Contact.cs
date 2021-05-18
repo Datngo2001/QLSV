@@ -128,5 +128,19 @@ namespace QLSV.Entity
             adapter.Fill(table);
             return table;
         }
+
+        public DataTable getUserContact(int user_id)
+        {
+            try
+            {
+                string query = "SELECT * FROM Contact Where user_id = " + user_id.ToString();
+                return this.GetTable(query);
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -165,12 +165,14 @@ namespace QLSV.Entity
                     "Password = @password, " +
                     "fname = @fname, " +
                     "lname = @lname, " +
-                    "pic = @pic"
+                    "pic = @pic " +
+                    "WHERE id = @id"
                     , db.Connection);
 
 
                 db.openConnection();
 
+                insertCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 insertCommand.Parameters.Add("@password", SqlDbType.NVarChar).Value = Password;
                 insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
                 insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
@@ -203,12 +205,14 @@ namespace QLSV.Entity
                     "UPDATE Users SET " +
                     "fname = @fname, " +
                     "lname = @lname, " +
-                    "pic = @pic"
+                    "pic = @pic " +
+                    "WHERE id = @id"
                     , db.Connection);
 
 
                 db.openConnection();
 
+                insertCommand.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 insertCommand.Parameters.Add("@fname", SqlDbType.NVarChar).Value = fname;
                 insertCommand.Parameters.Add("@lname", SqlDbType.NVarChar).Value = lname;
                 insertCommand.Parameters.Add("@pic", SqlDbType.Image).Value = new Picture(image).toByteArray();

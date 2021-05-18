@@ -185,10 +185,11 @@ namespace QLSV.AppForm
         private void linkLabelEdit_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             EditProfileForm editProfileForm = new EditProfileForm();
-            editProfileForm.Show();
+            editProfileForm.ShowDialog();
             try
             {
-                pictureBoxContact.Image = CurrentUser.Avatar;
+                labelName.Text = editProfileForm.fname_tb.Text + editProfileForm.lname_tb.Text;
+                pictureBoxContact.Image = editProfileForm.pictureBox.Image;
             }
             catch (Exception)
             {

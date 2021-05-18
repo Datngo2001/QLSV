@@ -51,7 +51,7 @@ namespace QLSV.AppForm
             // upload_btn
             // 
             this.upload_btn.Location = new System.Drawing.Point(179, 245);
-            this.upload_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.upload_btn.Margin = new System.Windows.Forms.Padding(2);
             this.upload_btn.Name = "upload_btn";
             this.upload_btn.Size = new System.Drawing.Size(202, 23);
             this.upload_btn.TabIndex = 40;
@@ -75,7 +75,7 @@ namespace QLSV.AppForm
             // 
             this.lname_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lname_tb.Location = new System.Drawing.Point(179, 90);
-            this.lname_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lname_tb.Margin = new System.Windows.Forms.Padding(2);
             this.lname_tb.Name = "lname_tb";
             this.lname_tb.Size = new System.Drawing.Size(202, 26);
             this.lname_tb.TabIndex = 37;
@@ -84,7 +84,7 @@ namespace QLSV.AppForm
             // 
             this.fname_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.fname_tb.Location = new System.Drawing.Point(179, 57);
-            this.fname_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fname_tb.Margin = new System.Windows.Forms.Padding(2);
             this.fname_tb.Name = "fname_tb";
             this.fname_tb.Size = new System.Drawing.Size(203, 26);
             this.fname_tb.TabIndex = 36;
@@ -129,7 +129,7 @@ namespace QLSV.AppForm
             // 
             this.reEnter_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reEnter_tb.Location = new System.Drawing.Point(179, 356);
-            this.reEnter_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.reEnter_tb.Margin = new System.Windows.Forms.Padding(2);
             this.reEnter_tb.Name = "reEnter_tb";
             this.reEnter_tb.PasswordChar = '*';
             this.reEnter_tb.Size = new System.Drawing.Size(203, 26);
@@ -139,7 +139,7 @@ namespace QLSV.AppForm
             // 
             this.password_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.password_tb.Location = new System.Drawing.Point(179, 319);
-            this.password_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.password_tb.Margin = new System.Windows.Forms.Padding(2);
             this.password_tb.Name = "password_tb";
             this.password_tb.PasswordChar = '*';
             this.password_tb.Size = new System.Drawing.Size(203, 26);
@@ -149,7 +149,7 @@ namespace QLSV.AppForm
             // 
             this.username_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.username_tb.Location = new System.Drawing.Point(179, 278);
-            this.username_tb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.username_tb.Margin = new System.Windows.Forms.Padding(2);
             this.username_tb.Name = "username_tb";
             this.username_tb.ReadOnly = true;
             this.username_tb.Size = new System.Drawing.Size(203, 26);
@@ -161,7 +161,7 @@ namespace QLSV.AppForm
             this.saveChange_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.saveChange_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.saveChange_btn.Location = new System.Drawing.Point(53, 399);
-            this.saveChange_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.saveChange_btn.Margin = new System.Windows.Forms.Padding(2);
             this.saveChange_btn.Name = "saveChange_btn";
             this.saveChange_btn.Size = new System.Drawing.Size(167, 37);
             this.saveChange_btn.TabIndex = 27;
@@ -175,7 +175,7 @@ namespace QLSV.AppForm
             this.cancel_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.cancel_btn.Location = new System.Drawing.Point(257, 399);
-            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cancel_btn.Margin = new System.Windows.Forms.Padding(2);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(115, 37);
             this.cancel_btn.TabIndex = 26;
@@ -223,7 +223,7 @@ namespace QLSV.AppForm
             // 
             this.pictureBox.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBox.Location = new System.Drawing.Point(179, 123);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(201, 118);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -252,7 +252,7 @@ namespace QLSV.AppForm
             this.Controls.Add(this.reEnter_lb);
             this.Controls.Add(this.password_lb);
             this.Controls.Add(this.username_lb);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EditProfileForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edit Profile";
@@ -266,10 +266,7 @@ namespace QLSV.AppForm
         #endregion
 
         private System.Windows.Forms.Button upload_btn;
-        private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label picture_lb;
-        private System.Windows.Forms.TextBox lname_tb;
-        private System.Windows.Forms.TextBox fname_tb;
         private System.Windows.Forms.Label lname_lb;
         private System.Windows.Forms.Label fname_lb;
         private System.Windows.Forms.Label profile_lb;
@@ -281,5 +278,8 @@ namespace QLSV.AppForm
         private System.Windows.Forms.Label reEnter_lb;
         private System.Windows.Forms.Label password_lb;
         private System.Windows.Forms.Label username_lb;
+        public System.Windows.Forms.PictureBox pictureBox;
+        public System.Windows.Forms.TextBox lname_tb;
+        public System.Windows.Forms.TextBox fname_tb;
     }
 }
