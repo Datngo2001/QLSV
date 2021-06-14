@@ -6,12 +6,14 @@ using System.Collections.Generic;
 
 namespace QLSV.Entity
 {
+    //THIEN
     class Course
     {
         private int period;
 
         public int Id { get; set; }
         public string Label { get; set; }
+        //tạo trigger
         public int Period
         {
             get { return period; }
@@ -29,6 +31,7 @@ namespace QLSV.Entity
         }
         public string Description { get; set; }
         public string Semester { get; set; }
+        //tạo proceduce
         public bool AddThisCourse()
         {
             DataBase mydb = new DataBase();
@@ -66,6 +69,7 @@ namespace QLSV.Entity
                 mydb.closeConnection();
             }
         }
+        //tạo proceduce
         public bool UpdateThisCourse()
         {
             DataBase dataBase = new DataBase();
@@ -108,6 +112,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool RemoveThisCourse()
         {
             DataBase dataBase = new DataBase();
@@ -151,6 +156,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public List<int> GetAllId()
         {
             List<int> result = new List<int>();
@@ -183,6 +189,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public Course getByID(int Id)
         {
             DataBase dataBase = new DataBase();
@@ -225,6 +232,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable GetAll_ID_label()
         {
             DataBase dataBase = new DataBase();
@@ -251,6 +259,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool InsertCourse(string label, int period, string description, string semester)
         {
             DataBase db = new DataBase();
@@ -286,6 +295,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo function
         public bool CheckCourseName(string courseName)
         {
             DataBase db = new DataBase();
@@ -319,6 +329,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public bool RemoveCourse(int id)
         {
             DataBase db = new DataBase();
@@ -360,6 +371,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public bool UpdateCourse(int id, string label, int period, string description, string semester)
         {
             DataBase db = new DataBase();
@@ -403,6 +415,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public bool DeleteCourse(int id)
         {
             DataBase db = new DataBase();
@@ -461,6 +474,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable GetAllCourses()
         {
             DataBase db = new DataBase();
@@ -478,6 +492,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable GetCourseByID(int id)
         {
             DataBase db = new DataBase();
@@ -496,6 +511,7 @@ namespace QLSV.Entity
             }
 
         }
+        //tạo function
         public int TotalCourse()
         {
             DataBase db = new DataBase();
@@ -515,6 +531,7 @@ namespace QLSV.Entity
             }
 
         }
+        //tạo proceduce
         public DataTable getAvgScoreByCourse()
         {
             DataBase db = new DataBase();
@@ -546,6 +563,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable allLabel_IdOrder()
         {
             DataBase db = new DataBase();
@@ -576,6 +594,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable GetCourseBySemester(string semester)
         {
             semester = semester.Trim();
@@ -606,6 +625,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo function
         public int GetIdByLabel(string label)
         {
             DataBase dataBase = new DataBase();
@@ -625,6 +645,7 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        //tao view
         public DataTable studentsInCourse(int id)
         {
             DataBase db = new DataBase();

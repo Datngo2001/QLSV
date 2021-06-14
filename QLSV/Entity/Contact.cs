@@ -7,10 +7,11 @@ using QLSV.Entity;
 
 namespace QLSV.Entity
 {
+    //THIEN
     class Contact
     {
         DataBase db = new DataBase();
-
+        //tạo proceduce
         public bool InsertContact(string fname, string lname, int group, string phone, string email, string address, Image picture, int user_id)
         {
             SqlCommand command = new SqlCommand("INSERT INTO Contact (fname, lname, [group], phone, email, address, picture, user_id) " +
@@ -37,7 +38,7 @@ namespace QLSV.Entity
                 return false;
             }
         }
-
+        //tạo proceduce
         public bool UpdateContact(int id, string fname, string lname, string group, string phone, string email, string address, Image picture)
         {
             SqlCommand command = new SqlCommand("UPDATE Contact " +
@@ -73,7 +74,7 @@ namespace QLSV.Entity
                 return false;
             }
         }
-
+        //tạo proceduce
         public bool DeleteContact(int id)
         {
             SqlCommand command = new SqlCommand("DELETE FROM Contact WHERE id=@id", db.Connection);
@@ -105,19 +106,19 @@ namespace QLSV.Entity
             DataTable table = dataSet.Tables["Contact"];
             return table;
         }
-
+        //tạo proceduce
         public DataTable SelectContactList()
         {
             string query = "SELECT * FROM Contact";
             return this.GetTable(query);
         }
-
+        //tạo proceduce
         public DataTable GetContactByID(int id)
         {
             string query = $"SELECT * FROM Contact WHERE id = {id}";
             return this.GetTable(query);
         }
-
+        //tạo proceduce
         public DataTable GetContactByGroup(string group)
         {
             SqlCommand command = new SqlCommand("SELECT * FROM Contact WHERE CAST([group] AS NVARCHAR) = @group", db.Connection);
@@ -128,7 +129,7 @@ namespace QLSV.Entity
             adapter.Fill(table);
             return table;
         }
-
+        //tạo proceduce
         public DataTable getUserContact(int user_id)
         {
             try

@@ -10,6 +10,7 @@ using QLSV.Data;
 
 namespace QLSV.Entity
 {
+    //DAT
     class studentManager
     {
         DataBase dataBase;
@@ -17,6 +18,7 @@ namespace QLSV.Entity
         {
             dataBase = new DataBase();
         }
+        //tạo proceduce
         public bool login(string username, string password)
         {
             try
@@ -64,6 +66,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo function
         public bool CheckUserName(string username)
         {
             try
@@ -93,6 +96,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo function
         public bool CheckPassword(string password)
         {
             try
@@ -123,6 +127,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool addNewAccount(string username, string password)
         {
             try

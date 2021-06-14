@@ -6,17 +6,20 @@ using System.Drawing;
 
 namespace QLSV.Entity
 {
+    //DAT
     class Student
     {
         private DateTime bdate;
         public int ID { get; set; }
         public string Lname { get; set; }
         public string Fname { get; set; }
+        //tạo trigger
         public DateTime Bdate
         {
             get { return Convert.ToDateTime(this.bdate.ToShortDateString()); }
             set { this.bdate = Convert.ToDateTime(value.ToShortDateString()); } 
         }
+        //tạo trigger
         public char Gender { get; set; } 
         public string Phone { get; set; }
         public string Address { get; set; }
@@ -25,6 +28,7 @@ namespace QLSV.Entity
         {
             Bdate = default;
         }
+        //tạo proceduce
         public bool getByID(int id)
         {
             DataBase dataBase = new DataBase();
@@ -76,6 +80,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo function
         public int isExistId(int id)
         {
             DataBase dataBase = new DataBase();
@@ -107,6 +112,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool getByPhone(string phone)
         {
             DataBase dataBase = new DataBase();
@@ -180,6 +186,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable findByHint(string hint)
         {
             DataBase dataBase = new DataBase();
@@ -214,6 +221,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable findIdFname(string hint)
         {
             DataBase dataBase = new DataBase();
@@ -248,6 +256,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool InsertThisStudent()
         {
             DataBase mydb = new DataBase();
@@ -288,6 +297,7 @@ namespace QLSV.Entity
                 mydb.closeConnection();
             }
         }
+        //tạo proceduce
         public bool UpdateThisStudent()
         {
             DataBase dataBase = new DataBase();
@@ -336,6 +346,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool DeleteThisStudent()
         {
             DataBase dataBase = new DataBase();
@@ -389,6 +400,7 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        //tạo proceduce
         public DataTable getAllBriefInfo()
         {
             DataBase db = new DataBase();
@@ -418,6 +430,7 @@ namespace QLSV.Entity
             }
 
         }
+        //tạo proceduce
         public DataTable GetAllStudent()
         {
             try
@@ -432,6 +445,7 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        //tao view
         public DataTable GetSelectedCourses(int id)
         {
             try
@@ -459,6 +473,7 @@ namespace QLSV.Entity
                 return true;
             }
         }
+        //tạo proceduce
         public bool InsertSelectedCourse(string id, int course)
         {
             DataBase db = new DataBase();

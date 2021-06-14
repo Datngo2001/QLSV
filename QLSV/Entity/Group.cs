@@ -4,10 +4,11 @@ using QLSV.Data;
 
 namespace QLSV.Entity
 {
+    //THONG
     class Group
     {
         DataBase db = new DataBase();
-
+        //tạo proceduce
         public bool InsertGroup(string name, int user_id)
         {
             SqlCommand command = new SqlCommand("INSERT INTO [Group] (name, user_id) " +
@@ -28,7 +29,7 @@ namespace QLSV.Entity
                 return false;
             }
         }
-
+        //tạo proceduce
         public bool UpdateGroup(int id, string name, int user_id)
         {
             SqlCommand command = new SqlCommand("UPDATE [Group] " +
@@ -54,7 +55,7 @@ namespace QLSV.Entity
                 return false;
             }
         }
-
+        //tạo proceduce
         public bool DeleteGroup(int id, int user_id)
         {
             try
@@ -86,7 +87,7 @@ namespace QLSV.Entity
                 throw;
             }
         }
-
+        //tạo function
         public bool CheckGroupExist(string name, string operation)
         {
             try
@@ -141,13 +142,13 @@ namespace QLSV.Entity
             DataTable table = dataSet.Tables["Group"];
             return table;
         }
-
+        //tạo proceduce
         public DataTable GetAllGroup()
         {
             string query = "SELECT * FROM [Group]";
             return this.GetTable(query);
         }
-
+        //tạo proceduce
         public DataTable getAllContactInGroup(int id)
         {
             string query = "SELECT * from Contact WHERE [Contact].[group] = " + id.ToString();

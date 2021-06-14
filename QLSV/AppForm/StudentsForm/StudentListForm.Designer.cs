@@ -45,6 +45,7 @@ namespace QLSV.AppForm.StudentsForm
             this.list_dgv.Size = new System.Drawing.Size(1706, 673);
             this.list_dgv.TabIndex = 0;
             this.list_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.list_dgv.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.list_dgv_DataError);
             this.list_dgv.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
             // 
             // refresh_btn

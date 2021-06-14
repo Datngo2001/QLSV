@@ -92,5 +92,10 @@ namespace QLSV.AppForm.StudentsForm
         {
 
         }
+
+        private void list_dgv_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
+        }
     }
 }

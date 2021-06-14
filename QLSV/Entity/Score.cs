@@ -5,11 +5,13 @@ using System.Data.SqlClient;
 
 namespace QLSV.Entity
 {
+    //THONG
     class Score
     {
         private float studentScore;
         public int StudentID { get; set; }
         public int CourseID { get; set; }
+        //tao trigger
         public float StudentScore
         {
             get { return studentScore; }
@@ -30,6 +32,7 @@ namespace QLSV.Entity
         {
 
         }
+        //tạo proceduce
         public bool AddThisScore()
         {
             DataBase mydb = new DataBase();
@@ -74,6 +77,7 @@ namespace QLSV.Entity
                 mydb.closeConnection();
             }
         }
+        //tạo proceduce
         public bool UpdateThisScore()
         {
             DataBase dataBase = new DataBase();
@@ -113,6 +117,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public bool RemoveThisScore()
         {
             DataBase dataBase = new DataBase();
@@ -146,6 +151,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable getAllScore()
         {
             DataBase dataBase = new DataBase();
@@ -174,6 +180,7 @@ namespace QLSV.Entity
                 dataBase.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable getALL_IdCourseOrder()
         {
             DataBase db = new DataBase();
@@ -205,6 +212,7 @@ namespace QLSV.Entity
             }
 
         }
+        //tao view
         public DataTable getAvg_byStudent()
         {
             DataBase db = new DataBase();
@@ -314,6 +322,7 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        //tao function
         public bool isExisted()
         {
             DataBase mydb = new DataBase();
@@ -348,6 +357,7 @@ namespace QLSV.Entity
                 mydb.closeConnection();
             }
         }
+        //tao function
         public int getPassNumber()
         {
             DataBase db = new DataBase();
@@ -385,6 +395,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tao fuction
         public int getFailNumber()
         {
             DataBase db = new DataBase();

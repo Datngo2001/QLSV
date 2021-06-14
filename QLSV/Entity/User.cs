@@ -7,9 +7,11 @@ using System;
 
 namespace QLSV.Entity
 {
+    //DAT
     class User
     {
         DataBase db = new DataBase();
+        //tạo proceduce
         public bool login(string Username, string Password)
         {
             ProgressDialog progress = new ProgressDialog();
@@ -52,6 +54,7 @@ namespace QLSV.Entity
                 return false;
             }
         }
+        //tạo proceduce
         public bool signin(string Username, string Password, string fname, string lname, Image image)
         {
             try
@@ -96,6 +99,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo function
         public bool CheckUserName(string username)
         {
             try
@@ -125,6 +129,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo function
         public bool CheckPassword(string password)
         {
             try
@@ -156,6 +161,7 @@ namespace QLSV.Entity
             }
 
         }
+        //tạo proceduce
         public bool editProfile(int id, string Password, string fname, string lname, Image image)
         {
             try
@@ -197,6 +203,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public bool editProfile(int id, string fname, string lname, Image image)
         {
             try
@@ -236,6 +243,7 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
+        //tạo proceduce
         public DataTable GetUserByID(int id)
         {
             try
@@ -258,6 +266,7 @@ namespace QLSV.Entity
                 throw;
             }
         }
+        //tạo proceduce
         public string GetUserFullNameByID(int id)
         {
             SqlCommand command = new SqlCommand("SELECT CONCAT(TRIM(lname), ' ', TRIM(fname)) FROM [Users] WHERE id = @id",
@@ -270,6 +279,7 @@ namespace QLSV.Entity
 
             return table.Rows[0][0].ToString().Trim();
         }
+        //tao view
         public DataTable getJoinedGroup(int user_id)
         {
             try
