@@ -16,6 +16,7 @@ namespace QLSV.AppForm
         {
             if (student_rbtn.Checked == true)
             {
+                CurrentUser.isManager = true;
                 var studentmanager = new studentManager();
                 if (studentmanager.login(Username_textBox.Text, Password_textBox.Text))
                 {
@@ -23,17 +24,20 @@ namespace QLSV.AppForm
                 }
                 else
                 {
+                    CurrentUser.isManager = false;
                     MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else if(human_rbtn.Checked == true)
             {
+                CurrentUser.isContact = true;
                 if (user.login(Username_textBox.Text, Password_textBox.Text))
                 {
                     this.DialogResult = DialogResult.Yes;
                 }
                 else
                 {
+                    CurrentUser.isContact = false;
                     MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

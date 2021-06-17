@@ -8,8 +8,21 @@ namespace QLSV.Data
 {
     class DataBase
     {
-        protected SqlConnection connection = new SqlConnection
-            (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;Integrated Security=True");
+        protected SqlConnection connection;
+        public DataBase()
+        {
+            if(CurrentUser.isManager == true)
+            {
+                connection = new SqlConnection
+                    (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;User ID=QLSV_Manager;Password=123");
+            }
+            else if(CurrentUser.isContact == true)
+            {
+                connection = new SqlConnection
+                    (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;User ID=QLSV_Contact;Password=123");
+            }
+        }
+
         public SqlConnection Connection
         {
             get { return connection; }

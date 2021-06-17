@@ -10,5 +10,7 @@ namespace QLSV
         public static string lname { get; set; }
         public static Image Avatar { get; set; }
         public static bool isAdmin { get; set; }
+        public static bool isManager = false;
+        public static bool isContact = false;
     }
 }

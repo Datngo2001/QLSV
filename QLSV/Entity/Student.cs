@@ -482,7 +482,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand("Insert into Student_Courses (stdId, courseId) " +
                                                      "values (@stdId, @courseId)", db.Connection);
 
-                command.Parameters.Add("@stdId", SqlDbType.Int).Value = id;
+                command.Parameters.Add("@stdId", SqlDbType.NVarChar).Value = id;
                 command.Parameters.Add("@courseId", SqlDbType.Int).Value = course;
 
                 db.openConnection();

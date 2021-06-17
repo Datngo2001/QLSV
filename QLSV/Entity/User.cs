@@ -203,7 +203,6 @@ namespace QLSV.Entity
                 db.closeConnection();
             }
         }
-        //tạo proceduce
         public bool editProfile(int id, string fname, string lname, Image image)
         {
             try
@@ -242,42 +241,6 @@ namespace QLSV.Entity
             {
                 db.closeConnection();
             }
-        }
-        //tạo proceduce
-        public DataTable GetUserByID(int id)
-        {
-            try
-            {
-                db.openConnection();
-                SqlCommand command = new SqlCommand($"SELECT * FROM [Users] WHERE id = @id", db.Connection);
-                command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = command;
-                DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Users");
-                db.closeConnection();
-
-                DataTable table = dataSet.Tables["Users"];
-                return table;
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-        }
-        //tạo proceduce
-        public string GetUserFullNameByID(int id)
-        {
-            SqlCommand command = new SqlCommand("SELECT CONCAT(TRIM(lname), ' ', TRIM(fname)) FROM [Users] WHERE id = @id",
-                                                db.Connection);
-            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
-
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-            return table.Rows[0][0].ToString().Trim();
         }
         //tao view
         public DataTable getJoinedGroup(int user_id)
