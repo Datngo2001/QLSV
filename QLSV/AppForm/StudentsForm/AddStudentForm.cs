@@ -38,7 +38,7 @@ namespace QLSV.AppForm.StudentsForm
             {
                 student.Gender = 'M';
             }
-            if (student.isExistId(Convert.ToInt32(id_tb.Text)) >= 1)
+            if (student.isExistId(Convert.ToInt32(id_tb.Text)))
             {
                 MessageBox.Show("Id is existed!");
                 return;
@@ -82,7 +82,7 @@ namespace QLSV.AppForm.StudentsForm
         private void check_btn_Click(object sender, EventArgs e)
         {
             Student student = new Student();
-            if (student.isExistId(Convert.ToInt32(id_tb.Text)) >= 1)
+            if (student.isExistId(Convert.ToInt32(id_tb.Text)))
             {
                 MessageBox.Show("Id is existed!");
             }

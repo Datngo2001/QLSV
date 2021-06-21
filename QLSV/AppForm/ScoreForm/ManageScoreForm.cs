@@ -102,6 +102,33 @@ namespace QLSV.AppForm.ScoreForm
         {
             AvarageScore avarageScore = new AvarageScore();
             avarageScore.Show();
-        } 
+        }
+
+        private void update_btn_Click(object sender, EventArgs e)
+        {
+            if (id_tb.Text != "" && cource_cb.SelectedIndex != -1
+                && description_tb.Text != "" && score_tb.Text != "")
+            {
+                score.StudentID = Convert.ToInt32(id_tb.Text);
+                score.StudentScore = (float)Convert.ToDouble(score_tb.Text);
+                score.Description = description_tb.Text;
+                score.CourseID = Convert.ToInt32(labelTable.Rows[cource_cb.SelectedIndex][0].ToString());
+                try
+                {
+                    if (score.UpdateThisScore())
+                    {
+                        MessageBox.Show("Complete!");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("This student already have score!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Make sure you fill all gap!");
+            }
+        }
     }
 }

@@ -10,7 +10,6 @@ namespace QLSV.AppForm
         public LoginForm()
         {
             InitializeComponent();
-            user = new User();
         }
         private void Login_button_Click(object sender, EventArgs e)
         {
@@ -24,12 +23,12 @@ namespace QLSV.AppForm
                 }
                 else
                 {
-                    CurrentUser.isManager = false;
                     MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if(human_rbtn.Checked == true)
+            else if (human_rbtn.Checked == true)
             {
+                user = new User();
                 CurrentUser.isContact = true;
                 if (user.login(Username_textBox.Text, Password_textBox.Text))
                 {
@@ -37,7 +36,6 @@ namespace QLSV.AppForm
                 }
                 else
                 {
-                    CurrentUser.isContact = false;
                     MessageBox.Show("Invalid Username or Password", "Login Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }

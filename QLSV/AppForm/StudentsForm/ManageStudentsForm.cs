@@ -54,8 +54,17 @@ namespace QLSV.AppForm.StudentsForm
             Phone_tb.Text = showResult_dgv.CurrentRow.Cells[5].Value.ToString().Trim();
             Address_rtb.Text = showResult_dgv.CurrentRow.Cells[6].Value.ToString().Trim();
 
-            Picture picture = new Picture();
-            student_pcb.Image = picture.ByteArrToImage((byte[])showResult_dgv.CurrentRow.Cells[7].Value);
+            try
+            {
+                Picture picture = new Picture();
+                student_pcb.Image = picture.ByteArrToImage((byte[])showResult_dgv.CurrentRow.Cells[7].Value);
+            }
+            catch (Exception)
+            {
+                student_pcb.Image = null;
+            }
+
+            student.getByID(Convert.ToInt32(Id_tb.Text));
         }
 
         private void ManageStudentsForm_Load(object sender, EventArgs e)

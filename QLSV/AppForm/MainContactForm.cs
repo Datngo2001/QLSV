@@ -95,7 +95,7 @@ namespace QLSV.AppForm
                 string name = textBoxGroupName.Text;
                 int user_id = CurrentUser.Id;
 
-                if (!(group.CheckGroupExist(name, "add")))
+                if (!(group.CheckGroupExist(name)))
                 {
                     if (group.InsertGroup(name, user_id))
                     {
@@ -129,7 +129,7 @@ namespace QLSV.AppForm
                 string name = textBoxNewName.Text.Trim();
                 int user_id = CurrentUser.Id;
 
-                if (!(group.CheckGroupExist(name, "edit")))
+                if (!(group.CheckGroupExist(name)))
                 {
                     if (group.UpdateGroup(id, name, user_id))
                     {

@@ -37,8 +37,7 @@ namespace QLSV.Entity
             DataBase mydb = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Courses (label, period, description, semester)" +
-                    "VALUES (@label, @period, @desciption, @semester)", mydb.Connection);
+                SqlCommand command = new SqlCommand("exec InsertCourse @label, @period, @desciption, @semester", mydb.Connection);
 
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = Label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = Period;
@@ -76,13 +75,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "UPDATE Courses" +
-                    " SET " +
-                    "label = @label," +
-                    "period = @period," +
-                    "semester = @semester, " +
-                    "description = @description" +
-                    " WHERE id = @ID"
+                    "exec UpdateCourse @ID, @label, @period, @description, @semester"
                     , dataBase.Connection);
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = Label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = Period;
@@ -118,22 +111,11 @@ namespace QLSV.Entity
             DataBase dataBase = new DataBase();
             try
             {
-                SqlCommand command2 = new SqlCommand("DELETE FROM Student_Courses WHERE courseId = @ID", dataBase.Connection);
-                command2.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
-
-                SqlCommand command3 = new SqlCommand("DELETE FROM Score WHERE course_Id = @ID", dataBase.Connection);
-                command3.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
-
                 SqlCommand command = new SqlCommand(
-                    "DELETE FROM Courses" +
-                    " WHERE Id = @ID", dataBase.Connection);
+                    "exec RemoveCourse @ID", dataBase.Connection);
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = Id;
 
                 dataBase.openConnection();
-
-                command2.ExecuteNonQuery();
-
-                command3.ExecuteNonQuery();
 
                 if (command.ExecuteNonQuery() == 1)
                 {
@@ -163,7 +145,7 @@ namespace QLSV.Entity
             DataBase dataBase = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("Select id From Courses", dataBase.Connection);
+                SqlCommand command = new SqlCommand("exec GetAllId_Course", dataBase.Connection);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
                 DataTable table = new DataTable();
@@ -195,7 +177,7 @@ namespace QLSV.Entity
             DataBase dataBase = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("Select * From Courses Where Id = @id", dataBase.Connection);
+                SqlCommand command = new SqlCommand("exec getByID_Course @id", dataBase.Connection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = Id;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
@@ -238,7 +220,7 @@ namespace QLSV.Entity
             DataBase dataBase = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("Select id, label From Courses", dataBase.Connection);
+                SqlCommand command = new SqlCommand("exec GetAll_ID_label", dataBase.Connection);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
                 DataTable table = new DataTable();
@@ -265,8 +247,7 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Courses (label, period, description, semester) "
-                                  + "VALUES (@label, @period, @description, @semester)", db.Connection);
+                SqlCommand command = new SqlCommand("exec InsertCourse @label, @period, @description, @semester", db.Connection);
 
                 command.Parameters.Add("@label", SqlDbType.VarChar).Value = label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = period;
@@ -301,23 +282,11 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM Courses WHERE label=@cName", db.Connection);
+                SqlCommand command = new SqlCommand("select CheckCourseName(@cName)", db.Connection);
 
                 command.Parameters.Add("@cName", SqlDbType.VarChar).Value = courseName;
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                if (table.Rows.Count > 0)
-                {
-                    return false;
-                }
-                else
-                {
-                    return true;
-                }
-
+                return (bool)command.ExecuteScalar();
             }
             catch (Exception)
             {
@@ -335,20 +304,10 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command2 = new SqlCommand("DELETE FROM Student_Courses WHERE courseId = @ID", db.Connection);
-                command2.Parameters.Add("@ID", SqlDbType.Int).Value = id;
-
-                SqlCommand command3 = new SqlCommand("DELETE FROM Score WHERE course_Id = @ID", db.Connection);
-                command3.Parameters.Add("@ID", SqlDbType.Int).Value = id;
-
-                SqlCommand command = new SqlCommand("DELETE FROM Courses WHERE id = @ID", db.Connection);
+                SqlCommand command = new SqlCommand("exec RemoveCourse @ID", db.Connection);
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = id;
 
                 db.openConnection();
-
-                command2.ExecuteNonQuery();
-
-                command3.ExecuteNonQuery();
 
                 if (command.ExecuteNonQuery() == 1)
                 {
@@ -378,13 +337,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "UPDATE Courses" +
-                    " SET " +
-                    "label = @label," +
-                    "semester = @semester," +
-                    "period = @period," +
-                    "description = @description" +
-                    " WHERE id = @ID"
+                    "exec UpdateCourse @ID, @label, @period, @description, @semester"
                     , db.Connection);
 
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = label;
@@ -421,8 +374,7 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("DELETE FROM Courses " +
-                                    "where id=@id",
+                SqlCommand command = new SqlCommand("exec DeleteCourse @id",
                                     db.Connection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
@@ -477,39 +429,28 @@ namespace QLSV.Entity
         //tạo proceduce
         public DataTable GetAllCourses()
         {
-            DataBase db = new DataBase();
             try
             {
-                string query = "SELECT * FROM Courses";
+                string query = "exec GetAllCourses";
                 return this.GetTable(query);
             }
             catch (Exception)
             {
                 throw;
-            }
-            finally
-            {
-                db.closeConnection();
             }
         }
         //tạo proceduce
         public DataTable GetCourseByID(int id)
         {
-            DataBase db = new DataBase();
             try
             {
-                string query = $"SELECT * FROM Courses WHERE id = {id}";
+                string query = $"exec GetCourseByID {id}";
                 return this.GetTable(query);
             }
             catch (Exception)
             {
                 throw;
             }
-            finally
-            {
-                db.closeConnection();
-            }
-
         }
         //tạo function
         public int TotalCourse()
@@ -517,9 +458,24 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                DataTable table = this.GetAllCourses();
-                return table.Rows.Count;
+                db.openConnection();
+                SqlCommand command = new SqlCommand()
+                {
+                    Connection = db.Connection,
+                    CommandText = "select [dbo].TotalCourse()"
+                };
+                int result;
+                try
+                {
+                    result = (int)command.ExecuteScalar();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+                db.closeConnection();
 
+                return result;
             }
             catch (Exception)
             {
@@ -529,7 +485,6 @@ namespace QLSV.Entity
             {
                 db.closeConnection();
             }
-
         }
         //tạo proceduce
         public DataTable getAvgScoreByCourse()
@@ -541,10 +496,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "SELECT Courses.label, AVG(score.student_score) As AverageGrade " +
-                    "FROM Courses, Score " +
-                    "WHERE Courses.Id = Score.course_id " +
-                    "GROUP BY Courses.label"
+                    CommandText = "exec getAvgScoreByCourse"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
@@ -573,9 +525,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "select Courses.Id, Courses.label " +
-                                    "from Courses " +
-                                    "order by Courses.Id"
+                    CommandText = "exec allLabel_IdOrder"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
@@ -605,7 +555,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "SELECT * FROM Courses WHERE semester = @semester"
+                    CommandText = "exec GetCourseBySemester @semester"
                 };
                 command.Parameters.Add("@semester", SqlDbType.NVarChar).Value = semester;
                 SqlDataAdapter adapter = new SqlDataAdapter();
@@ -628,21 +578,32 @@ namespace QLSV.Entity
         //tạo function
         public int GetIdByLabel(string label)
         {
-            DataBase dataBase = new DataBase();
+            DataBase db = new DataBase();
             try
             {
-                label = label.Trim();
-                SqlCommand command = new SqlCommand("SELECT Id From Courses Where label = @label", dataBase.Connection);
+                db.openConnection();
+                SqlCommand command = new SqlCommand("select GetIdByLabel(@label)", db.Connection);
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = label;
-                dataBase.openConnection();
-                int result = Convert.ToInt32(command.ExecuteScalar());
-                dataBase.closeConnection();
+                int result;
+                try
+                {
+                    result = (int)command.ExecuteScalar();
+                }
+                catch (Exception)
+                {
+                    return 0;
+                }
+                db.closeConnection();
+
                 return result;
             }
             catch (Exception)
             {
-
                 throw;
+            }
+            finally
+            {
+                db.closeConnection();
             }
         }
         //tao view
@@ -651,10 +612,7 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("select Students_info.ID, fname, lname, bdate " +
-                                                    "from Students_info inner join Student_Courses " +
-                                                    "on Students_info.ID = Student_Courses.stdId " +
-                                                    "where Student_Courses.courseId = @id", db.Connection);
+                SqlCommand command = new SqlCommand("exec getStudentsInCourse @id", db.Connection);
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;

@@ -11,8 +11,7 @@ namespace QLSV.Entity
         //tạo proceduce
         public bool InsertGroup(string name, int user_id)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO [Group] (name, user_id) " +
-                                                "VALUES (@name, @user_id)", db.Connection);
+            SqlCommand command = new SqlCommand("exec InsertUser_Group @name, @user_id", db.Connection);
 
             command.Parameters.Add("@name", SqlDbType.Text).Value = name;
             command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
@@ -32,11 +31,7 @@ namespace QLSV.Entity
         //tạo proceduce
         public bool UpdateGroup(int id, string name, int user_id)
         {
-            SqlCommand command = new SqlCommand("UPDATE [Group] " +
-                                                "SET " +
-                                                "name=@name " +
-                                                "WHERE id=@id " +
-                                                "AND user_id=@user_id ",
+            SqlCommand command = new SqlCommand("exec UpdateUser_Group @name, @user_id, @id",
                                                 db.Connection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
@@ -60,7 +55,7 @@ namespace QLSV.Entity
         {
             try
             {
-                SqlCommand deleteCmd = new SqlCommand("DELETE FROM [Group] WHERE id=@id AND user_id=@user_id", db.Connection);
+                SqlCommand deleteCmd = new SqlCommand("exec DeleteUser_Group @id, @user_id", db.Connection);
                 deleteCmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 deleteCmd.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
 
@@ -68,10 +63,6 @@ namespace QLSV.Entity
 
                 if (deleteCmd.ExecuteNonQuery() > 0)
                 {
-                    SqlCommand deleteContact = new SqlCommand("DELETE FROM Contact WHERE [group] = @id", db.Connection);
-                    deleteContact.Parameters.Add("@id", SqlDbType.Int).Value = id;
-                    deleteContact.ExecuteNonQuery();
-
                     db.closeConnection();
                     return true;
                 }
@@ -88,47 +79,23 @@ namespace QLSV.Entity
             }
         }
         //tạo function
-        public bool CheckGroupExist(string name, string operation)
+        public bool CheckGroupExist(string name)
         {
             try
             {
-                string query = "";
                 SqlCommand command = new SqlCommand();
 
-                if (operation == "add")
-                {
-                    query = "SELECT * FROM [Group] WHERE CAST(name AS NVARCHAR) = @name";
-                    command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
-                }
-                else if (operation == "edit")
-                {
-                    query = "SELECT * FROM [Group] WHERE CAST(name AS NVARCHAR) = @name";
-                    command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
-                }
-
                 command.Connection = db.Connection;
-                command.CommandText = query;
+                command.CommandText = "SELECT [dbo].CheckGroupExist_Group(@name)";
+                command.Parameters.Add("@name", SqlDbType.NVarChar).Value = name;
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-
-                if (table.Rows.Count > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return (bool)command.ExecuteScalar();
             }
             catch (System.Exception)
             {
-
-                throw;
+                return false;
             }
         }
-
         public DataTable GetTable(string query)
         {
             db.openConnection();
@@ -145,15 +112,15 @@ namespace QLSV.Entity
         //tạo proceduce
         public DataTable GetAllGroup()
         {
-            string query = "SELECT * FROM [Group]";
+            string query = "exec GetAll_Group";
             return this.GetTable(query);
         }
         //tạo proceduce
         public DataTable getAllContactInGroup(int id)
         {
-            string query = "SELECT * from Contact WHERE [Contact].[group] = " + id.ToString();
             db.openConnection();
-            SqlCommand command = new SqlCommand(query, db.Connection);
+            SqlCommand command = new SqlCommand("exec GetAllContact_Group @id", db.Connection);
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
             SqlDataAdapter adapter = new SqlDataAdapter();
             adapter.SelectCommand = command;
             DataTable table = new DataTable();

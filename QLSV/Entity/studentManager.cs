@@ -23,6 +23,17 @@ namespace QLSV.Entity
         {
             try
             {
+                if (CurrentUser.isManager == true)
+                {
+                    dataBase.Connection = new SqlConnection
+                        (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;User ID=QLSV_Manager;Password=123");
+                }
+                else if (CurrentUser.isContact == true)
+                {
+                    dataBase.Connection = new SqlConnection
+                        (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;User ID=QLSV_Contact;Password=123");
+                }
+
                 ProgressDialog progress = new ProgressDialog();
                 progress.Show();
 
@@ -30,7 +41,7 @@ namespace QLSV.Entity
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 dataBase.openConnection();
                 SqlCommand cm = new SqlCommand(
-                    "SELECT * FROM studentManager WHERE userName = @User AND password = @Pass", dataBase.Connection);
+                    "exec login_studentManager @User, @Pass", dataBase.Connection);
                 cm.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
                 cm.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
                 adapter.SelectCommand = cm;
@@ -72,12 +83,11 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
-                    "SELECT * FROM studentManager " +
-                    "WHERE username = @username"
+                    "select CheckUserName_studentManager(@username)"
                     , dataBase.Connection);
                 checkCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
                 dataBase.openConnection();
-                if (checkCommand.ExecuteScalar() == null)
+                if ((bool)checkCommand.ExecuteScalar() == true)
                 {
                     return true;
                 }
@@ -102,8 +112,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
-                    "SELECT * FROM studentManager " +
-                    "where username = @User AND password = @Pass"
+                    "SELECT CheckPassword_studentManager(@User, @Pass)"
                     , dataBase.Connection);
                 checkCommand.Parameters.Add("@User", SqlDbType.NVarChar).Value = CurrentUser.UserName;
                 checkCommand.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = password;
@@ -136,7 +145,7 @@ namespace QLSV.Entity
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 dataBase.openConnection();
                 SqlCommand cm = new SqlCommand(
-                    "INSERT INTO studentManager VALUES (@User, @Pass)", dataBase.Connection);
+                    "exec addNewAccount_studentManager @User, @Pass", dataBase.Connection);
                 cm.Parameters.Add("@User", SqlDbType.VarChar).Value = username;
                 cm.Parameters.Add("@Pass", SqlDbType.VarChar).Value = password;
                 if(cm.ExecuteNonQuery() == 1)

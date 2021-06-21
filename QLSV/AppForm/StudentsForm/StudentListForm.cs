@@ -41,9 +41,8 @@ namespace QLSV.AppForm.StudentsForm
 
                 progress.Show();
 
-                SqlCommand command = new SqlCommand("SELECT * FROM Students_info order by ID");
                 Student student = new Student();
-                DataTable table = student.getByComand(command);
+                DataTable table = new Student().GetAllStudent();
 
                 progress.Bar.Value = 50;
 
@@ -67,7 +66,6 @@ namespace QLSV.AppForm.StudentsForm
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
-                return false;
                 throw;
             }
         }

@@ -14,8 +14,7 @@ namespace QLSV.Entity
         //tạo proceduce
         public bool InsertContact(string fname, string lname, int group, string phone, string email, string address, Image picture, int user_id)
         {
-            SqlCommand command = new SqlCommand("INSERT INTO Contact (fname, lname, [group], phone, email, address, picture, user_id) " +
-                                                "VALUES (@fname, @lname, @group, @phone, @email, @address, @picture, @user_id)", db.Connection);
+            SqlCommand command = new SqlCommand("exec Insert_Contact @fname, @lname, @group, @phone, @email, @address, @picture, @user_id", db.Connection);
 
             command.Parameters.Add("@fname", SqlDbType.Text).Value = fname;
             command.Parameters.Add("@lname", SqlDbType.Text).Value = lname;
@@ -41,16 +40,7 @@ namespace QLSV.Entity
         //tạo proceduce
         public bool UpdateContact(int id, string fname, string lname, string group, string phone, string email, string address, Image picture)
         {
-            SqlCommand command = new SqlCommand("UPDATE Contact " +
-                                                "SET " +
-                                                "fname=@fname," +
-                                                "lname=@lname," +
-                                                "[group]=@group," +
-                                                "phone=@phone," +
-                                                "email=@email," +
-                                                "address=@address," +
-                                                "picture=@picture " +
-                                                "WHERE id=@id",
+            SqlCommand command = new SqlCommand("exec Update_Contac @fname, @lname, @group, @phone, @email,@address, @picture , @id",
                                                 db.Connection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
@@ -77,7 +67,7 @@ namespace QLSV.Entity
         //tạo proceduce
         public bool DeleteContact(int id)
         {
-            SqlCommand command = new SqlCommand("DELETE FROM Contact WHERE id=@id", db.Connection);
+            SqlCommand command = new SqlCommand("exec Delete_Contact @id", db.Connection);
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;
 
             db.openConnection();
@@ -92,7 +82,6 @@ namespace QLSV.Entity
                 return false;
             }
         }
-
         public DataTable GetTable(string query)
         {
             db.openConnection();
@@ -109,20 +98,20 @@ namespace QLSV.Entity
         //tạo proceduce
         public DataTable SelectContactList()
         {
-            string query = "SELECT * FROM Contact";
+            string query = "exec SelectContactList";
             return this.GetTable(query);
         }
         //tạo proceduce
         public DataTable GetContactByID(int id)
         {
-            string query = $"SELECT * FROM Contact WHERE id = {id}";
+            string query = $"exec GetContactByID { id}";
             return this.GetTable(query);
         }
         //tạo proceduce
-        public DataTable GetContactByGroup(string group)
+        public DataTable GetContactByGroup(int group)
         {
-            SqlCommand command = new SqlCommand("SELECT * FROM Contact WHERE CAST([group] AS NVARCHAR) = @group", db.Connection);
-            command.Parameters.Add("@group", SqlDbType.NVarChar).Value = group;
+            SqlCommand command = new SqlCommand("exec GetContactByGroup @group", db.Connection);
+            command.Parameters.Add("@group", SqlDbType.Int).Value = group;
 
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             DataTable table = new DataTable();
@@ -134,7 +123,7 @@ namespace QLSV.Entity
         {
             try
             {
-                string query = "SELECT * FROM Contact Where user_id = " + user_id.ToString();
+                string query = "exec getUserContact " + user_id.ToString();
                 return this.GetTable(query);
             }
             catch (System.Exception)

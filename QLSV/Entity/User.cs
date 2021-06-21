@@ -21,7 +21,7 @@ namespace QLSV.Entity
             SqlDataAdapter adapter = new SqlDataAdapter();
             db.openConnection();
             SqlCommand cm = new SqlCommand(
-                "SELECT * FROM Users WHERE UserName = @User AND Password = @Pass", db.Connection);
+                "exec login_Users @User, @Pass", db.Connection);
             cm.Parameters.Add("@User", SqlDbType.VarChar).Value = Username;
             cm.Parameters.Add("@Pass", SqlDbType.VarChar).Value = Password;
             adapter.SelectCommand = cm;
@@ -62,8 +62,7 @@ namespace QLSV.Entity
                 if (CheckUserName(Username) == true)
                 {
                     SqlCommand insertCommand = new SqlCommand(
-                    "INSERT INTO Users (UserName, Password, fname, lname, pic)" +
-                    "VALUES (@username, @password, @fname, @lname, @pic)"
+                    "exec signin_Users @username, @password, @fname, @lname, @pic"
                     , db.Connection);
 
                     db.openConnection();
@@ -105,12 +104,11 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
-                    "SELECT * FROM Users " +
-                    "WHERE UserName = @username"
+                    "select [dbo].CheckUserName(@username)"
                     , db.Connection);
                 checkCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
                 db.openConnection();
-                if(checkCommand.ExecuteScalar()  == null)
+                if((bool)checkCommand.ExecuteScalar()  == true)
                 {
                     return true;
                 }
@@ -135,13 +133,12 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
-                    "SELECT * FROM Users " +
-                    "where UserName = @User AND Password = @Pass"
+                    "select [dbo].CheckPassword_Users(@User, @Pass)"
                     , db.Connection);
                 checkCommand.Parameters.Add("@User", SqlDbType.NVarChar).Value = CurrentUser.UserName;
                 checkCommand.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = password;
                 db.openConnection();
-                if (checkCommand.ExecuteScalar() != null)
+                if ((bool)checkCommand.ExecuteScalar() != true)
                 {
                     return true;
                 }
@@ -167,12 +164,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand insertCommand = new SqlCommand(
-                    "UPDATE Users SET " +
-                    "Password = @password, " +
-                    "fname = @fname, " +
-                    "lname = @lname, " +
-                    "pic = @pic " +
-                    "WHERE id = @id"
+                    "exec editProfile_Users @id, @password, @fname, @lname, @pic"
                     , db.Connection);
 
 
@@ -208,11 +200,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand insertCommand = new SqlCommand(
-                    "UPDATE Users SET " +
-                    "fname = @fname, " +
-                    "lname = @lname, " +
-                    "pic = @pic " +
-                    "WHERE id = @id"
+                    "exec editProfile_noPassword_Users @id, @fname, @lname, @pic"
                     , db.Connection);
 
 
@@ -248,9 +236,7 @@ namespace QLSV.Entity
             try
             {
                 db.openConnection();
-                SqlCommand command = new SqlCommand($"SELECT [Group].id, [Group].name, [Group].user_id" +
-                    $" FROM [Group] inner join Contact on [Group].id = Contact.[group]" +
-                    $" WHERE Contact.[user_id] = @user_id", db.Connection);
+                SqlCommand command = new SqlCommand("exec getJoinedGroup_Users @user_id", db.Connection);
                 command.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;

@@ -38,8 +38,7 @@ namespace QLSV.Entity
             DataBase mydb = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Score (student_id, course_id, student_score, description)" +
-                    "VALUES (@student_id, @course_id, @student_score, @description)", mydb.Connection);
+                SqlCommand command = new SqlCommand("exec Add_Score @student_id, @course_id, @student_score, @description", mydb.Connection);
 
                 command.Parameters.Add("@student_id", SqlDbType.NVarChar).Value = StudentID;
                 command.Parameters.Add("@course_id", SqlDbType.Int).Value = CourseID;
@@ -84,11 +83,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "UPDATE Score" +
-                    " SET " +
-                    "student_score = @student_score," +
-                    "description = @description," +
-                    " WHERE student_id = @student_id and course_id = @course_id"
+                    "exec Update_Score @student_id, @course_id, @student_score, @description"
                     , dataBase.Connection);
                 command.Parameters.Add("@student_id", SqlDbType.NVarChar).Value = StudentID;
                 command.Parameters.Add("@course_id", SqlDbType.Int).Value = CourseID;
@@ -124,8 +119,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "DELETE FROM Score" +
-                    " WHERE student_id = @student_id and course_id = @course_id", dataBase.Connection);
+                    "exec Remove_Score @student_id, @course_id", dataBase.Connection);
                 command.Parameters.Add("@student_id", SqlDbType.NVarChar).Value = StudentID;
                 command.Parameters.Add("@course_id", SqlDbType.Int).Value = CourseID;
 
@@ -157,7 +151,7 @@ namespace QLSV.Entity
             DataBase dataBase = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("Select * From Score", dataBase.Connection);
+                SqlCommand command = new SqlCommand("exec GetAll_IdCourseOrder_Score", dataBase.Connection);
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
                 DataTable table = new DataTable();
@@ -190,9 +184,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "SELECT student_id, course_id, student_score " +
-                                    "FROM Score " +
-                                    "order by student_id, course_id"
+                    CommandText = "exec GetAll_IdCourseOrder_Score"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
@@ -222,10 +214,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "SELECT Score.student_id, AVG(Score.student_score) " +
-                                    "FROM Students_info inner join Score on Students_info.ID = Score.student_id " +
-                                    "Group by Score.student_id " +
-                                    "order by Score.student_id "
+                    CommandText = "exec getAvg_Student_Score"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
@@ -328,24 +317,14 @@ namespace QLSV.Entity
             DataBase mydb = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("Select * from Score where student_id = @student_id and course_id = @course_id", mydb.Connection);
+                SqlCommand command = new SqlCommand("select [dbo].IsExisted_Score (@student_id, @course_id)", mydb.Connection);
 
                 command.Parameters.Add("@student_id", SqlDbType.NVarChar).Value = StudentID;
                 command.Parameters.Add("@course_id", SqlDbType.Int).Value = CourseID;
 
                 mydb.openConnection();
 
-                if (command.ExecuteScalar() != null)
-                {
-                    mydb.closeConnection();
-                    return true;
-                }
-                else
-                {
-                    mydb.closeConnection();
-                    return false;
-                }
-
+                return (bool)command.ExecuteScalar();
             }
             catch (Exception)
             {
@@ -367,11 +346,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "select count(A.student_id) " +
-                        "from (SELECT Score.student_id, AVG(Score.student_score) as avgScore " +
-                        "FROM Students_info inner join Score on Students_info.ID = Score.student_id " +
-                        "Group by Score.student_id " +
-                        "HAVING AVG(Score.student_score) >= 5) as A"
+                    CommandText = "select [dbo].getPassNumber_Score()"
                 };
                 int result;
                 try
@@ -405,11 +380,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "select count(A.student_id) " +
-                        "from (SELECT Score.student_id, AVG(Score.student_score) as avgScore " +
-                        "FROM Students_info inner join Score on Students_info.ID = Score.student_id " +
-                        "Group by Score.student_id " +
-                        "HAVING AVG(Score.student_score) < 5 and AVG(Score.student_score) >= 0) as A"
+                    CommandText = "select [dbo].getFailNumber_Score()"
                 };
 
                 int result = 0;

@@ -11,12 +11,12 @@ namespace QLSV.Data
         protected SqlConnection connection;
         public DataBase()
         {
-            if(CurrentUser.isManager == true)
+            if (CurrentUser.isManager == true)
             {
                 connection = new SqlConnection
                     (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;User ID=QLSV_Manager;Password=123");
             }
-            else if(CurrentUser.isContact == true)
+            else if (CurrentUser.isContact == true)
             {
                 connection = new SqlConnection
                     (@"Data Source=LAPTOP-CGKU0T3D;Initial Catalog=SinhVien;User ID=QLSV_Contact;Password=123");
@@ -26,9 +26,11 @@ namespace QLSV.Data
         public SqlConnection Connection
         {
             get { return connection; }
+            set { connection = value; }
         }
         public void openConnection()
         {
+            
             if ((connection.State == ConnectionState.Closed))
             {
                 connection.Open();

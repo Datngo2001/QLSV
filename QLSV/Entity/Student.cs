@@ -7,7 +7,7 @@ using System.Drawing;
 namespace QLSV.Entity
 {
     //DAT
-    class Student
+    public class Student
     {
         private DateTime bdate;
         public int ID { get; set; }
@@ -35,7 +35,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE id = @ID", dataBase.Connection);
+                    "exec getByID_Students_info @ID", dataBase.Connection);
                 command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = id;
                 dataBase.openConnection();
 
@@ -81,31 +81,28 @@ namespace QLSV.Entity
             }
         }
         //tạo function
-        public int isExistId(int id)
+        public bool isExistId(int id)
         {
             DataBase dataBase = new DataBase();
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE id = @ID", dataBase.Connection);
-                command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = id;
+                    "select [dbo].isExistId(@ID)", dataBase.Connection);
+                command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = id.ToString();
                 dataBase.openConnection();
-
-                DataTable table = new DataTable();
-
-                SqlDataAdapter adapter = new SqlDataAdapter()
+                var rs = command.ExecuteScalar();
+                if ((bool)rs == true)
                 {
-                    SelectCommand = command
-                };
-
-                adapter.Fill(table);
-
-                return table.Rows.Count;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception)
             {
-                return 0;
-                throw;
+                return true;
             }
             finally
             {
@@ -119,7 +116,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "SELECT id, fname, lname, bdate, gender, phone, address, picture FROM Students_info WHERE phone = @phone", dataBase.Connection);
+                    "exec getByPhone_Students_info @phone", dataBase.Connection);
                 command.Parameters.Add("@phone", SqlDbType.NVarChar).Value = phone;
                 dataBase.openConnection();
 
@@ -169,8 +166,8 @@ namespace QLSV.Entity
             DataBase dataBase = new DataBase();
             try
             {
-                command.Connection = dataBase.Connection;
                 dataBase.openConnection();
+                command.Connection = dataBase.Connection;
                 SqlDataAdapter adapter = new SqlDataAdapter(command);
                 DataTable table = new DataTable(); adapter.Fill(table);
                 dataBase.closeConnection();
@@ -193,9 +190,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "SELECT * FROM Students_info WHERE CONCAT(fname, lname, address) LIKE '%" +
-                    hint
-                    + "%'", dataBase.Connection);
+                    "exec findByHint_Students_info '" + hint + "'", dataBase.Connection);
 
                 dataBase.openConnection();
 
@@ -228,9 +223,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "SELECT * FROM Students_info WHERE CONCAT(ID, fname, lname) LIKE '%" +
-                    hint
-                    + "%'", dataBase.Connection);
+                    "exec findByHint_Students_info " + hint, dataBase.Connection);
 
                 dataBase.openConnection();
 
@@ -262,8 +255,7 @@ namespace QLSV.Entity
             DataBase mydb = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("INSERT INTO Students_info (ID, fname, lname, bdate, gender, phone, address, picture)" +
-                "VALUES (@id, @fn, @ln, @bdt, @gd, @phn, @adrs, @pic)", mydb.Connection);
+                SqlCommand command = new SqlCommand("exec InsertThisStudent_Students_info @id, @fn, @ln, @bdt, @gd, @phn, @adrs, @pic", mydb.Connection);
 
                 command.Parameters.Add("@id", SqlDbType.Int).Value = ID;
                 command.Parameters.Add("@fn", SqlDbType.VarChar).Value = Fname;
@@ -304,24 +296,14 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "UPDATE Students_info" +
-                    " SET " +
-                    "fname = @Fname," +
-                    "lname = @Lname," +
-                    "bdate = @Bdate," +
-                    "gender = @Gender," +
-                    "phone = @Phone," +
-                    "address = @Adress," +
-                    "picture = @Picture" +
-                    " WHERE id = @ID"
-                    , dataBase.Connection);
+                    "exec UpdateThisStudent_Students_info @ID, @Fname, @Lname, @Bdate, @Gender, @Phone, @Adress, @Picture", dataBase.Connection);
                 command.Parameters.Add("@Fname", SqlDbType.NVarChar).Value = Fname;
                 command.Parameters.Add("@Lname", SqlDbType.NVarChar).Value = Lname;
                 command.Parameters.Add("@Bdate", SqlDbType.Date).Value = Bdate;
                 command.Parameters.Add("@Phone", SqlDbType.NVarChar).Value = Phone;
                 command.Parameters.Add("@Adress", SqlDbType.NVarChar).Value = Address;
                 command.Parameters.Add("@Picture", SqlDbType.Image).Value = new Picture(this.Picture).toByteArray();
-                command.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
+                command.Parameters.Add("@ID", SqlDbType.NVarChar).Value = ID.ToString();
                 command.Parameters.Add("@Gender", SqlDbType.VarChar).Value = Gender;
 
                 dataBase.openConnection();
@@ -353,8 +335,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "DELETE FROM Students_info" +
-                    " WHERE ID = @id", dataBase.Connection);
+                    "exec DeleteThisStudent_Students_info @id", dataBase.Connection);
                 command.Parameters.Add("@ID", SqlDbType.Int).Value = ID;
 
                 dataBase.openConnection();
@@ -410,7 +391,7 @@ namespace QLSV.Entity
                 SqlCommand command = new SqlCommand()
                 {
                     Connection = db.Connection,
-                    CommandText = "SELECT ID, fname, lname FROM Students_info ORDER BY ID"
+                    CommandText = "exec getAllBriefInfo_Students_info"
                 };
                 SqlDataAdapter adapter = new SqlDataAdapter();
                 adapter.SelectCommand = command;
@@ -436,7 +417,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand();
-                command.CommandText = "SELECT * FROM Students_info";
+                command.CommandText = "exec getAllInfo_Students_info";
                 return this.getByComand(command);
             }
             catch (Exception)
@@ -450,9 +431,7 @@ namespace QLSV.Entity
         {
             try
             {
-                SqlCommand command = new SqlCommand("SELECT * FROM Student_Courses " +
-                                                    "inner join Courses on Student_Courses.courseId = Courses.Id " +
-                                                    "WHERE stdId=@id");
+                SqlCommand command = new SqlCommand("exec GetSelectedCourses @id");
                 command.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 return this.getByComand(command);
             }
@@ -479,8 +458,7 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("Insert into Student_Courses (stdId, courseId) " +
-                                                     "values (@stdId, @courseId)", db.Connection);
+                SqlCommand command = new SqlCommand("exec InsertSelectedCourse_Students_info @stdId, @courseId", db.Connection);
 
                 command.Parameters.Add("@stdId", SqlDbType.NVarChar).Value = id;
                 command.Parameters.Add("@courseId", SqlDbType.Int).Value = course;

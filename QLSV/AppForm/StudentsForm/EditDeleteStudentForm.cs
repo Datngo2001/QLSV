@@ -7,7 +7,7 @@ namespace QLSV.AppForm.StudentsForm
 {
     public partial class EditDeleteStudentForm : Form
     {
-        Student student;
+        public Student student;
         public EditDeleteStudentForm()
         {
             InitializeComponent();
@@ -58,7 +58,7 @@ namespace QLSV.AppForm.StudentsForm
         {
             try
             {
-                Student student = new Student()
+                student = new Student()
                 {
                     ID = Convert.ToInt32(Id_tb.Text),
                     Fname = FirstName_tb.Text,
@@ -78,11 +78,6 @@ namespace QLSV.AppForm.StudentsForm
                 }
                 try
                 {
-                    if (student.isExistId(Convert.ToInt32(Id_tb.Text)) > 1)
-                    {
-                        MessageBox.Show("Id is duplicated!");
-                        return;
-                    }
                     if (student.UpdateThisStudent() == true)
                     {
                         MessageBox.Show("Edited!");
