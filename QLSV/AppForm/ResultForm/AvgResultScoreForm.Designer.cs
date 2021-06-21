@@ -272,6 +272,7 @@ namespace QLSV.AppForm.ResultForm
             // 
             // showResult_dgv
             // 
+            this.showResult_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.showResult_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showResult_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showResult_dgv.Location = new System.Drawing.Point(303, 46);

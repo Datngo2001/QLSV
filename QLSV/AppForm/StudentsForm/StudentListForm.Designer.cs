@@ -36,13 +36,15 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // list_dgv
             // 
+            this.list_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.list_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.list_dgv.Dock = System.Windows.Forms.DockStyle.Top;
             this.list_dgv.Location = new System.Drawing.Point(0, 0);
+            this.list_dgv.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.list_dgv.Name = "list_dgv";
             this.list_dgv.RowHeadersWidth = 62;
             this.list_dgv.RowTemplate.Height = 80;
-            this.list_dgv.Size = new System.Drawing.Size(1706, 673);
+            this.list_dgv.Size = new System.Drawing.Size(856, 437);
             this.list_dgv.TabIndex = 0;
             this.list_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.list_dgv.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.list_dgv_DataError);
@@ -54,9 +56,10 @@ namespace QLSV.AppForm.StudentsForm
             this.refresh_btn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.refresh_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.refresh_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.refresh_btn.Location = new System.Drawing.Point(0, 688);
+            this.refresh_btn.Location = new System.Drawing.Point(0, 424);
+            this.refresh_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.refresh_btn.Name = "refresh_btn";
-            this.refresh_btn.Size = new System.Drawing.Size(1706, 50);
+            this.refresh_btn.Size = new System.Drawing.Size(856, 32);
             this.refresh_btn.TabIndex = 1;
             this.refresh_btn.Text = "Refresh";
             this.refresh_btn.UseVisualStyleBackColor = false;
@@ -64,11 +67,12 @@ namespace QLSV.AppForm.StudentsForm
             // 
             // StudentListForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1706, 738);
+            this.ClientSize = new System.Drawing.Size(856, 456);
             this.Controls.Add(this.refresh_btn);
             this.Controls.Add(this.list_dgv);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "StudentListForm";
             this.Text = "List of students";
             this.Load += new System.EventHandler(this.StudentListForm_Load);

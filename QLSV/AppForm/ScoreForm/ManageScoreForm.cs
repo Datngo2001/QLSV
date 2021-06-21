@@ -70,6 +70,7 @@ namespace QLSV.AppForm.ScoreForm
 
         private void remove_btn_Click(object sender, EventArgs e)
         {
+            if (id_tb.Text == "") return;
             score.StudentID = Convert.ToInt32(id_tb.Text);
             score.CourseID = Convert.ToInt32(labelTable.Rows[cource_cb.SelectedIndex][0].ToString());
             if (score.RemoveThisScore())

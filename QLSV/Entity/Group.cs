@@ -55,7 +55,7 @@ namespace QLSV.Entity
         {
             try
             {
-                SqlCommand deleteCmd = new SqlCommand("exec DeleteUser_Group @id, @user_id", db.Connection);
+                SqlCommand deleteCmd = new SqlCommand("exec DeleteUser_Group @user_id, @id", db.Connection);
                 deleteCmd.Parameters.Add("@id", SqlDbType.Int).Value = id;
                 deleteCmd.Parameters.Add("@user_id", SqlDbType.Int).Value = user_id;
 

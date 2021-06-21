@@ -69,8 +69,8 @@ namespace QLSV.AppForm.ContactForm
             {
                 User user = new User();
                 listBoxGroup.DataSource = user.getJoinedGroup(CurrentUser.Id);
-                listBoxGroup.ValueMember = "id";
-                listBoxGroup.DisplayMember = "name";
+                listBoxGroup.ValueMember = "groupId";
+                listBoxGroup.DisplayMember = "groupName";
                 listBoxGroup.SelectedItem = 0;
             }
             catch (Exception)

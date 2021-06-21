@@ -20,11 +20,10 @@ namespace QLSV.AppForm.ContactForm
 
         private void EditContactForm_Load(object sender, EventArgs e)
         {
-            comboBoxGroup.DataSource = group.GetAllGroup();
-            comboBoxGroup.ValueMember = "id";
-            comboBoxGroup.DisplayMember = "name";
-            comboBoxGroup.SelectedItem = 0;
-            comboBoxGroup.Text = "";
+            group_cb.DataSource = group.GetAllGroup();
+            group_cb.ValueMember = "id";
+            group_cb.DisplayMember = "name";
+            group_cb.SelectedItem = -1;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -59,12 +58,12 @@ namespace QLSV.AppForm.ContactForm
                     textBoxID.Text = id.ToString();
                     textBoxFname.Text = table.Rows[0][1].ToString().Trim();
                     textBoxLname.Text = table.Rows[0][2].ToString().Trim();
-                    comboBoxGroup.Text = table.Rows[0][3].ToString().Trim();
+                    group_cb.SelectedValue = table.Rows[0][3].ToString().Trim();
                     textBoxPhone.Text = table.Rows[0][4].ToString().Trim();
                     textBoxEmail.Text = table.Rows[0][5].ToString().Trim();
-                    textBoxAddress.Text = table.Rows[0][6].ToString().Trim();
+                    textBoxAddress.Text = table.Rows[0][7].ToString().Trim();
 
-                    pictureContact.Image = new Picture().ByteArrToImage((byte[])table.Rows[0][7]);
+                    pictureContact.Image = new Picture().ByteArrToImage((byte[])table.Rows[0][6]);
                 }
                 catch (Exception E)
                 {
@@ -78,7 +77,7 @@ namespace QLSV.AppForm.ContactForm
             int id = Convert.ToInt32(textBoxID.Text.Trim());
             string fname = textBoxFname.Text.Trim();
             string lname = textBoxLname.Text.Trim();
-            string _group = comboBoxGroup.Text.Trim();
+            string _group = group_cb.Text.Trim();
             string phone = textBoxPhone.Text.Trim();
             string email = textBoxEmail.Text.Trim();
             string address = textBoxAddress.Text.Trim();
@@ -104,8 +103,13 @@ namespace QLSV.AppForm.ContactForm
             textBoxAddress.Text = "";
             textBoxEmail.Text = "";
             textBoxPhone.Text = "";
-            comboBoxGroup.Text = "";
+            group_cb.Text = "";
             pictureContact.Image = null;
+        }
+
+        private void comboBoxGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

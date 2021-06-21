@@ -36,6 +36,7 @@ namespace QLSV.AppForm.ContactForm
             // 
             // dataGridViewShowAll
             // 
+            this.dataGridViewShowAll.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewShowAll.BackgroundColor = System.Drawing.Color.White;
             this.dataGridViewShowAll.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewShowAll.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -69,7 +70,7 @@ namespace QLSV.AppForm.ContactForm
             this.ClientSize = new System.Drawing.Size(1184, 361);
             this.Controls.Add(this.dataGridViewShowAll);
             this.Controls.Add(this.listBoxGroup);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ShowFullContactForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "All your contact";

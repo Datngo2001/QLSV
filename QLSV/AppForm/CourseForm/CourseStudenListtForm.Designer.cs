@@ -47,7 +47,7 @@ namespace QLSV.AppForm.CourseForm
             this.label_pn.Controls.Add(this.courseName_lb);
             this.label_pn.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_pn.Location = new System.Drawing.Point(0, 0);
-            this.label_pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.label_pn.Margin = new System.Windows.Forms.Padding(2);
             this.label_pn.Name = "label_pn";
             this.label_pn.Size = new System.Drawing.Size(593, 47);
             this.label_pn.TabIndex = 14;
@@ -82,7 +82,7 @@ namespace QLSV.AppForm.CourseForm
             this.print_pn.Controls.Add(this.print_btn);
             this.print_pn.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.print_pn.Location = new System.Drawing.Point(0, 317);
-            this.print_pn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.print_pn.Margin = new System.Windows.Forms.Padding(2);
             this.print_pn.Name = "print_pn";
             this.print_pn.Size = new System.Drawing.Size(593, 48);
             this.print_pn.TabIndex = 15;
@@ -93,7 +93,7 @@ namespace QLSV.AppForm.CourseForm
             this.save_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.save_btn.ForeColor = System.Drawing.Color.White;
             this.save_btn.Location = new System.Drawing.Point(170, 5);
-            this.save_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.save_btn.Margin = new System.Windows.Forms.Padding(2);
             this.save_btn.Name = "save_btn";
             this.save_btn.Size = new System.Drawing.Size(106, 41);
             this.save_btn.TabIndex = 0;
@@ -107,7 +107,7 @@ namespace QLSV.AppForm.CourseForm
             this.print_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.print_btn.ForeColor = System.Drawing.Color.White;
             this.print_btn.Location = new System.Drawing.Point(310, 5);
-            this.print_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.print_btn.Margin = new System.Windows.Forms.Padding(2);
             this.print_btn.Name = "print_btn";
             this.print_btn.Size = new System.Drawing.Size(106, 41);
             this.print_btn.TabIndex = 0;
@@ -117,6 +117,7 @@ namespace QLSV.AppForm.CourseForm
             // 
             // student_dgv
             // 
+            this.student_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.student_dgv.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.student_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.student_dgv.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,7 +138,7 @@ namespace QLSV.AppForm.CourseForm
             this.Controls.Add(this.student_dgv);
             this.Controls.Add(this.print_pn);
             this.Controls.Add(this.label_pn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CourseStudenListtForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Course Student List";

@@ -40,7 +40,7 @@ namespace QLSV.Entity
         //tạo proceduce
         public bool UpdateContact(int id, string fname, string lname, string group, string phone, string email, string address, Image picture)
         {
-            SqlCommand command = new SqlCommand("exec Update_Contac @fname, @lname, @group, @phone, @email,@address, @picture , @id",
+            SqlCommand command = new SqlCommand("exec Update_Contact @fname, @lname, @group, @phone, @email,@address, @picture , @id",
                                                 db.Connection);
 
             command.Parameters.Add("@id", SqlDbType.Int).Value = id;

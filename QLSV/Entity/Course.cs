@@ -75,7 +75,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand command = new SqlCommand(
-                    "exec UpdateCourse @ID, @label, @period, @description, @semester"
+                    "exec UpdateCourses @ID, @label, @period, @description, @semester"
                     , dataBase.Connection);
                 command.Parameters.Add("@label", SqlDbType.NVarChar).Value = Label;
                 command.Parameters.Add("@period", SqlDbType.Int).Value = Period;
@@ -194,13 +194,15 @@ namespace QLSV.Entity
                     Id = Convert.ToInt32(table.Rows[0][0].ToString()),
                     Label = table.Rows[0][1].ToString(),
                     Period = Convert.ToInt32(table.Rows[0][2].ToString()),
-                    Description = table.Rows[0][3].ToString()
+                    Description = table.Rows[0][3].ToString(),
+                    Semester = table.Rows[0][4].ToString()
                 };
 
                 this.Id = Convert.ToInt32(table.Rows[0][0].ToString());
                 this.Label = table.Rows[0][1].ToString();
                 this.Period = Convert.ToInt32(table.Rows[0][2].ToString());
                 this.Description = table.Rows[0][3].ToString();
+                this.Semester = table.Rows[0][4].ToString();
 
                 return course;
             }
@@ -282,7 +284,9 @@ namespace QLSV.Entity
             DataBase db = new DataBase();
             try
             {
-                SqlCommand command = new SqlCommand("select CheckCourseName(@cName)", db.Connection);
+                db.openConnection();
+
+                SqlCommand command = new SqlCommand("select [dbo].CheckCourseName(@cName)", db.Connection);
 
                 command.Parameters.Add("@cName", SqlDbType.VarChar).Value = courseName;
 
@@ -290,7 +294,7 @@ namespace QLSV.Entity
             }
             catch (Exception)
             {
-                return false;
+                return true;
                 throw;
             }
             finally
