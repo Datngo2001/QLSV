@@ -83,7 +83,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
-                    "select CheckUserName_studentManager(@username)"
+                    "select [dbo].CheckUserName_studentManager(@username)"
                     , dataBase.Connection);
                 checkCommand.Parameters.Add("@username", SqlDbType.NVarChar).Value = username;
                 dataBase.openConnection();
@@ -112,7 +112,7 @@ namespace QLSV.Entity
             try
             {
                 SqlCommand checkCommand = new SqlCommand(
-                    "SELECT CheckPassword_studentManager(@User, @Pass)"
+                    "SELECT [dbo].CheckPassword_studentManager(@User, @Pass)"
                     , dataBase.Connection);
                 checkCommand.Parameters.Add("@User", SqlDbType.NVarChar).Value = CurrentUser.UserName;
                 checkCommand.Parameters.Add("@Pass", SqlDbType.NVarChar).Value = password;
